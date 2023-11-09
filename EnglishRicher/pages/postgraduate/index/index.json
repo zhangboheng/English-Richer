@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "accordion-list": "../../../components/accordion-list/accordion-list"
+  },
+  "navigationBarTitleText": "考研词库"
+}

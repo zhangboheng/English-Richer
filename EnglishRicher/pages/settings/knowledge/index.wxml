@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="rectangle" style="background-color: #f5d659" bind:tap="goToJunior">
+    <text class="title">初中</text>
+  </view>
+  <view class="rectangle" style="background-color: #f5d659" bind:tap="goToHigh">
+    <text class="title">高中</text>
+  </view>
+  <view class="rectangle" style="background-color: #f5d659" bind:tap="goToCet4">
+    <text class="title">大学英语四级</text>
+  </view>
+  <view class="rectangle" style="background-color: #f5d659" bind:tap="goToCet6">
+    <text class="title">大学英语六级</text>
+  </view>
+  <view class="rectangle" style="background-color: #f5d659" bind:tap="goToPostgraduate">
+    <text class="title">考研</text>
+  </view>
+  <view class="rectangle" style="background-color: #f5d659" bind:tap="goToToelf">
+    <text class="title">托福1</text>
+  </view>
+  <view class="rectangle" style="background-color: #f5d659" bind:tap="goToToelfs">
+    <text class="title">托福2</text>
+  </view>
+  <view class="rectangle" style="background-color: #f5d659" bind:tap="goToSat">
+    <text class="title">SAT</text>
+  </view>
+</view>

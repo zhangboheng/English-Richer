@@ -1,0 +1,22 @@
+<view>
+  <image class="background-image" src="../../static/source/startup.png" mode='aspectFill'></image>
+  <view class="top-box">
+      <view class="info">
+        <view class="info-detail">
+          <text class="nickname">{{storageDickName}}</text>
+          <text class="level">LV：{{userInfo.level}}</text>
+        </view>
+        <view class="progress-bar">
+          <view class="progress" style="width: {{userInfo.progress + '%'}}"></view>
+        </view>
+      </view>
+      <view class="funds">
+        <image class="price-image" src="../../static/source/coin.png"></image>
+        <text class="coins">{{userInfo.coins}}</text>
+      </view>
+      <view class="settings" bindtap="goToSettings">
+        <image class="settings-image" src="../../static/source/gear.png"></image>
+      </view>
+  </view>
+  <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
+</view>

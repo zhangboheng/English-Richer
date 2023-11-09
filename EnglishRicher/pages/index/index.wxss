@@ -1,0 +1,88 @@
+/** 图片样式开始 **/
+.background-image {
+  width: 100%;
+  height: 100vh;
+  opacity: 0.25;
+}
+/** 图片样式结束 **/
+.top-box {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  padding: 20rpx 0;
+}
+
+.info {
+  margin-left: 20rpx;
+}
+
+.info-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nickname {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.level {
+  font-size: 32rpx;
+  color: #666;
+  margin-top: 10rpx;
+  font-weight: bold;
+}
+
+.progress-bar {
+  width: 250rpx;
+  height: 10rpx;
+  background-color: #000;
+}
+
+.progress {
+  height: 100%;
+  background-color: #ff9900;
+}
+
+.funds {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price-image {
+  width: 50rpx;
+  height: 50rpx;
+  animation: rotate360 5s infinite linear;
+}
+
+.coins {
+  font-size: 32rpx;
+  color: #666;
+  font-weight: bold;
+}
+
+.settings {
+  margin-right: 20rpx;
+}
+
+.settings-image {
+  width: 50rpx;
+  height: 50rpx;
+  animation: rotate360 5s infinite linear;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

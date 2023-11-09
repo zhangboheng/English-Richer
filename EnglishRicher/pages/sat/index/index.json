@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "accordion-list": "../../../components/accordion-list/accordion-list"
+  },
+  "navigationBarTitleText": "SAT 词库"
+}

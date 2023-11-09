@@ -1,0 +1,15 @@
+.container {
+  padding: 20px;
+}
+
+.settingscontent {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.item-content {
+  display: grid;
+}

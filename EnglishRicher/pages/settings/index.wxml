@@ -1,0 +1,55 @@
+<view>
+  <view class="container-head">
+    <image src="../../static/source/logos.png" alt="Logo"></image>
+    <view class="container-item-text">
+      <view class="inner-box">
+        <text class="inner-title">英语大富翁</text>
+      </view>
+      <view class="inner-box">
+        <text>Version 0.0.1</text>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="container-item item-top" bind:tap="editNickName">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/nickname.png" />
+        <text>修改昵称</text>
+      </view>
+      <text class="item-inner">{{ username }}</text>
+    </view>
+  </view>
+  <view>
+    <view class="container-item" bind:tap="goToKnowlege">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/book.png" />
+        <text>英语词库</text>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="container-item" bind:tap="goToDonate">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/donation.png" />
+        <text>捐赠打赏</text>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="container-item" bind:tap="goToUpdateHistory">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/history.png" />
+        <text>更新历史</text>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="container-item" bind:tap="goToAboutUs">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/aboutus.png" />
+        <text>关于我们</text>
+      </view>
+    </view>
+  </view>
+  <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
+</view>

@@ -1,0 +1,52 @@
+<view class="container">
+  <view class="search-section">
+    <input class="search-input" placeholder="请输入搜索内容" bindinput="onInput" />
+    <button class="search-box" bindtap="onSearch">搜索</button>
+  </view>
+  <view class="title-section">
+    <view class="title-line-left"></view>
+    <text>\t兑换列表\t</text>
+    <view class="title-line-right"></view>
+  </view>
+  <view class="money-section">
+    <text>资产：{{ moenyTotal }}</text>
+    <image class="price-image" src="../../static/source/coin.png"></image>
+  </view>
+  <view class="product-section">
+    <view class="row" wx:if="{{yasiShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/exam.png"></image>
+        <view class="title">{{priceArray.yasiTitle}}</view>
+        <view class="price" bindtap="exchangeYasi">
+          <text class="price-text">{{ priceArray.yasiPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
+    <view class="row" wx:if="{{movieShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/ticket.png"></image>
+        <view class="title">{{ priceArray.movieTitle }}</view>
+        <view class="price" bindtap="exchangeMovie">
+          <text class="price-text">{{ priceArray.moviePrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="product-section">
+    <view class="row" wx:if="{{telegramShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/smartphone.png"></image>
+        <view class="title">{{priceArray.telegramTitle}}</view>
+        <view class="price" bindtap="exchangeCredits">
+          <text class="price-text">{{ priceArray.telegramPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

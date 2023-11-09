@@ -1,0 +1,22 @@
+.container {
+  padding: 20px;
+}
+
+.settingscontent {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container-head {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

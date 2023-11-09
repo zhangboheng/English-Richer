@@ -1,0 +1,52 @@
+.accordion-list {
+  width: 100%;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 3px solid #000;
+  cursor: pointer;
+  margin-bottom: 10rpx;
+}
+
+.list-item:active {
+  background-color: #f5d659;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.item-image {
+  width: 20px;
+  height: 20px;
+}
+
+.bottomup {
+  width: 100%;
+  position: fixed;
+  bottom: 20rpx;
+  text-align: center;
+}
+
+.fixedimage {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.content {
+  padding: 10px;
+  background-color: #f5d659;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 500;
+  margin-bottom: 10rpx;
+}
+
+.item-type {
+  margin-right:10rpx;
+}

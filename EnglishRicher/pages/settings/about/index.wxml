@@ -1,0 +1,25 @@
+<view class="container-head">
+  <image class="top-inner" src="../../../static/source/logos.png" alt="Logo"  mode='aspectFit'></image>
+</view>
+<view class="container">
+  <view class="settingscontent">
+    <image class="content-icon" src="../../../static/source/wechat.png" />
+    <text user-select="{{true}}">Nosense-history</text>
+  </view>
+  <view class="settingscontent">
+    <image class="content-icon" src="../../../static/source/youtube.png" />
+    <text user-select="{{true}}">@LuckyDesigner</text>
+  </view>
+  <view class="settingscontent">
+    <image class="content-icon" src="../../../static/source/gmail.png" />
+    <text user-select="{{true}}">zhangboheng827@gmail.com</text>
+  </view>
+  <view class="settingscontent">
+    <image class="content-icon" src="../../../static/source/web.png" />
+    <text user-select="{{true}}">https://luckydesigner.space/</text>
+  </view>
+  <view class="settingscontent">
+    <image class="content-icon" src="../../../static/source/github.png" />
+    <text user-select="{{true}}">https://github.com/zhangboheng</text>
+  </view>
+</view>

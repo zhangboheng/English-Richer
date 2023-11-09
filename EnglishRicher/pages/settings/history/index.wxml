@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="settingscontent">
+    <text class="version">版本 0.0.1</text>
+    <text class="date">2023-11-07</text>
+  </view>
+  <view class="item-content">
+    <text>英语大富翁初始版发布。</text>
+  </view>
+</view>

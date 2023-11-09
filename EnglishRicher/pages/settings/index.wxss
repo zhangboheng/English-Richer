@@ -1,0 +1,56 @@
+/* 设置页面顶部 logo 开始 */
+.container-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.container-item-text {
+  text-align: center;
+}
+
+.inner-box {
+  width: 100%;
+}
+
+.inner-title {
+  font-size: 24px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.container-head image {
+  width: 96px;
+  height: 96px;
+}
+/* 设置页面顶部 logo 结束 */
+
+/* 设置页面底部功能区开始 */
+.container-item {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+}
+
+.item-box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.item-box-image {
+  margin-right: 10rpx;
+}
+
+.container-item image {
+  width: 24px;
+  height: 24px;
+}
+.item-inner {
+  color: #ccc;
+  font-weight: 400;
+}
+
+/* 设置页面底部功能区结束 */

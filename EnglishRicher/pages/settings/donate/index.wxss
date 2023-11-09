@@ -1,0 +1,22 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.container-item {
+  text-align: center;
+  width:100%;
+  display: grid;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.container-item-text {
+  font-weight: bold;
+}
+
+.inner-card {
+  height:150px;
+  width: 150px;
+  margin-top: 20px;
+}

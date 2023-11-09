@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "scrollable-text": "../../components/scroll-text/scroll"
+  },
+  "navigationBarTitleText": "英语大富翁",
+  "disableScroll": true
+}

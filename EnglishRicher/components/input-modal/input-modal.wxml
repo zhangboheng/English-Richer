@@ -1,0 +1,6 @@
+<view class="modal" wx:if="{{showModal}}">
+  <view class="modal-content">
+    <input class="input-box" type="text" placeholder="{{placeholder}}" bindinput="inputChange" value="{{inputValue}}" />
+    <button class="model-btn" bindtap="confirm">确定</button>
+  </view>
+</view>

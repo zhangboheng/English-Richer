@@ -1,0 +1,71 @@
+{
+  "pages":[
+    "pages/setup/index",
+    "pages/index/index",
+    "pages/exchange/index",
+    "pages/settings/index",
+    "pages/settings/knowledge/index",
+    "pages/settings/donate/index",
+    "pages/settings/history/index",
+    "pages/settings/about/index"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/junior",
+      "pages": [
+        "index/index"
+      ]
+    },
+    {
+      "root": "pages/high",
+      "pages": [
+        "index/index"
+      ]
+    },
+    {
+      "root": "pages/cet4",
+      "pages": [
+        "index/index"
+      ]
+    },
+    {
+      "root": "pages/cet6",
+      "pages": [
+        "index/index"
+      ]
+    },
+    {
+      "root": "pages/postgraduate",
+      "pages": [
+        "index/index"
+      ]
+    },
+    {
+      "root": "pages/toelf",
+      "pages": [
+        "index/index"
+      ]
+    },
+    {
+      "root": "pages/toelfs",
+      "pages": [
+        "index/index"
+      ]
+    },
+    {
+      "root": "pages/sat",
+      "pages": [
+        "index/index"
+      ]
+    }
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f5d659",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

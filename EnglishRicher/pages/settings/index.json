@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "input-modal": "../../components/input-modal/input-modal"
+  },
+  "navigationBarTitleText": "策略谋划",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,20 @@
+<!-- scrollable-text 组件的 WXML -->
+<view class="page-container">
+  <view class="popup-container">
+    <view class="button-content">
+      <image class="button-icon" src="../../static/source/console.png"></image>
+      <text class="text-info">玩法说明</text>
+    </view>
+    <!-- 弹出框内容 -->
+    <scroll-view class="text-container" scroll-y="{{true}}">
+      <text class="text" user-select="{{true}}">\n英语大富翁主旨是辅佐用户学习英语，通过一个个关卡，寓教于乐，提高了英语水平，收获了财富信息。\n\n1.点击开启旅途后，可以进入正式故事，先设置名字，初始等级和财富都是0，后续随着完成的任务越多，等级和财富自然就随之变化。\n\n2.等级是通往下一关卡的重要凭据，而财富则是用来在兑换情报处用来兑换各种实用情报，比如考试资料，英语字幕，话费优惠信息，优惠电影票，满减商品等。\n\n3.后续随着开发进展会有更多惊喜等待你的挖掘。\n\n4.一切数据都保存在本机，如果清空数据后，所有数据也会清除。\n\n</text>
+    </scroll-view>
+    <view class="understand">
+      <button bind:tap="closePopup" class="close">
+        <view class="button-content">
+          <text class="button-text">X</text>
+        </view>
+      </button>
+    </view>
+  </view>
+</view>
