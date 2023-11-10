@@ -20,6 +20,15 @@
     </view>
   </view>
   <view>
+    <view class="container-item" bind:tap="editLevel">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/level.png" />
+        <text>修改水平</text>
+      </view>
+      <text class="item-inner">{{ getDefaultLevel }}</text>
+    </view>
+  </view>
+  <view>
     <view class="container-item" bind:tap="goToKnowlege">
       <view class="item-box">
         <image class="item-box-image" src="../../static/source/book.png" />
@@ -51,5 +60,14 @@
       </view>
     </view>
   </view>
+  <!-- 修改昵称弹出组件 -->
   <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
+  <!-- 修改水平弹出组件 -->
+  <radio-dialog
+    englishLevels="{{ englishLevels }}"
+    bind:confirm="handleConfirmLevel"
+    bind:close="closeRadioDialog"
+    defaultLevel="{{ getDefaultLevel }}"
+    wx:if="{{ showRadioDialog }}"
+  ></radio-dialog>
 </view>

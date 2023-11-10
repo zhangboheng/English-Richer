@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "input-modal": "../../components/input-modal/input-modal"
+    "input-modal": "../../components/input-modal/input-modal",
+    "radio-dialog": "../../components/radio-dialog/radio-dialog"
   },
   "navigationBarTitleText": "策略谋划",
   "enablePullDownRefresh": true

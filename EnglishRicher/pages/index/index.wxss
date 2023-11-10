@@ -1,3 +1,9 @@
+.center-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 /** 图片样式开始 **/
 .background-image {
   width: 100%;
@@ -14,6 +20,20 @@
   justify-content: space-between;
   z-index: 2;
   padding: 20rpx 0;
+}
+
+.top-banner {
+  width: 90%;
+  position: absolute;
+  top: 100rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 20rpx;
+  border: 3px solid #000;
+  background-color: #f5d659;
 }
 
 .info {

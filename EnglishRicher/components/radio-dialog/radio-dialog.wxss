@@ -1,0 +1,43 @@
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  padding: 20px;
+  background-color: #f5d659;
+  border: 3px solid #000;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.dialog-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.radio-group {
+  margin-bottom: 20px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio {
+  margin-right: 10px;
+}
+
+.confirm-btn {
+  background-color: #f5d659;
+  border: 3px solid #000;
+}
+
+.confirm-btn:active {
+  background-color: #ffa500;
+  border: 3px solid #000;
+}

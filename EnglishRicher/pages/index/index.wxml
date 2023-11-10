@@ -1,4 +1,4 @@
-<view>
+<view class="center-box">
   <image class="background-image" src="../../static/source/startup.png" mode='aspectFill'></image>
   <view class="top-box">
       <view class="info">
@@ -17,6 +17,11 @@
       <view class="settings" bindtap="goToSettings">
         <image class="settings-image" src="../../static/source/gear.png"></image>
       </view>
+  </view>
+  <view class="top-banner">
+    <view class="top-banner-scale">
+      <text>Game One 诚实刷单词</text>
+    </view>
   </view>
   <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
 </view>
