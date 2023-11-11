@@ -1,0 +1,33 @@
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10rpx;
+}
+
+.search-input {
+  width: 90%;
+  padding: 10rpx;
+  border: 3px solid #000;
+  outline: none;
+  margin-right:10rpx;
+}
+
+.search-box {
+  border: none;
+  outline: none;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5d659;
+  border: 3px solid #000
+}
+
+.content-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 80rpx);
+}

@@ -67,6 +67,12 @@ Page({
       url: './knowledge/index',
     });
   },
+  // 点击后跳转到温故知新页面
+  goToRemmember: function() {
+    wx.navigateTo({
+      url: './renew/index',
+    });
+  },
   // 点击后跳转到捐赠打赏页面
   goToDonate: function () {
     wx.navigateTo({

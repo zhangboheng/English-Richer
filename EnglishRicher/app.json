@@ -5,6 +5,7 @@
     "pages/exchange/index",
     "pages/settings/index",
     "pages/settings/knowledge/index",
+    "pages/settings/renew/index",
     "pages/settings/donate/index",
     "pages/settings/history/index",
     "pages/settings/about/index"
@@ -56,6 +57,13 @@
       "root": "pages/sat",
       "pages": [
         "index/index"
+      ]
+    },
+    {
+      "root": "pages/gameone",
+      "pages": [
+        "junior/index",
+        "high/index"
       ]
     }
   ],

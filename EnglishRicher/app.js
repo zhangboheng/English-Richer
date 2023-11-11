@@ -13,7 +13,7 @@ App({
       wx.setStorageSync('money', money);
     }
     // 判断是否存在初始水平数据，如果不存在则赋值为 0
-    if (typeof defaultLevel == 'undefined' || defaultLevel == null || typeof defaultLevel == "string") {
+    if (typeof defaultLevel == 'undefined' || defaultLevel == null || defaultLevel.length == 0) {
       defaultLevel = "初中";
       wx.setStorageSync('defaultLevel', defaultLevel);
     }

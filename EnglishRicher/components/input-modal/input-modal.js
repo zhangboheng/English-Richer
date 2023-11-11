@@ -9,12 +9,6 @@ Component({
     showModal: true,
     inputValue: '',
   },
-  lifetimes: {
-    created: function() {
-      // 在这里执行组件实例的初始化操作
-      console.log('组件实例被创建');
-    }
-  },
   methods: {
     closeModal: function () {
       this.setData({ showModal: false });

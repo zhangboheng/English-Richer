@@ -37,6 +37,14 @@
     </view>
   </view>
   <view>
+    <view class="container-item" bind:tap="goToRemmember">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/study.png" />
+        <text>温故知新</text>
+      </view>
+    </view>
+  </view>
+  <view>
     <view class="container-item" bind:tap="goToDonate">
       <view class="item-box">
         <image class="item-box-image" src="../../static/source/donation.png" />
