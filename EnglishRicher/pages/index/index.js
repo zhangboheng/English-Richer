@@ -39,13 +39,21 @@ Page({
         url: '/pages/gameone/high/index'
       });
     } else if (defaultLevel === '大学英语四级') {
-      console.info('---->', '大学英语四级')
+      wx.navigateTo({
+        url: '/pages/gameone/cet4/index'
+      });
     } else if (defaultLevel === '大学英语六级') {
-      console.info('---->', '大学英语六级')
+      wx.navigateTo({
+        url: '/pages/gameone/cet6/index'
+      });
     } else if (defaultLevel === '考研') {
-      console.info('---->', '考研')
+      wx.navigateTo({
+        url: '/pages/gameones/postgraduate/index'
+      });
     } else if (defaultLevel === '托福') {
-      console.info('---->', '托福')
+      wx.navigateTo({
+        url: '/pages/gameones/toelf/index'
+      });
     } else if (defaultLevel === 'SAT') {
       console.info('---->', 'SAT')
     }

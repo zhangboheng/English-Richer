@@ -66,3 +66,8 @@
   height: 50rpx;
   margin-right: 20rpx;
 }
+
+.grade-box {
+  position: absolute;
+  bottom: 60rpx;
+}

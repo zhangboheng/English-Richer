@@ -7,18 +7,20 @@ Page({
     translations: [], // 翻译的集合
     translationShow: false, // 是否显示翻译
     showAnimation: false, // 显示悬浮动画
-    count: 0
+    showGrade: '初中'
   },
   onLoad: function (options) {
     // 初次加载获取数据
+    let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let trueData = database.postData.main;
     // 生成0到1990之间的随机数
-    const randomNum = Math.floor(Math.random() * 1991);
+    const randomNum = Math.floor(Math.random() * trueData.length);
     // 赋值给本轮列表
     this.setData({
       listData: trueData,
       word: trueData[randomNum].word,
-      translations: trueData[randomNum].translations
+      translations: trueData[randomNum].translations,
+      showGrade: defaultLevel
     });
   },
   // 显示翻译的动作
@@ -63,21 +65,12 @@ Page({
   },
 
   getNextWord: function() {
-    let countNum = this.data.count + 1;
-    if (countNum === 10) {
-      wx.showToast({
-        title: '啊呀哟，是不是觉得太简单？快前往设置调整难度水平！',
-        icon: 'none',
-        duration: 3000
-      });
-    }
     // 生成0到1990之间的随机数
-    const randomNum = Math.floor(Math.random() * 1991);
+    const randomNum = Math.floor(Math.random() * this.data.listData.length);
     this.setData({
       translationShow: false,
       word: this.data.listData[randomNum].word,
       translations: this.data.listData[randomNum].translations,
-      count: countNum
     });
   }
 });

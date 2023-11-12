@@ -63,7 +63,16 @@
       "root": "pages/gameone",
       "pages": [
         "junior/index",
-        "high/index"
+        "high/index",
+        "cet4/index",
+        "cet6/index"
+      ]
+    },
+    {
+      "root": "pages/gameones",
+      "pages": [
+        "postgraduate/index",
+        "toelf/index"
       ]
     }
   ],

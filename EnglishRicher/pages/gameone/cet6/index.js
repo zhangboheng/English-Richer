@@ -1,4 +1,4 @@
-var database = require('./source/high');
+var database = require('./source/cet6');
 // 在对应页面的 js 文件中
 Page({
   data: {
@@ -7,7 +7,7 @@ Page({
     translations: [], // 翻译的集合
     translationShow: false, // 是否显示翻译
     showAnimation: false, // 显示悬浮动画
-    showGrade: '高中'
+    showGrade: '大学英语六级'
   },
   onLoad: function (options) {
     // 初次加载获取数据

@@ -1,4 +1,4 @@
-var database = require('./source/high');
+var database = require('./source/postgraduate');
 // 在对应页面的 js 文件中
 Page({
   data: {
@@ -7,14 +7,14 @@ Page({
     translations: [], // 翻译的集合
     translationShow: false, // 是否显示翻译
     showAnimation: false, // 显示悬浮动画
-    showGrade: '高中'
+    showGrade: '考研'
   },
   onLoad: function (options) {
     // 初次加载获取数据
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let trueData = database.postData.main;
     // 生成0到1990之间的随机数
-    const randomNum = Math.floor(Math.random() * trueData.length);
+    const randomNum = Math.floor(Math.random() * 1991);
     // 赋值给本轮列表
     this.setData({
       listData: trueData,
@@ -66,7 +66,7 @@ Page({
 
   getNextWord: function() {
     // 生成0到1990之间的随机数
-    const randomNum = Math.floor(Math.random() * this.data.listData.length);
+    const randomNum = Math.floor(Math.random() * 1991);
     this.setData({
       translationShow: false,
       word: this.data.listData[randomNum].word,

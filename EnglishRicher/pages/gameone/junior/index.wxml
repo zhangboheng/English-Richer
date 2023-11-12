@@ -26,4 +26,7 @@
   <button class="btn" bindtap="handleNotMaster">
     <text>不会</text>
   </button>
+  <view class="grade-box">
+    <text>当前水平：{{ showGrade }}</text>
+  </view>
 </view>
