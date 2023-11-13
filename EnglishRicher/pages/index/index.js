@@ -90,7 +90,7 @@ Page({
         getShowOrNot: false,
         storageDickName: nickname,
         storageStartGrade: startGrade,
-        progress: getProgress,
+        progress: getProgress % 100,
         coins: money
       })
     } else {
