@@ -1,5 +1,5 @@
-var database = require('./source/toelf-first');
-var databaseTwo = require('./source/toelf-second');
+var database = require('./source/toelf-third');
+var databaseTwo = require('./source/toelf-fourth');
 // 在对应页面的 js 文件中
 Page({
   data: {

@@ -51,12 +51,29 @@ Page({
         url: '/pages/gameones/postgraduate/index'
       });
     } else if (defaultLevel === '托福') {
-      wx.navigateTo({
-        url: '/pages/gameones/toelf/index'
-      });
+      let index = Math.round(Math.random());
+      if (index == 0) {
+        wx.navigateTo({
+          url: '/pages/gameones/toelf/index'
+        });
+      } else {
+        wx.navigateTo({
+          url: '/pages/gameones/toelfs/index'
+        });
+      }
     } else if (defaultLevel === 'SAT') {
-      console.info('---->', 'SAT')
+      wx.navigateTo({
+        url: '/pages/gameoness/sat/index'
+      });
     }
+  },
+  // 点击游戏2后根据水平不同，跳转到不同页面
+  goToGameTwo() {
+    wx.showToast({
+      title: '搭建中，下次更新后开启……',
+      icon: 'none',
+      duration: 1000
+    });
   },
   // 获取昵称数据的公共方法
   getAllData() {

@@ -7,7 +7,7 @@
     </view>
     <view class="floating-box">
       <image class="price-image" src="../../../static/source/up.png"></image>
-      <text>+0.001</text>
+      <text>+0.1</text>
     </view>
   </view>
   <view class="word">{{word}}</view>

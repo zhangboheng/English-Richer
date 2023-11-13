@@ -1,30 +1,38 @@
+<image class="background-image" src="../../static/source/startup.png" mode='aspectFill'></image>
 <view class="center-box">
-  <image class="background-image" src="../../static/source/startup.png" mode='aspectFill'></image>
   <view class="top-box">
-      <view class="info">
-        <view class="info-detail">
-          <text class="nickname">{{storageDickName}}</text>
-          <text class="level">LV：{{storageStartGrade}}</text>
-        </view>
-        <view class="progress-bar">
-          <view class="progress" style="width: {{progress + '%'}}"></view>
-        </view>
+    <view class="info">
+      <view class="info-detail">
+        <text class="nickname">{{storageDickName}}</text>
+        <text class="level">LV：{{storageStartGrade}}</text>
       </view>
-      <view class="funds">
-        <image class="price-image" src="../../static/source/coin.png"></image>
-        <text class="coins">{{coins}}</text>
+      <view class="progress-bar">
+        <view class="progress" style="width: {{progress + '%'}}"></view>
       </view>
-      <view class="settings" bindtap="goToSettings">
-        <image class="settings-image" src="../../static/source/gear.png"></image>
-      </view>
+    </view>
+    <view class="funds">
+      <image class="price-image" src="../../static/source/coin.png"></image>
+      <text class="coins">{{coins}}</text>
+    </view>
+    <view class="settings" bindtap="goToSettings">
+      <image class="settings-image" src="../../static/source/gear.png"></image>
+    </view>
   </view>
-  <view class="top-banner" bind:tap="goToGameOne">
-    <view class="top-banner-scale">
+  <view class="top-banner">
+    <view class="top-banner-scale" bind:tap="goToGameOne">
       <view class="scale-image">
         <image class="scale-image-inner" src="../../static/source/gameone.jpeg" mode="scaleToFill"></image>
       </view>
     </view>
     <text class="scale-text">Game One 诚实刷单词</text>
+  </view>
+  <view class="top-banner box-gap">
+    <view class="top-banner-scale" bind:tap="goToGameTwo">
+      <view class="scale-image">
+        <image class="scale-image-inner" src="../../static/source/gametwo.jpeg" mode="scaleToFill"></image>
+      </view>
+    </view>
+    <text class="scale-text">Game Two 提示写单词</text>
   </view>
   <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
 </view>

@@ -72,7 +72,14 @@
       "root": "pages/gameones",
       "pages": [
         "postgraduate/index",
-        "toelf/index"
+        "toelf/index",
+        "toelfs/index"
+      ]
+    },
+    {
+      "root": "pages/gameoness",
+      "pages": [
+        "sat/index"
       ]
     }
   ],

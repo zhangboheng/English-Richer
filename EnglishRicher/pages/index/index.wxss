@@ -1,9 +1,3 @@
-.center-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 /** 图片样式开始 **/
 .background-image {
   width: 100%;
@@ -11,30 +5,38 @@
   opacity: 0.25;
 }
 /** 图片样式结束 **/
-.top-box {
+.center-box {
   width: 100%;
   position: absolute;
   top: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.top-box {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 2;
   padding: 20rpx 0;
 }
 
 .top-banner {
   width: 90%;
-  position: absolute;
-  top: 100rpx;
   margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  z-index: 2;
   padding: 20rpx;
   border: 3px solid #000;
   background-color: #f5d659;
+}
+
+.box-gap {
+  margin:20rpx 0;
 }
 
 .top-banner:active {
