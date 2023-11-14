@@ -6,6 +6,10 @@ Page({
     progress: 0,
     coins: 0
   },
+  // 页面分享
+  onShareAppMessage() {},
+  // 页面分享朋友圈
+  onShareTimeline() {},
   onLoad: function() {
     this.getAllData();
   },

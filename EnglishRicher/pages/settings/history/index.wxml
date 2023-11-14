@@ -1,5 +1,13 @@
 <view class="container">
   <view class="settingscontent">
+    <text class="version">版本 0.0.2</text>
+    <text class="date">2023-11-15</text>
+  </view>
+  <view class="item-content">
+    <text>增加朋友和朋友圈分享功能。</text>
+    <text>优化 Game One 诚实刷单词解释内容显示。</text>
+  </view>
+  <view class="settingscontent">
     <text class="version">版本 0.0.1</text>
     <text class="date">2023-11-07</text>
   </view>

@@ -17,6 +17,10 @@ Page({
     // 手机话费
     telegramShow: true,
   },
+  // 页面分享
+  onShareAppMessage() {},
+  // 页面分享朋友圈
+  onShareTimeline() {},
   // 初次加载后加载数据
   onLoad: function (options) {
     // 从缓存中获取数据

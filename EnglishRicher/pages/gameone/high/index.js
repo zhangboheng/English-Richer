@@ -9,6 +9,10 @@ Page({
     showAnimation: false, // 显示悬浮动画
     showGrade: '高中'
   },
+  // 页面分享
+  onShareAppMessage() {},
+  // 页面分享朋友圈
+  onShareTimeline() {},
   onLoad: function (options) {
     // 初次加载获取数据
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平

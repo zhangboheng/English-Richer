@@ -2,20 +2,24 @@ Page({
   data: {
     showComponent: false
   },
+  // 页面分享
+  onShareAppMessage() {},
+  // 页面分享朋友圈
+  onShareTimeline() {},
   // 点击跳转后到首页
-  gotoHome: function() {
+  gotoHome: function () {
     wx.redirectTo({
       url: '/pages/index/index'
     })
   },
   // 点击跳转到兑换情报
-  gotoExchange: function() {
+  gotoExchange: function () {
     wx.redirectTo({
-      url: '/pages/exchange/index'  // 跳转到目标页面的路径
+      url: '/pages/exchange/index' // 跳转到目标页面的路径
     });
   },
   // 点击弹出玩法说明
-  gotoIntroduce: function() {
+  gotoIntroduce: function () {
     this.setData({
       showComponent: !this.data.showComponent
     })

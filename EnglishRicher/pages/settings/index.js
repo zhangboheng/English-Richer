@@ -6,6 +6,10 @@ Page({
     englishLevels: ['初中', '高中', '大学英语四级', '大学英语六级', '考研', '托福', 'SAT'],
     getDefaultLevel: "初中"
   },
+  // 页面分享
+  onShareAppMessage() {},
+  // 页面分享朋友圈
+  onShareTimeline() {},
   onLoad: function () {
     // 从缓存中获取昵称数据
     let nickname = wx.getStorageSync('nickname'); // 获取昵称

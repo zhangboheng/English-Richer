@@ -4,6 +4,10 @@ Page({
     listData: [],
     searchData: '', // 搜索关键词
   },
+  // 页面分享
+  onShareAppMessage() {},
+  // 页面分享朋友圈
+  onShareTimeline() {},
   onLoad: function (options) {
     // 从缓存中获取不会的单词
     let database = wx.getStorageSync('notMasterWords') || [];

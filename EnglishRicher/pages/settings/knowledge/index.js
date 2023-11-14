@@ -2,6 +2,10 @@ Page({
   data: {
 
   },
+  // 页面分享
+  onShareAppMessage() {},
+  // 页面分享朋友圈
+  onShareTimeline() {},
   // 点击跳转到初中题库
   goToJunior: function(){
     wx.navigateTo({

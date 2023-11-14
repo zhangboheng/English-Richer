@@ -6,6 +6,10 @@ Page({
     listData: [],
     searchData: '', // 搜索关键词
   },
+  // 页面分享
+  onShareAppMessage() {},
+  // 页面分享朋友圈
+  onShareTimeline() {},
   onLoad: function (options) {
     // 显示正在刷新提示框
     wx.showToast({
