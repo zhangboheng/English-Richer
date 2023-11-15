@@ -1,5 +1,5 @@
 {
   "usingComponents": {},
   "navigationBarTitleText": "诚实刷单词",
-  "disableScroll": true
+  "enablePullDownRefresh": false
 }

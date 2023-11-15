@@ -79,7 +79,9 @@ Page({
         url: '/pages/gametwo/junior/index'
       });
     } else if (defaultLevel === '高中') {
-      console.info('高中');
+      wx.navigateTo({
+        url: '/pages/gametwo/high/index'
+      });
     } else if (defaultLevel === '大学英语四级') {
       console.info('大学英语四级');
     } else if (defaultLevel === '大学英语六级') {
