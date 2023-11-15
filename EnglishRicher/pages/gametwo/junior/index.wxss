@@ -1,0 +1,82 @@
+/* 在对应的 wxss 文件中 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.word {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.content {
+  font-size: 36rpx;
+  margin-bottom: 20px;
+  padding: 0 20rpx;
+  text-align: justify;
+}
+
+.item-type {
+  margin-right: 10rpx;
+}
+
+.word-input {
+  width: 60%;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-bottom: 3px solid #000;
+}
+
+.btn {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border: 3px solid #000;
+  background-color: #f5d659;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-animation {
+  position: absolute;
+  top: 40rpx;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: floating 1s infinite;
+}
+
+.floating-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.grade-box {
+  position: absolute;
+  bottom: 60rpx;
+}

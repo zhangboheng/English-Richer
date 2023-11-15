@@ -80,6 +80,12 @@
       "pages": [
         "sat/index"
       ]
+    },
+    {
+      "root": "pages/gametwo",
+      "pages": [
+        "junior/index"
+      ]
     }
   ],
   "window":{

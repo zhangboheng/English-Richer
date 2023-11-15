@@ -73,11 +73,24 @@ Page({
   },
   // 点击游戏2后根据水平不同，跳转到不同页面
   goToGameTwo() {
-    wx.showToast({
-      title: '搭建中，下次更新后开启……',
-      icon: 'none',
-      duration: 1000
-    });
+    let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
+    if (defaultLevel === '初中') {
+      wx.navigateTo({
+        url: '/pages/gametwo/junior/index'
+      });
+    } else if (defaultLevel === '高中') {
+      console.info('高中');
+    } else if (defaultLevel === '大学英语四级') {
+      console.info('大学英语四级');
+    } else if (defaultLevel === '大学英语六级') {
+      console.info('大学英语六级');
+    } else if (defaultLevel === '考研') {
+      console.info('考研');
+    } else if (defaultLevel === '托福') {
+      console.info('托福');
+    } else if (defaultLevel === 'SAT') {
+      console.info('SAT');
+    }
   },
   // 获取昵称数据的公共方法
   getAllData() {
