@@ -85,7 +85,8 @@
       "root": "pages/gametwo",
       "pages": [
         "junior/index",
-        "high/index"
+        "high/index",
+        "cet4/index"
       ]
     }
   ],

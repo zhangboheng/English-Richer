@@ -1,4 +1,4 @@
-var database = require('./source/high');
+var database = require('./source/cet4');
 // 在对应页面的 js 文件中
 Page({
   data: {
@@ -7,7 +7,7 @@ Page({
     inputValue: '', // 输入框的值
     word: '', // 填写正确的值
     showAnimation: false, // 显示悬浮动画
-    showGrade: '高中'
+    showGrade: '大学英语四级'
   },
   // 页面分享
   onShareAppMessage() { },

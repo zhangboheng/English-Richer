@@ -83,7 +83,9 @@ Page({
         url: '/pages/gametwo/high/index'
       });
     } else if (defaultLevel === '大学英语四级') {
-      console.info('大学英语四级');
+      wx.navigateTo({
+        url: '/pages/gametwo/cet4/index'
+      });
     } else if (defaultLevel === '大学英语六级') {
       console.info('大学英语六级');
     } else if (defaultLevel === '考研') {
