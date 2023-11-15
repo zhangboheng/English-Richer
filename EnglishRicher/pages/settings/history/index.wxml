@@ -1,5 +1,12 @@
 <view class="container">
   <view class="settingscontent">
+    <text class="version">版本 2.1.0</text>
+    <text class="date">2023-11-16</text>
+  </view>
+  <view class="item-content">
+    <text>开启 Game Two 提示写单词关卡，限制 LV3 及其以后开启。</text>
+  </view>
+  <view class="settingscontent">
     <text class="version">版本 2.0.1</text>
     <text class="date">2023-11-15</text>
   </view>

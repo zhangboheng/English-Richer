@@ -10,16 +10,16 @@ Page({
   onShareAppMessage() {},
   // 页面分享朋友圈
   onShareTimeline() {},
-  onLoad: function() {
+  onLoad: function () {
     this.getAllData();
   },
   // 当上一级页面返回后，触发 onShow 生命周期函数
-  onShow: function() {
+  onShow: function () {
     this.getAllData();
   },
   handleConfirm: function (event) {
     let inputValue = event.detail.inputValue;
-    if (inputValue.length > 0 && inputValue.length <= 6){
+    if (inputValue.length > 0 && inputValue.length <= 6) {
       this.setData({
         storageDickName: inputValue
       })
@@ -74,26 +74,51 @@ Page({
   // 点击游戏2后根据水平不同，跳转到不同页面
   goToGameTwo() {
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
-    if (defaultLevel === '初中') {
-      wx.navigateTo({
-        url: '/pages/gametwo/junior/index'
-      });
-    } else if (defaultLevel === '高中') {
-      wx.navigateTo({
-        url: '/pages/gametwo/high/index'
-      });
-    } else if (defaultLevel === '大学英语四级') {
-      wx.navigateTo({
-        url: '/pages/gametwo/cet4/index'
-      });
-    } else if (defaultLevel === '大学英语六级') {
-      console.info('大学英语六级');
-    } else if (defaultLevel === '考研') {
-      console.info('考研');
-    } else if (defaultLevel === '托福') {
-      console.info('托福');
-    } else if (defaultLevel === 'SAT') {
-      console.info('SAT');
+    let startGrade = this.data.storageStartGrade;
+    console.info("---->", startGrade)
+    if (startGrade >= 3) {
+      if (defaultLevel === '初中') {
+        wx.navigateTo({
+          url: '/pages/gametwo/junior/index'
+        });
+      } else if (defaultLevel === '高中') {
+        wx.navigateTo({
+          url: '/pages/gametwo/high/index'
+        });
+      } else if (defaultLevel === '大学英语四级') {
+        wx.navigateTo({
+          url: '/pages/gametwo/cet4/index'
+        });
+      } else if (defaultLevel === '大学英语六级') {
+        wx.navigateTo({
+          url: '/pages/gametwo/cet6/index'
+        });
+      } else if (defaultLevel === '考研') {
+        wx.navigateTo({
+          url: '/pages/gametwos/postgraduate/index'
+        });
+      } else if (defaultLevel === '托福') {
+        let index = Math.round(Math.random());
+        if (index == 0) {
+          wx.navigateTo({
+            url: '/pages/gametwos/toelf/index'
+          });
+        } else {
+          wx.navigateTo({
+            url: '/pages/gametwos/toelfs/index'
+          });
+        }
+      } else if (defaultLevel === 'SAT') {
+        wx.navigateTo({
+          url: '/pages/gametwoss/sat/index'
+        });
+      }
+    } else {
+      wx.showToast({
+        title: '哎哟，菜鸟，等级没到 3 级无法进入哦！',
+        icon: 'none',
+        duration: 2000
+      }); 
     }
   },
   // 获取昵称数据的公共方法

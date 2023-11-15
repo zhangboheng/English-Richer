@@ -86,7 +86,22 @@
       "pages": [
         "junior/index",
         "high/index",
-        "cet4/index"
+        "cet4/index",
+        "cet6/index"
+      ]
+    },
+    {
+      "root": "pages/gametwos",
+      "pages": [
+        "postgraduate/index",
+        "toelf/index",
+        "toelfs/index"
+      ]
+    },
+    {
+      "root": "pages/gametwoss",
+      "pages": [
+        "sat/index"
       ]
     }
   ],
