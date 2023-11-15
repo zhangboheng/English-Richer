@@ -25,8 +25,9 @@
 
 .word-input {
   width: 60%;
-  font-size: 32rpx;
+  font-size: 36rpx;
   font-weight: bold;
+  text-align: center;
   border-bottom: 3px solid #000;
 }
 

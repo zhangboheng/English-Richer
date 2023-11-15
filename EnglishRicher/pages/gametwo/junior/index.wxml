@@ -16,7 +16,7 @@
       <text>{{item.translation}}</text>
     </view>
   </view>
-  <input class="word-input" placeholder="根据中文填写对应的英文" bindinput="onInput" />
+  <input class="word-input" placeholder="根据中文填写对应的英文" value="{{inputValue}}" bindinput="onInput" />
   <button class="btn" bindtap="handleMaster">
     <text>确认</text>
   </button>
