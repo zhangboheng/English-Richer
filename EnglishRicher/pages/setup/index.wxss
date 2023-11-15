@@ -35,13 +35,13 @@
 }
 
 .start {
-  margin-bottom: 20rpx;
+  margin-bottom: 20px;
 }
 .exchange {
-  margin-bottom: 20rpx;
+  margin-bottom: 20px;
 }
 .introduce {
-  margin-bottom: 20rpx;
+  margin-bottom: 20px;
 }
 
 .custom-btn:active {
