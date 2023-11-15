@@ -6,7 +6,6 @@
     "pages/settings/index",
     "pages/settings/knowledge/index",
     "pages/settings/renew/index",
-    "pages/settings/donate/index",
     "pages/settings/history/index",
     "pages/settings/about/index"
   ],

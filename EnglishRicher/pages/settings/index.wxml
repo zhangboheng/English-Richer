@@ -45,14 +45,6 @@
     </view>
   </view>
   <view>
-    <view class="container-item" bind:tap="goToDonate">
-      <view class="item-box">
-        <image class="item-box-image" src="../../static/source/donation.png" />
-        <text>捐赠打赏</text>
-      </view>
-    </view>
-  </view>
-  <view>
     <view class="container-item" bind:tap="goToUpdateHistory">
       <view class="item-box">
         <image class="item-box-image" src="../../static/source/history.png" />
