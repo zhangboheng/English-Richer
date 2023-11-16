@@ -18,16 +18,16 @@
       <image class="settings-image" src="../../static/source/gear.png"></image>
     </view>
   </view>
-  <view class="top-banner">
-    <view class="top-banner-scale" bind:tap="goToGameOne">
+  <view class="top-banner" bind:tap="goToGameOne">
+    <view class="top-banner-scale">
       <view class="scale-image">
         <image class="scale-image-inner" src="../../static/source/gameone.jpeg" mode="scaleToFill"></image>
       </view>
     </view>
     <text class="scale-text">Game One 诚实刷单词</text>
   </view>
-  <view class="top-banner box-gap">
-    <view class="top-banner-scale" bind:tap="goToGameTwo">
+  <view class="top-banner box-gap" bind:tap="goToGameTwo">
+    <view class="top-banner-scale">
       <view class="scale-image">
         <image class="scale-image-inner" src="../../static/source/gametwo.jpeg" mode="scaleToFill"></image>
       </view>
