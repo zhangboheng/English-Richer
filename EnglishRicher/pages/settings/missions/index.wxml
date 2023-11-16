@@ -1,0 +1,27 @@
+<view>
+  <view class="task">
+    <view class="task-item">
+      <view class="task-name">每日签到</view>
+      <view class="task-image">
+        <image class="item-image" src="../../../static/source/signin.png" />
+      </view>
+      <view class="task-reward">
+        经验值:<text class="reward-value">+{{ signExp }}</text>
+        钱币:<text class="reward-value">+{{ signCoins }}</text>
+      </view>
+      <button class="task-button" bindtap="handleSign">签到</button>
+    </view>
+    
+    <view class="task-item">
+      <view class="task-name">每日分享</view>
+      <view class="task-image">
+        <image class="item-image" src="../../../static/source/share.png" />
+      </view>
+      <view class="task-reward">
+        经验值:<text class="reward-value">+{{ shareExp }}</text>
+        钱币:<text class="reward-value">+{{ shareCoins }}</text>
+      </view>
+      <button class="task-button" bindtap="handleShare" open-type="share">分享</button>
+    </view>
+  </view>
+</view>

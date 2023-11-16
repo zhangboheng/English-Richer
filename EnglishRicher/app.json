@@ -4,6 +4,7 @@
     "pages/index/index",
     "pages/exchange/index",
     "pages/settings/index",
+    "pages/settings/missions/index",
     "pages/settings/knowledge/index",
     "pages/settings/renew/index",
     "pages/settings/history/index",

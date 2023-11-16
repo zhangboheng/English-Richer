@@ -60,9 +60,16 @@ Page({
     // 修改后保存到缓存方便以后调用
     wx.setStorageSync('defaultLevel', level);
   },
+  // 点击关闭修改水平弹窗
   closeRadioDialog: function() {
     this.setData({
       showRadioDialog: false
+    });
+  },
+  // 点击后跳转到每日任务页面
+  goToMissions: function() {
+    wx.navigateTo({
+      url: './missions/index',
     });
   },
   // 点击后跳转到知识储备页面

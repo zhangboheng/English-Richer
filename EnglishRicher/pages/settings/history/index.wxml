@@ -1,5 +1,13 @@
 <view class="container">
   <view class="settingscontent">
+    <text class="version">版本 2.1.1</text>
+    <text class="date">2023-11-17</text>
+  </view>
+  <view class="item-content">
+    <text>增加每日任务功能，可以额外获取经验值和钱币。</text>
+    <text>优化页面样式显示。</text>
+  </view>
+  <view class="settingscontent">
     <text class="version">版本 2.1.0</text>
     <text class="date">2023-11-16</text>
   </view>

@@ -1,4 +1,3 @@
-// app.js
 App({
   // 初次加载获取缓存数据
   onLaunch() {
@@ -14,7 +13,7 @@ App({
       money = 0;
       wx.setStorageSync('money', money);
     }
-    // 判断是否存在初始水平数据，如果不存在则赋值为 0
+    // 判断是否存在初始水平数据，如果不存在则赋值为初中
     if (typeof defaultLevel == 'undefined' || defaultLevel == null || defaultLevel.length == 0) {
       defaultLevel = "初中";
       wx.setStorageSync('defaultLevel', defaultLevel);

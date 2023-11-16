@@ -6,7 +6,7 @@
         <text class="inner-title">英语大富翁</text>
       </view>
       <view class="inner-box">
-        <text>Version 2.1.0</text>
+        <text>Version 2.1.1</text>
       </view>
     </view>
   </view>
@@ -26,6 +26,14 @@
         <text>修改水平</text>
       </view>
       <text class="item-inner">{{ getDefaultLevel }}</text>
+    </view>
+  </view>
+  <view>
+    <view class="container-item" bind:tap="goToMissions">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/mission.png" />
+        <text>每日任务</text>
+      </view>
     </view>
   </view>
   <view>
