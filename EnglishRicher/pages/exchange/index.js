@@ -78,7 +78,7 @@ Page({
       this.popupPublic(this.data.priceArray.yasiPrice, this.data.priceArray.yasiTitle);
     } else {
       wx.showToast({
-        title: '哎哟，你都兑换过了，前往微信公众号行运设计师，关注后发送数字消息：9527，即可获得',
+        title: '前往微信公众号行运设计师，发送消息：9527',
         icon: 'none',
         duration: 2000
       });
@@ -92,7 +92,7 @@ Page({
       this.popupPublic(this.data.priceArray.moviePrice, this.data.priceArray.movieTitle);
     } else {
       wx.showToast({
-        title: '哎哟，你都兑换过了，前往微信公众号行运设计师，关注后发送数字消息：2048，即可获得',
+        title: '前往微信公众号行运设计师，发送消息：2048',
         icon: 'none',
         duration: 2000
       });      
@@ -106,7 +106,7 @@ Page({
       this.popupPublic(this.data.priceArray.telegramPrice, this.data.priceArray.telegramTitle);
     } else {
       wx.showToast({
-        title: '哎哟，你都兑换过了，前往微信公众号行运设计师，关注后发送数字消息：13888，即可获得',
+        title: '前往微信公众号行运设计师，发送消息：13888',
         icon: 'none',
         duration: 2000
       });      
@@ -138,14 +138,14 @@ Page({
           if (_publicTitle == "雅思考试资料") {
             if (self.data.moenyTotal >= _publicPrice) {
               self.setData({
-                moenyTotal: self.data.moenyTotal - _publicPrice
+                moenyTotal: (self.data.moenyTotal - _publicPrice).toFixed(2)
               });
               // 将剩余钱币数量存储到缓存中
-              wx.setStorageSync('money', self.data.moenyTotal);
+              wx.setStorageSync('money', Number(self.data.moenyTotal));
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('yasiGet', 1);
               wx.showToast({
-                title: '前往微信公众号行运设计师，关注后发送数字消息：9527，即可获得',
+                title: '前往微信公众号行运设计师，发送消息：9527',
                 icon: 'none',
                 duration: 10000
               });
@@ -159,14 +159,14 @@ Page({
           } else if (_publicTitle == "随机电影字幕") {
             if (self.data.moenyTotal >= _publicPrice) {
               self.setData({
-                moenyTotal: self.data.moenyTotal - _publicPrice
+                moenyTotal: (self.data.moenyTotal - _publicPrice).toFixed(2)
               });
               // 将剩余钱币数量存储到缓存中
-              wx.setStorageSync('money', self.data.moenyTotal);
+              wx.setStorageSync('money', Number(self.data.moenyTotal));
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('movieSub', 1);
               wx.showToast({
-                title: '前往微信公众号行运设计师，关注后发送数字消息：2048，即可获得',
+                title: '前往微信公众号行运设计师，发送消息：2048',
                 icon: 'none',
                 duration: 10000
               });
@@ -180,14 +180,14 @@ Page({
           } else if (_publicTitle == "话费优惠信息") {
             if (self.data.moenyTotal >= _publicPrice) {
               self.setData({
-                moenyTotal: self.data.moenyTotal - _publicPrice
+                moenyTotal: (self.data.moenyTotal - _publicPrice).toFixed(2)
               });
               // 将剩余钱币数量存储到缓存中
-              wx.setStorageSync('money', self.data.moenyTotal);
+              wx.setStorageSync('money', Number(self.data.moenyTotal));
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('telephoneCredits', 1);
               wx.showToast({
-                title: '前往微信公众号行运设计师，关注后发送数字消息：13888，即可获得',
+                title: '前往微信公众号行运设计师，发送消息：13888',
                 icon: 'none',
                 duration: 10000
               });
