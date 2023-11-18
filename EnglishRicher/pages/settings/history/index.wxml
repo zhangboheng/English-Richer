@@ -1,5 +1,14 @@
 <view class="container">
   <view class="settingscontent">
+    <text class="version">版本 2.1.2</text>
+    <text class="date">2023-11-18</text>
+  </view>
+  <view class="item-content">
+    <text>优化修改昵称，免去误点后再输入问题。</text>
+    <text>修复交换情报后，提示消息显示不全问题和钱币小数产生问题。</text>
+    <text>更换图标。</text>
+  </view>
+  <view class="settingscontent">
     <text class="version">版本 2.1.1</text>
     <text class="date">2023-11-17</text>
   </view>

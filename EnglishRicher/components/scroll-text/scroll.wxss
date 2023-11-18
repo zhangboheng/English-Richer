@@ -1,4 +1,3 @@
-/* scrollable-text.wxss */
 .page-container {
   position: absolute;
   top: 0rpx;

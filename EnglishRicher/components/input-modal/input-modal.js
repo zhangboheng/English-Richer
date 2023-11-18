@@ -9,6 +9,16 @@ Component({
     showModal: true,
     inputValue: '',
   },
+  lifetimes: {
+    ready() {
+      // 从缓存中获取值
+      const cachedName = wx.getStorageSync('nickname');
+      // 将值填入组件的 input
+      this.setData({
+        inputValue: cachedName
+      });
+    }
+  },
   methods: {
     closeModal: function () {
       this.setData({ showModal: false });

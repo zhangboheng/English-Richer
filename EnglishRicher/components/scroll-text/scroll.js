@@ -1,9 +1,16 @@
-// scrollable-text.js
 Component({
   options: {
     addGlobalClass: true
   },
   properties: {
+    imgSrc: {
+      type: String,
+      value: ''
+    },
+    titleInfo: {
+      type: String,
+      value: '',
+    },
     text: {
       type: String,
       value: '',
