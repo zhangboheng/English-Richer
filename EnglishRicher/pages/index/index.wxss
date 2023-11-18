@@ -137,3 +137,9 @@
     transform: rotate(360deg);
   }
 }
+
+.adContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

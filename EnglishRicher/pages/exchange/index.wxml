@@ -1,4 +1,7 @@
 <view class="container">
+  <view class="adContainer">
+    <ad unit-id="adunit-ad104572b4e7145d" bindload="adLoad" binderror="adError" bindclose="adClose" ad-intervals="30"></ad>
+  </view>
   <view class="search-section">
     <input class="search-input" placeholder="请输入搜索内容" bindinput="onInput" />
     <button class="search-box" bindtap="onSearch">搜索</button>
@@ -9,8 +12,8 @@
     <view class="title-line-right"></view>
   </view>
   <view class="money-section">
-    <text>资产：{{ moenyTotal }}</text>
     <image class="price-image" src="../../static/source/coin.png"></image>
+    <text>{{ moenyTotal }}</text>
   </view>
   <view class="product-section">
     <view class="row" wx:if="{{yasiShow}}">

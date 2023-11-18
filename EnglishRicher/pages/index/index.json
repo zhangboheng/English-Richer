@@ -2,5 +2,6 @@
   "usingComponents": {
     "input-modal": "../../components/input-modal/input-modal"
   },
-  "navigationBarTitleText": "英语大富翁"
+  "navigationBarTitleText": "英语大富翁",
+  "enablePullDownRefresh": false
 }

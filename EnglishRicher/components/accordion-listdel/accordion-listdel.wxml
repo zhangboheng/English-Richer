@@ -1,18 +1,19 @@
-<!-- accordion-list.wxml -->
-<view class="accordion-list">
-  <block wx:for="{{dataList}}" wx:key="index">
-    <view class="list-item" bindtap="toggleAccordion" data-index="{{index}}">
-      <view class="title">{{item.word}}</view>
-      <image class="item-image" src="../../static/source/detail.png" />
-    </view>
-    <view class="content" wx:if="{{item.show}}">
+<view class="components-box">
+  <view class="accordion-list">
+    <block wx:for="{{dataList}}" wx:key="index">
+      <view class="list-item" bindtap="toggleAccordion" data-index="{{index}}">
+        <view class="title">{{item.word}}</view>
+        <image class="item-image" src="../../static/source/detail.png" />
+      </view>
+      <view class="content" wx:if="{{item.show}}">
         <view wx:for="{{item.translations}}" wx:key="index">
           <text class="item-type">{{item.type}}</text>
           <text>{{item.translation}}</text>
         </view>
         <button class="content-btn" data-id="{{item.word}}" bind:tap="removeWord">掌握</button>
-    </view>
-  </block>
+      </view>
+    </block>
+  </view>
   <view class="bottomup" bindtap="scrollToTop">
     <image class="fixedimage" src="../../static/source/uparrow.png" />
   </view>

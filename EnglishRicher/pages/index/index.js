@@ -75,7 +75,6 @@ Page({
   goToGameTwo() {
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let startGrade = this.data.storageStartGrade;
-    console.info("---->", startGrade)
     if (startGrade >= 3) {
       if (defaultLevel === '初中') {
         wx.navigateTo({
@@ -145,7 +144,7 @@ Page({
         storageDickName: nickname,
         storageStartGrade: startGrade,
         progress: getProgress % 100,
-        coins: money
+        coins: money.toFixed(2)
       })
     } else {
       self.setData({
@@ -156,5 +155,15 @@ Page({
         coins: 0
       })
     }
-  }
+  },
+  // 底部广告事件开始
+  adLoad() {
+    console.log('原生模板广告加载成功')
+  },
+  adError(err) {
+    console.error('原生模板广告加载失败', err)
+  },
+  adClose() {
+    console.log('原生模板广告关闭')
+  },
 });

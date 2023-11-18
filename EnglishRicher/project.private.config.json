@@ -1,0 +1,15 @@
+{
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "pages/setup/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": 1011
+        }
+      ]
+    }
+  }
+}

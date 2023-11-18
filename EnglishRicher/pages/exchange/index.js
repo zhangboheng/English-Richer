@@ -205,5 +205,16 @@ Page({
         }
       }
     });
+  },
+  // Banner 广告方法开始
+  adLoad() {
+    console.log('Banner 广告加载成功')
+  },
+  adError(err) {
+    console.error('Banner 广告加载失败', err)
+  },
+  adClose() {
+    console.log('Banner 广告关闭')
   }
+  // Banner 广告方法结束
 });

@@ -1,3 +1,9 @@
+.components-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
 .accordion-list {
   width: 100%;
 }
@@ -37,7 +43,6 @@
 }
 
 .bottomup {
-  width: 100%;
   position: fixed;
   bottom: 20rpx;
   text-align: center;
@@ -50,7 +55,7 @@
 
 .content {
   padding: 10px;
-  background-color: #f5d659;
+  border: 3px solid #000;
   overflow: hidden;
   transition: max-height 0.3s;
   max-height: 500;

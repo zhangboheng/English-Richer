@@ -1,5 +1,8 @@
 <view class="container-head">
-  <image class="top-inner" src="../../../static/source/logos.png" alt="Logo"  mode='aspectFit'></image>
+  <image class="top-inner" src="../../../static/source/logos.png" alt="Logo" mode='aspectFit'></image>
+</view>
+<view style="width:100%;">
+  <official-account></official-account>
 </view>
 <view class="container">
   <view class="settingscontent">

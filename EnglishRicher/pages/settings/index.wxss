@@ -9,13 +9,8 @@
   text-align: center;
 }
 
-.inner-box {
-  width: 100%;
-}
-
 .inner-title {
   font-size: 24px;
-  margin-left: 10px;
   font-weight: bold;
 }
 

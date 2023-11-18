@@ -1,41 +1,44 @@
 <view class="container">
   <view class="settingscontent">
     <text class="version">版本 2.1.2</text>
-    <text class="date">2023-11-18</text>
+    <text class="date">2023-11-19</text>
   </view>
   <view class="item-content">
-    <text>优化修改昵称，免去误点后再输入问题。</text>
-    <text>修复交换情报后，提示消息显示不全问题和钱币小数产生问题。</text>
-    <text>更换图标。</text>
+    <text>1.优化修改昵称，免去误点后再输入问题。</text>
+    <text>2.修复交换情报后，提示消息显示不全问题和钱币小数产生问题。</text>
+    <text>3.修复策略谋划、英语词库和温故知新中样式显示问题。</text>
+    <text>4.更换图标为统一风格。</text>
+    <text>5.关于我们增加微信公众号关联。</text>
+    <text>6.Game One 诚实刷单词增加刷单词进度。</text>
   </view>
   <view class="settingscontent">
     <text class="version">版本 2.1.1</text>
     <text class="date">2023-11-17</text>
   </view>
   <view class="item-content">
-    <text>增加每日任务功能，可以额外获取经验值和钱币。</text>
-    <text>优化页面样式显示。</text>
+    <text>1.增加每日任务功能，可以额外获取经验值和钱币。</text>
+    <text>2.优化页面样式显示。</text>
   </view>
   <view class="settingscontent">
     <text class="version">版本 2.1.0</text>
     <text class="date">2023-11-16</text>
   </view>
   <view class="item-content">
-    <text>开启 Game Two 提示写单词关卡，限制 LV3 及其以后开启。</text>
+    <text>1.开启 Game Two 提示写单词关卡，限制 LV3 及其以后开启。</text>
   </view>
   <view class="settingscontent">
     <text class="version">版本 2.0.1</text>
     <text class="date">2023-11-15</text>
   </view>
   <view class="item-content">
-    <text>增加朋友和朋友圈分享功能。</text>
-    <text>优化 Game One 诚实刷单词解释内容显示。</text>
+    <text>1.增加朋友和朋友圈分享功能。</text>
+    <text>2.优化 Game One 诚实刷单词解释内容显示。</text>
   </view>
   <view class="settingscontent">
     <text class="version">版本 2.0.0</text>
     <text class="date">2023-11-07</text>
   </view>
   <view class="item-content">
-    <text>英语大富翁初始版发布。</text>
+    <text>1.英语大富翁初始版发布。</text>
   </view>
 </view>
