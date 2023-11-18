@@ -121,6 +121,14 @@ Page({
       }); 
     }
   },
+  // 点击游戏3后根据水平不同，跳转到不同页面
+  goToGameThree() {
+    wx.showToast({
+      title: '搭建中，版本 2.3.0 开启！',
+      icon: 'none',
+      duration: 2000
+    });     
+  },
   // 获取昵称数据的公共方法
   getAllData() {
     let self = this;

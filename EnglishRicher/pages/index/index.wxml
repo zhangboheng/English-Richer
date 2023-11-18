@@ -26,13 +26,21 @@
     </view>
     <text class="scale-text">Game One 诚实刷单词</text>
   </view>
-  <view class="top-banner box-gap" bind:tap="goToGameTwo">
+  <view class="top-banner" bind:tap="goToGameTwo">
     <view class="top-banner-scale">
       <view class="scale-image">
         <image class="scale-image-inner" src="../../static/source/gametwo.jpeg" mode="scaleToFill"></image>
       </view>
     </view>
     <text class="scale-text">Game Two 提示写单词</text>
+  </view>
+  <view class="top-banner" bind:tap="goToGameThree">
+    <view class="top-banner-scale">
+      <view class="scale-image">
+        <image class="scale-image-inner" src="../../static/source/gamethree.jpeg" mode="scaleToFill"></image>
+      </view>
+    </view>
+    <text class="scale-text">Game Three 选择知我意</text>
   </view>
   <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
 </view>
