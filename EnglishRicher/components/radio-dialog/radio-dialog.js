@@ -4,6 +4,10 @@ Component({
       type: Array,
       value: []
     },
+    wordTotal: {
+      type: Array,
+      value: []
+    },
     // 设置默认选中类型
     defaultLevel: {
       type: String,

@@ -1,7 +1,3 @@
-.container {
-  padding: 20px;
-}
-
 .settingscontent {
   font-weight: bold;
   display: flex;
@@ -12,4 +8,8 @@
 
 .item-content {
   display: grid;
+}
+
+.adContainer {
+  margin-bottom: 20rpx;
 }

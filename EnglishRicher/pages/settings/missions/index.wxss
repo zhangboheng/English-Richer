@@ -4,7 +4,6 @@
   align-items: center;
   width: 90%;
   margin: 0 auto;
-  margin-top:20rpx;
 }
 
 .task-item {
@@ -59,4 +58,8 @@
 
 .task-button:active {
   background-color: #ffa500;
+}
+
+.adContainer {
+  margin-bottom: 20rpx;
 }

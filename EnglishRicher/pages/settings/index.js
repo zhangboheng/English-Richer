@@ -4,6 +4,7 @@ Page({
     getShowOrNot: false, // 修改昵称弹出组件
     showRadioDialog: false, // 修改水平弹出组件
     englishLevels: ['初中', '高中', '大学英语四级', '大学英语六级', '考研', '托福', 'SAT'],
+    wordTotal: [1991, 3753, 4544, 3992, 5057, 10377, 4464],
     getDefaultLevel: "初中"
   },
   // 页面分享

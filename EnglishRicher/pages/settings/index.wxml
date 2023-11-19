@@ -73,6 +73,7 @@
   <!-- 修改水平弹出组件 -->
   <radio-dialog
     englishLevels="{{ englishLevels }}"
+    wordTotal="{{ wordTotal }}"
     bind:confirm="handleConfirmLevel"
     bind:close="closeRadioDialog"
     defaultLevel="{{ getDefaultLevel }}"
