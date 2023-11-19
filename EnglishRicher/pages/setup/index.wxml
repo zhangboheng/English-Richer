@@ -1,27 +1,38 @@
 <image class="background-image" src="../../static/source/startup.png" mode='aspectFill'></image>
 <scrollable-text wx:if="{{showComponent}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="玩法说明" imgSrc="../../static/source/console.png"></scrollable-text>
 <view class="tool-zone">
-    <view class="tool-zone-image">
-      <image src="../../static/source/logos.png"></image>
-    </view>
-    <view>
-      <button bindtap="gotoHome" class="custom-btn start">
-        <view class="button-content">
-          <image class="button-icon  rotate-animation" src="../../static/source/dice.png"></image>
-          <text class="button-text">开启旅途</text>
-        </view>
-      </button>
-      <button bindtap="gotoExchange" class="custom-btn exchange">
-        <view class="button-content">
-          <image class="button-icon  rotate-animation" src="../../static/source/station.png"></image>
-          <text class="button-text">兑换情报</text>
-        </view>
-      </button>
-      <button bindtap="gotoIntroduce" class="custom-btn introduce">
-        <view class="button-content">
-          <image class="button-icon  rotate-animation" src="../../static/source/console.png"></image>
-          <text class="button-text">玩法说明</text>
-        </view>
-      </button>
-    </view>
+  <view class="marquee-box">
+  <view class="mention">
+    <image class="button-icon" src="../../static/source/trumpet.png"></image>
+  </view>
+  <view class="marquee">
+    <text class="marquee-text">{{randomText}}</text>
+  </view>
+</view>
+  <view class="tool-zone-image">
+    <image class="logos" src="../../static/source/logos.png"></image>
+  </view>
+  <view>
+    <button bindtap="gotoHome" class="custom-btn start">
+      <view class="button-content">
+        <image class="button-icon rotate-animation" src="../../static/source/dice.png"></image>
+        <text class="button-text">开启旅途</text>
+      </view>
+    </button>
+    <button bindtap="gotoExchange" class="custom-btn exchange">
+      <view class="button-content">
+        <image class="button-icon rotate-animation" src="../../static/source/station.png"></image>
+        <text class="button-text">兑换情报</text>
+      </view>
+    </button>
+    <button bindtap="gotoIntroduce" class="custom-btn introduce">
+      <view class="button-content">
+        <image class="button-icon rotate-animation" src="../../static/source/console.png"></image>
+        <text class="button-text">玩法说明</text>
+      </view>
+    </button>
+  </view>
+  <view class="copyright">
+    <text>©行运设计师荣誉出品</text>
+  </view>
 </view>

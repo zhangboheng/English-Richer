@@ -8,9 +8,10 @@ App({
     let yasiGet = wx.getStorageSync('yasi'); // 雅思考试资料是否兑换
     let movieSub = wx.getStorageSync('subtitle'); // 电影字幕是否兑换
     let telephoneCredits = wx.getStorageSync('telephoneCredits'); // 电影字幕是否兑换
+    let getGpt4OrNot = wx.getStorageSync('getGpt4OrNot'); // 免费离线GPT4是否兑换
     // 判断是否存在总货币数数据，如果不存在则赋值为 0
     if (typeof money == 'undefined' || money == null || typeof money == "string") {
-      money = 0;
+      money = 100;
       wx.setStorageSync('money', money);
     }
     // 判断是否存在初始水平数据，如果不存在则赋值为初中
@@ -32,6 +33,11 @@ App({
     if (typeof telephoneCredits == 'undefined' || telephoneCredits == null || typeof telephoneCredits == "string") {
       telephoneCredits = 0;
       wx.setStorageSync('telephoneCredits', telephoneCredits);
+    }
+    // 判断是否存在免费离线GPT4兑换信息数据，如果不存在则赋值为 0
+    if (typeof getGpt4OrNot == 'undefined' || getGpt4OrNot == null || typeof getGpt4OrNot == "string") {
+      getGpt4OrNot = 0;
+      wx.setStorageSync('getGpt4OrNot', getGpt4OrNot);
     }
   },
   // 重写分享方法

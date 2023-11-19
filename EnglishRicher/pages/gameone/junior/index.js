@@ -72,7 +72,7 @@ Page({
     this.getNextWord();
     // 点击掌握后进度条增加
     this.setData({
-      currentLength: randomList.length, // 是否显示翻译
+      currentLength: randomList.length,
     });
   },
 

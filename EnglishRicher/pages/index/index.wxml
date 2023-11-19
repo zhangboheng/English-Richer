@@ -32,7 +32,7 @@
         <image class="scale-image-inner" src="../../static/source/gametwo.jpeg" mode="scaleToFill"></image>
       </view>
     </view>
-    <text class="scale-text">Game Two 提示写单词</text>
+    <text class="scale-text">Game Two 轻航填字海</text>
   </view>
   <view class="top-banner" bind:tap="goToGameThree">
     <view class="top-banner-scale">

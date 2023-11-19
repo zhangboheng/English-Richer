@@ -1,5 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "提示写单词",
-  "enablePullDownRefresh": false
+  "navigationBarTitleText": "轻航填字海",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
 }

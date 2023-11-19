@@ -1,5 +1,4 @@
 <view class="container">
-  <!--每次点击后出现的增加分数-->
   <view id="floatingAnimation" class="floating-animation" wx:if="{{showAnimation}}">
     <view class="floating-box">
       <image class="price-image" src="../../../static/source/coin.png"></image>
@@ -24,6 +23,13 @@
     <text>跳过</text>
   </button>
   <view class="grade-box">
-    <text>当前水平：{{ showGrade }}</text>
+    <view class="footer-inner">
+      <image class="price-image" src="../../../static/source/level.png"></image>
+      <text>{{showGrade}}</text>
+    </view>
+    <view class="footer-inner">
+      <image class="price-image" src="../../../static/source/progress.png"></image>
+      <text>{{currentLength}}/{{listLength}}</text>
+    </view>
   </view>
 </view>

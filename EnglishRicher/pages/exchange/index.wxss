@@ -59,7 +59,7 @@
 }
 
 .row {
-  margin-bottom: 10px;
+  margin-bottom: 10rpx;
   height: 320rpx;
   padding: 10px;
   background-color: #f5d659;

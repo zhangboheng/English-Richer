@@ -51,5 +51,16 @@
         </view>
       </view>
     </view>
+    <view class="row" wx:if="{{gpt4Show}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/gpt4.png"></image>
+        <view class="title">{{priceArray.gpt4Title}}</view>
+        <view class="price" bindtap="exchangeGpt4">
+          <text class="price-text">{{ priceArray.gpt4Price }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
   </view>
 </view>

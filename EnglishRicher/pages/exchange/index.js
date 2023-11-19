@@ -8,7 +8,9 @@ Page({
       moviePrice: 10,
       movieTitle: "随机电影字幕",
       telegramPrice: 20,
-      telegramTitle: "话费优惠信息"
+      telegramTitle: "话费优惠信息",
+      gpt4Price: 5,
+      gpt4Title: "免费离线GPT4"
     },
     // 雅思考试资料
     yasiShow: true,
@@ -16,6 +18,8 @@ Page({
     movieShow: true,
     // 手机话费
     telegramShow: true,
+    // 离线GPT4
+    gpt4Show: true
   },
   // 页面分享
   onShareAppMessage() {},
@@ -69,6 +73,16 @@ Page({
         telegramShow: false
       });
     }
+    // 判断免费离线GPT4是否显示
+    if (this.data.priceArray.gpt4Title.indexOf(this.data.inputTitle) > -1) {
+      this.setData({
+        gpt4Show: true
+      });
+    } else {
+      this.setData({
+        gpt4Show: false
+      });
+    }
   },
   // 点击兑换雅思按钮
   exchangeYasi() {
@@ -78,7 +92,7 @@ Page({
       this.popupPublic(this.data.priceArray.yasiPrice, this.data.priceArray.yasiTitle);
     } else {
       wx.showToast({
-        title: '前往微信公众号行运设计师，发送消息：9527',
+        title: '微信公众号行运设计师，发送消息：9527',
         icon: 'none',
         duration: 2000
       });
@@ -92,7 +106,7 @@ Page({
       this.popupPublic(this.data.priceArray.moviePrice, this.data.priceArray.movieTitle);
     } else {
       wx.showToast({
-        title: '前往微信公众号行运设计师，发送消息：2048',
+        title: '微信公众号行运设计师，发送消息：2048',
         icon: 'none',
         duration: 2000
       });      
@@ -106,11 +120,25 @@ Page({
       this.popupPublic(this.data.priceArray.telegramPrice, this.data.priceArray.telegramTitle);
     } else {
       wx.showToast({
-        title: '前往微信公众号行运设计师，发送消息：13888',
+        title: '微信公众号行运设计师，发送消息：13888',
         icon: 'none',
         duration: 2000
       });      
     }    
+  },
+  // 点击兑换免费离线GPT4
+  exchangeGpt4() {
+    // 从缓存中获取数据
+    let getGpt4OrNot = wx.getStorageSync('getGpt4OrNot');
+    if (getGpt4OrNot == 0) {
+      this.popupPublic(this.data.priceArray.gpt4Price, this.data.priceArray.gpt4Title);
+    } else {
+      wx.showToast({
+        title: '微信公众号行运设计师，发送消息：GPT4Free',
+        icon: 'none',
+        duration: 2000
+      });      
+    }  
   },
   // 下拉
   onPullDownRefresh() {
@@ -145,7 +173,7 @@ Page({
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('yasiGet', 1);
               wx.showToast({
-                title: '前往微信公众号行运设计师，发送消息：9527',
+                title: '微信公众号行运设计师，发送消息：9527',
                 icon: 'none',
                 duration: 10000
               });
@@ -166,7 +194,7 @@ Page({
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('movieSub', 1);
               wx.showToast({
-                title: '前往微信公众号行运设计师，发送消息：2048',
+                title: '微信公众号行运设计师，发送消息：2048',
                 icon: 'none',
                 duration: 10000
               });
@@ -187,7 +215,28 @@ Page({
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('telephoneCredits', 1);
               wx.showToast({
-                title: '前往微信公众号行运设计师，发送消息：13888',
+                title: '微信公众号行运设计师，发送消息：13888',
+                icon: 'none',
+                duration: 10000
+              });
+            } else {
+              wx.showToast({
+                title: '资产不够兑换咯，还不去搬砖！',
+                icon: 'none',
+                duration: 2000
+              });
+            }
+          } else if (_publicTitle == "免费离线GPT4") {
+            if (self.data.moenyTotal >= _publicPrice) {
+              self.setData({
+                moenyTotal: (self.data.moenyTotal - _publicPrice).toFixed(2)
+              });
+              // 将剩余钱币数量存储到缓存中
+              wx.setStorageSync('money', Number(self.data.moenyTotal));
+              // 将兑换成功后资格储存到缓存中
+              wx.setStorageSync('getGpt4OrNot', 1);
+              wx.showToast({
+                title: '微信公众号行运设计师，发送消息：GPT4Free',
                 icon: 'none',
                 duration: 10000
               });
@@ -206,15 +255,4 @@ Page({
       }
     });
   },
-  // Banner 广告方法开始
-  adLoad() {
-    console.log('Banner 广告加载成功')
-  },
-  adError(err) {
-    console.error('Banner 广告加载失败', err)
-  },
-  adClose() {
-    console.log('Banner 广告关闭')
-  }
-  // Banner 广告方法结束
 });

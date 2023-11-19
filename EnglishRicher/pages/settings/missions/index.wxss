@@ -4,14 +4,18 @@
   align-items: center;
   width: 90%;
   margin: 0 auto;
+  margin-top:20rpx;
 }
 
 .task-item {
   padding: 20px;
-  margin-top: 20rpx;
   border: 3px solid #000;
   border-radius: 8px;
   width: calc(100% - 20px);
+}
+
+.gap-box {
+  margin-bottom: 20rpx;
 }
 
 .task-image {

@@ -1,5 +1,5 @@
 {
   "usingComponents": {},
   "navigationBarTitleText": "兑换情报",
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": true
 }

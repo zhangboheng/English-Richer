@@ -1,6 +1,9 @@
-<view>
+<view class="container">
+  <view class="adContainer">
+    <ad unit-id="adunit-ad104572b4e7145d" bindload="adLoad" binderror="adError" bindclose="adClose" ad-intervals="30"></ad>
+  </view>
   <view class="task">
-    <view class="task-item">
+    <view class="task-item gap-box">
       <view class="task-name">每日签到</view>
       <view class="task-image">
         <image class="item-image" src="../../../static/source/signin.png" />
@@ -11,8 +14,7 @@
       </view>
       <button class="task-button" bindtap="handleSign">签到</button>
     </view>
-    
-    <view class="task-item">
+    <view class="task-item gap-box">
       <view class="task-name">每日分享</view>
       <view class="task-image">
         <image class="item-image" src="../../../static/source/share.png" />
@@ -22,6 +24,17 @@
         钱币:<text class="reward-value">+{{ shareCoins }}</text>
       </view>
       <button class="task-button" bindtap="handleShare" open-type="share">分享</button>
+    </view>
+    <view class="task-item">
+      <view class="task-name">耕耘收获</view>
+      <view class="task-image">
+        <image class="item-image" src="../../../static/source/field.png" />
+      </view>
+      <view class="task-reward">
+        经验值:<text class="reward-value">+{{ masterFiveHundredExp }}</text>
+        钱币:<text class="reward-value">+{{ masterFiveHundredCoins }}</text>
+      </view>
+      <button class="task-button" bindtap="handleFiveHundred">掌握单词 500 个</button>
     </view>
   </view>
 </view>

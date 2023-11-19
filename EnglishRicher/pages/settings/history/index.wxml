@@ -1,7 +1,7 @@
 <view class="container">
   <view class="settingscontent">
     <text class="version">版本 2.1.2</text>
-    <text class="date">2023-11-19</text>
+    <text class="date">2023-11-20</text>
   </view>
   <view class="item-content">
     <text>1.优化修改昵称，免去误点后再输入问题。</text>
@@ -9,7 +9,9 @@
     <text>3.修复策略谋划、英语词库和温故知新中样式显示问题。</text>
     <text>4.更换图标为统一风格。</text>
     <text>5.关于我们增加微信公众号关联。</text>
-    <text>6.Game One 诚实刷单词增加刷单词进度。</text>
+    <text>6.关卡增加刷单词进度。</text>
+    <text>7.启动页增加公告信息和品牌标识。</text>
+    <text>8.每日任务以及交换情报新增选项。</text>
   </view>
   <view class="settingscontent">
     <text class="version">版本 2.1.1</text>
@@ -24,7 +26,7 @@
     <text class="date">2023-11-16</text>
   </view>
   <view class="item-content">
-    <text>1.开启 Game Two 提示写单词关卡，限制 LV3 及其以后开启。</text>
+    <text>1.开启 Game Two 轻航填字海关卡，限制 LV3 及其以后开启。</text>
   </view>
   <view class="settingscontent">
     <text class="version">版本 2.0.1</text>
