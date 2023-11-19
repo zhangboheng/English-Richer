@@ -11,7 +11,7 @@ App({
     let getGpt4OrNot = wx.getStorageSync('getGpt4OrNot'); // 免费离线GPT4是否兑换
     // 判断是否存在总货币数数据，如果不存在则赋值为 0
     if (typeof money == 'undefined' || money == null || typeof money == "string") {
-      money = 100;
+      money = 0;
       wx.setStorageSync('money', money);
     }
     // 判断是否存在初始水平数据，如果不存在则赋值为初中
