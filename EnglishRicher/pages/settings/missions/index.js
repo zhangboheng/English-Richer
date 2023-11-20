@@ -12,6 +12,10 @@ Page({
     masterFiveHundred: false, // 是否领取耕耘收获
     masterFiveHundredExp: 5, // 掌握 500 单词后奖励经验
     masterFiveHundredCoins: 0.5, // 掌握 500 单词后奖励钱币
+    canGetThousand: false, // 领取资格判断
+    masterThousand: false, // 是否领取耕耘收获
+    masterThousandExp: 10, // 掌握 1000 单词后奖励经验
+    masterThousandCoins: 1, // 掌握 1000 单词后奖励钱币
   },
   // 页面分享
   onShareAppMessage() {},
@@ -40,6 +44,11 @@ Page({
     if (TotalNumber >= 500) {
       this.setData({
         canGetFiveHundred: true
+      });
+    }
+    if (TotalNumber >= 1000) {
+      this.setData({
+        canGetThousand: true
       });
     }
     // 判断签到日期是否和当前日期一致
@@ -144,6 +153,39 @@ Page({
           icon: 'none',
         });    
       }
-    } 
+    }
+  },
+  // 耕耘收获奖励的处理方法
+  handleThousand() {
+    let getProgress = wx.getStorageSync('progress') || 0; // 经验值
+    let money = wx.getStorageSync('money'); // 总货币数
+    let masterThousand = wx.getStorageSync('masterThousand');
+    if(typeof masterThousand != 'string') {
+      this.setData({
+        masterThousand: true
+      });
+    }
+    if (this.data.masterThousand) {
+      wx.showToast({
+        title: '太贪心了吧，已经领取过了～',
+        icon: 'none',
+      });
+    } else {
+      if (this.data.canGetThousand) {
+        getProgress = getProgress + this.data.masterThousandExp;
+        wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
+        wx.setStorageSync('money', money + this.data.masterThousandCoins);
+        wx.setStorageSync('masterThousand', true)
+        wx.showToast({
+          title: `一分耕耘一分收获，经验值+${this.data.masterThousandExp}，钱币+${this.data.masterThousandCoins}`,
+          icon: 'none',
+        }); 
+      } else {
+        wx.showToast({
+          title: '哎呦，都没有掌握1000个单词，吁～～',
+          icon: 'none',
+        });    
+      }
+    }
   }
 });

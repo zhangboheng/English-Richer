@@ -5,24 +5,10 @@
   <official-account></official-account>
 </view>
 <view class="container">
-  <view class="settingscontent">
-    <image class="content-icon" src="../../../static/source/wechat.png" />
-    <text user-select="{{true}}">Nosense-history</text>
-  </view>
-  <view class="settingscontent">
-    <image class="content-icon" src="../../../static/source/youtube.png" />
-    <text user-select="{{true}}">@LuckyDesigner</text>
-  </view>
-  <view class="settingscontent">
-    <image class="content-icon" src="../../../static/source/gmail.png" />
-    <text user-select="{{true}}">zhangboheng827@gmail.com</text>
-  </view>
-  <view class="settingscontent">
-    <image class="content-icon" src="../../../static/source/web.png" />
-    <text user-select="{{true}}">https://luckydesigner.space/</text>
-  </view>
-  <view class="settingscontent">
-    <image class="content-icon" src="../../../static/source/github.png" />
-    <text user-select="{{true}}">https://github.com/zhangboheng</text>
+  <view wx:for="{{ contacts }}" wx:for-item="contact" wx:key="contact.id">
+    <view class="settingscontent">
+      <image class="content-icon" src="{{ contact.icon }}" />
+      <text user-select="{{ true }}">{{ contact.text }}</text>
+    </view>
   </view>
 </view>

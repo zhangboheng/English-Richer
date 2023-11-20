@@ -3,10 +3,11 @@ var randomList = [];
 // 在对应页面的 js 文件中
 Page({
   data: {
+    giftAnimation: {}, // 动画实例
     listData: [], // 刷单词所有的词库
     listLength: 0, // 单词所有词库
     currentLength: 1, // 当前显示单词进度数
-    word: 'hello',  // 要展示的英文单词
+    word: 'hello', // 要展示的英文单词
     translations: [], // 翻译的集合
     translationShow: false, // 是否显示翻译
     showAnimation: false, // 显示悬浮动画
@@ -17,6 +18,7 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function (options) {
+    this.initGiftAnimation();
     // 初次加载获取数据
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let trueData = database.postData.main;
@@ -41,14 +43,58 @@ Page({
       currentLength: randomList.length
     });
   },
+  onShow() {
+    this.startGiftAnimation();
+  },
+  onHide() {
+    this.stopGiftAnimation();
+  },
+  initGiftAnimation() {
+    let allCondition = ['linear', 'ease', 'ease-in', 'ease-in-out', 'ease-out', 'step-start', 'step-end'];
+    let index = Math.floor(Math.random() * allCondition.length);
+    // 创建一个从左到右的动画
+    this.data.giftAnimation = wx.createAnimation({
+      duration: 10000, // 动画时长，单位毫秒
+      timingFunction: allCondition[index],
+    });
+    this.data.giftAnimation.translate('100vw', 0).step();
+    // 将动画实例保存到 data 中
+    this.setData({
+      showGift: true,
+      giftAnimation: this.data.giftAnimation.export(),
+    });
+  },
+  startGiftAnimation() {
+    // 启动礼包动画，每隔一段时间重置动画状态
+    this.intervalId = setInterval(() => {
+      this.resetGiftAnimation();
+      this.initGiftAnimation();
+    }, 1000 * 10); // 一分钟一次，根据需求调整时间间隔
+  },
+  resetGiftAnimation() {
+    // 重置动画状态
+    this.data.giftAnimation = wx.createAnimation({
+      duration: 0, // 动画时长，单位毫秒
+    });
+    // 设置动画位移
+    this.data.giftAnimation.translateX('-100vw').step();
+    // 将动画实例保存到 data 中
+    this.setData({
+      giftAnimation: this.data.giftAnimation.export(),
+    });
+  },
+  stopGiftAnimation() {
+    // 停止礼包动画，清除定时器
+    clearInterval(this.intervalId);
+  },
   // 显示翻译的动作
-  showExplanation: function() {
+  showExplanation: function () {
     this.setData({
       translationShow: !this.data.translationShow, // 是否显示翻译
     });
   },
   // 点击掌握后进行下一个单词
-  handleMaster: function() {
+  handleMaster: function () {
     // 掌握一个增加1分钱
     let money = wx.getStorageSync('money');
     money = money + 0.01;
@@ -57,7 +103,7 @@ Page({
     let getProgress = wx.getStorageSync('progress') || 0;
     getProgress = getProgress + 0.1;
     wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
-    wx.setStorageSync('startGrade', Math.floor(getProgress/100));
+    wx.setStorageSync('startGrade', Math.floor(getProgress / 100));
     // 显示增加分数的悬浮动画
     this.setData({
       showAnimation: true,
@@ -76,12 +122,15 @@ Page({
     });
   },
 
-  handleNotMaster: function() {
+  handleNotMaster: function () {
     // 将单词缓存到本地数据
     let notMasterWords = wx.getStorageSync('notMasterWords') || [];
     // 如果缓存内没有则可以放置
-    if (notMasterWords.map(x=>x.word).indexOf(this.data.word)==-1) {
-      notMasterWords.push({word:this.data.word, translations:this.data.translations});
+    if (notMasterWords.map(x => x.word).indexOf(this.data.word) == -1) {
+      notMasterWords.push({
+        word: this.data.word,
+        translations: this.data.translations
+      });
     }
     wx.setStorageSync('notMasterWords', notMasterWords);
     // 重新赋值给随机数字集合
@@ -90,7 +139,7 @@ Page({
     this.getNextWord();
   },
 
-  getNextWord: function() {
+  getNextWord: function () {
     // 生成0到1990之间的随机数
     const randomNum = Math.floor(Math.random() * this.data.listData.length);
     // 当 randomList 集合中没有随机数即放进去

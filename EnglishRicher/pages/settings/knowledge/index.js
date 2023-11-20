@@ -1,6 +1,15 @@
 Page({
   data: {
-
+    subjects: [
+      { id: 1, title: '初中', color: '#f5d659', tapMethod: 'goToJunior' },
+      { id: 2, title: '高中', color: '#f5d659', tapMethod: 'goToHigh' },
+      { id: 3, title: '大学英语四级', color: '#f5d659', tapMethod: 'goToCet4' },
+      { id: 4, title: '大学英语六级', color: '#f5d659', tapMethod: 'goToCet6' },
+      { id: 5, title: '考研', color: '#f5d659', tapMethod: 'goToPostgraduate' },
+      { id: 6, title: '托福1', color: '#f5d659', tapMethod: 'goToToelf' },
+      { id: 7, title: '托福2', color: '#f5d659', tapMethod: 'goToToelfs' },
+      { id: 8, title: 'SAT', color: '#f5d659', tapMethod: 'goToSat' },
+    ],
   },
   // 页面分享
   onShareAppMessage() {},

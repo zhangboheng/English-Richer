@@ -6,7 +6,7 @@
   width: 98%;
   height: 50px;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 20rpx;
   border-radius: 20px;
   display: flex;
   align-items: center;

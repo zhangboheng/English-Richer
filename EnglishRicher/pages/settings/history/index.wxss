@@ -13,3 +13,9 @@
 .adContainer {
   margin-bottom: 20rpx;
 }
+
+.text-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

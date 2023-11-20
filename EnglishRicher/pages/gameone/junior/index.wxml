@@ -1,5 +1,7 @@
 <view class="container">
-  <!--每次点击后出现的增加分数-->
+  <view animation="{{ giftAnimation }}" class="gift-wrapper">
+    <text class="text-inline">学习如逆水行舟，不进则退</text>
+  </view>
   <view id="floatingAnimation" class="floating-animation" wx:if="{{showAnimation}}">
     <view class="floating-box">
       <image class="price-image" src="../../../static/source/coin.png"></image>
