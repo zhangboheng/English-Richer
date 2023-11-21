@@ -1,3 +1,3 @@
-<view animation="{{ giftAnimation }}" class="gift-wrapper">
+<view animation="{{ giftAnimation }}" class="gift-wrapper" wx:if="{{showOrNot}}">
   <text class="text-inline">{{cheerUp}}</text>
 </view>

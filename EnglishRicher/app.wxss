@@ -2,3 +2,8 @@
 .container {
   padding: 20rpx;
 } 
+
+.footer-text {
+  width: 100%;
+  text-align: right;
+}

@@ -29,11 +29,11 @@
   <view class="grade-box">
     <view class="footer-inner">
       <image class="price-image" src="../../../static/source/level.png"></image>
-      <text>{{showGrade}}</text>
+      <text class="footer-text">{{showGrade}}</text>
     </view>
     <view class="footer-inner">
       <image class="price-image" src="../../../static/source/progress.png"></image>
-      <text>{{currentLength}}/{{listLength}}</text>
+      <text class="footer-text">{{currentLength}}/{{listLength}}</text>
     </view>
   </view>
 </view>

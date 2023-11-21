@@ -5,6 +5,7 @@ Component({
   data: {
     giftAnimation: {}, // 动画实例
     cheerUp: '',
+    showOrNot: false,
     cheerUpList: [
       '学习如逆水行舟，不进则退', 
       '知之为知之，不知为不知，是知也', 
@@ -28,7 +29,6 @@ Component({
       this.setData({
         cheerUp: randomNumText
       });
-      this.initGiftAnimation();
       this.startGiftAnimation();
     },
     show() {
@@ -40,7 +40,7 @@ Component({
   },
   methods: {
     initGiftAnimation() {
-      let allCondition = ['linear', 'ease', 'ease-in', 'ease-in-out', 'ease-out', 'step-start', 'step-end'];
+      let allCondition = ['linear', 'ease', 'ease-in-out'];
       let index = Math.floor(Math.random() * allCondition.length);
       // 创建一个从左到右的动画
       this.data.giftAnimation = wx.createAnimation({
@@ -51,7 +51,7 @@ Component({
       // 将动画实例保存到 data 中
       const randomNumText = this.data.cheerUpList[Math.floor(Math.random() * this.data.cheerUpList.length)];
       this.setData({
-        showGift: true,
+        showOrNot: true,
         cheerUp: randomNumText,
         giftAnimation: this.data.giftAnimation.export(),
       });
@@ -61,7 +61,7 @@ Component({
       this.intervalId = setInterval(() => {
         this.resetGiftAnimation();
         this.initGiftAnimation();
-      }, 60000);
+      }, 1000*60);
     },
     resetGiftAnimation() {
       // 重置动画状态

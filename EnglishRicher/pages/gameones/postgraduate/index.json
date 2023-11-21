@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "animation-box": "../../../components/animation-box/animation-box"
+  },
   "navigationBarTitleText": "诚实刷单词",
   "enablePullDownRefresh": false,
   "disableScroll": true

@@ -39,6 +39,10 @@ Page({
       translations: trueData[randomNum].translations,
       showGrade: defaultLevel,
       listLength: trueData.length,
+    });
+  },
+  onReady: function() {
+    this.setData({
       currentLength: randomList.length
     });
   },

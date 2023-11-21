@@ -22,7 +22,7 @@
     <button bindtap="gotoExchange" class="custom-btn exchange">
       <view class="button-content">
         <image class="button-icon rotate-animation" src="../../static/source/station.png"></image>
-        <text class="button-text">兑换情报</text>
+        <text class="button-text">兑换市集</text>
       </view>
     </button>
     <button bindtap="gotoIntroduce" class="custom-btn introduce">
