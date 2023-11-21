@@ -3,7 +3,6 @@ var randomList = [];
 // 在对应页面的 js 文件中
 Page({
   data: {
-    giftAnimation: {}, // 动画实例
     listData: [], // 刷单词所有的词库
     listLength: 0, // 单词所有词库
     currentLength: 1, // 当前显示单词进度数
@@ -18,7 +17,6 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function (options) {
-    this.initGiftAnimation();
     // 初次加载获取数据
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let trueData = database.postData.main;
@@ -42,50 +40,6 @@ Page({
       listLength: trueData.length,
       currentLength: randomList.length
     });
-  },
-  onShow() {
-    this.startGiftAnimation();
-  },
-  onHide() {
-    this.stopGiftAnimation();
-  },
-  initGiftAnimation() {
-    let allCondition = ['linear', 'ease', 'ease-in', 'ease-in-out', 'ease-out', 'step-start', 'step-end'];
-    let index = Math.floor(Math.random() * allCondition.length);
-    // 创建一个从左到右的动画
-    this.data.giftAnimation = wx.createAnimation({
-      duration: 10000, // 动画时长，单位毫秒
-      timingFunction: allCondition[index],
-    });
-    this.data.giftAnimation.translate('100vw', 0).step();
-    // 将动画实例保存到 data 中
-    this.setData({
-      showGift: true,
-      giftAnimation: this.data.giftAnimation.export(),
-    });
-  },
-  startGiftAnimation() {
-    // 启动礼包动画，每隔一段时间重置动画状态
-    this.intervalId = setInterval(() => {
-      this.resetGiftAnimation();
-      this.initGiftAnimation();
-    }, 1000 * 10); // 一分钟一次，根据需求调整时间间隔
-  },
-  resetGiftAnimation() {
-    // 重置动画状态
-    this.data.giftAnimation = wx.createAnimation({
-      duration: 0, // 动画时长，单位毫秒
-    });
-    // 设置动画位移
-    this.data.giftAnimation.translateX('-100vw').step();
-    // 将动画实例保存到 data 中
-    this.setData({
-      giftAnimation: this.data.giftAnimation.export(),
-    });
-  },
-  stopGiftAnimation() {
-    // 停止礼包动画，清除定时器
-    clearInterval(this.intervalId);
   },
   // 显示翻译的动作
   showExplanation: function () {
