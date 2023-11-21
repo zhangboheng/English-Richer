@@ -106,6 +106,12 @@
       ]
     }
   ],
+  "plugins": {
+    "wxatradecommentplugin": {
+      "version": "latest",
+      "provider": "wx82e6ae1175f264fa"
+    }
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#f5d659",

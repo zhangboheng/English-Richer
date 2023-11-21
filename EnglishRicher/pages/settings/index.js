@@ -1,3 +1,4 @@
+var plugin = requirePlugin("wxatradecommentplugin");
 Page({
   data: {
     username: '佚名',
@@ -85,11 +86,16 @@ Page({
       url: './renew/index',
     });
   },
-  // 点击后跳转到捐赠打赏页面
-  goToDonate: function () {
-    wx.navigateTo({
-      url: './donate/index',
-    });
+  // 点击后打开评价
+  goToAdvice: function () {
+    plugin.openComment({
+      success: (res)=>{
+        console.log('plugin.openComment success', res)
+      },
+      fail: (res) =>{
+        console.log('plugin.openComment fail', res)
+      }
+    })
   },
   // 点击后跳转到更新历史页面
   goToUpdateHistory: function () {

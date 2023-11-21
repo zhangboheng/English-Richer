@@ -61,7 +61,7 @@ Component({
       this.intervalId = setInterval(() => {
         this.resetGiftAnimation();
         this.initGiftAnimation();
-      }, 1000 * 60 * 3);
+      }, 60000);
     },
     resetGiftAnimation() {
       // 重置动画状态
