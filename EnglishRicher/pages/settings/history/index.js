@@ -10,6 +10,14 @@ Page({
         ],
       },
       {
+        version: '2.1.4',
+        date: '2023-11-23',
+        icon: ['success'],
+        changes: [
+          '温故知新增加导出功能。'
+        ],
+      },
+      {
         version: '2.1.3',
         date: '2023-11-22',
         icon: ['success', 'success', 'success', 'success_no_circle'],

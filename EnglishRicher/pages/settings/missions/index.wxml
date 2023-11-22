@@ -1,6 +1,6 @@
 <view class="container">
   <view class="adContainer">
-    <ad unit-id="adunit-ad104572b4e7145d" bindload="adLoad" binderror="adError" bindclose="adClose" ad-intervals="30"></ad>
+    <ad unit-id="adunit-ad104572b4e7145d" ad-intervals="30"></ad>
   </view>
   <view class="task">
     <view class="task-item gap-box">

@@ -1,8 +1,8 @@
 <view class="container">
   <view class="adContainer">
-    <ad unit-id="adunit-ad104572b4e7145d" bindload="adLoad" binderror="adError" bindclose="adClose" ad-intervals="30"></ad>
+    <ad unit-id="adunit-ad104572b4e7145d" ad-intervals="30"></ad>
   </view>
-  <view wx:for="{{ versions }}" wx:for-item="versionItem" wx:key="versionItem.version">
+  <view wx:for="{{ versions }}" wx:for-item="versionItem" wx:key="index">
     <view class="settingscontent">
       <text class="version">版本 {{ versionItem.version }}</text>
       <text class="date">{{ versionItem.date }}</text>

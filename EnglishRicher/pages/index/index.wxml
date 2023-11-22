@@ -43,7 +43,7 @@
     <text class="scale-text">Game Three 选择知我意</text>
   </view>
   <view class="adContainer">
-    <ad-custom unit-id="adunit-e3bcc88e9d49d5d2" bindload="adLoad" binderror="adError" bindclose="adClose"  ad-intervals="30"></ad-custom>
+    <ad-custom unit-id="adunit-e3bcc88e9d49d5d2" ad-intervals="30"></ad-custom>
   </view>
   <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
 </view>

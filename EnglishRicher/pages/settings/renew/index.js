@@ -1,8 +1,10 @@
+const XLSX = require('../../../utils/excel.js')
 Page({
   data: {
     globalData: [], // 全局获取所有单词列表
     listData: [],
     searchData: '', // 搜索关键词
+    exportList: [], // 导出内容
   },
   // 页面分享
   onShareAppMessage() {},
@@ -22,11 +24,9 @@ Page({
     trueData = trueData.map(item => ({ ...item, show: false }));
     // 赋值给子组件列表
     this.setData({
-      listData: trueData
-    });
-    // 赋值给全局数据列表
-    this.setData({
-      globalData: trueData
+      listData: trueData,
+      globalData: trueData,
+      exportList: database
     });
   },
   // 输入时的方法
@@ -44,6 +44,78 @@ Page({
       listData: filterArr
     });
   },
+  // 当点击导出按钮的时候方法
+  onExport: function () {
+    // 数据源
+    const data = this.data.exportList
+    if (data.length == 0) {
+      wx.showToast({
+        title: '没有不会的导出个锤子哟～～',
+        icon: 'none',
+        duration: 2000
+      })
+      return false;
+    }
+    // 构建一个表的数据
+    let sheet = []
+    let title = ['单词', '解释']
+    sheet.push(title)
+    data.forEach(item => {
+      let rowcontent = []
+      rowcontent.push(item.word)
+      console.info(item);
+      rowcontent.push(item.translations.map(x=>x.translation))
+      sheet.push(rowcontent)
+    })
+    var ws = XLSX.utils.aoa_to_sheet(sheet);
+    var wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "温故知新生词本");
+    var fileData = XLSX.write(wb, {
+      bookType: "xlsx",
+      type: 'base64'
+    });
+    let filePath = `${wx.env.USER_DATA_PATH}/温故知新生词本.xlsx`
+    // 写文件
+    const fs = wx.getFileSystemManager()
+    fs.writeFile({
+      filePath: filePath,
+      data: fileData,
+      encoding: 'base64',
+      success(res) {
+        const sysInfo = wx.getSystemInfoSync()
+        if (sysInfo.platform.toLowerCase().indexOf('windows') >= 0) {
+          wx.saveFileToDisk({
+            filePath: filePath,
+            success(res) {
+              console.log(res)
+            },
+            fail(res) {
+              console.error(res)
+              util.tips("导出失败")
+            }
+          })
+        } else {
+          // 手机端导出
+          wx.openDocument({
+            filePath: filePath,
+            success: function (res) {
+              console.log('打开文档成功')
+            },
+            fail: console.error
+          })
+        }
+      },
+      fail(res) {
+        if (res.errMsg.indexOf('locked')) {
+          wx.showModal({
+            title: '提示',
+            content: '文档已打开，请先关闭',
+          })
+        }
+
+      }
+    })
+  },
   // 获取删除的词汇
   getRemoveWord: function(e){
     // 从缓存中获取不会的单词
@@ -57,11 +129,9 @@ Page({
     trueData = trueData.map(item => ({ ...item, show: false }));
     // 赋值给子组件列表
     this.setData({
-      listData: trueData
-    });
-    // 赋值给全局数据列表
-    this.setData({
-      globalData: trueData
+      listData: trueData,
+      globalData: trueData,
+      exportList: newNotMasterWords
     });
   },
   // 公共乱序方法
