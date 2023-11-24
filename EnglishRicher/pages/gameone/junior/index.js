@@ -1,3 +1,4 @@
+const innerAudioContext = wx.createInnerAudioContext();
 var database = require('./source/journior');
 var randomList = [];
 // 在对应页面的 js 文件中
@@ -13,9 +14,9 @@ Page({
     showGrade: '初中'
   },
   // 页面分享
-  onShareAppMessage() {},
+  onShareAppMessage() { },
   // 页面分享朋友圈
-  onShareTimeline() {},
+  onShareTimeline() { },
   onLoad: function (options) {
     // 初次加载获取数据
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
@@ -40,7 +41,7 @@ Page({
       listLength: trueData.length,
     });
   },
-  onReady: function() {
+  onReady: function () {
     this.setData({
       currentLength: randomList.length
     });
@@ -109,5 +110,10 @@ Page({
       word: this.data.listData[randomNum].word,
       translations: this.data.listData[randomNum].translations,
     });
+  },
+  // 语音播放
+  playAudio() {
+    innerAudioContext.src = `https://dict.youdao.com/dictvoice?type=0&audio=${this.data.word}`;
+    innerAudioContext.play();
   }
 });

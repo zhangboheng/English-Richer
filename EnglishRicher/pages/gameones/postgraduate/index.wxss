@@ -10,6 +10,17 @@
 .word {
   font-size: 32px;
   margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voice-word {
+  position: relative;
+  top: -10px;
+  width: 24px;
+  height: 24px;
 }
 
 .content {

@@ -10,7 +10,10 @@
       <text>+0.1</text>
     </view>
   </view>
-  <view class="word">{{word}}</view>
+  <view class="word">
+    <text>{{word}}</text>
+    <image  bind:tap="playAudio" class="voice-word" src="../../../static/source/microphone.png" mode="scaleToFill"></image>
+  </view>
   <view class="content" wx:if="{{translationShow}}">
     <view wx:for="{{translations}}" wx:key="index">
       <text class="item-type">{{item.type}}</text>
