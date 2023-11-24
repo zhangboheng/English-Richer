@@ -6,19 +6,20 @@
   justify-content: center;
   height: 100vh;
 }
-
-.word {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
 .content {
   font-size: 36rpx;
   margin-bottom: 20px;
   padding: 0 20rpx;
+  text-align: center;
+}
+.translation-word {
   text-align: justify;
 }
-
+.voice-word {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+}
 .item-type {
   margin-right: 10rpx;
 }

@@ -10,6 +10,14 @@ Page({
         ],
       },
       {
+        version: '2.1.5',
+        date: '2023-11-24',
+        icon: ['success'],
+        changes: [
+          '每一关都增加了单词朗读功能。'
+        ],
+      },
+      {
         version: '2.1.4',
         date: '2023-11-23',
         icon: ['success'],

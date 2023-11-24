@@ -1,3 +1,4 @@
+const innerAudioContext = wx.createInnerAudioContext();
 var database = require('./source/postgraduate');
 var randomList = [];
 // 在对应页面的 js 文件中
@@ -128,5 +129,10 @@ Page({
       word: this.data.listData[randomNum].word,
       translations: this.data.listData[randomNum].translations,
     });
+  },
+  // 语音播放
+  playAudio() {
+    innerAudioContext.src = `https://dict.youdao.com/dictvoice?type=0&audio=${this.data.word}`;
+    innerAudioContext.play();
   }
 });

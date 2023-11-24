@@ -14,7 +14,7 @@
       <image class="price-image" src="../../static/source/coin.png"></image>
       <text class="coins">{{coins}}</text>
     </view>
-    <view class="settings" bindtap="goToArticles">
+    <view class="settings" bindtap="goToArticles" style="display: none;">
       <image class="class-image" src="../../static/source/lightbulb.png"></image>
     </view>
     <view class="settings" bindtap="goToSettings">
