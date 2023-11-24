@@ -1,0 +1,3 @@
+<view>
+  <swiper-banner class="swiper-box" images="{{swiperImages}}" indicatorDots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" circular="{{true}}"></swiper-banner>
+</view>

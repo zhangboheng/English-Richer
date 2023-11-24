@@ -25,7 +25,13 @@ Page({
       })
     }
   },
-  // 点击后跳转到设置页面
+  // 点击后跳转到经验学堂页面
+  goToArticles() {
+    wx.navigateTo({
+      url: '/pages/articles/index'
+    });
+  },
+  // 点击后跳转到策划谋略页面
   goToSettings() {
     wx.navigateTo({
       url: '/pages/settings/index'
