@@ -1,0 +1,11 @@
+<view class="article-list">
+  <view class="item" wx:for="{{ articles }}" wx:key="index" bind:tap="goToDetail" data-url="{{ item.url }}">
+    <view class="image-box">
+      <image class="image" src="{{ item.image }}" mode="aspectFill"></image>
+    </view>
+    <view class="content">
+      <view class="title">{{ item.title }}</view>
+      <view class="time">{{ item.time }}</view>
+    </view>
+  </view>
+</view>

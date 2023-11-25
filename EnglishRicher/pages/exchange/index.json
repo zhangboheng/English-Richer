@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "title-section": "../../components/title-section/title-section"
+  },
   "navigationBarTitleText": "兑换市集",
   "enablePullDownRefresh": true
 }

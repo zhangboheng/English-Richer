@@ -31,7 +31,7 @@ Component({
       const url = event.currentTarget.dataset.url;
       if (url) {
         wx.navigateTo({
-          url: url,
+          url: '../../pages/issue/index/index?href=' + url,
         });
       }
     },
@@ -39,7 +39,6 @@ Component({
     swiperChange(event) {
       // 当前轮播图索引
       const current = event.detail.current;
-      console.log('Current swiper index:', current);
     },
   },
 });

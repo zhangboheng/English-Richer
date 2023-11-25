@@ -1,0 +1,21 @@
+
+.title-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 20rpx 0;
+  font-weight: bold;
+}
+
+.title-line-left {
+  flex: 0.5;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #f5d659);
+}
+
+.title-line-right {
+  flex: 0.5;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #f5d659);
+}

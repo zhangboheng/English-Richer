@@ -6,11 +6,7 @@
     <input class="search-input" placeholder="请输入搜索内容" bindinput="onInput" />
     <button class="search-box" bindtap="onSearch">搜索</button>
   </view>
-  <view class="title-section">
-    <view class="title-line-left"></view>
-    <text>\t兑换列表\t</text>
-    <view class="title-line-right"></view>
-  </view>
+  <title-section lineTitle="兑换列表"></title-section>
   <view class="money-section">
     <image class="price-image" src="../../static/source/coin.png"></image>
     <text>{{ moenyTotal }}</text>

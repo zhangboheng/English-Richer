@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "swiper-banner": "../../components/swiper-banner/swiper-banner"
+    "swiper-banner": "../../components/swiper-banner/swiper-banner",
+    "title-section": "../../components/title-section/title-section",
+    "article-list": "../../components/article-list/article-list"
   },
   "navigationBarTitleText": "经验学堂"
 }

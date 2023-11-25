@@ -13,6 +13,12 @@
   ],
   "subpackages": [
     {
+      "root": "pages/issue",
+      "pages": [
+        "index/index"
+      ]
+    },
+    {
       "root": "pages/junior",
       "pages": [
         "index/index"

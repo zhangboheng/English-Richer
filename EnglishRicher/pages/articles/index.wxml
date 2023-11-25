@@ -1,3 +1,6 @@
-<view>
+<view class="container">
   <swiper-banner class="swiper-box" images="{{swiperImages}}" indicatorDots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" circular="{{true}}"></swiper-banner>
+  <title-section lineTitle="AI助力"></title-section>
+  <article-list articles="{{ articleData }}"></article-list>
+  <ad unit-id="adunit-9ea16354eb9450a0" ad-type="video" ad-theme="white"></ad>
 </view>

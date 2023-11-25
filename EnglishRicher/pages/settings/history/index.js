@@ -10,6 +10,14 @@ Page({
         ],
       },
       {
+        version: '2.1.6',
+        date: '2023-11-25',
+        icon: ['success'],
+        changes: [
+          '开启旅途新增经验学堂，分享学习上的经验技巧。'
+        ],
+      },
+      {
         version: '2.1.5',
         date: '2023-11-24',
         icon: ['success'],

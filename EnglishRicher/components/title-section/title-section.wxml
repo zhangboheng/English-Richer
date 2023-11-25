@@ -1,0 +1,5 @@
+<view class="title-section">
+    <view class="title-line-left"></view>
+    <text>{{lineTitle}}</text>
+    <view class="title-line-right"></view>
+  </view>
