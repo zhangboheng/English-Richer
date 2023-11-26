@@ -60,7 +60,22 @@
 }
 
 .title {
+  display: flex;
+  justify-content: center;
   font-size: 14px;
+}
+
+.intro-content {
+  position: relative;
+  top: -2px;
+  right: 0;
+  font-size: 10px;
+  width: 14px;
+  height: 14px;
+  color: #000;
+  border-radius: 20px;
+  border:1px solid #000;
+  background-color: #ffa500;
 }
 
 .price {

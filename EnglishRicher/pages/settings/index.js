@@ -68,7 +68,7 @@ Page({
       showRadioDialog: false
     });
   },
-  // 点击后跳转到每日任务页面
+  // 点击后跳转到任务大厅页面
   goToMissions: function() {
     wx.navigateTo({
       url: './missions/index',

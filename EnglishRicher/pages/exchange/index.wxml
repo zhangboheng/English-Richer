@@ -12,6 +12,40 @@
     <text>{{ moenyTotal }}</text>
   </view>
   <view class="product-section">
+    <view class="row" wx:if="{{lotteryShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/lottery.png"></image>
+        <view class="title">
+          <text>{{priceArray.lotteryTitle}}</text>
+          <view class="intro-content" bind:tap="showLotteryInfo">
+            <text>?</text>
+          </view>
+        </view>
+        <view class="price" bindtap="exchangeLottery">
+          <text class="price-text">{{ priceArray.lotteryPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
+    <view class="row" wx:if="{{levelCardShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/up.png"></image>
+        <view class="title">
+          <text>{{priceArray.levelCardTitle}}</text>
+          <view class="intro-content" bind:tap="showExperienceInfo">
+            <text>?</text>
+          </view>
+        </view>
+        <view class="price" bindtap="exchangeLevelCard">
+          <text class="price-text">{{ priceArray.levelCardPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="product-section">
     <view class="row" wx:if="{{yasiShow}}">
       <view class="row-inline">
         <image class="image" src="../../static/source/exam.png"></image>

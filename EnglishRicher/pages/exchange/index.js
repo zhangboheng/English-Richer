@@ -3,6 +3,10 @@ Page({
     moenyTotal: 0,
     inputTitle: "",
     priceArray: {
+      lotteryPrice: 0.5,
+      lotteryTitle: "彩票",
+      levelCardPrice: 1,
+      levelCardTitle: "经验卡",
       yasiPrice: 5,
       yasiTitle: "雅思考试资料",
       moviePrice: 10,
@@ -12,6 +16,10 @@ Page({
       gpt4Price: 5,
       gpt4Title: "免费离线GPT4"
     },
+    // 彩票
+    lotteryShow: true,
+    // 经验卡
+    levelCardShow: true,
     // 雅思考试资料
     yasiShow: true,
     // 电影字幕资料
@@ -43,6 +51,26 @@ Page({
   },
   // 点击搜索按钮事件
   onSearch() {
+    // 判断彩票是否显示
+    if (this.data.priceArray.lotteryTitle.indexOf(this.data.inputTitle) > -1) {
+      this.setData({
+        lotteryShow: true
+      });
+    } else {
+      this.setData({
+        lotteryShow: false
+      });
+    }
+    // 判断经验卡是否显示
+    if (this.data.priceArray.levelCardTitle.indexOf(this.data.inputTitle) > -1) {
+      this.setData({
+        levelCardShow: true
+      });
+    } else {
+      this.setData({
+        levelCardShow: false
+      });
+    }
     // 判断雅思考试资料是否显示
     if (this.data.priceArray.yasiTitle.indexOf(this.data.inputTitle) > -1) {
       this.setData({
@@ -84,6 +112,30 @@ Page({
       });
     }
   },
+  // 显示彩票详情信息
+  showLotteryInfo() {
+    wx.showToast({
+      title: '0.01～100钱币，体验一夜暴富的感觉',
+      icon: 'none',
+      duration: 2000
+    });
+  },
+  // 点击兑换彩票
+  exchangeLottery() {
+    this.popupPublic(this.data.priceArray.lotteryPrice, this.data.priceArray.lotteryTitle);
+  },
+  // 显示经验卡详情信息
+  showExperienceInfo() {
+    wx.showToast({
+      title: '0.01～100经验，让你快速变强',
+      icon: 'none',
+      duration: 2000
+    });
+  },
+  // 点击兑换经验卡
+  exchangeLevelCard() {
+    this.popupPublic(this.data.priceArray.levelCardPrice, this.data.priceArray.levelCardTitle);
+  },
   // 点击兑换雅思按钮
   exchangeYasi() {
     // 从缓存中获取数据
@@ -109,7 +161,7 @@ Page({
         title: '微信公众号行运设计师，发送消息：2048',
         icon: 'none',
         duration: 2000
-      });      
+      });
     }
   },
   // 点击兑换话费优惠信息
@@ -123,8 +175,8 @@ Page({
         title: '微信公众号行运设计师，发送消息：13888',
         icon: 'none',
         duration: 2000
-      });      
-    }    
+      });
+    }
   },
   // 点击兑换免费离线GPT4
   exchangeGpt4() {
@@ -137,8 +189,8 @@ Page({
         title: '微信公众号行运设计师，发送消息：GPT4Free',
         icon: 'none',
         duration: 2000
-      });      
-    }  
+      });
+    }
   },
   // 下拉
   onPullDownRefresh() {
@@ -163,7 +215,60 @@ Page({
       success: function (res) {
         if (res.confirm) {
           // 用户点击了确定按钮
-          if (_publicTitle == "雅思考试资料") {
+          if (_publicTitle == "彩票") {
+            if (self.data.moenyTotal >= _publicPrice) {
+              self.setData({
+                moenyTotal: (self.data.moenyTotal - _publicPrice).toFixed(2)
+              });
+              // 将剩余钱币数量存储到缓存中
+              wx.setStorageSync('money', Number(self.data.moenyTotal));
+              // 进行彩票抽奖活动
+              let lotteryMoney = self.getRandomNumber();
+              self.setData({
+                moenyTotal: (Number(self.data.moenyTotal) + lotteryMoney).toFixed(2)
+              });
+              wx.setStorageSync('money', Number(self.data.moenyTotal));
+              wx.showToast({
+                title: `恭喜你，中奖了，奖金是${lotteryMoney}钱币`,
+                icon: 'none',
+                duration: 2000
+              });
+            } else {
+              wx.showToast({
+                title: '资产不够兑换咯，还不去搬砖！',
+                icon: 'none',
+                duration: 2000
+              });
+            }
+          } else if (_publicTitle == "经验卡") {
+            if (self.data.moenyTotal >= _publicPrice) {
+              self.setData({
+                moenyTotal: (self.data.moenyTotal - _publicPrice).toFixed(2)
+              });
+              // 将剩余钱币数量存储到缓存中
+              wx.setStorageSync('money', Number(self.data.moenyTotal));
+              // 进行经验卡开奖
+              let experienceValue = self.getRandomNumber();
+              let getProgress = wx.getStorageSync('progress');
+              if (typeof getProgress == 'undefined' || getProgress == null || typeof getProgress == "string") {
+                getProgress = 0;
+                wx.setStorageSync('progress', getProgress);
+              }
+              getProgress = getProgress + experienceValue;
+              wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
+              wx.showToast({
+                title: `天啊，原地飞升，获得${experienceValue}经验值`,
+                icon: 'none',
+                duration: 2000
+              });
+            } else {
+              wx.showToast({
+                title: '资产不够兑换咯，还不去搬砖！',
+                icon: 'none',
+                duration: 2000
+              });
+            }
+          } else if (_publicTitle == "雅思考试资料") {
             if (self.data.moenyTotal >= _publicPrice) {
               self.setData({
                 moenyTotal: (self.data.moenyTotal - _publicPrice).toFixed(2)
@@ -255,4 +360,22 @@ Page({
       }
     });
   },
+  // 彩票出现的公共方法
+  getRandomNumber: function () {
+    const probabilities = [0.4, 0.35, 0.1, 0.05, 0.05, 0.03, 0.015, 0.004, 0.001];
+    const values = [0.01, 0.1, 0.5, 1, 1.5, 2, 5, 10, 100];
+    let sumOfProbabilities = 0;
+    for (const probability of probabilities) {
+      sumOfProbabilities += probability;
+    }
+    let randomValue = Math.random() * sumOfProbabilities;
+    let cumulativeProbability = 0;
+    for (let i = 0; i < values.length; i++) {
+      cumulativeProbability += probabilities[i];
+      if (randomValue <= cumulativeProbability) {
+        return values[i];
+      }
+    }
+    return values[values.length - 1];
+  }
 });

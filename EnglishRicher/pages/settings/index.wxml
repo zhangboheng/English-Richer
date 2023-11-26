@@ -32,7 +32,7 @@
     <view class="container-item" bind:tap="goToMissions">
       <view class="item-box">
         <image class="item-box-image" src="../../static/source/mission.png" />
-        <text>每日任务</text>
+        <text>任务大厅</text>
       </view>
     </view>
   </view>

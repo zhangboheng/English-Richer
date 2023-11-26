@@ -16,6 +16,10 @@ Page({
     masterThousand: false, // 是否领取耕耘收获
     masterThousandExp: 10, // 掌握 1000 单词后奖励经验
     masterThousandCoins: 1, // 掌握 1000 单词后奖励钱币
+    canGetTwoThousand: false, // 领取资格判断
+    masterTwoThousand: false, // 是否领取耕耘收获
+    masterTwoThousandExp: 20, // 掌握 2000 单词后奖励经验
+    masterTwoThousandCoins: 2, // 掌握 2000 单词后奖励钱币
   },
   // 页面分享
   onShareAppMessage() {},
@@ -49,6 +53,11 @@ Page({
     if (TotalNumber >= 1000) {
       this.setData({
         canGetThousand: true
+      });
+    }
+    if (TotalNumber >= 2000) {
+      this.setData({
+        canGetTwoThousand: true
       });
     }
     // 判断签到日期是否和当前日期一致
@@ -122,7 +131,7 @@ Page({
       }, 4000);
     }
   },
-  // 耕耘收获奖励的处理方法
+  // 耕耘收获500单词奖励的处理方法
   handleFiveHundred() {
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
@@ -155,7 +164,7 @@ Page({
       }
     }
   },
-  // 耕耘收获奖励的处理方法
+  // 耕耘收获1000单词奖励的处理方法
   handleThousand() {
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
@@ -187,5 +196,39 @@ Page({
         });    
       }
     }
-  }
+  },
+  // 耕耘收获2000单词奖励的处理方法
+  handleTwoThousand() {
+    let getProgress = wx.getStorageSync('progress') || 0; // 经验值
+    let money = wx.getStorageSync('money'); // 总货币数
+    let masterTwoThousand = wx.getStorageSync('masterTwoThousand');
+    if(typeof masterTwoThousand != 'string') {
+      this.setData({
+        masterTwoThousand: true
+      });
+    }
+    if (this.data.masterTwoThousand) {
+      wx.showToast({
+        title: '太贪心了吧，已经领取过了～',
+        icon: 'none',
+      });
+    } else {
+      if (this.data.canGetTwoThousand) {
+        getProgress = getProgress + this.data.masterTwoThousandExp;
+        wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
+        wx.setStorageSync('money', money + this.data.masterTwoThousandCoins);
+        wx.setStorageSync('masterTwoThousand', true)
+        wx.showToast({
+          title: `一分耕耘一分收获，经验值+${this.data.masterTwoThousandExp}，钱币+${this.data.masterTwoThousandCoins}`,
+          icon: 'none',
+        }); 
+      } else {
+        wx.showToast({
+          title: '哎呦，都没有掌握2000个单词，吁～～',
+          icon: 'none',
+        });    
+      }
+    }
+  },
+  // 耕耘收获5000单词奖励的处理方法
 });
