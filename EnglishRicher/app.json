@@ -69,6 +69,7 @@
     {
       "root": "pages/gameone",
       "pages": [
+        "elementary/index",
         "junior/index",
         "high/index",
         "cet4/index",

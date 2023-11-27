@@ -40,7 +40,11 @@ Page({
   // 点击游戏1后根据水平不同，跳转到不同页面
   goToGameOne() {
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
-    if (defaultLevel === '初中') {
+    if (defaultLevel === '小学') {
+      wx.navigateTo({
+        url: '/pages/gameone/elementary/index'
+      });
+    } else if (defaultLevel === '初中') {
       wx.navigateTo({
         url: '/pages/gameone/junior/index'
       });
