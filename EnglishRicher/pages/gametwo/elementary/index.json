@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "animation-box": "../../../components/animation-box/animation-box"
+  },
+  "navigationBarTitleText": "轻航填字海",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

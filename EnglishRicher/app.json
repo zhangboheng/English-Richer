@@ -99,6 +99,7 @@
     {
       "root": "pages/gametwo",
       "pages": [
+        "elementary/index",
         "junior/index",
         "high/index",
         "cet4/index",

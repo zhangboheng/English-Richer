@@ -86,7 +86,11 @@ Page({
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let startGrade = this.data.storageStartGrade;
     if (startGrade >= 3) {
-      if (defaultLevel === '初中') {
+      if (defaultLevel === '小学') {
+        wx.navigateTo({
+          url: '/pages/gametwo/elementary/index'
+        });
+      } else if (defaultLevel === '初中') {
         wx.navigateTo({
           url: '/pages/gametwo/junior/index'
         });

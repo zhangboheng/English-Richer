@@ -18,7 +18,7 @@
         <view class="title">
           <text>{{priceArray.lotteryTitle}}</text>
           <view class="intro-content" bind:tap="showLotteryInfo">
-            <text>?</text>
+            <icon type="info" size="18"/>
           </view>
         </view>
         <view class="price" bindtap="exchangeLottery">
@@ -34,7 +34,7 @@
         <view class="title">
           <text>{{priceArray.levelCardTitle}}</text>
           <view class="intro-content" bind:tap="showExperienceInfo">
-            <text>?</text>
+            <icon type="info" size="18"/>
           </view>
         </view>
         <view class="price" bindtap="exchangeLevelCard">

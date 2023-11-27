@@ -28,6 +28,7 @@ Page({
   onLoad: function() {
     let dailySIgn = wx.getStorageSync('dailySign'); // 获取签到日期
     let shareSign = wx.getStorageSync('shareSign'); // 获取分享日期
+    let elementary = wx.getStorageSync('elementaryList');
     let juniorList = wx.getStorageSync('juniorList');
     let highList = wx.getStorageSync('highList');
     let cet4List = wx.getStorageSync('cet4List');
@@ -36,6 +37,7 @@ Page({
     let toelfOneList = wx.getStorageSync('toelfOneList');
     let toelfTwoList = wx.getStorageSync('toelfTwoList');
     let satList = wx.getStorageSync('satList');
+    let elementaryTwoList = wx.getStorageSync('elementaryTwoList');
     let juniorTwoList = wx.getStorageSync('juniorTwoList');
     let highTwoList = wx.getStorageSync('highTwoList');
     let cet4TwoList = wx.getStorageSync('cet4TwoList');
@@ -44,7 +46,7 @@ Page({
     let toelfOneTwoList = wx.getStorageSync('toelfOneTwoList');
     let toelfTwoTwoList = wx.getStorageSync('toelfTwoTwoList');
     let satTwoList = wx.getStorageSync('satTwoList');
-    let TotalNumber = juniorList.length + highList.length + cet4List.length + cet6List.length + postgraduateList.length + toelfOneList.length + toelfTwoList.length + satList.length + juniorTwoList.length + highTwoList.length + cet4TwoList.length + cet6TwoList.length + postgraduateTwoList.length + toelfOneTwoList.length + toelfTwoTwoList.length + satTwoList.length;
+    let TotalNumber = elementary.length + juniorList.length + highList.length + cet4List.length + cet6List.length + postgraduateList.length + toelfOneList.length + toelfTwoList.length + satList.length + elementaryTwoList.length + juniorTwoList.length + highTwoList.length + cet4TwoList.length + cet6TwoList.length + postgraduateTwoList.length + toelfOneTwoList.length + toelfTwoTwoList.length + satTwoList.length;
     if (TotalNumber >= 500) {
       this.setData({
         canGetFiveHundred: true
