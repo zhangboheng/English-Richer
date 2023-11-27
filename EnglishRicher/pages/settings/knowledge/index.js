@@ -1,6 +1,7 @@
 Page({
   data: {
     subjects: [
+      { id: 0, title: '小学', color: '#f5d659', tapMethod: 'goToElementary' },
       { id: 1, title: '初中', color: '#f5d659', tapMethod: 'goToJunior' },
       { id: 2, title: '高中', color: '#f5d659', tapMethod: 'goToHigh' },
       { id: 3, title: '大学英语四级', color: '#f5d659', tapMethod: 'goToCet4' },
@@ -15,6 +16,12 @@ Page({
   onShareAppMessage() {},
   // 页面分享朋友圈
   onShareTimeline() {},
+  // 点击跳转到小学题库
+  goToElementary: function() {
+    wx.navigateTo({
+      url: '../../elementary/index/index',
+    });
+  },
   // 点击跳转到初中题库
   goToJunior: function(){
     wx.navigateTo({

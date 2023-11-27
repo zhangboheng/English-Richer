@@ -10,6 +10,15 @@ Page({
         ],
       },
       {
+        version: '2.1.8',
+        date: '2023-11-27',
+        icon: ['success', 'info'],
+        changes: [
+          '新增小学水平单词库以及对应的游戏关卡',
+          '完善经验学堂内容'
+        ],
+      },
+      {
         version: '2.1.7',
         date: '2023-11-26',
         icon: ['success', 'success'],

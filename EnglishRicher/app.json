@@ -19,6 +19,12 @@
       ]
     },
     {
+      "root": "pages/elementary",
+      "pages": [
+        "index/index"
+      ]
+    },
+    {
       "root": "pages/junior",
       "pages": [
         "index/index"
