@@ -1,6 +1,16 @@
 App({
   // 初次加载获取缓存数据
   onLaunch() {
+    // ios端音频不能在静音下播放处理
+    wx.setInnerAudioOption({
+      obeyMuteSwitch: false,
+      success: function (res) {
+        console.log("开启静音模式下播放音乐的功能");
+      },
+      fail: function (err) {
+        console.log("静音设置失败");
+      },
+    });
     // 获得全局分享能力
     this.overShare();
     let money = wx.getStorageSync('money'); // 总货币数

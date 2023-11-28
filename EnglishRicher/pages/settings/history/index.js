@@ -10,6 +10,15 @@ Page({
         ],
       },
       {
+        version: '2.1.9',
+        date: '2023-11-28',
+        icon: ['success_no_circle', 'success'],
+        changes: [
+          '修复在 iOS 客户端，静音模式下无声音问题',
+          '新增一个单词发音源'
+        ],
+      },
+      {
         version: '2.1.8',
         date: '2023-11-27',
         icon: ['success', 'info'],
