@@ -111,7 +111,8 @@ Page({
   },
   // 语音播放
   playAudio() {
-    innerAudioContext.src = `https://dict.youdao.com/dictvoice?type=0&audio=${this.data.word}`;
+    let speak = [`https://dict.youdao.com/dictvoice?type=0&audio=${this.data.word}`, `https://dds.dui.ai/runtime/v1/synthesize?voiceId=lucyfa&text=${this.data.word}&speed=1&volume=50&audioType=wav`][Math.floor(Math.random() * 2)];
+    innerAudioContext.src = speak;
     innerAudioContext.play();
   }
 });
