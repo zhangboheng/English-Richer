@@ -1,7 +1,8 @@
 // accordion-list.js
 Component({
   data: {
-    showOrNot: true
+    showOrNot: true,
+    showPopupButtons: false
   },
   properties: {
     dataList: {
@@ -28,6 +29,24 @@ Component({
         scrollTop: 0,
         duration: 300
       });
-    }
+    },
+    // 跳出或者隐藏复习按钮
+    popupMenu: function () {
+      this.setData({
+        showPopupButtons: !this.data.showPopupButtons
+      }) 
+    },
+    // 点击跳转到复习模式一
+    goToReviewOne: function () {
+      wx.navigateTo({
+        url: '../../settings/renew/modelone/index',
+      });
+    },
+    // 点击跳转到复习模式二
+    goToReviewTwo: function () {
+      wx.navigateTo({
+        url: '../../settings/renew/modeltwo/index',
+      });
+    },
   }
 });

@@ -1,17 +1,7 @@
 <view class="container">
   <animation-box></animation-box>
-  <view id="floatingAnimation" class="floating-animation" wx:if="{{showAnimation}}">
-    <view class="floating-box">
-      <image class="price-image" src="../../../static/source/coin.png"></image>
-      <text>+0.01</text>
-    </view>
-    <view class="floating-box">
-      <image class="price-image" src="../../../static/source/up.png"></image>
-      <text>+0.1</text>
-    </view>
-  </view>
   <view class="content">
-    <image  bind:tap="playAudio" class="voice-word" src="../../../static/source/microphone.png" mode="scaleToFill"></image>
+    <image  bind:tap="playAudio" class="voice-word" src="../../../../static/source/microphone.png" mode="scaleToFill"></image>
     <view class="translation-word" wx:for="{{translations}}" wx:key="index">
       <text class="item-type">{{item.type}}</text>
       <text>{{item.translation}}</text>
@@ -29,11 +19,7 @@
   </button>
   <view class="grade-box">
     <view class="footer-inner">
-      <image class="price-image" src="../../../static/source/level.png"></image>
-      <text class="footer-text">{{showGrade}}</text>
-    </view>
-    <view class="footer-inner">
-      <image class="price-image" src="../../../static/source/progress.png"></image>
+      <image class="price-image" src="../../../../static/source/progress.png"></image>
       <text class="footer-text">{{currentLength}}/{{listLength}}</text>
     </view>
   </view>

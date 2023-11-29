@@ -135,5 +135,13 @@ Page({
     let speak = [`https://dict.youdao.com/dictvoice?type=0&audio=${this.data.word}`, `https://dds.dui.ai/runtime/v1/synthesize?voiceId=lucyfa&text=${this.data.word}&speed=1&volume=50&audioType=mp3`][Math.floor(Math.random() * 2)];
     innerAudioContext.src = speak;
     innerAudioContext.play();
+  },
+  // 点击弹出提示
+  handleTips() {
+    wx.showToast({
+      title: `提示：单词长度为${this.data.word.length}，首字母为${this.data.word[0]}`,
+      icon: 'none',
+      duration: 2000
+    }); 
   }
 });

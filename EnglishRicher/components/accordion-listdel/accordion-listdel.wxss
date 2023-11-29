@@ -42,10 +42,24 @@
   border: 3px solid #000;
 }
 
-.bottomup {
+.footer-box {
+  display: flex;
+  align-items: center;
   position: fixed;
   bottom: 20rpx;
   text-align: center;
+}
+
+.popup-buttons {
+  position: fixed;
+  z-index: 2;
+  bottom: 140rpx;
+}
+
+.popup-button {
+  background-color: #f5d659;
+  border: 3px solid #000;
+  margin-top: 20rpx;
 }
 
 .fixedimage {

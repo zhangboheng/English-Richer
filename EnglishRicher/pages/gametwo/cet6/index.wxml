@@ -24,6 +24,9 @@
   <button class="btn" bindtap="handleNotMaster">
     <text>跳过</text>
   </button>
+  <button class="btn" bindtap="handleTips">
+    <text>提示</text>
+  </button>
   <view class="grade-box">
     <view class="footer-inner">
       <image class="price-image" src="../../../static/source/level.png"></image>

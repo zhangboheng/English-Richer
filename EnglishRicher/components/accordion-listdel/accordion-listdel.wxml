@@ -14,7 +14,16 @@
       </view>
     </block>
   </view>
-  <view class="bottomup" bindtap="scrollToTop">
-    <image class="fixedimage" src="../../static/source/uparrow.png" />
+  <view class="popup-buttons" wx:if="{{showPopupButtons}}">
+      <button class="popup-button" bindtap="goToReviewOne">复习模式一</button>
+      <button class="popup-button" bindtap="goToReviewTwo">复习模式二</button>
+  </view>
+  <view class="footer-box">
+    <view class="bottomup" bindtap="scrollToTop">
+      <image class="fixedimage" src="../../static/source/uparrow.png" />
+    </view>
+    <view class="bottom-menu" bindtap="popupMenu">
+      <image class="fixedimage" src="../../static/source/review.png" />
+    </view>
   </view>
 </view>

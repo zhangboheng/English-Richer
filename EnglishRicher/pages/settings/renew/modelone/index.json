@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "animation-box": "../../../../components/animation-box/animation-box"
+  },
+  "navigationBarTitleText": "复习模式一"
+}
