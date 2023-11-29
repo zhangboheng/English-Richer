@@ -15,6 +15,7 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() { },
   onLoad: function (options) {
+    randomList = [];
     // 初次加载获取数据
     let trueData = wx.getStorageSync('notMasterWords');
     // 生成0到1990之间的随机数
