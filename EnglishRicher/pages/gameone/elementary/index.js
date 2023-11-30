@@ -84,8 +84,14 @@ Page({
   handleNotMaster: function () {
     // 将单词缓存到本地数据
     let notMasterWords = wx.getStorageSync('notMasterWords') || [];
+    let limitNumber = 200;
+    // 从缓存获取解限卡是否获得
+    let getNoLimitCard = wx.getStorageSync('getNoLimitCard');
+    if (getNoLimitCard == 1) {
+        limitNumber = 2000;
+    }
     // 如果缓存内没有则可以放置
-    if (notMasterWords.map(x => x.word).indexOf(this.data.word) == -1) {
+    if (notMasterWords.map(x => x.word).indexOf(this.data.word) == -1 && notMasterWords.length < limitNumber) {
       notMasterWords.push({
         word: this.data.word,
         translations: this.data.translations
