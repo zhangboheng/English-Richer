@@ -7,6 +7,7 @@
     <button class="search-box" bindtap="onSearch">搜索</button>
     <button class="export-box" bindtap="onExport">导出</button>
   </view>
+  <title-section lineTitle="解限卡可将容量扩充为2000"></title-section>
   <accordion-listdel dataList="{{listData}}" wx:if="{{listData.length > 0}}" bind:removeWord="getRemoveWord"></accordion-listdel>
   <view class="content-box" wx:else>
     <view>

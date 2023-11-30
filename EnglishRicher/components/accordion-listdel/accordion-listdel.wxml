@@ -15,8 +15,20 @@
     </block>
   </view>
   <view class="popup-buttons" wx:if="{{showPopupButtons}}">
-      <button class="popup-button" bindtap="goToReviewOne">复习模式一</button>
-      <button class="popup-button" bindtap="goToReviewTwo">复习模式二</button>
+    <button class="popup-button" bindtap="goToReviewOne">
+      <text>复习模式一</text>
+      <view class="btn-inner">
+        <image class="price-image" src="../../static/source/coin.png"></image>
+        <text>1</text>
+      </view>
+    </button>
+    <button class="popup-button" bindtap="goToReviewTwo">
+      <text>复习模式二</text>
+      <view class="btn-inner">
+        <image class="price-image" src="../../static/source/coin.png"></image>
+        <text>1</text>
+      </view>
+    </button>
   </view>
   <view class="footer-box">
     <view class="bottomup" bindtap="scrollToTop">

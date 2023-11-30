@@ -19,7 +19,7 @@ Component({
       });
     },
     // 删除该条目
-    removeWord: function(e) {
+    removeWord: function (e) {
       const delWord = e.currentTarget.dataset.id;
       this.triggerEvent('removeWord', delWord);
     },
@@ -34,18 +34,54 @@ Component({
     popupMenu: function () {
       this.setData({
         showPopupButtons: !this.data.showPopupButtons
-      }) 
+      })
     },
     // 点击跳转到复习模式一
     goToReviewOne: function () {
-      wx.navigateTo({
-        url: '../../settings/renew/modelone/index',
-      });
+      this.popupPublic(1, "复习模式一")
     },
     // 点击跳转到复习模式二
     goToReviewTwo: function () {
-      wx.navigateTo({
-        url: '../../settings/renew/modeltwo/index',
+      this.popupPublic(1, "复习模式二")
+    },
+    // 提示公共方法
+    popupPublic(_publicPrice, _publicTitle) {
+      // 从缓存中获取数据
+      let money = wx.getStorageSync('money');
+      wx.showModal({
+        title: '兑换提示',
+        content: `确定要用${_publicPrice}钱币开启${_publicTitle}？`,
+        showCancel: true,
+        cancelText: '取消',
+        confirmText: '确定',
+        success: function (res) {
+          if (res.confirm) {
+            // 用户点击了确定按钮
+            if (money >= _publicPrice) {
+              if (_publicTitle == "复习模式一") {
+                // 将剩余钱币数量存储到缓存中
+                wx.setStorageSync('money', Number((money - _publicPrice).toFixed(2)));
+                wx.navigateTo({
+                  url: '../../settings/renew/modelone/index',
+                });
+              } else if (_publicTitle == "复习模式二") {
+                wx.setStorageSync('money', Number((money - _publicPrice).toFixed(2)));
+                wx.navigateTo({
+                  url: '../../settings/renew/modeltwo/index',
+                });
+              } 
+            } else {
+              wx.showToast({
+                title: '钱币不足，攒够再来～～',
+                icon: 'none',
+                duration: 2000
+              });
+            }
+          } else if (res.cancel) {
+            // 用户点击了取消按钮
+            console.log('用户点击取消');
+          }
+        }
       });
     },
   }

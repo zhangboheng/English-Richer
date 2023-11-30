@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "accordion-listdel": "../../../components/accordion-listdel/accordion-listdel"
+    "accordion-listdel": "../../../components/accordion-listdel/accordion-listdel",
+    "title-section": "../../../components/title-section/title-section"
   },
   "navigationBarTitleText": "温故知新"
 }

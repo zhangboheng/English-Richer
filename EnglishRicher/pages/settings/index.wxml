@@ -50,7 +50,7 @@
         <image class="item-box-image" src="../../static/source/study.png" />
         <text>温故知新</text>
       </view>
-      <text class="item-inner">使用量{{currentCount}}/总容量{{limitCount}}</text>
+      <text class="item-inner">用量{{currentCount}}/总量{{limitCount}}</text>
     </view>
   </view>
   <view>

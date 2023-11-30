@@ -22,9 +22,4 @@ Component({
       this.triggerEvent('closePopup');
     }
   },
-  observers: {
-    'text': function (newText) {
-      this.observeTextChange(newText);
-    },
-  },
 });

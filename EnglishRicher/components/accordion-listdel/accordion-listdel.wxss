@@ -60,6 +60,16 @@
   background-color: #f5d659;
   border: 3px solid #000;
   margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.btn-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .fixedimage {
@@ -78,4 +88,9 @@
 
 .item-type {
   margin-right:10rpx;
+}
+
+.price-image {
+  width: 50rpx;
+  height: 50rpx;
 }
