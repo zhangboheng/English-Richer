@@ -100,7 +100,7 @@ Page({
   handleNotMaster: function () {
     // 将单词缓存到本地数据
     let notMasterWords = wx.getStorageSync('notMasterWords') || [];
-    let limitNumber = 200;
+    let limitNumber = 100;
     // 从缓存获取解限卡是否获得
     let getNoLimitCard = wx.getStorageSync('getNoLimitCard');
     if (getNoLimitCard == 1) {

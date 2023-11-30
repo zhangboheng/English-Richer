@@ -6,15 +6,20 @@ Page({
     showRadioDialog: false, // 修改水平弹出组件
     englishLevels: ['小学', '初中', '高中', '大学英语四级', '大学英语六级', '考研', '托福', 'SAT'],
     wordTotal: [750, 1991, 3753, 4544, 3992, 5057, 10377, 4464],
-    getDefaultLevel: "初中"
+    getDefaultLevel: "初中",
+    currentCount: 0, // 
+    limitCount: 100,
   },
   // 页面分享
   onShareAppMessage() {},
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function () {
-    // 从缓存中获取昵称数据
+    // 从缓存中获取数据
     let nickname = wx.getStorageSync('nickname'); // 获取昵称
+    let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
+    let notMasterWords = wx.getStorageSync('notMasterWords'); // 当前不会的单词集合
+    let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 是否购买了解除限制卡
     if (nickname.length > 0) {
       this.setData({
         username: nickname
@@ -24,10 +29,33 @@ Page({
         username: '佚名',
       })
     }
-    let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     this.setData({
       getDefaultLevel: defaultLevel
-    })
+    });
+    if (getNoLimitCard == 1) {
+        limitCount = 2000;
+        this.setData({
+          limitCount: limitCount
+        })
+    } else {
+      this.setData({
+        currentCount: notMasterWords.length
+      })
+    }
+  },
+  onShow: function() {
+    let notMasterWords = wx.getStorageSync('notMasterWords'); // 当前不会的单词集合
+    let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 是否购买了解除限制卡
+    if (getNoLimitCard == 1) {
+        limitCount = 2000;
+        this.setData({
+          limitCount: limitCount
+        })
+    } else {
+      this.setData({
+        currentCount: notMasterWords.length
+      })
+    }
   },
   // 点击后弹出修改昵称框
   editNickName() {
