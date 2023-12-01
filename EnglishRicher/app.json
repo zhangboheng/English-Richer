@@ -23,7 +23,8 @@
     {
       "root": "pages/elementary",
       "pages": [
-        "index/index"
+        "index/index",
+        "index/quick/index"
       ]
     },
     {
