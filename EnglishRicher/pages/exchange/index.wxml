@@ -93,4 +93,20 @@
       </view>
     </view>
   </view>
+  <view class="product-section">
+    <view class="row" wx:if="{{infiniteShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/infinite.png"></image>
+        <view class="title">
+          <text>{{priceArray.infiniteTitle}}</text>
+          <view class="intro-content" bind:tap="showInfiniteInfo">
+            <icon type="info" size="18"/>
+          </view>
+        </view>
+        <view class="price" bindtap="unclockAd">
+          <text class="price-text">观看广告解锁</text>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

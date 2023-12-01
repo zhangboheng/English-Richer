@@ -10,6 +10,16 @@ Page({
         ],
       },
       {
+        version: '2.2.1',
+        date: '2023-12-01',
+        icon: ['success', 'success', 'success'],
+        changes: [
+          '温故知新增加容量限制。',
+          '兑换市集新增解限卡，可以兑换后解除温故知新容量限制。',
+          '温故知新复习模式增加了钱币限制，花费钱币后前往。',
+        ],
+      },
+      {
         version: '2.2.0',
         date: '2023-11-29',
         icon: ['success', 'success'],

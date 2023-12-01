@@ -1,3 +1,4 @@
+let videoAd = null
 Page({
   data: {
     moenyTotal: 0,
@@ -14,7 +15,8 @@ Page({
       telegramPrice: 20,
       telegramTitle: "话费优惠信息",
       gpt4Price: 5,
-      gpt4Title: "免费离线GPT4"
+      gpt4Title: "免费离线GPT4",
+      infiniteTitle: "解限卡"
     },
     // 彩票
     lotteryShow: true,
@@ -27,7 +29,9 @@ Page({
     // 手机话费
     telegramShow: true,
     // 离线GPT4
-    gpt4Show: true
+    gpt4Show: true,
+    // 解限卡
+    infiniteShow: true,
   },
   // 页面分享
   onShareAppMessage() {},
@@ -41,6 +45,18 @@ Page({
     this.setData({
       moenyTotal: money
     });
+    // 在页面onLoad回调事件中创建激励视频广告实例
+    if (wx.createRewardedVideoAd) {
+      videoAd = wx.createRewardedVideoAd({
+        adUnitId: 'adunit-67cd6ef4b3dd9519'
+      })
+      videoAd.onLoad(() => {
+        console.log('激励视频 广告加载成功')
+      })
+      videoAd.onError((err) => {
+        console.error('激励视频光告加载失败', err)
+      });
+    }
   },
   onInput(event) {
     // 处理输入事件的逻辑
@@ -109,6 +125,16 @@ Page({
     } else {
       this.setData({
         gpt4Show: false
+      });
+    }
+    // 判断解限卡是否显示
+    if (this.data.priceArray.infiniteTitle.indexOf(this.data.inputTitle) > -1) {
+      this.setData({
+        infiniteShow: true
+      });
+    } else {
+      this.setData({
+        infiniteShow: false
       });
     }
   },
@@ -190,6 +216,35 @@ Page({
         icon: 'none',
         duration: 2000
       });
+    }
+  },
+  // 点击显示解限卡说明
+  showInfiniteInfo() {
+    wx.showToast({
+      title: '温故知新容量永久变成2000',
+      icon: 'none',
+      duration: 2000
+    });
+  },
+  // 点击获取解限卡
+  unclockAd() {
+    if (videoAd) {
+      videoAd.show().catch(() => {
+        videoAd.load()
+          .then(() => videoAd.show())
+          .catch(err => {
+            console.error('激励视频 广告显示失败', err)
+          })
+      });
+      videoAd.onClose((res) => {
+        if (res && res.isEnded) {
+          // 正常播放结束，可以下发游戏奖励
+          wx.setStorageSync('getNoLimitCard', 1);
+        } else {
+          // 播放中途退出，不下发游戏奖励
+          console.info('用户放弃了解限卡的获取');
+        }
+      })
     }
   },
   // 下拉

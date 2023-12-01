@@ -69,11 +69,13 @@
   position: relative;
   top: -2px;
   right: 0;
+  width: 18px;
+  height: 18px;
   font-size: 10px;
-  width: 14px;
-  height: 14px;
   color: #000;
   border-radius: 20px;
+  border: 1px solid #000;
+  background-color: #000;
 }
 
 .price {

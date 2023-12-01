@@ -33,9 +33,9 @@ Page({
       getDefaultLevel: defaultLevel
     });
     if (getNoLimitCard == 1) {
-        limitCount = 2000;
         this.setData({
-          limitCount: limitCount
+          currentCount: notMasterWords.length,
+          limitCount: 2000,
         })
     } else {
       this.setData({
@@ -47,9 +47,9 @@ Page({
     let notMasterWords = wx.getStorageSync('notMasterWords'); // 当前不会的单词集合
     let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 是否购买了解除限制卡
     if (getNoLimitCard == 1) {
-        limitCount = 2000;
         this.setData({
-          limitCount: limitCount
+          currentCount: notMasterWords.length,
+          limitCount: 2000
         })
     } else {
       this.setData({
