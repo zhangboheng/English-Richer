@@ -26,6 +26,17 @@
       <button class="task-button" bindtap="handleShare" open-type="share">分享</button>
     </view>
     <view class="task-item gap-box">
+      <view class="task-name">解除限制</view>
+      <view class="task-image">
+        <image class="item-image" src="../../../static/source/infinite.png" />
+      </view>
+      <view class="task-reward">
+        经验值:<text class="reward-value">+{{ masterInfiniteExp }}</text>
+        钱币:<text class="reward-value">+{{ masterInfiniteCoins }}</text>
+      </view>
+      <button class="task-button" bindtap="handleInfinite">已兑解限卡</button>
+    </view>
+    <view class="task-item gap-box">
       <view class="task-name">耕耘收获</view>
       <view class="task-image">
         <image class="item-image" src="../../../static/source/field.png" />
@@ -47,7 +58,7 @@
       </view>
       <button class="task-button" bindtap="handleThousand">掌握单词 1000 个</button>
     </view>
-    <view class="task-item">
+    <view class="task-item gap-box">
       <view class="task-name">耕耘收获</view>
       <view class="task-image">
         <image class="item-image" src="../../../static/source/field.png" />
@@ -57,6 +68,17 @@
         钱币:<text class="reward-value">+{{ masterTwoThousandCoins }}</text>
       </view>
       <button class="task-button" bindtap="handleTwoThousand">掌握单词 2000 个</button>
+    </view>
+    <view class="task-item">
+      <view class="task-name">耕耘收获</view>
+      <view class="task-image">
+        <image class="item-image" src="../../../static/source/field.png" />
+      </view>
+      <view class="task-reward">
+        经验值:<text class="reward-value">+{{ masterFiveThousandExp }}</text>
+        钱币:<text class="reward-value">+{{ masterFiveThousandCoins }}</text>
+      </view>
+      <button class="task-button" bindtap="handleFiveThousand">掌握单词 5000 个</button>
     </view>
   </view>
 </view>

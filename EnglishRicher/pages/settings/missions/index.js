@@ -12,6 +12,10 @@ Page({
     masterFiveHundred: false, // 是否领取耕耘收获
     masterFiveHundredExp: 5, // 掌握 500 单词后奖励经验
     masterFiveHundredCoins: 0.5, // 掌握 500 单词后奖励钱币
+    canGetInfinite: false, // 领取资格判断
+    masterInfinite: false, // 是否领取耕耘收获
+    masterInfiniteExp: 5, // 已兑解限卡奖励经验
+    masterInfiniteCoins: 1, // 已兑解限卡奖励钱币
     canGetThousand: false, // 领取资格判断
     masterThousand: false, // 是否领取耕耘收获
     masterThousandExp: 10, // 掌握 1000 单词后奖励经验
@@ -20,6 +24,10 @@ Page({
     masterTwoThousand: false, // 是否领取耕耘收获
     masterTwoThousandExp: 20, // 掌握 2000 单词后奖励经验
     masterTwoThousandCoins: 2, // 掌握 2000 单词后奖励钱币
+    canGetFiveThousand: false, // 领取资格判断
+    masterFiveThousand: false, // 是否领取耕耘收获
+    masterFiveThousandExp: 50, // 掌握 5000 单词后奖励经验
+    masterFiveThousandCoins: 5, // 掌握 5000 单词后奖励钱币 
   },
   // 页面分享
   onShareAppMessage() {},
@@ -28,6 +36,7 @@ Page({
   onLoad: function() {
     let dailySIgn = wx.getStorageSync('dailySign'); // 获取签到日期
     let shareSign = wx.getStorageSync('shareSign'); // 获取分享日期
+    let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 获取解限卡是否获取
     let elementary = wx.getStorageSync('elementaryList');
     let juniorList = wx.getStorageSync('juniorList');
     let highList = wx.getStorageSync('highList');
@@ -47,6 +56,11 @@ Page({
     let toelfTwoTwoList = wx.getStorageSync('toelfTwoTwoList');
     let satTwoList = wx.getStorageSync('satTwoList');
     let TotalNumber = elementary.length + juniorList.length + highList.length + cet4List.length + cet6List.length + postgraduateList.length + toelfOneList.length + toelfTwoList.length + satList.length + elementaryTwoList.length + juniorTwoList.length + highTwoList.length + cet4TwoList.length + cet6TwoList.length + postgraduateTwoList.length + toelfOneTwoList.length + toelfTwoTwoList.length + satTwoList.length;
+    if (getNoLimitCard == 1) {
+      this.setData({
+        canGetInfinite: true
+      });
+    }
     if (TotalNumber >= 500) {
       this.setData({
         canGetFiveHundred: true
@@ -60,6 +74,11 @@ Page({
     if (TotalNumber >= 2000) {
       this.setData({
         canGetTwoThousand: true
+      });
+    }
+    if (TotalNumber >= 5000) {
+      this.setData({
+        canGetFiveThousand: true
       });
     }
     // 判断签到日期是否和当前日期一致
@@ -131,6 +150,39 @@ Page({
           icon: 'none',
         });
       }, 4000);
+    }
+  },
+  // 获取解除限制的奖励
+  handleInfinite() {
+    let getProgress = wx.getStorageSync('progress') || 0; // 经验值
+    let money = wx.getStorageSync('money'); // 总货币数
+    let masterInfinite = wx.getStorageSync('masterInfinite');
+    if(typeof masterInfinite != 'string') {
+      this.setData({
+        masterInfinite: true
+      });
+    }
+    if (this.data.masterInfinite) {
+      wx.showToast({
+        title: '太贪心了吧，已经领取过了～',
+        icon: 'none',
+      });
+    } else {
+      if (this.data.canGetInfinite) {
+        getProgress = getProgress + this.data.masterInfiniteExp;
+        wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
+        wx.setStorageSync('money', money + this.data.masterInfiniteCoins);
+        wx.setStorageSync('masterInfinite', true)
+        wx.showToast({
+          title: `一分耕耘一分收获，经验值+${this.data.masterInfiniteExp}，钱币+${this.data.masterInfiniteCoins}`,
+          icon: 'none',
+        }); 
+      } else {
+        wx.showToast({
+          title: '骗不了我，你没领取解限卡呢～～',
+          icon: 'none',
+        });    
+      }
     }
   },
   // 耕耘收获500单词奖励的处理方法
@@ -233,4 +285,36 @@ Page({
     }
   },
   // 耕耘收获5000单词奖励的处理方法
+  handleFiveThousand() {
+    let getProgress = wx.getStorageSync('progress') || 0; // 经验值
+    let money = wx.getStorageSync('money'); // 总货币数
+    let masterFiveThousand = wx.getStorageSync('masterFiveThousand');
+    if(typeof masterFiveThousand != 'string') {
+      this.setData({
+        masterFiveThousand: true
+      });
+    }
+    if (this.data.masterFiveThousand) {
+      wx.showToast({
+        title: '太贪心了吧，已经领取过了～',
+        icon: 'none',
+      });
+    } else {
+      if (this.data.canGetFiveThousand) {
+        getProgress = getProgress + this.data.masterFiveThousandExp;
+        wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
+        wx.setStorageSync('money', money + this.data.masterFiveThousandCoins);
+        wx.setStorageSync('masterFiveThousand', true)
+        wx.showToast({
+          title: `一分耕耘一分收获，经验值+${this.data.masterFiveThousandExp}，钱币+${this.data.masterFiveThousandCoins}`,
+          icon: 'none',
+        }); 
+      } else {
+        wx.showToast({
+          title: '哎呦，都没有掌握5000个单词，吁～～',
+          icon: 'none',
+        });    
+      }
+    }
+  },
 });
