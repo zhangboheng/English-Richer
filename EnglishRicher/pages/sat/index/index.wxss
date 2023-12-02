@@ -17,11 +17,17 @@
   border: none;
   outline: none;
   padding: 10rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-right: 10rpx !important;
   background-color: #f5d659;
-  border: 3px solid #000
+  border: 3px solid #000;
+}
+
+.export-box {
+  border: none;
+  outline: none;
+  padding: 10rpx;
+  background-color: #f5d659;
+  border: 3px solid #000;
 }
 
 .adContainer {

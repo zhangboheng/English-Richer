@@ -19,7 +19,7 @@ Page({
     });
     // 初次加载获取数据
     let allData = database.postData.main.concat(databaseTwo.postData.main);
-    let trueData = allData.sort(this.shuffleArray);
+    let trueData = allData
     trueData = trueData.map(item => ({ ...item, show: false }));
     // 赋值给子组件列表
     this.setData({
@@ -45,8 +45,10 @@ Page({
       listData: filterArr
     });
   },
-  // 公共乱序方法
-  shuffleArray: function(_a, _b) {
-    return 0.5 - Math.random();
-  }
+  // 点击跳转到速览页面
+  quickLook: function () {
+    wx.navigateTo({
+      url: './quick/index',
+    })
+  },
 })

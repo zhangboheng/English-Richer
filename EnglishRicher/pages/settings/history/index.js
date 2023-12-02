@@ -10,6 +10,14 @@ Page({
         ],
       },
       {
+        version: '2.2.2',
+        date: '2023-12-03',
+        icon: ['success'],
+        changes: [
+          '英语词库增加速览功能。',
+        ],
+      },
+      {
         version: '2.2.1',
         date: '2023-12-01',
         icon: ['success', 'success', 'success'],

@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.word {
+  font-size: 32px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voice-word {
+  position: relative;
+  top: -10px;
+  width: 24px;
+  height: 24px;
+}
+
+.content {
+  font-size: 36rpx;
+  margin-bottom: 20px;
+  padding: 0 20rpx;
+  text-align: justify;
+}
+
+.item-type {
+  margin-right: 10rpx;
+}
+
+.btn {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 3px solid #000;
+  background-color: #f5d659;
+}
+
+.price-image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.grade-box {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 60rpx;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+  width: 40%;
+  margin: 0 auto;
+}

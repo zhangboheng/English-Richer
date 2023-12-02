@@ -43,6 +43,12 @@ Page({
       listData: filterArr
     });
   },
+  // 点击跳转到速览页面
+  quickLook: function () {
+    wx.navigateTo({
+      url: './quick/index',
+    })
+  },
   // 公共乱序方法
   shuffleArray: function(_a, _b) {
     return 0.5 - Math.random();

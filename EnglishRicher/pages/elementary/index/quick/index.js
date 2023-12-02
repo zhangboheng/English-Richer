@@ -18,8 +18,8 @@ Page({
     randomList = [];
     // 初次加载获取数据
     let trueData = database.postData.main
-    // 生成0到1990之间的随机数
-    const randomNum = Math.floor(Math.random() * trueData.length);
+    // 初始为第1个单词
+    const randomNum = 0;
     if (randomList.indexOf(randomNum) == -1) {
       randomList.push(randomNum);
     }
@@ -46,8 +46,13 @@ Page({
   },
 
   getNextWord: function () {
-    // 生成0到1990之间的随机数
-    const randomNum = Math.floor(Math.random() * this.data.listData.length);
+    let randomNum = 0;
+    if (randomList.length == database.postData.main.length) {
+      randomNum = 0;
+      randomList = [];
+    } else {
+      randomNum = randomList.length
+    }
     // 当 randomList 集合中没有随机数即放进去
     if (randomList.indexOf(randomNum) == -1) {
       randomList.push(randomNum);

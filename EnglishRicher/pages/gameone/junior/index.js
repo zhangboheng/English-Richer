@@ -1,5 +1,5 @@
 const innerAudioContext = wx.createInnerAudioContext();
-var database = require('./source/journior');
+var database = require('./source/junior');
 var randomList = [];
 // 在对应页面的 js 文件中
 Page({

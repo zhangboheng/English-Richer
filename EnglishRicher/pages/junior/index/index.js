@@ -1,4 +1,4 @@
-var database = require('../source/journior');
+var database = require('../source/junior');
 Page({
   data: {
     globalData: [], // 全局获取所有单词列表
@@ -42,6 +42,12 @@ Page({
     this.setData({
       listData: filterArr
     });
+  },
+  // 点击跳转到速览页面
+  quickLook: function () {
+    wx.navigateTo({
+      url: './quick/index',
+    })
   },
   // 公共乱序方法
   shuffleArray: function(_a, _b) {

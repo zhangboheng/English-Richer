@@ -30,49 +30,57 @@
     {
       "root": "pages/junior",
       "pages": [
-        "index/index"
+        "index/index",
+        "index/quick/index"
       ]
     },
     {
       "root": "pages/high",
       "pages": [
-        "index/index"
+        "index/index",
+        "index/quick/index"
       ]
     },
     {
       "root": "pages/cet4",
       "pages": [
-        "index/index"
+        "index/index",
+        "index/quick/index"
       ]
     },
     {
       "root": "pages/cet6",
       "pages": [
-        "index/index"
+        "index/index",
+        "index/quick/index"
       ]
     },
     {
       "root": "pages/postgraduate",
       "pages": [
-        "index/index"
+        "index/index",
+        "index/quick/index"
       ]
     },
     {
       "root": "pages/toelf",
       "pages": [
-        "index/index"
+        "index/index",
+        "index/quick/index"
       ]
     },
     {
       "root": "pages/toelfs",
       "pages": [
-        "index/index"
+        "index/index",
+        "index/quick/index"
       ]
     },
     {
       "root": "pages/sat",
       "pages": [
-        "index/index"
+        "index/index",
+        "index/quick/index"
       ]
     },
     {
