@@ -2,13 +2,13 @@
 <scrollable-text wx:if="{{showComponent}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="玩法说明" imgSrc="../../static/source/console.png"></scrollable-text>
 <view class="tool-zone">
   <view class="marquee-box">
-  <view class="mention">
-    <image class="button-icon" src="../../static/source/trumpet.png"></image>
+    <view class="mention">
+      <image class="button-icon" src="../../static/source/trumpet.png"></image>
+    </view>
+    <view class="marquee">
+      <text class="marquee-text">{{randomText}}</text>
+    </view>
   </view>
-  <view class="marquee">
-    <text class="marquee-text">{{randomText}}</text>
-  </view>
-</view>
   <view class="tool-zone-image">
     <image class="logos" src="../../static/source/logos.png"></image>
   </view>

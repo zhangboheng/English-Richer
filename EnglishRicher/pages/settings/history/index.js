@@ -10,6 +10,16 @@ Page({
         ],
       },
       {
+        version: '2.2.3',
+        date: '2023-12-05',
+        icon: ['success', 'info', 'info'],
+        changes: [
+          '初始页面新增开场音乐。',
+          '完善策略谋划页面显示内容。',
+          '完善漂浮彩蛋内容。'
+        ],
+      },
+      {
         version: '2.2.2',
         date: '2023-12-03',
         icon: ['success', 'info', 'info', 'info'],

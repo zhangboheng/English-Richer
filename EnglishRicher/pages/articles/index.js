@@ -113,12 +113,14 @@ Page({
   },
   onLoad: function (options) {
     this.shuffleArray(this.data.swiperImages);
+    this.shuffleArray(this.data.bookData);
     this.shuffleArray(this.data.articleData);
     this.shuffleArray(this.data.appData);
     this.setData({
       swiperImages: this.data.swiperImages,
       appData: this.data.appData,
-      articleData: this.data.articleData
+      articleData: this.data.articleData,
+      bookData: this.data.bookData
     })
   },
   shuffleArray: function(array) {
