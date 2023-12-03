@@ -4,8 +4,41 @@ Page({
       { src: '../../static/source/share-how-to-learn-idea.jpg', url: 'https://mp.weixin.qq.com/s/xSN-KKvFcY9Mtl7XR44MoA' },
       { src: 'https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxln5YNBlQ3M3NC0GWAibKjoSl7f7llGXfXrVlzgIKiaHzngb9qQaCmEnDhomVeuxR3Ta3v9bBHAmxzg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/mrVXC-NWUVQ8lvEEBkKh6A' },
       { src: 'https://mmbiz.qpic.cn/sz_mmbiz_jpg/YpPe9SnqQxn2JuiaduqEickgWDOezQjod5LXkib0lNj51LJcX9lQG7UOFG7ib1JA1mApN1Nhl3YXA5NLVbUZK234bw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/r26TgyxO0MGEoGgEVL8K_A' },
-      { src: 'https://mmbiz.qpic.cn/sz_mmbiz_png/YpPe9SnqQxmukrF3icQjMpUxbXyEZRqBls5VSFqg4ojKCMwZt2EKAojn4E2pB3YMgEpzicg8GwopbR4S6228tq2Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/AaQT_onocB-jv8tOrsRV5w' },
       { src: 'https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkj7CjLmeIfSk1vUAvXBmcmTS4eGPbRDtEW0ozVhczA6ItVGUtVkEZiaVfE1uScafTgniaJvk5f0LCw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/By442g-row9mG9PvKwm4EQ' },
+      { src: 'https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxmwbGOibCKicDoK6Ie8qnvAokPibD2dg6c2ic7ichJjV3FSPPY0QSX5ETiagwe7KRUiaiaQ9tVhzdl7589ibXg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/tUTnxl3XtuEvblx-m86BKQ' },
+      { src: 'https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxlHiaJ3p2y2WicDEDRccYy5TTwBcBqdJDGia2ug7kywXzXBM8tn7qaY1FBxvzlHgR2e8ZCZntsCxd4Yw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/ws17l6682Cu1XR07nqan8Q' },
+    ],
+    bookData: [
+      {
+        image: "https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxnPKt79k8HIdctH0Rues9O5wKKPGN3kqkjiau0bicpfibq3r1pGffTsiaxzibnOYTrbicWmPwBh1VDScyiaQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "50个免费开源电子书下载网站",
+        time: "2022-05-16",
+        url: "https://mp.weixin.qq.com/s/GBgsKbRY1P4P7ljdND4MRg"
+      },
+      {
+        image: "https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxmicFEaOmbjZwxDpZkv0lT9w3uVpjtzce0fX96g1w0HcNWNX9KFLEEKJD3ryeIY0dtrP2f18w7Sl9w/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "台湾电子书资源网站推荐",
+        time: "2022-04-20",
+        url: "https://mp.weixin.qq.com/s/F0j4GhSmacDFsEemRMelnQ"
+      },
+      {
+        image: "https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxmwbGOibCKicDoK6Ie8qnvAokPibD2dg6c2ic7ichJjV3FSPPY0QSX5ETiagwe7KRUiaiaQ9tVhzdl7589ibXg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "细数8个下载英文有声电子书的最佳网站",
+        time: "2021-11-10",
+        url: "https://mp.weixin.qq.com/s/tUTnxl3XtuEvblx-m86BKQ"
+      },
+      {
+        image: "https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxliczMTuSnt2iaUy0JcmhnmySKQ7xHaOJd8sq3T8vAvCFKBtgv5nuCU33AfMKj8l39TvUJCXgO7R4ng/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "新东方教育公开多媒体学习库400多教育精品课如何在中国大陆免费看",
+        time: "2022-04-21",
+        url: "https://mp.weixin.qq.com/s/f1ZOsaYkGsTx1sqxDjr8uQ"
+      },
+      {
+        image: "https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkPSEFFiacRuxyrcAPFApVicHdkdaTZCRdicFfar3eJWUTuCyEOStL3sPxocXPtGbAgTnPUicrZtUveUQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "再推荐10个新闻应用掌握新闻快人一步",
+        time: "2020-09-01",
+        url: "https://mp.weixin.qq.com/s/Dpb1K6nc9KJ304MVzBcq6A"
+      }
     ],
     appData: [
       {
@@ -37,9 +70,21 @@ Page({
         title: "Reams 让你的 RSS 像杂志一样般阅读",
         time: "2022-04-25",
         url: "https://mp.weixin.qq.com/s/3j9BBEofy-Cb59alTqkEyQ"
+      },
+      {
+        image: "https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxlHiaJ3p2y2WicDEDRccYy5TTwBcBqdJDGia2ug7kywXzXBM8tn7qaY1FBxvzlHgR2e8ZCZntsCxd4Yw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "用浏览器浏览英文文章结合这款插件——Relingo 让你的英语能力不知不觉提高",
+        time: "2022-05-12",
+        url: "https://mp.weixin.qq.com/s/ws17l6682Cu1XR07nqan8Q"
       }
     ],
     articleData: [
+      {
+        image: "https://mmbiz.qpic.cn/sz_mmbiz_png/YpPe9SnqQxmukrF3icQjMpUxbXyEZRqBls5VSFqg4ojKCMwZt2EKAojn4E2pB3YMgEpzicg8GwopbR4S6228tq2Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "用 ChatGPT 打造你的一人公司，让它扮演各个员工角色，榨取它的剩余价值",
+        time: "2023-06-04",
+        url: "https://mp.weixin.qq.com/s/AaQT_onocB-jv8tOrsRV5w"
+      },
       {
         image: "https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxn55A00Z0l31LAyjSs2CuQSK5dvCyKlgZ2HwKxvccEakicuB6Q5lQqN8iacteBjhbQfiakpnq5BkmcDw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
         title: "我拜微软新版 bing 结合 ChatGPT 为师，学习智能 AI 效果真好",
@@ -64,12 +109,6 @@ Page({
         time: "2023-06-25",
         url: "https://mp.weixin.qq.com/s/x3JYKam5r_Y_ViP_5uCRpQ"
       },
-      {
-        image: "https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxlHiaJ3p2y2WicDEDRccYy5TTwBcBqdJDGia2ug7kywXzXBM8tn7qaY1FBxvzlHgR2e8ZCZntsCxd4Yw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1",
-        title: "用浏览器浏览英文文章结合这款插件——Relingo 让你的英语能力不知不觉提高",
-        time: "2022-05-12",
-        url: "https://mp.weixin.qq.com/s/ws17l6682Cu1XR07nqan8Q"
-      }
     ]
   },
   onLoad: function (options) {

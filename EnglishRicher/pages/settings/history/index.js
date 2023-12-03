@@ -12,9 +12,12 @@ Page({
       {
         version: '2.2.2',
         date: '2023-12-03',
-        icon: ['success'],
+        icon: ['success', 'info', 'info', 'info'],
         changes: [
           '英语词库增加速览功能。',
+          '完善任务大厅任务。',
+          '完善经验学堂内容。',
+          '完善兑换市集道具。'
         ],
       },
       {

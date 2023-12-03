@@ -1,10 +1,11 @@
 <view class="container">
   <swiper-banner class="swiper-box" images="{{swiperImages}}" indicatorDots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" circular="{{true}}"></swiper-banner>
+  <title-section lineTitle="他山之石"></title-section>
+  <article-list articles="{{ bookData }}"></article-list>
+  <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
   <title-section lineTitle="英语应用"></title-section>
   <article-list articles="{{ appData }}"></article-list>
-  <view class="adContainer">
-    <ad unit-id="adunit-ad104572b4e7145d" ad-intervals="30"></ad>
-  </view>
+  <ad unit-id="adunit-ad104572b4e7145d" ad-intervals="30"></ad>
   <title-section lineTitle="AI助力"></title-section>
   <article-list articles="{{ articleData }}"></article-list>
   <ad unit-id="adunit-9ea16354eb9450a0" ad-type="video" ad-theme="white"></ad>

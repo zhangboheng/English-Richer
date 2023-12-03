@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "title-section": "../../components/title-section/title-section"
+    "title-section": "../../components/title-section/title-section",
+    "scrollable-text": "../../components/scroll-text/scroll"
   },
   "navigationBarTitleText": "兑换市集",
   "enablePullDownRefresh": true

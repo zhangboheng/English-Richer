@@ -19,6 +19,7 @@ App({
     let movieSub = wx.getStorageSync('subtitle'); // 电影字幕是否兑换
     let telephoneCredits = wx.getStorageSync('telephoneCredits'); // 电影字幕是否兑换
     let getGpt4OrNot = wx.getStorageSync('getGpt4OrNot'); // 免费离线GPT4是否兑换
+    let getEinsteinBrain = wx.getStorageSync('einsteinBrain'); // 爱因斯坦大脑是否兑换
     // 判断是否存在总货币数数据，如果不存在则赋值为 0
     if (typeof money == 'undefined' || money == null || typeof money == "string") {
       money = 0;
@@ -48,6 +49,11 @@ App({
     if (typeof getGpt4OrNot == 'undefined' || getGpt4OrNot == null || typeof getGpt4OrNot == "string") {
       getGpt4OrNot = 0;
       wx.setStorageSync('getGpt4OrNot', getGpt4OrNot);
+    }
+    // 判断是否存在爱因斯坦大脑数据，如果不存在赋值为 0
+    if (typeof getEinsteinBrain == 'undefined' || getEinsteinBrain == null || typeof getEinsteinBrain == "string") {
+      getEinsteinBrain = 0;
+      wx.setStorageSync('einsteinBrain', getEinsteinBrain);
     }
   },
   // 重写分享方法

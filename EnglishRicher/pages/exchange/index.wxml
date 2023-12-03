@@ -108,5 +108,22 @@
         </view>
       </view>
     </view>
+    <view class="row" wx:if="{{einsteinShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/einstein.png"></image>
+        <view class="title">
+          <text>{{priceArray.einsteinTitle}}</text>
+          <view class="intro-content" bind:tap="showEinstein">
+            <icon type="info" size="18"/>
+          </view>
+        </view>
+        <view class="price" bindtap="exchangeEinstein">
+          <text class="price-text">{{ priceArray.einsteinPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
   </view>
+  <scrollable-text wx:if="{{einsteinArticle}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="爱因斯坦大脑" imgSrc="../../static/source/einstein.png"></scrollable-text>
 </view>
