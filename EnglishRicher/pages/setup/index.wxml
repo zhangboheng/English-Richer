@@ -9,8 +9,8 @@
       <text class="marquee-text">{{randomText}}</text>
     </view>
   </view>
-  <view class="tool-zone-image">
-    <image class="logos" src="../../static/source/logos.png"></image>
+  <view class="tool-zone-image" bind:tap="stopMusic">
+    <image class="logos" src="../../static/source/logos.png" style="transform: rotate({{rotate}}deg);" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"></image>
   </view>
   <view>
     <button bindtap="gotoHome" class="custom-btn start">
