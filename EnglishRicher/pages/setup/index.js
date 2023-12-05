@@ -1,4 +1,7 @@
-const innerAudioContext = wx.createInnerAudioContext();
+const innerAudioContext = wx.createInnerAudioContext({
+  useWebAudioImplement: false
+});
+var videoContext = wx.createVideoContext('myVideo', this);  // 获取视频上下
 Page({
   data: {
     randomText: 'V2.2.3 发布，新增伴音彩蛋，首页按住 Logo 顺时针旋转一周，三次即可解锁，点击 Logo 可暂停～～',
@@ -17,6 +20,7 @@ Page({
     startY: 0,
     rotate: 0,
     rotationCount: 0,
+    musicLink:'',
     radioList: [
       'https://lhttp.qtfm.cn/live/5022308/64k.mp3',
       'https://lhttp.qingting.fm/live/4581/64k.mp3',
@@ -92,10 +96,23 @@ Page({
     // 检查是否完成三圈旋转
     var rotationCount = this.data.rotationCount;
     var rotate = this.data.rotate;
+    var that = this;
     if (rotationCount === 2 && rotate >= 0) {
       let getNum = Math.floor(Math.random()*this.data.radioList.length);
-      innerAudioContext.src = this.data.radioList[getNum];
-      innerAudioContext.play();
+      innerAudioContext.src = that.data.radioList[getNum];
+      let links = that.data.radioList[getNum];
+      wx.getSystemInfo({
+        success: function(res) {
+          if (res.platform === 'ios') {
+            innerAudioContext.play();
+          } else {
+            that.setData({
+              musicLink: links
+            })
+            videoContext.play();
+          }
+        }
+      });
       // 监听播放器播放事件
       this.setData({
         rotationCount: 0
@@ -113,7 +130,15 @@ Page({
   },
   // 点击停止音乐
   stopMusic: function () {
-    innerAudioContext.stop();
+    wx.getSystemInfo({
+      success: function(res) {
+        if (res.platform === 'ios') {
+          innerAudioContext.stop();
+        } else {
+          videoContext.pause();
+        }
+      }
+    });
     // 监听播放器播放事件
     this.setData({
       rotationCount: 0
