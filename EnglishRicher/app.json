@@ -134,7 +134,11 @@
     {
       "root": "pages/gamethree",
       "pages": [
-        "elementary/index"
+        "elementary/index",
+        "junior/index",
+        "high/index",
+        "cet4/index",
+        "cet6/index"
       ]
     }
   ],

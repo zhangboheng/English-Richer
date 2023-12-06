@@ -1,4 +1,4 @@
-var database = require('./source/elementary');
+var database = require('./source/cet6');
 var randomList = [];
 // 在对应页面的 js 文件中
 Page({
@@ -9,7 +9,7 @@ Page({
     translations: [], // 翻译的集合
     word: '', // 填写正确的值
     showAnimation: false, // 显示悬浮动画
-    showGrade: '小学'
+    showGrade: '大学英语六级'
   },
   // 页面分享
   onShareAppMessage() {},
@@ -24,10 +24,10 @@ Page({
     const randomElements = this.getRandomElements(sortData, 4);
     const randomNum = trueData.map(x => x.word).indexOf(randomElements[0]);
     // 当 randomList 集合中没有随机数即放进去
-    randomList = wx.getStorageSync('elementaryThreeList')
+    randomList = wx.getStorageSync('cet6ThreeList')
     if (typeof randomList == 'string') {
       randomList = [];
-      wx.setStorageSync('elementaryThreeList', [])
+      wx.setStorageSync('cet6ThreeList', [])
     }
     if (randomList.indexOf(randomNum) == -1) {
       randomList.push(randomNum);
@@ -78,7 +78,7 @@ Page({
         icon: 'none',
         duration: 1000
       });
-      wx.setStorageSync('elementaryThreeList', randomList);
+      wx.setStorageSync('cet6ThreeList', randomList);
       this.getNextWord();
       // 点击掌握后进度条增加
       this.setData({
@@ -102,7 +102,7 @@ Page({
       }
       wx.setStorageSync('notMasterWords', notMasterWords);
       randomList = randomList.slice(0, -1);
-      wx.setStorageSync('elementaryThreeList', randomList);
+      wx.setStorageSync('cet6ThreeList', randomList);
       wx.showToast({
         title: `啊哦，正解是${this.data.word}，放入了温故知新`,
         icon: 'none',
