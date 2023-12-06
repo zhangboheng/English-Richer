@@ -130,6 +130,12 @@
       "pages": [
         "sat/index"
       ]
+    },
+    {
+      "root": "pages/gamethree",
+      "pages": [
+        "elementary/index"
+      ]
     }
   ],
   "plugins": {

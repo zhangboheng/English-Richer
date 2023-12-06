@@ -136,11 +136,56 @@ Page({
   },
   // 点击游戏3后根据水平不同，跳转到不同页面
   goToGameThree() {
-    wx.showToast({
-      title: '搭建中，版本 2.3.0 开启！',
-      icon: 'none',
-      duration: 2000
-    });     
+    let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
+    let startGrade = this.data.storageStartGrade;
+    if (startGrade >= 6) {
+      if (defaultLevel === '小学') {
+        wx.navigateTo({
+          url: '/pages/gamethree/elementary/index'
+        });
+      } else if (defaultLevel === '初中') {
+        wx.navigateTo({
+          url: '/pages/gamethree/junior/index'
+        });
+      } else if (defaultLevel === '高中') {
+        wx.navigateTo({
+          url: '/pages/gamethree/high/index'
+        });
+      } else if (defaultLevel === '大学英语四级') {
+        wx.navigateTo({
+          url: '/pages/gamethree/cet4/index'
+        });
+      } else if (defaultLevel === '大学英语六级') {
+        wx.navigateTo({
+          url: '/pages/gamethree/cet6/index'
+        });
+      } else if (defaultLevel === '考研') {
+        wx.navigateTo({
+          url: '/pages/gamethree/postgraduate/index'
+        });
+      } else if (defaultLevel === '托福') {
+        let index = Math.round(Math.random());
+        if (index == 0) {
+          wx.navigateTo({
+            url: '/pages/gamethree/toelf/index'
+          });
+        } else {
+          wx.navigateTo({
+            url: '/pages/gamethree/toelfs/index'
+          });
+        }
+      } else if (defaultLevel === 'SAT') {
+        wx.navigateTo({
+          url: '/pages/gamethree/sat/index'
+        });
+      }
+    } else {
+      wx.showToast({
+        title: '奋斗者，等级没到 6 级无法进入哦！',
+        icon: 'none',
+        duration: 2000
+      }); 
+    }     
   },
   // 获取昵称数据的公共方法
   getAllData() {
