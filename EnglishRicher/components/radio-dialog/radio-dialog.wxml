@@ -1,10 +1,12 @@
-<view class="dialog">
-  <view class="dialog-title">请选择英语水平</view>
-  <radio-group class="radio-group" bindchange="handleRadioChange">
-    <label class="radio-label" wx:for="{{ englishLevels }}" wx:key="index">
-      <radio class="radio" value="{{ item }}"  checked="{{ item === selectedEnglishLevel }}">{{ item }}</radio>
-      <text>({{wordTotal[index]}})</text>
-    </label>
-  </radio-group>
-  <button class="confirm-btn" bindtap="confirmSelection">确定</button>
+<view class="dialog-model">
+  <view class="dialog">
+    <view class="dialog-title">请选择英语水平</view>
+    <radio-group class="radio-group" bindchange="handleRadioChange">
+      <label class="radio-label" wx:for="{{ englishLevels }}" wx:key="index">
+        <radio class="radio" value="{{ item }}" checked="{{ item === selectedEnglishLevel }}">{{ item }}</radio>
+        <text>({{wordTotal[index]}})</text>
+      </label>
+    </radio-group>
+    <button class="confirm-btn" bindtap="confirmSelection">确定</button>
+  </view>
 </view>

@@ -6,7 +6,7 @@ Page({
     showRadioDialog: false, // 修改水平弹出组件
     englishLevels: ['小学', '初中', '高中', '大学英语四级', '大学英语六级', '考研', '托福', 'SAT'],
     wordTotal: [750, 1991, 3753, 4544, 3992, 5057, 10377, 4464],
-    getDefaultLevel: "初中",
+    getDefaultLevel: "小学",
     currentCount: 0, // 
     limitCount: 100,
   },
@@ -87,7 +87,6 @@ Page({
     this.setData({
       getDefaultLevel: level
     });
-    // 修改后保存到缓存方便以后调用
     wx.setStorageSync('defaultLevel', level);
   },
   // 点击关闭修改水平弹窗

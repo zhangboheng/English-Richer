@@ -140,6 +140,20 @@
         "cet4/index",
         "cet6/index"
       ]
+    },
+    {
+      "root": "pages/gamethrees",
+      "pages": [
+        "postgraduate/index",
+        "toelf/index",
+        "toelfs/index"
+      ]
+    },
+    {
+      "root": "pages/gamethreess",
+      "pages": [
+        "sat/index"
+      ]
     }
   ],
   "plugins": {

@@ -2,6 +2,10 @@ Page({
   data: {
     getShowOrNot: true,
     storageDickName: '佚名',
+    showRadioDialog: false,
+    englishLevels: ['小学', '初中', '高中', '大学英语四级', '大学英语六级', '考研', '托福', 'SAT'],
+    wordTotal: [750, 1991, 3753, 4544, 3992, 5057, 10377, 4464],
+    getDefaultLevel: "小学",
     storageStartGrade: 0,
     progress: 0,
     coins: 0
@@ -17,13 +21,30 @@ Page({
   onShow: function () {
     this.getAllData();
   },
+  // 输入昵称后点击确定操作
   handleConfirm: function (event) {
     let inputValue = event.detail.inputValue;
     if (inputValue.length > 0 && inputValue.length <= 6) {
+      // 输入昵称框关闭，选择水平框开启
       this.setData({
-        storageDickName: inputValue
+        storageDickName: inputValue,
+        showRadioDialog: true
       })
     }
+  },
+  // 点击修改水平的确定后运行
+  handleConfirmLevel: function (event) {
+    const { level } = event.detail;
+    this.setData({
+      getDefaultLevel: level
+    });
+    wx.setStorageSync('defaultLevel', level);
+  },
+  // 点击关闭修改水平弹窗
+  closeRadioDialog: function() {
+    this.setData({
+      showRadioDialog: false
+    });
   },
   // 点击后跳转到经验学堂页面
   goToArticles() {
@@ -161,22 +182,22 @@ Page({
         });
       } else if (defaultLevel === '考研') {
         wx.navigateTo({
-          url: '/pages/gamethree/postgraduate/index'
+          url: '/pages/gamethrees/postgraduate/index'
         });
       } else if (defaultLevel === '托福') {
         let index = Math.round(Math.random());
         if (index == 0) {
           wx.navigateTo({
-            url: '/pages/gamethree/toelf/index'
+            url: '/pages/gamethrees/toelf/index'
           });
         } else {
           wx.navigateTo({
-            url: '/pages/gamethree/toelfs/index'
+            url: '/pages/gamethrees/toelfs/index'
           });
         }
       } else if (defaultLevel === 'SAT') {
         wx.navigateTo({
-          url: '/pages/gamethree/sat/index'
+          url: '/pages/gamethreess/sat/index'
         });
       }
     } else {

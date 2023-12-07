@@ -3,10 +3,12 @@ Page({
     versions: [
       {
         version: '2.3.0',
-        date: '未知',
-        icon: ['waiting'],
+        date: '2023-12-08',
+        icon: ['success', 'info', 'info'],
         changes: [
           '开启 Game Three 选择知我意关卡，限制 LV6 及其以后开启。',
+          '优化掌握单词数量的计算方法，避免数量被重复计算。',
+          '第一次进入开启旅途后，方便用户选择适合的英语水平。'
         ],
       },
       {

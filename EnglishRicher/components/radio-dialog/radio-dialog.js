@@ -11,7 +11,7 @@ Component({
     // 设置默认选中类型
     defaultLevel: {
       type: String,
-      value: '初中' // 设置默认级别为空字符串
+      value: '小学' // 设置默认级别为空字符串
     }
   },
 

@@ -49,4 +49,13 @@
     <ad-custom unit-id="adunit-e3bcc88e9d49d5d2" ad-intervals="30"></ad-custom>
   </view>
   <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
+  <!-- 修改水平弹出组件 -->
+  <radio-dialog
+    englishLevels="{{ englishLevels }}"
+    wordTotal="{{ wordTotal }}"
+    bind:confirm="handleConfirmLevel"
+    bind:close="closeRadioDialog"
+    defaultLevel="{{ getDefaultLevel }}"
+    wx:if="{{ showRadioDialog }}"
+  ></radio-dialog>
 </view>

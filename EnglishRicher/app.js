@@ -27,7 +27,7 @@ App({
     }
     // 判断是否存在初始水平数据，如果不存在则赋值为初中
     if (typeof defaultLevel == 'undefined' || defaultLevel == null || defaultLevel.length == 0) {
-      defaultLevel = "初中";
+      defaultLevel = "小学";
       wx.setStorageSync('defaultLevel', defaultLevel);
     }
     // 判断是否存在兑换雅思考试资料数据，如果不存在则赋值为 0

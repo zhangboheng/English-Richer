@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "animation-box": "../../../components/animation-box/animation-box"
+  },
+  "navigationBarTitleText": "选择知我意",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

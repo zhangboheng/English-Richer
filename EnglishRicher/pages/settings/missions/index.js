@@ -55,7 +55,27 @@ Page({
     let toelfOneTwoList = wx.getStorageSync('toelfOneTwoList');
     let toelfTwoTwoList = wx.getStorageSync('toelfTwoTwoList');
     let satTwoList = wx.getStorageSync('satTwoList');
-    let TotalNumber = elementary.length + juniorList.length + highList.length + cet4List.length + cet6List.length + postgraduateList.length + toelfOneList.length + toelfTwoList.length + satList.length + elementaryTwoList.length + juniorTwoList.length + highTwoList.length + cet4TwoList.length + cet6TwoList.length + postgraduateTwoList.length + toelfOneTwoList.length + toelfTwoTwoList.length + satTwoList.length;
+    let elementaryThreeList = wx.getStorageSync('elementaryThreeList');
+    let juniorThreeList = wx.getStorageSync('juniorThreeList');
+    let highThreeList = wx.getStorageSync('highThreeList');
+    let cet4ThreeList = wx.getStorageSync('cet4ThreeList');
+    let cet6ThreeList = wx.getStorageSync('cet6ThreeList');
+    let postgraduateThreeList = wx.getStorageSync('postgraduateThreeList');
+    let toelfOneThreeList = wx.getStorageSync('toelfOneThreeList');
+    let toelfTwoThreeList = wx.getStorageSync('toelfTwoThreeList');
+    let satThreeList = wx.getStorageSync('satThreeList');
+    // 每个等级的取最大数
+    let elementaryMax = Math.max(elementary.length, elementaryTwoList.length, elementaryThreeList.length);
+    let juniorMax = Math.max(juniorList.length, juniorTwoList.length, juniorThreeList.length);
+    let highMax = Math.max(highList.length, highTwoList.length, highThreeList.length);
+    let cet4Max = Math.max(cet4List.length, cet4TwoList.length, cet4ThreeList.length);
+    let cet6Max = Math.max(cet6List.length, cet6TwoList.length, cet6ThreeList.length);
+    let postgraduateMax = Math.max(postgraduateList.length, postgraduateTwoList.length, postgraduateThreeList.length);
+    let toelfOneMax = Math.max(toelfOneList.length, toelfOneTwoList.length, toelfOneThreeList.length);
+    let toelfTwoMax = Math.max(toelfTwoList.length, toelfTwoTwoList.length, toelfTwoThreeList.length);
+    let satMax = Math.max(satList.length, satTwoList.length, satThreeList.length);
+    // 将每个等级的最大数汇总为总数
+    let TotalNumber = elementaryMax + juniorMax + highMax + cet4Max + cet6Max + postgraduateMax + toelfOneMax + toelfTwoMax + satMax;
     if (getNoLimitCard == 1) {
       this.setData({
         canGetInfinite: true
