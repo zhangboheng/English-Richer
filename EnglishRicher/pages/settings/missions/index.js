@@ -37,7 +37,7 @@ Page({
     let dailySIgn = wx.getStorageSync('dailySign'); // 获取签到日期
     let shareSign = wx.getStorageSync('shareSign'); // 获取分享日期
     let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 获取解限卡是否获取
-    let elementary = wx.getStorageSync('elementaryList');
+    let elementaryList = wx.getStorageSync('elementaryList');
     let juniorList = wx.getStorageSync('juniorList');
     let highList = wx.getStorageSync('highList');
     let cet4List = wx.getStorageSync('cet4List');
@@ -65,7 +65,7 @@ Page({
     let toelfTwoThreeList = wx.getStorageSync('toelfTwoThreeList');
     let satThreeList = wx.getStorageSync('satThreeList');
     // 每个等级的取最大数
-    let elementaryMax = Math.max(elementary.length, elementaryTwoList.length, elementaryThreeList.length);
+    let elementaryMax = Math.max(elementaryList.length, elementaryTwoList.length, elementaryThreeList.length);
     let juniorMax = Math.max(juniorList.length, juniorTwoList.length, juniorThreeList.length);
     let highMax = Math.max(highList.length, highTwoList.length, highThreeList.length);
     let cet4Max = Math.max(cet4List.length, cet4TwoList.length, cet4ThreeList.length);

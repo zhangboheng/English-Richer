@@ -22,7 +22,8 @@ Page({
     let sortData = [...trueData.map(x => x.word)];
     // 选出四个随机单词
     const randomElements = this.getRandomElements(sortData, 4);
-    const randomNum = trueData.map(x => x.word).indexOf(randomElements[0]);
+    const randomOneToFour = Math.floor(Math.random() * 4);
+    const randomNum = trueData.map(x => x.word).indexOf(randomElements[randomOneToFour]);
     // 当 randomList 集合中没有随机数即放进去
     randomList = wx.getStorageSync('cet6ThreeList')
     if (typeof randomList == 'string') {
@@ -117,7 +118,8 @@ Page({
     let sortData = [...trueData.map(x => x.word)];
     // 选出四个随机单词
     const randomElements = this.getRandomElements(sortData, 4);
-    const randomNum = trueData.map(x => x.word).indexOf(randomElements[0]);
+    const randomOneToFour = Math.floor(Math.random() * 4);
+    const randomNum = trueData.map(x => x.word).indexOf(randomElements[randomOneToFour]);
     if (randomList.indexOf(randomNum) == -1) {
       randomList.push(randomNum);
     }

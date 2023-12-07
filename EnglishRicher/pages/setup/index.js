@@ -4,14 +4,14 @@ const innerAudioContext = wx.createInnerAudioContext({
 var videoContext = ''  // 获取视频上下
 Page({
   data: {
-    randomText: 'V2.2.4 发布，修复初始页面随机音频彩蛋在 Android 和 Windows 上没有声音问题～～',
+    randomText: 'V2.3.0 发布，开启 Game Three 选择知我意关卡～～',
     textCollection: [
       '使用小技巧，开启旅途中的小齿轮点击后可以进入策划谋略页面哦～～',
       '想要获取更多的经验和钱币？可以通过交换市集、关卡和任务大厅获取哦～～',
       '兑换市集不定期增加各种有用，有料，有趣的物品，可以用钱币兑换～～',
       '解限卡可将温故知新容量扩充为2000，可以在兑换市集兑换～～',
       '多利用温故知新可以帮助你更快掌握不会的单词哦～～',
-      '开启旅途新增经验学堂，分享学习上的经验技巧～～',
+      'V2.3.0 发布，开启 Game Three 选择知我意关卡～～',
       '伴音彩蛋，首页按住 Logo 顺时针旋转一周，三次即可解锁，点击 Logo 可停止～～'
     ],
     showComponent: false,
