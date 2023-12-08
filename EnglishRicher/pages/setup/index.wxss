@@ -8,6 +8,7 @@
 /** 顶部跑马灯开始 **/
 .marquee-box {
   width: 80%;
+  max-width: 360px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -67,6 +68,11 @@
   margin: 0 auto;
 }
 
+.logos {
+  width: 256px;
+  height: 256px;
+}
+
 /** 功能区的布局形式 **/
 
 /** 按钮样式开始 **/
@@ -78,13 +84,13 @@
 }
 
 .start {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .exchange {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .introduce {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .custom-btn:active {
