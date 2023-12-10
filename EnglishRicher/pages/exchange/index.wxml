@@ -18,7 +18,7 @@
         <view class="title">
           <text>{{priceArray.lotteryTitle}}</text>
           <view class="intro-content" bind:tap="showLotteryInfo">
-            <icon type="info" size="18"/>
+            <icon type="info" size="18" />
           </view>
         </view>
         <view class="price" bindtap="exchangeLottery">
@@ -34,7 +34,7 @@
         <view class="title">
           <text>{{priceArray.levelCardTitle}}</text>
           <view class="intro-content" bind:tap="showExperienceInfo">
-            <icon type="info" size="18"/>
+            <icon type="info" size="18" />
           </view>
         </view>
         <view class="price" bindtap="exchangeLevelCard">
@@ -44,8 +44,37 @@
         </view>
       </view>
     </view>
-  </view>
-  <view class="product-section">
+
+    <view class="row" wx:if="{{infiniteShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/infinite.png"></image>
+        <view class="title">
+          <text>{{priceArray.infiniteTitle}}</text>
+          <view class="intro-content" bind:tap="showInfiniteInfo">
+            <icon type="info" size="18" />
+          </view>
+        </view>
+        <view class="price" bindtap="unclockAd">
+          <text class="price-text">观看广告解锁</text>
+        </view>
+      </view>
+    </view>
+    <view class="row" wx:if="{{einsteinShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/einstein.png"></image>
+        <view class="title">
+          <text>{{priceArray.einsteinTitle}}</text>
+          <view class="intro-content" bind:tap="showEinstein">
+            <icon type="info" size="18" />
+          </view>
+        </view>
+        <view class="price" bindtap="exchangeEinstein">
+          <text class="price-text">{{ priceArray.einsteinPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
     <view class="row" wx:if="{{yasiShow}}">
       <view class="row-inline">
         <image class="image" src="../../static/source/exam.png"></image>
@@ -68,8 +97,38 @@
         </view>
       </view>
     </view>
-  </view>
-  <view class="product-section">
+    <view class="row" wx:if="{{ticketShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/twocard.png"></image>
+        <view class="title">
+          <text>{{priceArray.ticketTitle}}</text>
+          <view class="intro-content" bind:tap="showTicket">
+            <icon type="info" size="18" />
+          </view>
+        </view>
+        <view class="price" bindtap="exchangeTicket">
+          <text class="price-text">{{ priceArray.ticketPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
+    <view class="row" wx:if="{{ticketTwoShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/twocard.png"></image>
+        <view class="title">
+          <text>{{priceArray.ticketTwoTitle}}</text>
+          <view class="intro-content" bind:tap="showTicketTwo">
+            <icon type="info" size="18" />
+          </view>
+        </view>
+        <view class="price" bindtap="exchangeTicketTwo">
+          <text class="price-text">{{ priceArray.ticketTwoPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
     <view class="row" wx:if="{{telegramShow}}">
       <view class="row-inline">
         <image class="image" src="../../static/source/smartphone.png"></image>
@@ -93,37 +152,8 @@
       </view>
     </view>
   </view>
-  <view class="product-section">
-    <view class="row" wx:if="{{infiniteShow}}">
-      <view class="row-inline">
-        <image class="image" src="../../static/source/infinite.png"></image>
-        <view class="title">
-          <text>{{priceArray.infiniteTitle}}</text>
-          <view class="intro-content" bind:tap="showInfiniteInfo">
-            <icon type="info" size="18"/>
-          </view>
-        </view>
-        <view class="price" bindtap="unclockAd">
-          <text class="price-text">观看广告解锁</text>
-        </view>
-      </view>
-    </view>
-    <view class="row" wx:if="{{einsteinShow}}">
-      <view class="row-inline">
-        <image class="image" src="../../static/source/einstein.png"></image>
-        <view class="title">
-          <text>{{priceArray.einsteinTitle}}</text>
-          <view class="intro-content" bind:tap="showEinstein">
-            <icon type="info" size="18"/>
-          </view>
-        </view>
-        <view class="price" bindtap="exchangeEinstein">
-          <text class="price-text">{{ priceArray.einsteinPrice }}</text>
-          <image class="price-image" src="../../static/source/coin.png"></image>
-          <text class="price-text">兑换</text>
-        </view>
-      </view>
-    </view>
+  <view class="adContainer">
+    <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
   </view>
   <scrollable-text wx:if="{{einsteinArticle}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="爱因斯坦大脑" imgSrc="../../static/source/einstein.png"></scrollable-text>
 </view>

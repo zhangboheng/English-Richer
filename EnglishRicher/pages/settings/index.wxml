@@ -6,7 +6,7 @@
         <text class="inner-title">英语大富翁</text>
       </view>
       <view class="inner-box">
-        <text>Version 2.3.0</text>
+        <text>Version 2.3.1</text>
       </view>
     </view>
   </view>
@@ -34,7 +34,7 @@
         <image class="item-box-image" src="../../static/source/mission.png" />
         <text>任务大厅</text>
       </view>
-      <text class="item-inner">任务数7</text>
+      <text class="item-inner">任务数8</text>
     </view>
   </view>
   <view>
@@ -70,11 +70,11 @@
         <image class="item-box-image" src="../../static/source/history.png" />
         <text>更新历史</text>
       </view>
-      <text class="item-inner">最新2023-12-08</text>
+      <text class="item-inner">最新2023-12-10</text>
     </view>
   </view>
   <view>
-    <view class="container-item" bind:tap="goToAboutUs">
+    <view class="container-item container-item-special" bind:tap="goToAboutUs">
       <view class="item-box">
         <image class="item-box-image" src="../../static/source/aboutus.png" />
         <text>关于我们</text>

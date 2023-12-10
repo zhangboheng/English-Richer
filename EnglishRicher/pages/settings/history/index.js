@@ -2,6 +2,19 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.1',
+        date: '2023-12-10',
+        icon: ['success', 'info', 'info', 'info', 'success_no_circle', 'success_no_circle'],
+        changes: [
+          '兑换市集新增关卡体验道具，让没有达到等级的用户刷先体验后续关卡一次。',
+          '优化初始和策略谋划页面样式。',
+          '优化兑换市集图片失真以及排版样式。',
+          '完善广告显示。',
+          '修复 Game Three 选择知我意 关卡封面图没有正确答案问题。',
+          '解决单词发音源声音较小问题。'
+        ],
+      },
+      {
         version: '2.3.0',
         date: '2023-12-08',
         icon: ['success', 'info', 'info'],
@@ -62,10 +75,10 @@ Page({
       {
         version: '2.1.9',
         date: '2023-11-28',
-        icon: ['success_no_circle', 'success'],
+        icon: ['success', 'success_no_circle'],
         changes: [
-          '修复在 iOS 客户端，静音模式下无声音问题。',
-          '新增一个单词发音源。'
+          '新增一个单词发音源。',
+          '修复在 iOS 客户端，静音模式下无声音问题。'
         ],
       },
       {

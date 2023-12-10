@@ -105,8 +105,9 @@ Page({
   // 点击游戏2后根据水平不同，跳转到不同页面
   goToGameTwo() {
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
+    let goToGameTwoLimit = wx.getStorageSync('goToGameTwoLimit'); // 轻航填字海体验资格
     let startGrade = this.data.storageStartGrade;
-    if (startGrade >= 3) {
+    if (startGrade >= 3 || goToGameTwoLimit == "Yes") {
       if (defaultLevel === '小学') {
         wx.navigateTo({
           url: '/pages/gametwo/elementary/index'
@@ -147,6 +148,7 @@ Page({
           url: '/pages/gametwoss/sat/index'
         });
       }
+      wx.removeStorageSync('goToGameTwoLimit');
     } else {
       wx.showToast({
         title: '哎哟，菜鸟，等级没到 3 级无法进入哦！',
@@ -158,8 +160,9 @@ Page({
   // 点击游戏3后根据水平不同，跳转到不同页面
   goToGameThree() {
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
+    let goToGameThreeLimit = wx.getStorageSync('goToGameThreeLimit'); // 选择知我意体验资格
     let startGrade = this.data.storageStartGrade;
-    if (startGrade >= 6) {
+    if (startGrade >= 6 || goToGameThreeLimit == "Yes") {
       if (defaultLevel === '小学') {
         wx.navigateTo({
           url: '/pages/gamethree/elementary/index'
@@ -200,6 +203,7 @@ Page({
           url: '/pages/gamethreess/sat/index'
         });
       }
+      wx.removeStorageSync('goToGameThreeLimit');
     } else {
       wx.showToast({
         title: '奋斗者，等级没到 6 级无法进入哦！',

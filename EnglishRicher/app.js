@@ -20,6 +20,8 @@ App({
     let telephoneCredits = wx.getStorageSync('telephoneCredits'); // 电影字幕是否兑换
     let getGpt4OrNot = wx.getStorageSync('getGpt4OrNot'); // 免费离线GPT4是否兑换
     let getEinsteinBrain = wx.getStorageSync('einsteinBrain'); // 爱因斯坦大脑是否兑换
+    let getGameTwoTicket = wx.getStorageSync('getGameTwoTicket'); // 轻航填字海体验是否兑换
+    let getGameThreeTicket = wx.getStorageSync('getGameThreeTicket'); // 选择知我意验是否兑换
     // 判断是否存在总货币数数据，如果不存在则赋值为 0
     if (typeof money == 'undefined' || money == null || typeof money == "string") {
       money = 0;
@@ -54,6 +56,16 @@ App({
     if (typeof getEinsteinBrain == 'undefined' || getEinsteinBrain == null || typeof getEinsteinBrain == "string") {
       getEinsteinBrain = 0;
       wx.setStorageSync('einsteinBrain', getEinsteinBrain);
+    }
+    // 判断是否存在轻航填字海数据，如果不存在赋值为 0
+    if (typeof getGameTwoTicket == 'undefined' || getGameTwoTicket == null || typeof getGameTwoTicket == "string") {
+      getGameTwoTicket = 0;
+      wx.setStorageSync('getGameTwoTicket', getGameTwoTicket);
+    }
+    // 判断是否存在选择知我意数据，如果不存在赋值为 0
+    if (typeof getGameThreeTicket == 'undefined' || getGameThreeTicket == null || typeof getGameThreeTicket == "string") {
+      getGameThreeTicket = 0;
+      wx.setStorageSync('getGameThreeTicket', getGameThreeTicket);
     }
   },
   // 重写分享方法

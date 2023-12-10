@@ -156,6 +156,7 @@
       ]
     }
   ],
+  "requiredBackgroundModes": ["audio"],
   "plugins": {
     "wxatradecommentplugin": {
       "version": "latest",
@@ -169,7 +170,6 @@
     "navigationBarTextStyle":"black"
   },
   "style": "v2",
-  "requiredBackgroundModes": ["audio"],
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
 }

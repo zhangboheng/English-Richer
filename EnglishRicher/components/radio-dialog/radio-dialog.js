@@ -34,14 +34,12 @@ Component({
         selectedEnglishLevel: event.detail.value
       });
     },
-
     confirmSelection: function () {
       const { selectedEnglishLevel } = this.data;
       if (selectedEnglishLevel) {
         // 执行选择后的逻辑，比如发送请求或更新页面数据等
         this.triggerEvent('confirm', { level: selectedEnglishLevel });
       }
-
       this.triggerEvent('close');
     }
   }
