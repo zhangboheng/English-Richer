@@ -2,11 +2,19 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.2',
+        date: '2023-12-11',
+        icon: ['info'],
+        changes: [
+          '小学英语单词和词组补全。'
+        ],
+      },
+      {
         version: '2.3.1',
         date: '2023-12-10',
         icon: ['success', 'info', 'info', 'info', 'success_no_circle', 'success_no_circle'],
         changes: [
-          '兑换市集新增关卡体验道具，让没有达到等级的用户刷先体验后续关卡一次。',
+          '兑换市集新增关卡体验道具，让没有达到等级的用户率先体验后续关卡一次。',
           '优化初始和策略谋划页面样式。',
           '优化兑换市集图片失真以及排版样式。',
           '完善广告显示。',
