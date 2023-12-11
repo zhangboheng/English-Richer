@@ -4,7 +4,7 @@ Page({
     storageDickName: '佚名',
     showRadioDialog: false,
     englishLevels: ['小学', '初中', '高中', '大学英语四级', '大学英语六级', '考研', '托福', 'SAT'],
-    wordTotal: [750, 1991, 3753, 4544, 3992, 5057, 10377, 4464],
+    wordTotal: [832, 1991, 3753, 4544, 3992, 5057, 10377, 4464],
     getDefaultLevel: "小学",
     storageStartGrade: 0,
     progress: 0,
