@@ -31,7 +31,11 @@ Page({
     canGetTenThousand: false, // 领取资格判断
     masterTenThousand: false, // 是否领取耕耘收获
     masterTenThousandExp: 100, // 掌握 10000 单词后奖励经验
-    masterTenThousandCoins: 10, // 掌握 10000 单词后奖励钱币 
+    masterTenThousandCoins: 10, // 掌握 10000 单词后奖励钱币
+    canGetTwentyThousand: false, // 领取资格判断
+    masterTwentyThousand: false, // 是否领取耕耘收获
+    masterTwentyThousandExp: 200, // 掌握 20000 单词后奖励经验
+    masterTwentyThousandCoins: 20, // 掌握 20000 单词后奖励钱币
   },
   // 页面分享
   onShareAppMessage() {},
@@ -108,6 +112,11 @@ Page({
     if (TotalNumber >= 10000) {
       this.setData({
         canGetTenThousand: true
+      });
+    }
+    if (TotalNumber >= 20000) {
+      this.setData({
+        canGetTwentyThousand: true
       });
     }
     // 判断签到日期是否和当前日期一致
@@ -346,7 +355,7 @@ Page({
       }
     }
   },
-  // 耕耘收获1000单词奖励的处理方法
+  // 耕耘收获 10000 单词奖励的处理方法
   handleTenThousand() {
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
@@ -366,7 +375,7 @@ Page({
         getProgress = getProgress + this.data.masterTenThousandExp;
         wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
         wx.setStorageSync('money', money + this.data.masterTenThousandCoins);
-        wx.setStorageSync('masterThousand', true)
+        wx.setStorageSync('masterTenThousand', true)
         wx.showToast({
           title: `一分耕耘一分收获，经验值+${this.data.masterTenThousandExp}，钱币+${this.data.masterTenThousandCoins}`,
           icon: 'none',
@@ -379,4 +388,37 @@ Page({
       }
     }
   },
+  // 耕耘收获 20000 单词奖励的处理方法
+  handleTwentyThousand() {
+    let getProgress = wx.getStorageSync('progress') || 0; // 经验值
+    let money = wx.getStorageSync('money'); // 总货币数
+    let masterTwentyThousand = wx.getStorageSync('masterTwentyThousand');
+    if(typeof masterTwentyThousand != 'string') {
+      this.setData({
+        masterTwentyThousand: true
+      });
+    }
+    if (this.data.masterTwentyThousand) {
+      wx.showToast({
+        title: '太贪心了吧，已经领取过了～',
+        icon: 'none',
+      });
+    } else {
+      if (this.data.canGetTwentyThousand) {
+        getProgress = getProgress + this.data.masterTwentyThousandExp;
+        wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
+        wx.setStorageSync('money', money + this.data.masterTwentyThousandCoins);
+        wx.setStorageSync('masterTwentyThousand', true)
+        wx.showToast({
+          title: `一分耕耘一分收获，经验值+${this.data.masterTwentyThousandExp}，钱币+${this.data.masterTwentyThousandCoins}`,
+          icon: 'none',
+        }); 
+      } else {
+        wx.showToast({
+          title: '哎呦，都没有掌握20000个单词，吁～～',
+          icon: 'none',
+        });    
+      }
+    }    
+  }
 });

@@ -80,7 +80,7 @@
       </view>
       <button class="task-button" bindtap="handleFiveThousand">掌握单词 5000 个</button>
     </view>
-    <view class="task-item">
+    <view class="task-item gap-box">
       <view class="task-name">耕耘收获</view>
       <view class="task-image">
         <image class="item-image" src="../../../static/source/field.png" />
@@ -90,6 +90,17 @@
         钱币:<text class="reward-value">+{{ masterTenThousandCoins }}</text>
       </view>
       <button class="task-button" bindtap="handleTenThousand">掌握单词 10000 个</button>
+    </view>
+    <view class="task-item">
+      <view class="task-name">耕耘收获</view>
+      <view class="task-image">
+        <image class="item-image" src="../../../static/source/field.png" />
+      </view>
+      <view class="task-reward">
+        经验值:<text class="reward-value">+{{ masterTwentyThousandExp }}</text>
+        钱币:<text class="reward-value">+{{ masterTwentyThousandCoins }}</text>
+      </view>
+      <button class="task-button" bindtap="handleTwentyThousand">掌握单词 20000 个</button>
     </view>
   </view>
 </view>

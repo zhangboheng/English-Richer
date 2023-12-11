@@ -34,7 +34,7 @@
         <image class="item-box-image" src="../../static/source/mission.png" />
         <text>任务大厅</text>
       </view>
-      <text class="item-inner">任务数8</text>
+      <text class="item-inner">任务数9</text>
     </view>
   </view>
   <view>
