@@ -1,0 +1,11 @@
+<view class="container">
+  <title-section lineTitle="基础信息"></title-section>
+  <view class="basic">
+    <view class="basic-box">
+      <image class="item-box-image" src="../../../static/source/nickname.png" />
+      <text>{{getDefaultName}}</text>
+    </view>
+  </view>
+  <title-section lineTitle="完成进度"></title-section>
+  <title-section lineTitle="综合评价"></title-section>
+</view>

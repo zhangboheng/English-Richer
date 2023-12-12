@@ -1,0 +1,17 @@
+.container {
+  margin: 0 auto;
+}
+
+.basic {
+  height: 200rpx;
+}
+.basic-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-box-image {
+  width:24px;
+  height: 24px;
+}

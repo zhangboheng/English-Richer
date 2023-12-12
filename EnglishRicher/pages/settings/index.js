@@ -113,6 +113,12 @@ Page({
       url: './renew/index',
     });
   },
+  // 点击后跳转到数据统计页面
+  goToAnalytics: function() {
+    wx.navigateTo({
+      url: './analytics/index',
+    });
+  },
   // 点击后打开评价
   goToAdvice: function () {
     plugin.openComment({

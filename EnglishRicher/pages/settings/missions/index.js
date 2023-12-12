@@ -13,7 +13,7 @@ Page({
     masterFiveHundredExp: 5, // 掌握 500 单词后奖励经验
     masterFiveHundredCoins: 0.5, // 掌握 500 单词后奖励钱币
     canGetInfinite: false, // 领取资格判断
-    masterInfinite: false, // 是否领取耕耘收获
+    masterInfinite: false, // 是否领取解除限制
     masterInfiniteExp: 5, // 已兑解限卡奖励经验
     masterInfiniteCoins: 1, // 已兑解限卡奖励钱币
     canGetThousand: false, // 领取资格判断
@@ -212,7 +212,7 @@ Page({
         wx.setStorageSync('money', money + this.data.masterInfiniteCoins);
         wx.setStorageSync('masterInfinite', true)
         wx.showToast({
-          title: `一分耕耘一分收获，经验值+${this.data.masterInfiniteExp}，钱币+${this.data.masterInfiniteCoins}`,
+          title: `已经解除限制，经验值+${this.data.masterInfiniteExp}，钱币+${this.data.masterInfiniteCoins}`,
           icon: 'none',
         }); 
       } else {

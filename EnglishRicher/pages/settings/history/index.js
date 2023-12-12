@@ -2,6 +2,15 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.3',
+        date: '2023-12-13',
+        icon: ['success', 'info'],
+        changes: [
+          '策略谋划新增进步轨迹功能。',
+          '完善任务大厅任务。'
+        ],
+      },
+      {
         version: '2.3.2',
         date: '2023-12-12',
         icon: ['info', 'info'],

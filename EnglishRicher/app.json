@@ -10,6 +10,7 @@
     "pages/settings/renew/index",
     "pages/settings/renew/modelone/index",
     "pages/settings/renew/modeltwo/index",
+    "pages/settings/analytics/index",
     "pages/settings/history/index",
     "pages/settings/about/index"
   ],

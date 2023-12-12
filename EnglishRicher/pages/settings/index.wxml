@@ -6,7 +6,7 @@
         <text class="inner-title">英语大富翁</text>
       </view>
       <view class="inner-box">
-        <text>Version 2.3.2</text>
+        <text>Version 2.3.3</text>
       </view>
     </view>
   </view>
@@ -56,6 +56,15 @@
     </view>
   </view>
   <view>
+    <view class="container-item" bind:tap="goToAnalytics">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/analytics.png" />
+        <text>进步轨迹</text>
+      </view>
+      <text class="item-inner">--</text>
+    </view>
+  </view>
+  <view>
     <view class="container-item" bind:tap="goToAdvice">
       <view class="item-box">
         <image class="item-box-image" src="../../static/source/advisory.png" />
@@ -70,7 +79,7 @@
         <image class="item-box-image" src="../../static/source/history.png" />
         <text>更新历史</text>
       </view>
-      <text class="item-inner">最新2023-12-12</text>
+      <text class="item-inner">最新2023-12-13</text>
     </view>
   </view>
   <view>
