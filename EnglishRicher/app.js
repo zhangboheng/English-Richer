@@ -70,7 +70,7 @@ App({
     }
     if (typeof getTrueName == 'undefined' || getTrueName == null || typeof getTrueName == "string") {
       getTrueName = "英语小菜鸟";
-      wx.setStorageSync('getTrueName', getTrueName);
+      wx.setStorageSync('trueName', getTrueName);
     }
   },
   // 重写分享方法
