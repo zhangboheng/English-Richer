@@ -7,8 +7,9 @@ Page({
     englishLevels: ['小学', '初中', '高中', '大学英语四级', '大学英语六级', '考研', '托福', 'SAT'],
     wordTotal: [832, 1991, 3753, 4544, 3992, 5057, 10377, 4464],
     getDefaultLevel: "小学",
-    currentCount: 0, // 
+    currentCount: 0,
     limitCount: 100,
+    trueName: "英语小菜鸟"
   },
   // 页面分享
   onShareAppMessage() {},
@@ -20,6 +21,10 @@ Page({
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let notMasterWords = wx.getStorageSync('notMasterWords'); // 当前不会的单词集合
     let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 是否购买了解除限制卡
+    let getTrueName = wx.getStorageSync('trueName');
+    this.setData({
+      getTrueName: getTrueName
+    })
     if (nickname.length > 0) {
       this.setData({
         username: nickname

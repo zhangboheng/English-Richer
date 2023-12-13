@@ -61,7 +61,7 @@
         <image class="item-box-image" src="../../static/source/analytics.png" />
         <text>进步轨迹</text>
       </view>
-      <text class="item-inner">--</text>
+      <text class="item-inner">{{trueName}}</text>
     </view>
   </view>
   <view>

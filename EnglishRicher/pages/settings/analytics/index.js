@@ -3,7 +3,8 @@ Page({
     getDefaultName: '',
     getDefaultLevel: '',
     getDefaultTotal: '',
-    total: 832,
+    getTrueName: '英语小菜鸟',
+    getTrueParam: '刚刚起步，财富虽少但学词如风',
     getElementary: 0,
     getJunior: 0,
     getHigh: 0,
@@ -43,9 +44,10 @@ Page({
     let toelfOneThreeList = wx.getStorageSync('toelfOneThreeList');
     let toelfTwoThreeList = wx.getStorageSync('toelfTwoThreeList');
     let satThreeList = wx.getStorageSync('satThreeList');
+    let getTrueName = "";
+    let getTrueParam = "";
     // 每个等级的取最大数
     let elementaryMax = Math.max(elementaryList.length, elementaryTwoList.length, elementaryThreeList.length);
-    console.info(elementaryMax);
     let juniorMax = Math.max(juniorList.length, juniorTwoList.length, juniorThreeList.length);
     let highMax = Math.max(highList.length, highTwoList.length, highThreeList.length);
     let cet4Max = Math.max(cet4List.length, cet4TwoList.length, cet4ThreeList.length);
@@ -56,6 +58,34 @@ Page({
     let satMax = Math.max(satList.length, satTwoList.length, satThreeList.length);
     // 将每个等级的最大数汇总为总数
     let TotalNumber = elementaryMax + juniorMax + highMax + cet4Max + cet6Max + postgraduateMax + toelfOneMax + toelfTwoMax + satMax;
+    if (TotalNumber < 500) {
+      getTrueName = "英语小菜鸟";
+      getTrueParam = '刚刚起步，财富虽少但学词如风';
+    } else if (TotalNumber < 1000 && TotalNumber >= 500) {
+      getTrueName = "学霸掌门人";
+      getTrueParam = '单词学得漂亮，成为学霸的领头人';
+    } else if (TotalNumber < 2500 && TotalNumber >= 1000) {
+      getTrueName = "语言钻石王老五";
+      getTrueParam = '单词就像钻石一样在你手中闪烁';
+    } else if (TotalNumber < 4500 && TotalNumber >= 2500) {
+      getTrueName = "拼写富豪";
+      getTrueParam = '单词拼写游刃有余，财产节节攀升';
+    } else if (TotalNumber < 7000 && TotalNumber >= 4500) {
+      getTrueName = "口语巨星";
+      getTrueParam = '口语表达如巨星般耀眼，财富也随之喷涌而至';
+    } else if (TotalNumber < 10000 && TotalNumber >= 7000) {
+      getTrueName = "英语财阀继承人";
+      getTrueParam = '成为英语学习的继承人，财富源源不断';
+    } else if (TotalNumber < 14000 && TotalNumber >= 10000) {
+      getTrueName = "流利语言达人";
+      getTrueParam = '语言流利无阻，成为学习之路的巅峰者';
+    } else if (TotalNumber < 19000 && TotalNumber >= 14000) {
+      getTrueName = "词海泰斗";
+      getTrueParam = '在词海中航行自如，成为学习的泰斗';
+    } else if (TotalNumber >= 19000) {
+      getTrueName = "英语大富翁";
+      getTrueParam = '财富如潮水般滚滚而来，你已是英语学习的大富翁';
+    }
     this.setData({
       getDefaultName: nickname,
       getDefaultLevel: defaultLevel,
@@ -67,8 +97,12 @@ Page({
       getCet6: cet6Max,
       getPostgraduate: postgraduateMax,
       getToelf: toelfOneMax + toelfTwoMax,
-      getSat: satMax
+      getSat: satMax,
+      getTrueName: getTrueName,
+      getTrueParam: getTrueParam
     });
+    // 将获取的真实称号缓存到本地
+    wx.setStorageSync('trueName', getTrueName)
   },
   onReady() {
 

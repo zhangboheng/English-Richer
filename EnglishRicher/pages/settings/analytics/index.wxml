@@ -28,7 +28,6 @@
     <view class="basic-box">
       <view class="inner-box">
         <text>小学</text>
-        <progress-bar total="{{total}}" current="{{getHigh}}" color="#ff0000" showPercentage="{{true}}"></progress-bar>
       </view>
       <text>{{getElementary}}/832</text>
     </view>
@@ -75,5 +74,11 @@
       <text>{{getSat}}/4464</text>
     </view>
   </view>
-  <title-section lineTitle="综合评价"></title-section>
+  <title-section lineTitle="授予称号"></title-section>
+  <view class="basic">
+    <view class="recommend">
+      <text>{{getTrueName}}</text>
+      <text style="font-size:12px; font-weight:500">{{getTrueParam}}</text>
+    </view>
+  </view>
 </view>

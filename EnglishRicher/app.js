@@ -22,6 +22,7 @@ App({
     let getEinsteinBrain = wx.getStorageSync('einsteinBrain'); // 爱因斯坦大脑是否兑换
     let getGameTwoTicket = wx.getStorageSync('getGameTwoTicket'); // 轻航填字海体验是否兑换
     let getGameThreeTicket = wx.getStorageSync('getGameThreeTicket'); // 选择知我意验是否兑换
+    let getTrueName = wx.getStorageSync('trueName');
     // 判断是否存在总货币数数据，如果不存在则赋值为 0
     if (typeof money == 'undefined' || money == null || typeof money == "string") {
       money = 0;
@@ -66,6 +67,10 @@ App({
     if (typeof getGameThreeTicket == 'undefined' || getGameThreeTicket == null || typeof getGameThreeTicket == "string") {
       getGameThreeTicket = 0;
       wx.setStorageSync('getGameThreeTicket', getGameThreeTicket);
+    }
+    if (typeof getTrueName == 'undefined' || getTrueName == null || typeof getTrueName == "string") {
+      getTrueName = "英语小菜鸟";
+      wx.setStorageSync('getTrueName', getTrueName);
     }
   },
   // 重写分享方法

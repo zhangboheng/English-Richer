@@ -1,3 +1,0 @@
-<view class="progress-bar">
-  <view class="progress-bar-inner" style="width: {{percentage + '%'}}; background-color: {{color}};"></view>
-</view>
