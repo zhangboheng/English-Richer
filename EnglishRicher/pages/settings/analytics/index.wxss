@@ -3,15 +3,23 @@
 }
 
 .basic {
-  height: 200rpx;
+  height: auto;
 }
 .basic-box {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10rpx;
 }
+
+.inner-box {
+  display: flex;
+  align-items: center;
+}
+
 .item-box-image {
-  width:24px;
+  width: 24px;
   height: 24px;
+  margin-right: 10rpx;
 }

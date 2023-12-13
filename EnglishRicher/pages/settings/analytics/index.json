@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "title-section": "../../../components/title-section/title-section"
+    "title-section": "../../../components/title-section/title-section",
+    "progress-bar": "../../../components/progress-bar/progress-bar"
   },
-  "navigationBarTitleText": "进步轨迹"
+  "navigationBarTitleText": "进步轨迹",
+  "enablePullDownRefresh": false
 }
