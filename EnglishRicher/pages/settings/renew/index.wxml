@@ -8,7 +8,7 @@
     <button class="export-box" bindtap="onExport">导出</button>
   </view>
   <title-section lineTitle="解限卡可将容量扩充为2000"></title-section>
-  <accordion-listdel dataList="{{listData}}" wx:if="{{listData.length > 0}}" bind:removeWord="getRemoveWord"></accordion-listdel>
+  <accordion-listdel dataList="{{listData}}" wx:if="{{listData.length > 0}}" bind:removeWord="getRemoveWord" bind:chooseOneOrTwo="handleChooseOneOrTwo"></accordion-listdel>
   <view class="content-box" wx:else>
     <view>
       <text>竟然没有不会的单词！？</text>

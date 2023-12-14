@@ -1,4 +1,5 @@
-const XLSX = require('../../../utils/excel.js')
+const XLSX = require('../../../utils/excel.js');
+let videoAd = null
 Page({
   data: {
     globalData: [], // 全局获取所有单词列表
@@ -13,6 +14,18 @@ Page({
   onLoad: function (options) {
     // 从缓存中获取不会的单词
     let database = wx.getStorageSync('notMasterWords') || [];
+    // 在页面onLoad回调事件中创建激励视频广告实例
+    if (wx.createRewardedVideoAd) {
+      videoAd = wx.createRewardedVideoAd({
+        adUnitId: 'adunit-67cd6ef4b3dd9519'
+      })
+      videoAd.onLoad(() => {
+        console.log('激励视频 广告加载成功')
+      })
+      videoAd.onError((err) => {
+        console.error('激励视频光告加载失败', err)
+      });
+    }
     // 显示正在刷新提示框
     wx.showToast({
       title: '努力加载中……',
@@ -133,6 +146,33 @@ Page({
       globalData: trueData,
       exportList: newNotMasterWords
     });
+  },
+  // 点击后获取真实链接
+  handleChooseOneOrTwo: function(event) {
+    const data = event.detail.url;
+    if (videoAd) {
+      videoAd.show().catch(() => {
+        videoAd.load()
+          .then(() => videoAd.show())
+          .catch(err => {
+            console.error('激励视频 广告显示失败', err)
+          })
+      });
+      videoAd.onClose((res) => {
+        if (res && res.isEnded) {
+          wx.navigateTo({
+            url: data,
+          });
+        } else {
+          // 播放中途退出，不下发游戏奖励
+          wx.showToast({
+            title: '由于没有看完，无法进入复习',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      })
+    }
   },
   // 公共乱序方法
   shuffleArray: function(_a, _b) {
