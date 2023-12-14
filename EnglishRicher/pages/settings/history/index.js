@@ -2,6 +2,15 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.4',
+        date: '2023-12-14',
+        icon: ['success', 'info'],
+        changes: [
+          '温故知新增加更多复习模式入口。',
+          '完善进步轨迹样式。'
+        ],
+      },
+      {
         version: '2.3.3',
         date: '2023-12-13',
         icon: ['success', 'info'],

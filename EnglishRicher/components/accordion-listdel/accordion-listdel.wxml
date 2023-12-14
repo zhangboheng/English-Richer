@@ -29,6 +29,9 @@
         <text>1</text>
       </view>
     </button>
+    <button class="popup-button" bindtap="goToRandomReview">
+      <text>观看广告无限复习</text>
+    </button>
   </view>
   <view class="footer-box">
     <view class="bottomup" bindtap="scrollToTop">

@@ -101,28 +101,5 @@ Page({
       getTrueName: getTrueName,
       getTrueParam: getTrueParam
     });
-    // 将获取的真实称号缓存到本地
-    wx.setStorageSync('trueName', getTrueName)
   },
-  onReady() {
-
-  },
-  onShow() {
-
-  },
-  onHide() {
-
-  },
-  onUnload() {
-
-  },
-  onPullDownRefresh() {
-
-  },
-  onReachBottom() {
-
-  },
-  onShareAppMessage() {
-
-  }
 })

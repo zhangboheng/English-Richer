@@ -1,4 +1,4 @@
-// accordion-list.js
+let videoAd = null
 Component({
   data: {
     showOrNot: true,
@@ -9,6 +9,22 @@ Component({
       type: Array,
       value: []
     },
+  },
+  lifetimes: {
+    created() {
+      // 在页面onLoad回调事件中创建激励视频广告实例
+      if (wx.createRewardedVideoAd) {
+        videoAd = wx.createRewardedVideoAd({
+          adUnitId: 'adunit-67cd6ef4b3dd9519'
+        })
+        videoAd.onLoad(() => {
+          console.log('激励视频 广告加载成功')
+        })
+        videoAd.onError((err) => {
+          console.error('激励视频光告加载失败', err)
+        });
+      }
+    }
   },
   methods: {
     toggleAccordion: function (e) {
@@ -44,6 +60,34 @@ Component({
     goToReviewTwo: function () {
       this.popupPublic(1, "复习模式二")
     },
+    // 点击跳转到随机复习模式
+    goToRandomReview: function() {
+      if (videoAd) {
+        videoAd.show().catch(() => {
+          videoAd.load()
+            .then(() => videoAd.show())
+            .catch(err => {
+              console.error('激励视频 广告显示失败', err)
+            })
+        });
+        videoAd.onClose((res) => {
+          if (res && res.isEnded) {
+            let randomNum = Math.floor(Math.random() * 2);
+            let url = ['../../settings/renew/modelone/index', '../../settings/renew/modeltwo/index'];
+            wx.navigateTo({
+              url: url[randomNum],
+            });
+          } else {
+            // 播放中途退出，不下发游戏奖励
+            wx.showToast({
+              title: '由于没有看完，无法进入复习',
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        })
+      }
+    },
     // 提示公共方法
     popupPublic(_publicPrice, _publicTitle) {
       // 从缓存中获取数据
@@ -69,7 +113,7 @@ Component({
                 wx.navigateTo({
                   url: '../../settings/renew/modeltwo/index',
                 });
-              } 
+              }
             } else {
               wx.showToast({
                 title: '钱币不足，攒够再来～～',

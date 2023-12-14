@@ -63,7 +63,7 @@
     </view>
     <view class="basic-box">
       <view class="inner-box">
-        <text>雅思托福</text>
+        <text>托福</text>
       </view>
       <text>{{getToelf}}/10377</text>
     </view>
