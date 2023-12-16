@@ -21,6 +21,10 @@
   align-items: center;
 }
 
+.margin-top {
+  margin-top: 20rpx;
+}
+
 .item-box-image {
   width: 24px;
   height: 24px;

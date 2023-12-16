@@ -3,6 +3,7 @@ Page({
     getDefaultName: '',
     getDefaultLevel: '',
     getDefaultTotal: '',
+    getClockTime: '00:00:00',
     getTrueName: '英语小菜鸟',
     getTrueParam: '刚刚起步，财富虽少但学词如风',
     getElementary: 0,
@@ -44,6 +45,7 @@ Page({
     let toelfOneThreeList = wx.getStorageSync('toelfOneThreeList');
     let toelfTwoThreeList = wx.getStorageSync('toelfTwoThreeList');
     let satThreeList = wx.getStorageSync('satThreeList');
+    let getClockTime = wx.getStorageSync('clockTime'); // 获取计时统计
     let getTrueName = "";
     let getTrueParam = "";
     // 每个等级的取最大数
@@ -90,6 +92,7 @@ Page({
       getDefaultName: nickname,
       getDefaultLevel: defaultLevel,
       getDefaultTotal: TotalNumber,
+      getClockTime: getClockTime,
       getElementary: elementaryMax,
       getJunior: juniorMax,
       getHigh: highMax,

@@ -8,19 +8,26 @@
       </view>
       <text>{{getDefaultName}}</text>
     </view>
-    <view class="basic-box">
+    <view class="basic-box margin-top">
       <view class="inner-box">
         <image class="item-box-image" src="../../../static/source/level.png" />
         <text>水平</text>
       </view>
       <text>{{getDefaultLevel}}</text>
     </view>
-    <view class="basic-box">
+    <view class="basic-box margin-top">
       <view class="inner-box">
         <image class="item-box-image" src="../../../static/source/vocabulary.png" />
         <text>掌握单词数</text>
       </view>
       <text>{{getDefaultTotal}}</text>
+    </view>
+    <view class="basic-box margin-top">
+      <view class="inner-box">
+        <image class="item-box-image" src="../../../static/source/clock.png" />
+        <text>进步总时</text>
+      </view>
+      <text>{{getClockTime}}</text>
     </view>
   </view>
   <title-section lineTitle="完成进度"></title-section>

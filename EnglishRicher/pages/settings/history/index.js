@@ -4,9 +4,10 @@ Page({
       {
         version: '2.3.5',
         date: '2023-12-16',
-        icon: ['success'],
+        icon: ['success', 'info'],
         changes: [
-          '关卡增加单局计时功能。'
+          '关卡增加单局计时功能。',
+          '进步轨迹完善进步总时统计。'
         ],
       },
       {
