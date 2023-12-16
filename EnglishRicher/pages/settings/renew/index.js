@@ -76,7 +76,6 @@ Page({
     data.forEach(item => {
       let rowcontent = []
       rowcontent.push(item.word)
-      console.info(item);
       rowcontent.push(item.translations.map(x=>x.translation))
       sheet.push(rowcontent)
     })

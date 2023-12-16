@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "animation-box": "../../../components/animation-box/animation-box"
+    "animation-box": "../../../components/animation-box/animation-box",
+    "image-timer": "../../../components/image-timer/image-timer"
   },
   "navigationBarTitleText": "选择知我意",
   "enablePullDownRefresh": false,

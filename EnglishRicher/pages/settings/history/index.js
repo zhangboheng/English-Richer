@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.5',
+        date: '2023-12-16',
+        icon: ['success'],
+        changes: [
+          '关卡增加单局计时功能。'
+        ],
+      },
+      {
         version: '2.3.4',
         date: '2023-12-14',
         icon: ['success', 'info'],

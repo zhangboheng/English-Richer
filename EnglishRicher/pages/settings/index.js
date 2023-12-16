@@ -80,7 +80,6 @@ Page({
     } else if (TotalNumber >= 19000) {
       getTrueName = "英语大富翁";
     }
-    console.info(TotalNumber)
     this.setData({
       trueName: getTrueName
     })
