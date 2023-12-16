@@ -1,0 +1,4 @@
+<view class="box">
+  <image class="image" src="../../static/source/clock.png"></image>
+  <text class="timer">{{formattedTime}}</text>
+</view>
