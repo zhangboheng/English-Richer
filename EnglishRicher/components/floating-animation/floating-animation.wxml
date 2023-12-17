@@ -1,0 +1,10 @@
+<view id="floatingAnimation" class="box" wx:if="{{showAnimation}}">
+    <view class="floating-box">
+      <image class="price-image" src="../../static/source/coin.png"></image>
+      <text>+0.01</text>
+    </view>
+    <view class="floating-box">
+      <image class="price-image" src="../../static/source/up.png"></image>
+      <text>+0.1</text>
+    </view>
+  </view>

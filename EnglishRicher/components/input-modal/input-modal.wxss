@@ -12,6 +12,7 @@
 }
 
 .modal-content {
+  width: 60%;
   padding: 20rpx;
   border-radius: 8rpx;
   text-align: center;
@@ -30,5 +31,5 @@
 .model-btn {
   background-color: #f5d659;
   border: 3px solid #000;
-  width: 100%;
+  width: 100% !important;
 }

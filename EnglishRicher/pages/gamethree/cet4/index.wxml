@@ -1,16 +1,7 @@
 <view class="container">
   <image-timer></image-timer>
   <animation-box></animation-box>
-  <view id="floatingAnimation" class="floating-animation" wx:if="{{showAnimation}}">
-    <view class="floating-box">
-      <image class="price-image" src="../../../static/source/coin.png"></image>
-      <text>+0.01</text>
-    </view>
-    <view class="floating-box">
-      <image class="price-image" src="../../../static/source/up.png"></image>
-      <text>+0.1</text>
-    </view>
-  </view>
+  <floating-animation showAnimation="{{showAnimation}}"></floating-animation>
   <view class="content">
     <view class="translation-word" wx:for="{{translations}}" wx:key="index">
       <text class="item-type">{{item.type}}</text>

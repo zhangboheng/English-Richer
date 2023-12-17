@@ -95,6 +95,6 @@
 }
 
 .price-image {
-  width: 50rpx;
-  height: 50rpx;
+  width: 24px;
+  height: 24px;
 }

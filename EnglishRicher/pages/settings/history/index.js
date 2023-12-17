@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.7',
+        date: '2023-12-18',
+        icon: ['info'],
+        changes: [
+          '完善每局关卡加载速度。',
+        ],
+      },
+      {
         version: '2.3.6',
         date: '2023-12-17',
         icon: ['success', 'info', 'info', 'success_no_circle'],

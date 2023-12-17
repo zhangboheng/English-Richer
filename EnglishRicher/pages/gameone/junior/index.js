@@ -18,6 +18,12 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() { },
   onLoad: function (options) {
+    // 显示正在刷新提示框
+    wx.showToast({
+      title: '努力加载中……',
+      icon: 'loading',
+      duration: 500
+    });
     // 初次加载获取数据
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let trueData = database.postData.main;
