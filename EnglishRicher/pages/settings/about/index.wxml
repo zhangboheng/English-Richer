@@ -5,7 +5,7 @@
   <official-account></official-account>
 </view>
 <view class="container">
-  <view wx:for="{{ contacts }}" wx:for-item="contact" wx:key="contact.id">
+  <view wx:for="{{ contacts }}" wx:for-item="contact" wx:key="contact">
     <view class="settingscontent">
       <image class="content-icon" src="{{ contact.icon }}" />
       <text user-select="{{ true }}">{{ contact.text }}</text>

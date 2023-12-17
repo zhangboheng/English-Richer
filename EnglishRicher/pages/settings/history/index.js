@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.6',
+        date: '2023-12-17',
+        icon: ['info'],
+        changes: [
+          '完善广告显示。'
+        ],
+      },
+      {
         version: '2.3.5',
         date: '2023-12-16',
         icon: ['success', 'info'],

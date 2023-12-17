@@ -1,4 +1,7 @@
 <view class="container">
+  <view class="adContainer">
+    <ad unit-id="adunit-ad104572b4e7145d" ad-intervals="30"></ad>
+  </view>
   <title-section lineTitle="基础信息"></title-section>
   <view class="basic">
     <view class="basic-box">
@@ -87,5 +90,8 @@
       <text>{{getTrueName}}</text>
       <text style="font-size:12px; font-weight:500">{{getTrueParam}}</text>
     </view>
+  </view>
+  <view class="adContainer" style="margin-top:20rpx;">
+    <ad unit-id="adunit-55e0b0675d7950fc" ad-intervals="30"></ad>
   </view>
 </view>
