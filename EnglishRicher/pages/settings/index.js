@@ -1,6 +1,7 @@
 var plugin = requirePlugin("wxatradecommentplugin");
 Page({
   data: {
+    isCloseTip: true,
     username: '佚名',
     getShowOrNot: false, // 修改昵称弹出组件
     showRadioDialog: false, // 修改水平弹出组件
@@ -16,6 +17,8 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function () {
+    // 初始化关注提示
+    this.initTip()
     // 从缓存中获取数据
     let nickname = wx.getStorageSync('nickname'); // 获取昵称
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
@@ -119,6 +122,20 @@ Page({
         currentCount: notMasterWords.length
       })
     }
+  },
+  // 初始化关注提示
+  initTip() {
+    let isShowTip = wx.getStorageSync('isShowTip')
+    this.setData({
+      isCloseTip: !isShowTip
+    })
+  },
+  // 关闭提示
+  closeTip() {
+    wx.setStorageSync('isShowTip', true)
+    this.setData({
+      isCloseTip: false
+    })
   },
   // 点击后弹出修改昵称框
   editNickName() {

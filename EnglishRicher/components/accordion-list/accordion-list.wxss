@@ -38,8 +38,12 @@
 }
 
 .fixedimage {
-  width: 24px;
-  height: 24px;
+  min-width: 50px;
+  min-height: 50px;
+  width: 50rpx;
+  height: 50rpx;
+  max-width: 64px;
+  max-height: 64px;
 }
 
 .content {

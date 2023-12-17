@@ -1,4 +1,15 @@
 <view>
+  <view wx:if="{{isCloseTip}}" class="add-dialog" bindtap='closeTip'>
+    <view class="add-tip">
+      <image class="add-tip-img" src="../../static/source/favourite.png"></image>
+      <text>喜欢就点击“</text>
+      <image class="add-tip-points" src="../../static/source/threepoints.png"></image>
+      <text>”添加到我的小程序吧</text>
+    </view>
+    <view class="add-close">
+      <text>X</text>
+    </view>
+  </view>
   <view class="container-head">
     <image src="../../static/source/logos.png" alt="Logo"></image>
     <view class="container-item-text">
@@ -94,12 +105,5 @@
   <!-- 修改昵称弹出组件 -->
   <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
   <!-- 修改水平弹出组件 -->
-  <radio-dialog
-    englishLevels="{{ englishLevels }}"
-    wordTotal="{{ wordTotal }}"
-    bind:confirm="handleConfirmLevel"
-    bind:close="closeRadioDialog"
-    defaultLevel="{{ getDefaultLevel }}"
-    wx:if="{{ showRadioDialog }}"
-  ></radio-dialog>
+  <radio-dialog englishLevels="{{ englishLevels }}" wordTotal="{{ wordTotal }}" bind:confirm="handleConfirmLevel" bind:close="closeRadioDialog" defaultLevel="{{ getDefaultLevel }}" wx:if="{{ showRadioDialog }}"></radio-dialog>
 </view>

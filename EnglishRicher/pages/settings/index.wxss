@@ -1,4 +1,29 @@
-/* 设置页面顶部 logo 开始 */
+.add-dialog {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  background-color: #00000055;
+  padding:5px 10px;
+}
+
+.add-tip {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+.add-tip-img {
+  width: 12px;
+  height: 12px;
+}
+.add-tip-points {
+  width: 33px;
+  height: 13px;
+}
+
+.add-close{
+  font-size: 12px;
+}
+
 .container-head {
   display: flex;
   justify-content: center;
@@ -18,9 +43,7 @@
   width: 96px;
   height: 96px;
 }
-/* 设置页面顶部 logo 结束 */
 
-/* 设置页面底部功能区开始 */
 .container-item {
   padding: 10px;
   display: flex;
@@ -51,5 +74,3 @@
   color: #ccc;
   font-weight: 400;
 }
-
-/* 设置页面底部功能区结束 */
