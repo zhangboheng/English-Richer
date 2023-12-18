@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="adContainer">
+    <ad unit-id="adunit-ad104572b4e7145d" ad-intervals="30"></ad>
+  </view>
+  <title-section lineTitle="我的梦想"></title-section>
+  <view class="section">
+    <input class="input" value="{{inputText}}" placeholder="赚它一个亿（最多7个字符）" maxlength="7" bindinput="handleInput"></input>
+  </view>
+  <title-section lineTitle="实现步骤"></title-section>
+  <view class="section">
+    <textarea class="textarea" value="{{textareaText}}" maxlength="10000" placeholder="将伟大的梦想拆解成一步步可以实现的步骤" bindinput="handleTextareaInput"></textarea>
+  </view>
+  <view class="section">
+    <button class="saveButton" bindtap="handleSave">保存</button>
+  </view>
+  <view class="adContainer" style="margin-top:20rpx;">
+    <ad unit-id="adunit-55e0b0675d7950fc" ad-intervals="30"></ad>
+  </view>
+</view>

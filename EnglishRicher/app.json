@@ -5,6 +5,7 @@
     "pages/exchange/index",
     "pages/articles/index",
     "pages/settings/index",
+    "pages/settings/mydream/index",
     "pages/settings/missions/index",
     "pages/settings/knowledge/index",
     "pages/settings/renew/index",

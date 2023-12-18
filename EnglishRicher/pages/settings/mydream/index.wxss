@@ -1,0 +1,28 @@
+.section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.input {
+  border: 3px solid #000;
+  border-radius: 5px;
+  margin-top: 10rpx;
+  padding: 10px;
+  width: 90%;
+}
+
+.textarea {
+  height: 500rpx;
+  border: 3px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  width: 90%;
+}
+
+.saveButton {
+  background-color:#f5d659;
+  border: 3px solid #000;
+  border-radius: 5px;
+  margin-top: 20px;
+}

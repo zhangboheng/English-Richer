@@ -2,6 +2,15 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.8',
+        date: '2023-12-19',
+        icon: ['success', 'info'],
+        changes: [
+          '策略谋划新增定小目标功能，让梦想带你翱翔。',
+          '进步轨迹完善我的梦想显示。'
+        ],
+      },
+      {
         version: '2.3.7',
         date: '2023-12-18',
         icon: ['info'],

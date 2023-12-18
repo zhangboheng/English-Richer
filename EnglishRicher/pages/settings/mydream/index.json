@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "title-section": "../../../components/title-section/title-section"
+  },
+  "navigationBarTitleText": "定小目标",
+  "enablePullDownRefresh": false
+}

@@ -8,6 +8,7 @@ Page({
     englishLevels: ['小学', '初中', '高中', '大学英语四级', '大学英语六级', '考研', '托福', 'SAT'],
     wordTotal: [832, 1991, 3753, 4544, 3992, 5057, 10377, 4464],
     getDefaultLevel: "小学",
+    myDream: '暂无',
     currentCount: 0,
     limitCount: 100,
     trueName: "英语小菜鸟"
@@ -22,6 +23,7 @@ Page({
     // 从缓存中获取数据
     let nickname = wx.getStorageSync('nickname'); // 获取昵称
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
+    let getMyDream = wx.getStorageSync('myDream'); // 获取小目标
     let notMasterWords = wx.getStorageSync('notMasterWords'); // 当前不会的单词集合
     let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 是否购买了解除限制卡
     let getTrueName = '';
@@ -96,7 +98,8 @@ Page({
       })
     }
     this.setData({
-      getDefaultLevel: defaultLevel
+      getDefaultLevel: defaultLevel,
+      myDream: getMyDream.length == 0 ? '暂无' : getMyDream
     });
     if (getNoLimitCard == 1) {
         this.setData({
@@ -110,8 +113,12 @@ Page({
     }
   },
   onShow: function() {
+    let getMyDream = wx.getStorageSync('myDream'); // 获取小目标
     let notMasterWords = wx.getStorageSync('notMasterWords'); // 当前不会的单词集合
     let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 是否购买了解除限制卡
+    this.setData({
+      myDream: getMyDream.length == 0 ? "暂无" : getMyDream
+    });
     if (getNoLimitCard == 1) {
         this.setData({
           currentCount: notMasterWords.length,
@@ -174,6 +181,12 @@ Page({
     this.setData({
       showRadioDialog: false
     });
+  },
+  // 点击后跳转到定小目标页面
+  goToDream: function() {
+    wx.navigateTo({
+      url: './mydream/index',
+    });    
   },
   // 点击后跳转到任务大厅页面
   goToMissions: function() {

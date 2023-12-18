@@ -32,6 +32,13 @@
       </view>
       <text>{{getClockTime}}</text>
     </view>
+    <view class="basic-box margin-top">
+      <view class="inner-box">
+        <image class="item-box-image" src="../../../static/source/dream.png" />
+        <text>我的梦想</text>
+      </view>
+      <text>{{getMyDream}}</text>
+    </view>
   </view>
   <title-section lineTitle="完成进度"></title-section>
   <view class="basic">

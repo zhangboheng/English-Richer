@@ -17,7 +17,7 @@
         <text class="inner-title">英语大富翁</text>
       </view>
       <view class="inner-box">
-        <text>Version 2.3.7</text>
+        <text>Version 2.3.8</text>
       </view>
     </view>
   </view>
@@ -37,6 +37,15 @@
         <text>修改水平</text>
       </view>
       <text class="item-inner">{{ getDefaultLevel }}</text>
+    </view>
+  </view>
+  <view>
+    <view class="container-item" bind:tap="goToDream">
+      <view class="item-box">
+        <image class="item-box-image" src="../../static/source/dream.png" />
+        <text>定小目标</text>
+      </view>
+      <text class="item-inner">{{ myDream }}</text>
     </view>
   </view>
   <view>
@@ -90,7 +99,7 @@
         <image class="item-box-image" src="../../static/source/history.png" />
         <text>更新历史</text>
       </view>
-      <text class="item-inner">最新2023-12-18</text>
+      <text class="item-inner">最新2023-12-19</text>
     </view>
   </view>
   <view>
@@ -102,8 +111,6 @@
       <text class="item-inner">详情</text>
     </view>
   </view>
-  <!-- 修改昵称弹出组件 -->
   <input-modal bind:confirm="handleConfirm" placeholder="请输入昵称" wx:if="{{ getShowOrNot }}"></input-modal>
-  <!-- 修改水平弹出组件 -->
   <radio-dialog englishLevels="{{ englishLevels }}" wordTotal="{{ wordTotal }}" bind:confirm="handleConfirmLevel" bind:close="closeRadioDialog" defaultLevel="{{ getDefaultLevel }}" wx:if="{{ showRadioDialog }}"></radio-dialog>
 </view>

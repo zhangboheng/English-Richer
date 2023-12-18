@@ -3,6 +3,7 @@ Page({
     getDefaultName: '',
     getDefaultLevel: '',
     getDefaultTotal: '',
+    getMyDream: '',
     getClockTime: '00:00:00',
     getTrueName: '英语小菜鸟',
     getTrueParam: '刚刚起步，财富虽少但学词如风',
@@ -18,6 +19,7 @@ Page({
   onLoad(options) {
     let nickname = wx.getStorageSync('nickname'); // 获取昵称
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
+    let getMyDream = wx.getStorageSync('myDream'); // 获取小目标
     let elementaryList = wx.getStorageSync('elementaryList');
     let juniorList = wx.getStorageSync('juniorList');
     let highList = wx.getStorageSync('highList');
@@ -93,6 +95,7 @@ Page({
       getDefaultLevel: defaultLevel,
       getDefaultTotal: TotalNumber,
       getClockTime: getClockTime,
+      getMyDream: getMyDream.length == 0 ? '暂无' : getMyDream,
       getElementary: elementaryMax,
       getJunior: juniorMax,
       getHigh: highMax,
