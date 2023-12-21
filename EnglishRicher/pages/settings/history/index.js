@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.9',
+        date: '2023-12-22',
+        icon: ['success'],
+        changes: [
+          '旋转 Logo 解锁后新增背景播放，即使退出也能听伴音咯。'
+        ],
+      },
+      {
         version: '2.3.8',
         date: '2023-12-19',
         icon: ['success', 'info'],
