@@ -23,6 +23,7 @@ App({
     let getGameTwoTicket = wx.getStorageSync('getGameTwoTicket'); // 轻航填字海体验是否兑换
     let getGameThreeTicket = wx.getStorageSync('getGameThreeTicket'); // 选择知我意验是否兑换
     let getClockTime = wx.getStorageSync('clockTime'); // 获取计时统计
+    let getTaobao = wx.getStorageSync('taobao'); // 淘宝商品1分购
     // 判断是否存在总货币数数据，如果不存在则赋值为 0
     if (typeof money == 'undefined' || money == null || typeof money == "string") {
       money = 0;
@@ -72,6 +73,11 @@ App({
     if (typeof getClockTime == 'undefined' || getClockTime == null || getClockTime.length == 0) {
       getClockTime = '00:00:00';
       wx.setStorageSync('clockTime', getClockTime);
+    }
+    // 判断是否存在淘宝1分购数据，如果不存在则赋值为 0
+    if (typeof getTaobao == 'undefined' || getTaobao == null || typeof getTaobao == "string") {
+      getTaobao = 0;
+      wx.setStorageSync('taobao', getTaobao);
     }
   },
   // 重写分享方法

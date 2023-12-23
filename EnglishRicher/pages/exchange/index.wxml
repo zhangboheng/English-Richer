@@ -97,6 +97,22 @@
         </view>
       </view>
     </view>
+    <view class="row" wx:if="{{taobaoShow}}">
+      <view class="row-inline">
+        <image class="image" style="border:3px solid #000;" src="../../static/source/taobao.png"></image>
+        <view class="title">
+          <view>{{ priceArray.taobaoTitle }}</view>
+          <view class="intro-content" bind:tap="showTaobaoOneCent">
+            <icon type="info" size="18" />
+          </view>
+        </view>
+        <view class="price" bindtap="exchangeTaobao">
+          <text class="price-text">{{ priceArray.taobaoPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
     <view class="row" wx:if="{{ticketShow}}">
       <view class="row-inline">
         <image class="image" src="../../static/source/twocard.png"></image>

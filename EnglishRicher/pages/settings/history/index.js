@@ -2,6 +2,16 @@ Page({
   data: {
     versions: [
       {
+        version: '2.3.9',
+        date: '2023-12-23',
+        icon: ['info', 'info', 'info'],
+        changes: [
+          '完善任务大厅任务。',
+          '完善兑换市集可兑换物品。',
+          '完善经验学堂内容。'
+        ],
+      },
+      {
         version: '2.3.8',
         date: '2023-12-19',
         icon: ['success', 'info'],

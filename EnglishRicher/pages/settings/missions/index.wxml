@@ -37,6 +37,17 @@
       <button class="task-button" bindtap="handleInfinite">已兑解限卡</button>
     </view>
     <view class="task-item gap-box">
+      <view class="task-name">时间的朋友</view>
+      <view class="task-image">
+        <image class="item-image" src="../../../static/source/basketball.png" />
+      </view>
+      <view class="task-reward">
+        经验值:<text class="reward-value">+{{ timeFriendsExp }}</text>
+        钱币:<text class="reward-value">+{{ timeFriendsCoins }}</text>
+      </view>
+      <button class="task-button" bindtap="handleBasketball">累积进步总时2时半</button>
+    </view>
+    <view class="task-item gap-box">
       <view class="task-name">耕耘收获</view>
       <view class="task-image">
         <image class="item-image" src="../../../static/source/field.png" />

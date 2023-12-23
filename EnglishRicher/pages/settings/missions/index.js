@@ -36,15 +36,20 @@ Page({
     masterTwentyThousand: false, // 是否领取耕耘收获
     masterTwentyThousandExp: 200, // 掌握 20000 单词后奖励经验
     masterTwentyThousandCoins: 20, // 掌握 20000 单词后奖励钱币
+    canGetTimeFriend: false, // 领取资格判断
+    masterTimeFrined: false, // 是否领取时间的朋友
+    timeFriendsExp: 10, // 掌握时间的朋友奖励经验
+    timeFriendsCoins: 2, // 掌握时间的朋友奖励金币
   },
   // 页面分享
   onShareAppMessage() {},
   // 页面分享朋友圈
   onShareTimeline() {},
-  onLoad: function() {
+  onLoad: function () {
     let dailySIgn = wx.getStorageSync('dailySign'); // 获取签到日期
     let shareSign = wx.getStorageSync('shareSign'); // 获取分享日期
     let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 获取解限卡是否获取
+    let getClockTime = wx.getStorageSync('clockTime'); // 获取累计进步时长
     let elementaryList = wx.getStorageSync('elementaryList');
     let juniorList = wx.getStorageSync('juniorList');
     let highList = wx.getStorageSync('highList');
@@ -87,6 +92,11 @@ Page({
     if (getNoLimitCard == 1) {
       this.setData({
         canGetInfinite: true
+      });
+    }
+    if (this.isTimeGreaterThan(getClockTime, "02:30:00")) {
+      this.setData({
+        canGetTimeFriend: true
       });
     }
     if (TotalNumber >= 500) {
@@ -195,7 +205,7 @@ Page({
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
     let masterInfinite = wx.getStorageSync('masterInfinite');
-    if(typeof masterInfinite != 'string') {
+    if (typeof masterInfinite != 'string') {
       this.setData({
         masterInfinite: true
       });
@@ -214,12 +224,45 @@ Page({
         wx.showToast({
           title: `已经解除限制，经验值+${this.data.masterInfiniteExp}，钱币+${this.data.masterInfiniteCoins}`,
           icon: 'none',
-        }); 
+        });
       } else {
         wx.showToast({
           title: '骗不了我，你没领取解限卡呢～～',
           icon: 'none',
-        });    
+        });
+      }
+    }
+  },
+  // 获取时间的朋友的奖励
+  handleBasketball() {
+    let getProgress = wx.getStorageSync('progress') || 0; // 经验值
+    let money = wx.getStorageSync('money'); // 总货币数
+    let getTimeFrined = wx.getStorageSync('getTimeFriend');
+    if (typeof getTimeFrined != 'string') {
+      this.setData({
+        masterTimeFrined: true
+      });
+    }
+    if (this.data.masterTimeFrined) {
+      wx.showToast({
+        title: '太贪心了吧，已经领取过了～',
+        icon: 'none',
+      });
+    } else {
+      if (this.data.canGetTimeFriend) {
+        getProgress = getProgress + this.data.timeFriendsExp;
+        wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
+        wx.setStorageSync('money', money + this.data.timeFriendsCoins);
+        wx.setStorageSync('getTimeFriend', true)
+        wx.showToast({
+          title: `为你打 Call，经验值+${this.data.timeFriendsExp}，钱币+${this.data.timeFriendsCoins}`,
+          icon: 'none',
+        });
+      } else {
+        wx.showToast({
+          title: '进步时长不足，请再去累积练习时长～～',
+          icon: 'none',
+        });
       }
     }
   },
@@ -228,7 +271,7 @@ Page({
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
     let masterFiveHundred = wx.getStorageSync('masterFiveHundred');
-    if(typeof masterFiveHundred != 'string') {
+    if (typeof masterFiveHundred != 'string') {
       this.setData({
         masterFiveHundred: true
       });
@@ -247,12 +290,12 @@ Page({
         wx.showToast({
           title: `一分耕耘一分收获，经验值+${this.data.masterFiveHundredExp}，钱币+${this.data.masterFiveHundredCoins}`,
           icon: 'none',
-        }); 
+        });
       } else {
         wx.showToast({
           title: '哎呦，都没有掌握500个单词，吁～～',
           icon: 'none',
-        });    
+        });
       }
     }
   },
@@ -261,7 +304,7 @@ Page({
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
     let masterThousand = wx.getStorageSync('masterThousand');
-    if(typeof masterThousand != 'string') {
+    if (typeof masterThousand != 'string') {
       this.setData({
         masterThousand: true
       });
@@ -280,12 +323,12 @@ Page({
         wx.showToast({
           title: `一分耕耘一分收获，经验值+${this.data.masterThousandExp}，钱币+${this.data.masterThousandCoins}`,
           icon: 'none',
-        }); 
+        });
       } else {
         wx.showToast({
           title: '哎呦，都没有掌握1000个单词，吁～～',
           icon: 'none',
-        });    
+        });
       }
     }
   },
@@ -294,7 +337,7 @@ Page({
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
     let masterTwoThousand = wx.getStorageSync('masterTwoThousand');
-    if(typeof masterTwoThousand != 'string') {
+    if (typeof masterTwoThousand != 'string') {
       this.setData({
         masterTwoThousand: true
       });
@@ -313,12 +356,12 @@ Page({
         wx.showToast({
           title: `一分耕耘一分收获，经验值+${this.data.masterTwoThousandExp}，钱币+${this.data.masterTwoThousandCoins}`,
           icon: 'none',
-        }); 
+        });
       } else {
         wx.showToast({
           title: '哎呦，都没有掌握2000个单词，吁～～',
           icon: 'none',
-        });    
+        });
       }
     }
   },
@@ -327,7 +370,7 @@ Page({
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
     let masterFiveThousand = wx.getStorageSync('masterFiveThousand');
-    if(typeof masterFiveThousand != 'string') {
+    if (typeof masterFiveThousand != 'string') {
       this.setData({
         masterFiveThousand: true
       });
@@ -346,12 +389,12 @@ Page({
         wx.showToast({
           title: `一分耕耘一分收获，经验值+${this.data.masterFiveThousandExp}，钱币+${this.data.masterFiveThousandCoins}`,
           icon: 'none',
-        }); 
+        });
       } else {
         wx.showToast({
           title: '哎呦，都没有掌握5000个单词，吁～～',
           icon: 'none',
-        });    
+        });
       }
     }
   },
@@ -360,7 +403,7 @@ Page({
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
     let masterTenThousand = wx.getStorageSync('masterTenThousand');
-    if(typeof masterTenThousand != 'string') {
+    if (typeof masterTenThousand != 'string') {
       this.setData({
         masterTenThousand: true
       });
@@ -379,12 +422,12 @@ Page({
         wx.showToast({
           title: `一分耕耘一分收获，经验值+${this.data.masterTenThousandExp}，钱币+${this.data.masterTenThousandCoins}`,
           icon: 'none',
-        }); 
+        });
       } else {
         wx.showToast({
           title: '哎呦，都没有掌握10000个单词，吁～～',
           icon: 'none',
-        });    
+        });
       }
     }
   },
@@ -393,7 +436,7 @@ Page({
     let getProgress = wx.getStorageSync('progress') || 0; // 经验值
     let money = wx.getStorageSync('money'); // 总货币数
     let masterTwentyThousand = wx.getStorageSync('masterTwentyThousand');
-    if(typeof masterTwentyThousand != 'string') {
+    if (typeof masterTwentyThousand != 'string') {
       this.setData({
         masterTwentyThousand: true
       });
@@ -412,13 +455,27 @@ Page({
         wx.showToast({
           title: `一分耕耘一分收获，经验值+${this.data.masterTwentyThousandExp}，钱币+${this.data.masterTwentyThousandCoins}`,
           icon: 'none',
-        }); 
+        });
       } else {
         wx.showToast({
           title: '哎呦，都没有掌握20000个单词，吁～～',
           icon: 'none',
-        });    
+        });
       }
-    }    
+    }
+  },
+  // 比较时间大小的公共方法
+  isTimeGreaterThan(timeStr, comparisonStr) {
+    // 将时间字符串转换为秒数
+    function timeToSeconds(time) {
+      const [hours, minutes, seconds] = time.split(':').map(Number);
+      return hours * 3600 + minutes * 60 + seconds;
+    }
+
+    let timeInSeconds = timeToSeconds(timeStr);
+    let comparisonInSeconds = timeToSeconds(comparisonStr);
+
+    // 比较时间
+    return timeInSeconds >= comparisonInSeconds;
   }
 });

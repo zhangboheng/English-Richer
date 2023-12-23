@@ -22,7 +22,9 @@ Page({
       ticketPrice: 0.01,
       ticketTitle: "轻航填字海体验",
       ticketTwoPrice: 0.01,
-      ticketTwoTitle: "选择知我意体验"
+      ticketTwoTitle: "选择知我意体验",
+      taobaoPrice: 5,
+      taobaoTitle: "淘宝商品1分购"
     },
     // 彩票
     lotteryShow: true,
@@ -46,7 +48,9 @@ Page({
     // 轻航填字海体验卡
     ticketShow: true,
     // 选择知我意体验卡
-    ticketTwoShow: true
+    ticketTwoShow: true,
+    // 淘宝一分购
+    taobaoShow: true
   },
   // 页面分享
   onShareAppMessage() {},
@@ -180,6 +184,16 @@ Page({
     } else {
       this.setData({
         ticketTwoShow: false
+      });
+    }
+    // 判断淘宝商品1分购是否显示
+    if (this.data.priceArray.taobaoTitle.indexOf(this.data.inputTitle) > -1) {
+      this.setData({
+        taobaoShow: true
+      });
+    } else {
+      this.setData({
+        taobaoShow: false
       });
     }
   },
@@ -350,6 +364,27 @@ Page({
     } else {
       wx.showToast({
         title: '已经兑换过了，仅限兑换一次哦～～',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+  },
+  // 点击淘宝商品1分购提示
+  showTaobaoOneCent() {
+    wx.showToast({
+      title: '获得每天1分购1商品资格',
+      icon: 'none',
+      duration: 2000
+    });
+  },
+  // 点击兑换淘宝商品1分购
+  exchangeTaobao() {
+    let getTaobao = wx.getStorageSync('taobao');
+    if (getTaobao == 0) {
+      this.popupPublic(this.data.priceArray.taobaoPrice, this.data.priceArray.taobaoTitle);
+    } else {
+      wx.showToast({
+        title: '微信公众号行运设计师，发送消息：1cent',
         icon: 'none',
         duration: 2000
       });
@@ -580,7 +615,28 @@ Page({
                 duration: 2000
               });
             }
-          }
+          } else if (_publicTitle == "淘宝商品1分购") {
+            if (self.data.moenyTotal >= _publicPrice) {
+              self.setData({
+                moenyTotal: (self.data.moenyTotal - _publicPrice).toFixed(2)
+              });
+              // 将剩余钱币数量存储到缓存中
+              wx.setStorageSync('money', Number(self.data.moenyTotal));
+              // 将兑换成功后资格储存到缓存中
+              wx.setStorageSync('taobao', 1);
+              wx.showToast({
+                title: '微信公众号行运设计师，发送消息：1cent',
+                icon: 'none',
+                duration: 10000
+              });
+            } else {
+              wx.showToast({
+                title: '资产不够兑换咯，还不去搬砖！',
+                icon: 'none',
+                duration: 2000
+              });
+            }
+          } 
         } else if (res.cancel) {
           // 用户点击了取消按钮
           console.log('用户点击取消');

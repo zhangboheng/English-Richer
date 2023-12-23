@@ -33,16 +33,17 @@
 .product-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   margin-top:16rpx;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .row {
   width: calc(50% - 30px);
   height: 320rpx;
-  padding: 10px;
   display: flex;
-  margin:1rpx;
+  margin-bottom: 10px;
+  padding: 10px;
   text-align: center;
   align-items: center;
   justify-content: center;
