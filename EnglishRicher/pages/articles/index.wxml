@@ -5,7 +5,7 @@
   <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
   <title-section lineTitle="他山之石"></title-section>
   <article-list articles="{{ bookData }}"></article-list>
-  <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
+  <ad unit-id="adunit-6fee8a12acce2682" ad-type="video" ad-intervals="30"></ad>
   <title-section lineTitle="英语应用"></title-section>
   <article-list articles="{{ appData }}"></article-list>
   <ad unit-id="adunit-ad104572b4e7145d" ad-intervals="30"></ad>

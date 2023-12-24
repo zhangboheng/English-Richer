@@ -1,4 +1,5 @@
 <view class="container">
+  <image-timer></image-timer>
   <animation-box></animation-box>
   <view class="content">
     <image  bind:tap="playAudio" class="voice-word" src="../../../../static/source/microphone.png" mode="scaleToFill"></image>

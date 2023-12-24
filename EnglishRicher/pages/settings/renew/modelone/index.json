@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "animation-box": "../../../../components/animation-box/animation-box"
+    "animation-box": "../../../../components/animation-box/animation-box",
+    "image-timer": "../../../../components/image-timer/image-timer"
   },
   "navigationBarTitleText": "复习模式一"
 }

@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "animation-box": "../../../../components/animation-box/animation-box",
+    "image-timer": "../../../../components/image-timer/image-timer"
+  },
   "navigationBarTitleText": "速览"
 }

@@ -1,3 +1,4 @@
+let interstitialAd = null
 Page({
   data: {
     swiperImages: [
@@ -153,7 +154,22 @@ Page({
       appData: this.data.appData,
       articleData: this.data.articleData,
       bookData: this.data.bookData
-    })
+    });
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-28211117f59c8710'
+      })
+      interstitialAd.onLoad(() => {})
+      interstitialAd.onError((err) => {
+        console.error('插屏广告加载失败', err)
+      })
+      interstitialAd.onClose(() => {})
+    }
+    if (interstitialAd) {
+      interstitialAd.show().catch((err) => {
+        console.error('插屏广告显示失败', err)
+      })
+    }
   },
   shuffleArray: function(array) {
     for (let i = array.length - 1; i > 0; i--) {

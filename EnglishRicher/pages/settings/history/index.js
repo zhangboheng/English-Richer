@@ -2,6 +2,16 @@ Page({
   data: {
     versions: [
       {
+        version: '2.4.0',
+        date: '2023-12-24',
+        icon: ['success', 'success', 'success'],
+        changes: [
+          '复习模式新增单局时间显示。',
+          '速览模式新增时间显示。',
+          '经验学堂引入广告赞助商。'
+        ],
+      },
+      {
         version: '2.3.9',
         date: '2023-12-23',
         icon: ['info', 'info', 'info'],
