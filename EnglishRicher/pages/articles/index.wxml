@@ -1,15 +1,36 @@
 <view class="container">
+  <scroll-view class="scroll-view" scroll-x="true">
+        <view class="tag" wx:for="{{tags}}" wx:key="index" bindtap="onTagTap" data-index="{{index}}">
+            {{item}}
+        </view>
+  </scroll-view>
   <swiper-banner class="swiper-box" images="{{swiperImages}}" indicatorDots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" circular="{{true}}"></swiper-banner>
-  <title-section lineTitle="学习娱乐"></title-section>
-  <article-list articles="{{ entertainmentData }}"></article-list>
-  <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
-  <title-section lineTitle="他山之石"></title-section>
-  <article-list articles="{{ bookData }}"></article-list>
-  <ad unit-id="adunit-6fee8a12acce2682" ad-type="video" ad-intervals="30"></ad>
-  <title-section lineTitle="英语应用"></title-section>
-  <article-list articles="{{ appData }}"></article-list>
-  <ad unit-id="adunit-ad104572b4e7145d" ad-intervals="30"></ad>
-  <title-section lineTitle="AI助力"></title-section>
-  <article-list articles="{{ articleData }}"></article-list>
-  <ad unit-id="adunit-9ea16354eb9450a0" ad-type="video" ad-theme="white"></ad>
+  <view id="content-0">
+    <title-section lineTitle="生财有道"></title-section>
+    <article-list articles="{{ moneyData }}"></article-list>
+    <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
+  </view>
+  <view id="content-1">
+    <title-section lineTitle="学习娱乐"></title-section>
+    <article-list articles="{{ entertainmentData }}"></article-list>
+    <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
+  </view>
+  <view id="content-2">
+    <title-section lineTitle="他山之石"></title-section>
+    <article-list articles="{{ bookData }}"></article-list>
+    <ad unit-id="adunit-6fee8a12acce2682" ad-type="video" ad-intervals="30"></ad>
+  </view>
+  <view id="content-3">
+    <title-section lineTitle="英语应用"></title-section>
+    <article-list articles="{{ appData }}"></article-list>
+    <ad unit-id="adunit-ad104572b4e7145d" ad-intervals="30"></ad>
+  </view>
+  <view id="content-4">
+    <title-section lineTitle="AI助力"></title-section>
+    <article-list articles="{{ articleData }}"></article-list>
+    <ad unit-id="adunit-9ea16354eb9450a0" ad-type="video" ad-theme="white"></ad>
+  </view>
+  <view class="bottomup" bindtap="scrollToTop">
+    <image class="fixedimage" src="../../static/source/uparrow.png" />
+  </view>
 </view>

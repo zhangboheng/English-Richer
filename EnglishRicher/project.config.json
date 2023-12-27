@@ -1,14 +1,5 @@
 {
   "description": "项目配置文件",
-  "packOptions": {
-    "ignore": [
-      {
-        "value": ".eslintrc.js",
-        "type": "file"
-      }
-    ],
-    "include": []
-  },
   "setting": {
     "urlCheck": true,
     "es6": true,
@@ -29,8 +20,6 @@
     "compileHotReLoad": true,
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": false,
-    "useApiHook": false,
-    "useApiHostProcess": false,
     "ignoreDevUnusedFiles": false,
     "babelSetting": {
       "ignore": [],
@@ -47,15 +36,26 @@
     "showES6CompileOption": false,
     "useCompilerPlugins": false,
     "ignoreUploadUnusedFiles": true,
-    "condition": false
+    "condition": false,
+    "useApiHook": false,
+    "useApiHostProcess": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
-  "appid": "wx9b59165c6132e1bd",
-  "projectname": "EnglishRicher",
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "appid": "wx9b59165c6132e1bd",
+  "libVersion": "2.19.4",
+  "packOptions": {
+    "ignore": [
+      {
+        "value": ".eslintrc.js",
+        "type": "file"
+      }
+    ],
+    "include": []
+  },
+  "projectname": "EnglishRicher"
 }

@@ -99,7 +99,7 @@ Page({
     }
     this.setData({
       getDefaultLevel: defaultLevel,
-      myDream: getMyDream.length == 0 ? '暂无' : getMyDream
+      myDream: getMyDream.length == 0 ? '暂无' : getMyDream.length <= 8 ? getMyDream : getMyDream.slice(0, 8) + '...'
     });
     if (getNoLimitCard == 1) {
         this.setData({
@@ -117,7 +117,7 @@ Page({
     let notMasterWords = wx.getStorageSync('notMasterWords'); // 当前不会的单词集合
     let getNoLimitCard = wx.getStorageSync('getNoLimitCard'); // 是否购买了解除限制卡
     this.setData({
-      myDream: getMyDream.length == 0 ? "暂无" : getMyDream
+      myDream: getMyDream.length == 0 ? "暂无" : getMyDream.length <= 8 ? getMyDream : getMyDream.slice(0, 8) + '...'
     });
     if (getNoLimitCard == 1) {
         this.setData({

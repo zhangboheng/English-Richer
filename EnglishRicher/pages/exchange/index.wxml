@@ -171,5 +171,5 @@
   <view class="adContainer">
     <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
   </view>
-  <scrollable-text wx:if="{{einsteinArticle}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="爱因斯坦大脑" imgSrc="../../static/source/einstein.png"></scrollable-text>
+  <scrollable-text wx:if="{{einsteinArticle}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="{{ itemName }}" imgSrc="{{ itemImg }}"></scrollable-text>
 </view>

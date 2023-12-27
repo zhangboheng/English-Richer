@@ -4,7 +4,7 @@
   </view>
   <title-section lineTitle="我的梦想"></title-section>
   <view class="section">
-    <input class="input" value="{{inputText}}" placeholder="赚它一个亿（最多7个字符）" maxlength="7" bindinput="handleInput"></input>
+    <input class="input" value="{{inputText}}" placeholder="赚它一个亿" bindinput="handleInput"></input>
   </view>
   <title-section lineTitle="实现步骤"></title-section>
   <view class="section">

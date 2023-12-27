@@ -95,7 +95,7 @@ Page({
       getDefaultLevel: defaultLevel,
       getDefaultTotal: TotalNumber,
       getClockTime: getClockTime,
-      getMyDream: getMyDream.length == 0 ? '暂无' : getMyDream,
+      getMyDream: getMyDream.length == 0 ? '暂无' : getMyDream.length <= 8 ? getMyDream : getMyDream.slice(0, 8) + '...',
       getElementary: elementaryMax,
       getJunior: juniorMax,
       getHigh: highMax,

@@ -1,3 +1,31 @@
-.article-btn {
-  width:100%;
+.scroll-view {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.tag {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 5px 10px 0;
+  background-color:#f5d659;
+  border: 3px solid #000;
+  border-radius: 5px;
+}
+
+.bottomup {
+  position: fixed;
+  left:0;
+  right:0;
+  margin: auto;
+  bottom: 20rpx;
+  text-align: center;
+}
+
+.fixedimage {
+  min-width: 50px;
+  min-height: 50px;
+  width: 50rpx;
+  height: 50rpx;
+  max-width: 64px;
+  max-height: 64px;
 }

@@ -1,16 +1,60 @@
 let interstitialAd = null
 Page({
   data: {
-    swiperImages: [
-      { src: '../../static/source/share-how-to-learn-idea.jpg', url: 'https://mp.weixin.qq.com/s/xSN-KKvFcY9Mtl7XR44MoA' },
-      { src: 'https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxln5YNBlQ3M3NC0GWAibKjoSl7f7llGXfXrVlzgIKiaHzngb9qQaCmEnDhomVeuxR3Ta3v9bBHAmxzg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/mrVXC-NWUVQ8lvEEBkKh6A' },
-      { src: 'https://mmbiz.qpic.cn/sz_mmbiz_jpg/YpPe9SnqQxn2JuiaduqEickgWDOezQjod5LXkib0lNj51LJcX9lQG7UOFG7ib1JA1mApN1Nhl3YXA5NLVbUZK234bw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/r26TgyxO0MGEoGgEVL8K_A' },
-      { src: 'https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkj7CjLmeIfSk1vUAvXBmcmTS4eGPbRDtEW0ozVhczA6ItVGUtVkEZiaVfE1uScafTgniaJvk5f0LCw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/By442g-row9mG9PvKwm4EQ' },
-      { src: 'https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxlHiaJ3p2y2WicDEDRccYy5TTwBcBqdJDGia2ug7kywXzXBM8tn7qaY1FBxvzlHgR2e8ZCZntsCxd4Yw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/ws17l6682Cu1XR07nqan8Q' },
-      { src: 'https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkLEFbY5QIiaEWmpkM9SOmTZliazzJ8un4z0ibkIOMcjH8K3kicrODyo25R4NM4E4Z2twmRXuOwN3NIqw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1', url: 'https://mp.weixin.qq.com/s/nZcujqasx51weS2_Ftxq8w' },
-    ],
-    entertainmentData: [
+    tags: ['生财有道', '学习娱乐', '他山之石', '英语应用', 'AI助力'], // 分类标签数组
+    swiperImages: [{
+        src: '../../static/source/share-how-to-learn-idea.jpg',
+        url: 'https://mp.weixin.qq.com/s/xSN-KKvFcY9Mtl7XR44MoA'
+      },
       {
+        src: 'https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxln5YNBlQ3M3NC0GWAibKjoSl7f7llGXfXrVlzgIKiaHzngb9qQaCmEnDhomVeuxR3Ta3v9bBHAmxzg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1',
+        url: 'https://mp.weixin.qq.com/s/mrVXC-NWUVQ8lvEEBkKh6A'
+      },
+      {
+        src: 'https://mmbiz.qpic.cn/sz_mmbiz_jpg/YpPe9SnqQxn2JuiaduqEickgWDOezQjod5LXkib0lNj51LJcX9lQG7UOFG7ib1JA1mApN1Nhl3YXA5NLVbUZK234bw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1',
+        url: 'https://mp.weixin.qq.com/s/r26TgyxO0MGEoGgEVL8K_A'
+      },
+      {
+        src: 'https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkj7CjLmeIfSk1vUAvXBmcmTS4eGPbRDtEW0ozVhczA6ItVGUtVkEZiaVfE1uScafTgniaJvk5f0LCw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1',
+        url: 'https://mp.weixin.qq.com/s/By442g-row9mG9PvKwm4EQ'
+      },
+      {
+        src: 'https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxlHiaJ3p2y2WicDEDRccYy5TTwBcBqdJDGia2ug7kywXzXBM8tn7qaY1FBxvzlHgR2e8ZCZntsCxd4Yw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1',
+        url: 'https://mp.weixin.qq.com/s/ws17l6682Cu1XR07nqan8Q'
+      },
+      {
+        src: 'https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkLEFbY5QIiaEWmpkM9SOmTZliazzJ8un4z0ibkIOMcjH8K3kicrODyo25R4NM4E4Z2twmRXuOwN3NIqw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1',
+        url: 'https://mp.weixin.qq.com/s/nZcujqasx51weS2_Ftxq8w'
+      },
+    ],
+    moneyData: [{
+        image: "https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxnSIUOGD2uQnf5hNtm7uzvsWAovr8AttM7KPo6OVIkCI7icv92W4q8iacVPrriaPj32LKc6jtHyDbzSw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "如何将被低估的被动收入超过你的工资收入",
+        time: "2022-04-19",
+        url: "https://mp.weixin.qq.com/s/hEbatplTWcb4pAGn0iXxHQ"
+      },{
+        image: "https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxlHiaJ3p2y2WicDEDRccYy5TTWaZpHso2uKvjdFY5eCPtNAliaia3fWf8JryRia15QEQHgxsG2nboFtELQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "如何妙用凯利公式，让你的投资立于不败之地",
+        time: "2022-05-12",
+        url: "https://mp.weixin.qq.com/s/Fs9Xl051A-eyWOL02-jFxw"
+      },{
+        image: "https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkCYlFrKCC7M1x2DKichcM2YzlsTr6GPQd6FJMNMLicdVM2kLbsIlobLWFicKFtvYlAYPSJ84MrJ5h2w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "Python爬虫爬取股票代码及名称导出为Excel表格以投资分析用",
+        time: "2021-11-22",
+        url: "https://mp.weixin.qq.com/s/zC7g2fVxEaD2DqPNMrl4Yw"
+      },{
+        image: "https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxlFiacK6TxP42Iv7k2xBlvIic6eoEIjmUS8VZSRrkqX3eZasOEw8niaSsmlFtk6F1uxBZaO4ax3a0qxg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "如何结合爬虫技术让你的金融投资更具科学性",
+        time: "2021-10-26",
+        url: "https://mp.weixin.qq.com/s/9UXzGFgrzFQy3jqQP0f3Ow"
+      },{
+        image: "https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkK6evD0nzSibu9HWsovMZwYMnKmicetFOxMYcytugzSKBuGKiah31TCKdOkS2ibUoeDpom2pDgwfrJoQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "以基金为例探索如何科学地进行投资——提升价值",
+        time: "2021-10-21",
+        url: "https://mp.weixin.qq.com/s/UfYG1-BuXZ5pFTU5fFP2gg"
+      }
+    ],
+    entertainmentData: [{
         image: "https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkLEFbY5QIiaEWmpkM9SOmTZliazzJ8un4z0ibkIOMcjH8K3kicrODyo25R4NM4E4Z2twmRXuOwN3NIqw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
         title: "在家也能环游世界——云旅游的科学指南",
         time: "2023-05-07",
@@ -41,8 +85,7 @@ Page({
         url: "https://mp.weixin.qq.com/s/UOdfTxGlmTuw_e7uw_5pwQ"
       }
     ],
-    bookData: [
-      {
+    bookData: [{
         image: "https://mmbiz.qpic.cn/mmbiz_jpg/YpPe9SnqQxnPKt79k8HIdctH0Rues9O5wKKPGN3kqkjiau0bicpfibq3r1pGffTsiaxzibnOYTrbicWmPwBh1VDScyiaQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1",
         title: "50个免费开源电子书下载网站",
         time: "2022-05-16",
@@ -73,8 +116,7 @@ Page({
         url: "https://mp.weixin.qq.com/s/Dpb1K6nc9KJ304MVzBcq6A"
       }
     ],
-    appData: [
-      {
+    appData: [{
         image: "https://mmbiz.qpic.cn/mmbiz_png/YpPe9SnqQxkJiat95Q1u1WbY2XKZoQjbGX9cNIiaSCGxy2o9m1LUUopeot8YdB204Jp47CSPxeEGibXOsOQibSdXkQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
         title: "边看美剧边学英语神器又一个秀丽英语帮助你",
         time: "2020-09-05",
@@ -111,8 +153,7 @@ Page({
         url: "https://mp.weixin.qq.com/s/ws17l6682Cu1XR07nqan8Q"
       }
     ],
-    articleData: [
-      {
+    articleData: [{
         image: "https://mmbiz.qpic.cn/sz_mmbiz_png/YpPe9SnqQxmukrF3icQjMpUxbXyEZRqBls5VSFqg4ojKCMwZt2EKAojn4E2pB3YMgEpzicg8GwopbR4S6228tq2Q/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1",
         title: "用 ChatGPT 打造你的一人公司，让它扮演各个员工角色，榨取它的剩余价值",
         time: "2023-06-04",
@@ -146,11 +187,15 @@ Page({
   },
   onLoad: function (options) {
     this.shuffleArray(this.data.swiperImages);
+    this.shuffleArray(this.data.moneyData);
+    this.shuffleArray(this.data.entertainmentData);
     this.shuffleArray(this.data.bookData);
     this.shuffleArray(this.data.articleData);
     this.shuffleArray(this.data.appData);
     this.setData({
       swiperImages: this.data.swiperImages,
+      moneyData: this.data.moneyData,
+      entertainmentData: this.data.entertainmentData,
       appData: this.data.appData,
       articleData: this.data.articleData,
       bookData: this.data.bookData
@@ -171,7 +216,23 @@ Page({
       })
     }
   },
-  shuffleArray: function(array) {
+  // 点击标签后跳转到对应位置
+  onTagTap: function (e) {
+    const index = e.currentTarget.dataset.index;
+    console.info('------>', index)
+    wx.pageScrollTo({
+      selector: `#content-${index}`,
+      duration: 300
+    });
+  },
+  // 侦测滚动事件回到顶部
+  scrollToTop: function () {
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    });
+  },
+  shuffleArray: function (array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];

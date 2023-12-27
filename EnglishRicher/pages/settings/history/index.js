@@ -2,6 +2,16 @@ Page({
   data: {
     versions: [
       {
+        version: '2.4.1',
+        date: '2023-12-27',
+        icon: ['info', 'info', 'info'],
+        changes: [
+          '完善经验学堂内容，增加分类标签。',
+          '完善兑换市集提示框样式。',
+          '人生无极限，定小目标不该有限制，策划谋略中的定小目标解除字数限制。'
+        ],
+      },
+      {
         version: '2.4.0',
         date: '2023-12-24',
         icon: ['success', 'success', 'success'],

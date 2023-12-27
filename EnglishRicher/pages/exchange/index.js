@@ -44,7 +44,9 @@ Page({
     einsteinShow: true,
     // 爱因斯坦大脑解锁弹出信息
     einsteinArticle: false,
-    showTips: "\n哎呦，没想到你真的兑换成功了，太强了吧！那么恭喜你，你已经获得了爱因斯坦大脑般思维方式的基础，那就是坚持。\n\n之所以说在现实中可能获得爱因斯坦般思考能力，关键是如何实现，没有一条固定的路径。\n\n以我自己的经验，简单来说，乐观自信，终身学习，形成自己的科学方法论，步入一条没人走过的道路，书写自己的人生传奇。\n\n获得类似爱因斯坦大脑般的思考能力是一个复杂的目标，它涉及到多个方面，包括学习、思维习惯和认知能力：\n\n① 持续学习：不断学习新的知识和技能，从多个领域获取信息。广泛的知识背景可以帮助你建立更多的关联和视角，促进创造性的思考。\n\n② 培养好奇心：保持对世界的好奇心和求知欲。提出问题、追寻答案、挑战常规思维模式，这样可以激发创新和深入思考的能力。请一定要找到自己的兴趣，最好是能够用它为生，这样才能有动力长久做下去。\n\n③ 培养批判性思维：学会质疑和分析信息，不盲从、不轻信。培养批判性思维，可以帮助你更好地理解问题的本质和逻辑，从而提出更深入的观点和解决方案。这也是我十分推崇的，也是能够有伟大创新的基础。\n\n④ 增强问题解决能力：培养解决问题的能力，不断寻找解决方案并进行实践。通过解决各种难题和挑战，你可以锻炼思维的灵活性和创造性。我一般学到某个具体的知识的话就会及时拿去使用，比如学到一个英语单词，我就会用它组成一个句子，或者学到一个编程的知识点，我就会想在实际项目中该如何使用。\n\n⑤ 培养系统思考能力：学会将问题和信息放入更广阔的背景中，观察事物之间的相互关系和影响。系统思考可以帮助你发现更深层次的模式和洞察力。\n\n⑥ 练习思考技巧：例如，概念映射、逆向思考、侧重点转移等思考技巧可以帮助你拓宽思维的范围和深度。\n\n⑦ 培养创造性思维：鼓励自由思考和想象力的发挥。尝试不同的观点、方法和解决方案，挑战传统思维模式，寻找新的创意和创新。这一点是建立在拥有批判性思维上，有了批判性思维，创造性思维就会在不知不觉中诞生。\n\n⑧ 培养耐心和毅力：深入思考和解决复杂问题需要耐心和毅力。不断锻炼这些品质，坚持思考和学习的过程。如果你看到这里，相信你已经具备了这个特质了，恭喜你已经具备了一半达成的可能性了。\n\n最后，请牢记，你是最棒的，找到适合自己的道路，没有标准答案。\n\n",
+    showTips: "",
+    itemName: '',
+    itemImg: '',
     // 轻航填字海体验卡
     ticketShow: true,
     // 选择知我意体验卡
@@ -199,10 +201,11 @@ Page({
   },
   // 显示彩票详情信息
   showLotteryInfo() {
-    wx.showToast({
-      title: '0.01～100钱币，体验一夜暴富的感觉',
-      icon: 'none',
-      duration: 2000
+    this.setData({
+      einsteinArticle: true,
+      showTips: '\n0.01～100钱币，体验一夜暴富。\n\n① 0.01钱币：中奖概率 40%\n\n② 0.10钱币：中奖概率 35%\n\n③ 0.50钱币：中奖概率 10%\n\n④ 1.00钱币：中奖概率 5%\n\n⑤ 1.50钱币：中奖概率 5%\n\n⑥ 2.00钱币：中奖概率 3%\n\n⑦ 5.00钱币：中奖概率 1.5%\n\n⑧ 10.00钱币：中奖概率 0.4%\n\n⑨ 100.00钱币：中奖概率 0.1%\n\n',
+      itemName: '彩票中奖概率',
+      itemImg: '../../static/source/lottery.png'
     });
   },
   // 点击兑换彩票
@@ -211,10 +214,11 @@ Page({
   },
   // 显示经验卡详情信息
   showExperienceInfo() {
-    wx.showToast({
-      title: '0.01～100经验，让你快速变强',
-      icon: 'none',
-      duration: 2000
+    this.setData({
+      einsteinArticle: true,
+      showTips: '\n0.01～100经验，让你快速变强。\n\n① 0.01经验：中奖概率 40%\n\n② 0.10经验：中奖概率 35%\n\n③ 0.50经验：中奖概率 10%\n\n④ 1.00经验：中奖概率 5%\n\n⑤ 1.50经验：中奖概率 5%\n\n⑥ 2.00经验：中奖概率 3%\n\n⑦ 5.00经验：中奖概率 1.5%\n\n⑧ 10.00经验：中奖概率 0.4%\n\n⑨ 100.00经验：中奖概率 0.1%\n\n',
+      itemName: '经验卡开出概率',
+      itemImg: '../../static/source/up.png'
     });
   },
   // 点击兑换经验卡
@@ -227,10 +231,11 @@ Page({
     if (yasiGet == 0) {
       this.popupPublic(this.data.priceArray.yasiPrice, this.data.priceArray.yasiTitle);
     } else {
-      wx.showToast({
-        title: '微信公众号行运设计师，发送消息：9527',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n请关注微信公众号行运设计师，之后发送消息：9527，即可获得。\n\n',
+        itemName: '雅思考试资料兑换成功',
+        itemImg: '../../static/source/exam.png'
       });
     }
   },
@@ -240,10 +245,11 @@ Page({
     if (movieSub == 0) {
       this.popupPublic(this.data.priceArray.moviePrice, this.data.priceArray.movieTitle);
     } else {
-      wx.showToast({
-        title: '微信公众号行运设计师，发送消息：2048',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n请关注微信公众号行运设计师，之后发送消息：2048，即可获得。\n\n',
+        itemName: '随机电影字幕兑换成功',
+        itemImg: '../../static/source/ticket.png'
       });
     }
   },
@@ -253,10 +259,11 @@ Page({
     if (telephoneCredits == 0) {
       this.popupPublic(this.data.priceArray.telegramPrice, this.data.priceArray.telegramTitle);
     } else {
-      wx.showToast({
-        title: '微信公众号行运设计师，发送消息：13888',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n请关注微信公众号行运设计师，之后发送消息：13888，即可获得。\n\n',
+        itemName: '话费优惠信息兑换成功',
+        itemImg: '../../static/source/smartphone.png'
       });
     }
   },
@@ -266,19 +273,21 @@ Page({
     if (getGpt4OrNot == 0) {
       this.popupPublic(this.data.priceArray.gpt4Price, this.data.priceArray.gpt4Title);
     } else {
-      wx.showToast({
-        title: '微信公众号行运设计师，发送消息：GPT4Free',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n请关注微信公众号行运设计师，之后发送消息：GPT4Free，即可获得。\n\n',
+        itemName: '离线GPT4兑换成功',
+        itemImg: '../../static/source/gpt4.png'
       });
     }
   },
   // 点击显示解限卡说明
   showInfiniteInfo() {
-    wx.showToast({
-      title: '温故知新容量永久变成2000',
-      icon: 'none',
-      duration: 2000
+    this.setData({
+      einsteinArticle: true,
+      showTips: '\n观看广告后，可以永久解锁温故知新容量，从 100 变成 2000，让复习更高效。',
+      itemName: '解限卡说明',
+      itemImg: '../../static/source/infinite.png'
     });
   },
   // 点击获取解限卡
@@ -304,10 +313,11 @@ Page({
   },
   // 点击显示爱因斯坦大脑说明
   showEinstein() {
-    wx.showToast({
-      title: '在现实中可能获得爱因斯坦般思考能力',
-      icon: 'none',
-      duration: 2000
+    this.setData({
+      einsteinArticle: true,
+      showTips: '\n兑换后，按照秘籍，在现实中可能获得爱因斯坦般思考能力。',
+      itemName: '爱因斯坦大脑兑换说明',
+      itemImg: '../../static/source/einstein.png'
     });
   },
   // 点击兑换爱因斯坦大脑
@@ -318,6 +328,9 @@ Page({
     } else {
       this.setData({
         einsteinArticle: true,
+        showTips: "\n哎呦，没想到你真的兑换成功了，太强了吧！那么恭喜你，你已经获得了爱因斯坦大脑般思维方式的基础，那就是坚持。\n\n之所以说在现实中可能获得爱因斯坦般思考能力，关键是如何实现，没有一条固定的路径。\n\n以我自己的经验，简单来说，乐观自信，终身学习，形成自己的科学方法论，步入一条没人走过的道路，书写自己的人生传奇。\n\n获得类似爱因斯坦大脑般的思考能力是一个复杂的目标，它涉及到多个方面，包括学习、思维习惯和认知能力：\n\n① 持续学习：不断学习新的知识和技能，从多个领域获取信息。广泛的知识背景可以帮助你建立更多的关联和视角，促进创造性的思考。\n\n② 培养好奇心：保持对世界的好奇心和求知欲。提出问题、追寻答案、挑战常规思维模式，这样可以激发创新和深入思考的能力。请一定要找到自己的兴趣，最好是能够用它为生，这样才能有动力长久做下去。\n\n③ 培养批判性思维：学会质疑和分析信息，不盲从、不轻信。培养批判性思维，可以帮助你更好地理解问题的本质和逻辑，从而提出更深入的观点和解决方案。这也是我十分推崇的，也是能够有伟大创新的基础。\n\n④ 增强问题解决能力：培养解决问题的能力，不断寻找解决方案并进行实践。通过解决各种难题和挑战，你可以锻炼思维的灵活性和创造性。我一般学到某个具体的知识的话就会及时拿去使用，比如学到一个英语单词，我就会用它组成一个句子，或者学到一个编程的知识点，我就会想在实际项目中该如何使用。\n\n⑤ 培养系统思考能力：学会将问题和信息放入更广阔的背景中，观察事物之间的相互关系和影响。系统思考可以帮助你发现更深层次的模式和洞察力。\n\n⑥ 练习思考技巧：例如，概念映射、逆向思考、侧重点转移等思考技巧可以帮助你拓宽思维的范围和深度。\n\n⑦ 培养创造性思维：鼓励自由思考和想象力的发挥。尝试不同的观点、方法和解决方案，挑战传统思维模式，寻找新的创意和创新。这一点是建立在拥有批判性思维上，有了批判性思维，创造性思维就会在不知不觉中诞生。\n\n⑧ 培养耐心和毅力：深入思考和解决复杂问题需要耐心和毅力。不断锻炼这些品质，坚持思考和学习的过程。如果你看到这里，相信你已经具备了这个特质了，恭喜你已经具备了一半达成的可能性了。\n\n最后，请牢记，你是最棒的，找到适合自己的道路，没有标准答案。\n\n",
+        itemName: '爱心斯坦大脑',
+        itemImg: '../../static/source/einstein.png',
       });
     }
   },
@@ -329,10 +342,11 @@ Page({
   },
   // 点击轻航填字海体验提示
   showTicket() {
-    wx.showToast({
-      title: '仅限进入轻航填字海关卡 1 次',
-      icon: 'none',
-      duration: 2000
+    this.setData({
+      einsteinArticle: true,
+      showTips: '\n仅限进入轻航填字海关卡 1 次，使用后就无法再兑换咯。',
+      itemName: '轻航填字海兑换说明',
+      itemImg: '../../static/source/twocard.png'
     });
   },
   // 点击兑换轻航填字海体验
@@ -341,19 +355,21 @@ Page({
     if (getGameTwoTicket == 0) {
       this.popupPublic(this.data.priceArray.ticketPrice, this.data.priceArray.ticketTitle);
     } else {
-      wx.showToast({
-        title: '已经兑换过了，仅限兑换一次哦～～',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n已经兑换过了，仅限兑换一次哦～～',
+        itemName: '轻航填字海兑换说明',
+        itemImg: '../../static/source/twocard.png'
       });
     }
   },
   // 点击选择知我意体验提示
   showTicketTwo() {
-    wx.showToast({
-      title: '仅限进入选择知我意关卡 1 次',
-      icon: 'none',
-      duration: 2000
+    this.setData({
+      einsteinArticle: true,
+      showTips: '\n仅限进入选择知我意关卡 1 次，使用后就无法再兑换咯。',
+      itemName: '选择知我意兑换说明',
+      itemImg: '../../static/source/twocard.png'
     });
   },
   // 点击兑换选择知我意体验
@@ -362,19 +378,21 @@ Page({
     if (getGameThreeTicket == 0) {
       this.popupPublic(this.data.priceArray.ticketTwoPrice, this.data.priceArray.ticketTwoTitle);
     } else {
-      wx.showToast({
-        title: '已经兑换过了，仅限兑换一次哦～～',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n已经兑换过了，仅限兑换一次哦～～',
+        itemName: '选择知我意兑换说明',
+        itemImg: '../../static/source/twocard.png'
       });
     }
   },
   // 点击淘宝商品1分购提示
   showTaobaoOneCent() {
-    wx.showToast({
-      title: '获得每天1分购1商品资格',
-      icon: 'none',
-      duration: 2000
+    this.setData({
+      einsteinArticle: true,
+      showTips: '\n通过兑换，可以获得在淘宝每天1分购1商品资格，部分幸运用户可以至少 5 天。',
+      itemName: '淘宝商品1分购兑换说明',
+      itemImg: '../../static/source/taobao.png'
     });
   },
   // 点击兑换淘宝商品1分购
@@ -383,10 +401,11 @@ Page({
     if (getTaobao == 0) {
       this.popupPublic(this.data.priceArray.taobaoPrice, this.data.priceArray.taobaoTitle);
     } else {
-      wx.showToast({
-        title: '微信公众号行运设计师，发送消息：1cent',
-        icon: 'none',
-        duration: 2000
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n请关注微信公众号行运设计师，之后发送消息：1cent，即可获得。',
+        itemName: '淘宝商品1分购兑换成功',
+        itemImg: '../../static/source/taobao.png'
       });
     }
   },
@@ -426,16 +445,18 @@ Page({
                 moenyTotal: (Number(self.data.moenyTotal) + lotteryMoney).toFixed(2)
               });
               wx.setStorageSync('money', Number(self.data.moenyTotal));
-              wx.showToast({
-                title: `恭喜你，中奖了，奖金是${lotteryMoney}钱币`,
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n恭喜你，中奖了，奖金是${lotteryMoney}钱币！`,
+                itemName: '彩票开奖',
+                itemImg: '../../static/source/lottery.png'
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
           } else if (_publicTitle == "经验卡") {
@@ -454,16 +475,18 @@ Page({
               }
               getProgress = getProgress + experienceValue;
               wx.setStorageSync('progress', Number(getProgress.toFixed(2)));
-              wx.showToast({
-                title: `天啊，原地飞升，获得${experienceValue}经验值`,
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n天啊，原地飞升，获得${experienceValue}经验值！`,
+                itemName: '经验卡开奖',
+                itemImg: '../../static/source/lottery.png'
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
           } else if (_publicTitle == "雅思考试资料") {
@@ -475,16 +498,18 @@ Page({
               wx.setStorageSync('money', Number(self.data.moenyTotal));
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('yasiGet', 1);
-              wx.showToast({
-                title: '微信公众号行运设计师，发送消息：9527',
-                icon: 'none',
-                duration: 10000
+              self.setData({
+                einsteinArticle: true,
+                showTips: '\n请关注微信公众号行运设计师，之后发送消息：9527，即可获得。\n\n',
+                itemName: '雅思考试资料兑换成功',
+                itemImg: '../../static/source/exam.png'
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
           } else if (_publicTitle == "随机电影字幕") {
@@ -496,16 +521,18 @@ Page({
               wx.setStorageSync('money', Number(self.data.moenyTotal));
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('movieSub', 1);
-              wx.showToast({
-                title: '微信公众号行运设计师，发送消息：2048',
-                icon: 'none',
-                duration: 10000
+              self.setData({
+                einsteinArticle: true,
+                showTips: '\n请关注微信公众号行运设计师，之后发送消息：2048，即可获得。\n\n',
+                itemName: '随机电影字幕兑换成功',
+                itemImg: '../../static/source/ticket.png'
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
           } else if (_publicTitle == "话费优惠信息") {
@@ -517,16 +544,18 @@ Page({
               wx.setStorageSync('money', Number(self.data.moenyTotal));
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('telephoneCredits', 1);
-              wx.showToast({
-                title: '微信公众号行运设计师，发送消息：13888',
-                icon: 'none',
-                duration: 10000
+              self.setData({
+                einsteinArticle: true,
+                showTips: '\n请关注微信公众号行运设计师，之后发送消息：13888，即可获得。\n\n',
+                itemName: '话费优惠信息兑换成功',
+                itemImg: '../../static/source/smartphone.png'
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
           } else if (_publicTitle == "免费离线GPT4") {
@@ -538,16 +567,18 @@ Page({
               wx.setStorageSync('money', Number(self.data.moenyTotal));
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('getGpt4OrNot', 1);
-              wx.showToast({
-                title: '微信公众号行运设计师，发送消息：GPT4Free',
-                icon: 'none',
-                duration: 10000
+              self.setData({
+                einsteinArticle: true,
+                showTips: '\n请关注微信公众号行运设计师，之后发送消息：GPT4Free，即可获得。\n\n',
+                itemName: '离线GPT4兑换成功',
+                itemImg: '../../static/source/gpt4.png'
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
           } else if (_publicTitle == "爱因斯坦大脑") {
@@ -561,12 +592,16 @@ Page({
               wx.setStorageSync('einsteinBrain', 1);
               self.setData({
                 einsteinArticle: true,
+                showTips: "\n哎呦，没想到你真的兑换成功了，太强了吧！那么恭喜你，你已经获得了爱因斯坦大脑般思维方式的基础，那就是坚持。\n\n之所以说在现实中可能获得爱因斯坦般思考能力，关键是如何实现，没有一条固定的路径。\n\n以我自己的经验，简单来说，乐观自信，终身学习，形成自己的科学方法论，步入一条没人走过的道路，书写自己的人生传奇。\n\n获得类似爱因斯坦大脑般的思考能力是一个复杂的目标，它涉及到多个方面，包括学习、思维习惯和认知能力：\n\n① 持续学习：不断学习新的知识和技能，从多个领域获取信息。广泛的知识背景可以帮助你建立更多的关联和视角，促进创造性的思考。\n\n② 培养好奇心：保持对世界的好奇心和求知欲。提出问题、追寻答案、挑战常规思维模式，这样可以激发创新和深入思考的能力。请一定要找到自己的兴趣，最好是能够用它为生，这样才能有动力长久做下去。\n\n③ 培养批判性思维：学会质疑和分析信息，不盲从、不轻信。培养批判性思维，可以帮助你更好地理解问题的本质和逻辑，从而提出更深入的观点和解决方案。这也是我十分推崇的，也是能够有伟大创新的基础。\n\n④ 增强问题解决能力：培养解决问题的能力，不断寻找解决方案并进行实践。通过解决各种难题和挑战，你可以锻炼思维的灵活性和创造性。我一般学到某个具体的知识的话就会及时拿去使用，比如学到一个英语单词，我就会用它组成一个句子，或者学到一个编程的知识点，我就会想在实际项目中该如何使用。\n\n⑤ 培养系统思考能力：学会将问题和信息放入更广阔的背景中，观察事物之间的相互关系和影响。系统思考可以帮助你发现更深层次的模式和洞察力。\n\n⑥ 练习思考技巧：例如，概念映射、逆向思考、侧重点转移等思考技巧可以帮助你拓宽思维的范围和深度。\n\n⑦ 培养创造性思维：鼓励自由思考和想象力的发挥。尝试不同的观点、方法和解决方案，挑战传统思维模式，寻找新的创意和创新。这一点是建立在拥有批判性思维上，有了批判性思维，创造性思维就会在不知不觉中诞生。\n\n⑧ 培养耐心和毅力：深入思考和解决复杂问题需要耐心和毅力。不断锻炼这些品质，坚持思考和学习的过程。如果你看到这里，相信你已经具备了这个特质了，恭喜你已经具备了一半达成的可能性了。\n\n最后，请牢记，你是最棒的，找到适合自己的道路，没有标准答案。\n\n",
+                itemName: '爱心斯坦大脑',
+                itemImg: '../../static/source/einstein.png',
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
           } else if (_publicTitle == "轻航填字海体验") {
@@ -580,16 +615,18 @@ Page({
               wx.setStorageSync('getGameTwoTicket', 1);
               // 将体验权限设置成缓存
               wx.setStorageSync('goToGameTwoLimit', 'Yes')
-              wx.showToast({
-                title: '恭喜你获得轻航填字海关卡体验资格',
-                icon: 'none',
-                duration: 4000
+              self.setData({
+                einsteinArticle: true,
+                showTips: '\n恭喜你获得轻航填字海关卡体验资格！',
+                itemName: '轻航填字海兑换成功',
+                itemImg: '../../static/source/twocard.png'
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
           } else if (_publicTitle == "选择知我意体验") {
@@ -603,16 +640,18 @@ Page({
               wx.setStorageSync('getGameThreeTicket', 1);
               // 将体验权限设置成缓存
               wx.setStorageSync('goToGameThreeLimit', 'Yes')
-              wx.showToast({
-                title: '恭喜你获得选择知我意关卡体验资格',
-                icon: 'none',
-                duration: 4000
+              self.setData({
+                einsteinArticle: true,
+                showTips: '\n恭喜你获得选择知我意关卡体验资格。',
+                itemName: '选择知我意兑换成功',
+                itemImg: '../../static/source/twocard.png'
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
           } else if (_publicTitle == "淘宝商品1分购") {
@@ -624,19 +663,21 @@ Page({
               wx.setStorageSync('money', Number(self.data.moenyTotal));
               // 将兑换成功后资格储存到缓存中
               wx.setStorageSync('taobao', 1);
-              wx.showToast({
-                title: '微信公众号行运设计师，发送消息：1cent',
-                icon: 'none',
-                duration: 10000
+              self.setData({
+                einsteinArticle: true,
+                showTips: '\n请关注微信公众号行运设计师，之后发送消息：1cent，即可获得。',
+                itemName: '淘宝商品1分购兑换成功',
+                itemImg: '../../static/source/taobao.png'
               });
             } else {
-              wx.showToast({
-                title: '资产不够兑换咯，还不去搬砖！',
-                icon: 'none',
-                duration: 2000
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
               });
             }
-          } 
+          }
         } else if (res.cancel) {
           // 用户点击了取消按钮
           console.log('用户点击取消');
