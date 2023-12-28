@@ -59,3 +59,4 @@
     wx:if="{{ showRadioDialog }}"
   ></radio-dialog>
 </view>
+<scrollable-text wx:if="{{einsteinArticle}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="{{ itemName }}" imgSrc="{{ itemImg }}"></scrollable-text>

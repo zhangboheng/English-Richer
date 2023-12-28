@@ -8,7 +8,11 @@ Page({
     getDefaultLevel: "小学",
     storageStartGrade: 0,
     progress: 0,
-    coins: 0
+    coins: 0,
+    einsteinArticle: false,
+    showTips: "",
+    itemName: '',
+    itemImg: '',
   },
   // 页面分享
   onShareAppMessage() {},
@@ -34,14 +38,16 @@ Page({
   },
   // 点击修改水平的确定后运行
   handleConfirmLevel: function (event) {
-    const { level } = event.detail;
+    const {
+      level
+    } = event.detail;
     this.setData({
       getDefaultLevel: level
     });
     wx.setStorageSync('defaultLevel', level);
   },
   // 点击关闭修改水平弹窗
-  closeRadioDialog: function() {
+  closeRadioDialog: function () {
     this.setData({
       showRadioDialog: false
     });
@@ -150,11 +156,12 @@ Page({
       }
       wx.removeStorageSync('goToGameTwoLimit');
     } else {
-      wx.showToast({
-        title: '哎哟，菜鸟，等级没到 3 级无法进入哦！',
-        icon: 'none',
-        duration: 2000
-      }); 
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n哎哟，菜鸟，等级没到 3 级无法进入哦！如何提升呢？\n\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的经验卡获得\n\n',
+        itemName: '等级不足进入，如何提升',
+        itemImg: '../../static/source/level.png'
+      });
     }
   },
   // 点击游戏3后根据水平不同，跳转到不同页面
@@ -205,12 +212,13 @@ Page({
       }
       wx.removeStorageSync('goToGameThreeLimit');
     } else {
-      wx.showToast({
-        title: '奋斗者，等级没到 6 级无法进入哦！',
-        icon: 'none',
-        duration: 2000
-      }); 
-    }     
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n奋斗者，等级没到 6 级无法进入哦！如何提升呢？\n\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的经验卡获得\n\n',
+        itemName: '等级不足进入，如何提升',
+        itemImg: '../../static/source/level.png'
+      });
+    }
   },
   // 获取昵称数据的公共方法
   getAllData() {
@@ -239,5 +247,11 @@ Page({
         coins: 0
       })
     }
+  },
+  // 点击等级不足提示弹出框
+  closePopup() {
+    this.setData({
+      einsteinArticle: false,
+    });
   },
 });

@@ -1,6 +1,5 @@
 <image class="background-image" src="../../static/source/startup.png" mode='aspectFill'></image>
 <scrollable-text wx:if="{{showComponent}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="玩法说明" imgSrc="../../static/source/console.png"></scrollable-text>
-<video id="myVideo" src="{{musicLink}}" autoplay style="width: 0; height: 0;"></video>
 <view class="tool-zone">
   <view class="marquee-box">
     <view class="mention">
@@ -10,7 +9,7 @@
       <text class="marquee-text">{{randomText}}</text>
     </view>
   </view>
-  <view class="tool-zone-image" bind:tap="stopMusic">
+  <view class="tool-zone-image" bind:tap="randomMusicNext"  bindlongpress="stopMusic">
     <image class="logos" src="../../static/source/logos.png" style="transform: rotate({{rotate}}deg);" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"></image>
   </view>
   <view>

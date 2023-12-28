@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "input-modal": "../../components/input-modal/input-modal",
-    "radio-dialog": "../../components/radio-dialog/radio-dialog"
+    "radio-dialog": "../../components/radio-dialog/radio-dialog",
+    "scrollable-text": "../../components/scroll-text/scroll"
   },
   "navigationBarTitleText": "英语大富翁",
   "enablePullDownRefresh": false
