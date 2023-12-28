@@ -17,7 +17,8 @@ Page({
     startY: 0,
     rotate: 0,
     rotationCount: 0,
-    radioList: database.postData.main
+    radioList: database.postData.main,
+    radioListTwo: database.postDataTwo.main
   },
   onLoad() {
     this.updateRandomText();
@@ -84,13 +85,31 @@ Page({
     // 检查是否完成三圈旋转
     var rotationCount = this.data.rotationCount;
     var rotate = this.data.rotate;
-    var that = this;
     if (rotationCount === 2 && rotate >= 0) {
-      let getNum = Math.floor(Math.random()*this.data.radioList.length);
-      innerAudioContext.title = that.data.radioList[getNum].label;
-      innerAudioContext.protocol = "hls";
-      innerAudioContext.src = that.data.radioList[getNum].url;
-      innerAudioContext.play();
+      try {
+        const res = wx.getSystemInfoSync();
+        if (res.platform == "windows" || res.platform == "mac" || res.platform == "devtools") {
+          // PC端
+          let getNum = Math.floor(Math.random()*this.data.radioListTwo.length);
+          innerAudioContext.title = this.data.radioListTwo[getNum].label;
+          innerAudioContext.protocol = "hls";
+          innerAudioContext.src = this.data.radioListTwo[getNum].url;
+        } else {
+          // 移动端
+          let getNum = Math.floor(Math.random()*this.data.radioList.length);
+          innerAudioContext.title = this.data.radioList[getNum].label;
+          innerAudioContext.protocol = "hls";
+          innerAudioContext.src = this.data.radioList[getNum].url;
+        }
+        innerAudioContext.play();
+      } catch (e) {
+        // 获取系统信息失败
+        let getNum = Math.floor(Math.random()*this.data.radioList.length);
+        innerAudioContext.title = this.data.radioList[getNum].label;
+        innerAudioContext.protocol = "hls";
+        innerAudioContext.src = this.data.radioList[getNum].url;
+        innerAudioContext.play();
+      }
       // 监听播放器播放事件
       this.setData({
         rotationCount: 3
@@ -109,15 +128,34 @@ Page({
   // 点击播放其他随机音乐
   randomMusicNext: function () {
     if (this.data.rotationCount >= 3) {
-      let getNum = Math.floor(Math.random()*this.data.radioList.length);
-      innerAudioContext.title = this.data.radioList[getNum].label;
-      innerAudioContext.protocol = "hls";
-      innerAudioContext.src = this.data.radioList[getNum].url;
-      innerAudioContext.play();
+      try {
+        const res = wx.getSystemInfoSync();
+        if (res.platform == "windows" || res.platform == "mac" || res.platform == "devtools") {
+          let getNum = Math.floor(Math.random()*this.data.radioListTwo.length);
+          innerAudioContext.title = this.data.radioListTwo[getNum].label;
+          innerAudioContext.protocol = "hls";
+          innerAudioContext.src = this.data.radioListTwo[getNum].url;
+        } else {
+          // 移动端
+          let getNum = Math.floor(Math.random()*this.data.radioList.length);
+          innerAudioContext.title = this.data.radioList[getNum].label;
+          innerAudioContext.protocol = "hls";
+          innerAudioContext.src = this.data.radioList[getNum].url;
+        }
+        innerAudioContext.play();
+      } catch (e) {
+        // 获取系统信息失败
+        let getNum = Math.floor(Math.random()*this.data.radioList.length);
+        innerAudioContext.title = this.data.radioList[getNum].label;
+        innerAudioContext.protocol = "hls";
+        innerAudioContext.src = this.data.radioList[getNum].url;
+        innerAudioContext.play();
+      }
     }
   },
-  // 长按 Logo 停止播放
+  // 长按关闭音乐
   stopMusic: function() {
-    innerAudioContext.stop(); 
+    innerAudioContext.pause();
+    innerAudioContext.stop();
   }
 })

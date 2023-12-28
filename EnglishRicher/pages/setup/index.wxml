@@ -9,7 +9,7 @@
       <text class="marquee-text">{{randomText}}</text>
     </view>
   </view>
-  <view class="tool-zone-image" bind:tap="randomMusicNext"  bindlongpress="stopMusic">
+  <view class="tool-zone-image" bind:tap="randomMusicNext" bind:longpress="stopMusic">
     <image class="logos" src="../../static/source/logos.png" style="transform: rotate({{rotate}}deg);" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"></image>
   </view>
   <view>
