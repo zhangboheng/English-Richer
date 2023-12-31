@@ -4,11 +4,12 @@ Page({
       {
         version: '2.4.3',
         date: '2023-12-31',
-        icon: ['success', 'info', 'info'],
+        icon: ['success', 'info', 'info', 'success_no_circle'],
         changes: [
           '新增更多背景伴音。',
           '完善经验学堂内容。',
-          '完善兑换市集可兑换物品。'
+          '完善兑换市集可兑换物品。',
+          '修复小学水平中在部分机型词组不发音问题。'
         ],
       },
       {
