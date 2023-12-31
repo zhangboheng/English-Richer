@@ -2,6 +2,16 @@ Page({
   data: {
     versions: [
       {
+        version: '2.4.3',
+        date: '2023-12-31',
+        icon: ['success', 'info', 'info'],
+        changes: [
+          '新增更多背景伴音。',
+          '完善经验学堂内容。',
+          '完善兑换市集可兑换物品。'
+        ],
+      },
+      {
         version: '2.4.2',
         date: '2023-12-28',
         icon: ['info'],

@@ -17,7 +17,7 @@
         <text class="inner-title">英语大富翁</text>
       </view>
       <view class="inner-box">
-        <text>Version 2.4.2</text>
+        <text>Version 2.4.3</text>
       </view>
     </view>
   </view>
@@ -99,7 +99,7 @@
         <image class="item-box-image" src="../../static/source/history.png" />
         <text>更新历史</text>
       </view>
-      <text class="item-inner">最新2023-12-28</text>
+      <text class="item-inner">最新2023-12-31</text>
     </view>
   </view>
   <view>

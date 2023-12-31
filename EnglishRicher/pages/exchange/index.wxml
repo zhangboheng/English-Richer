@@ -113,6 +113,22 @@
         </view>
       </view>
     </view>
+    <view class="row" wx:if="{{reimbursementShow}}">
+      <view class="row-inline">
+        <image class="image" src="../../static/source/reimbursement.png"></image>
+        <view class="title">
+          <view>{{ priceArray.reimbursementTitle }}</view>
+          <view class="intro-content" bind:tap="showReimbursementTips">
+            <icon type="info" size="18" />
+          </view>
+        </view>
+        <view class="price" bindtap="exchangeReimbursement">
+          <text class="price-text">{{ priceArray.reimbursementPrice }}</text>
+          <image class="price-image" src="../../static/source/coin.png"></image>
+          <text class="price-text">兑换</text>
+        </view>
+      </view>
+    </view>
     <view class="row" wx:if="{{ticketShow}}">
       <view class="row-inline">
         <image class="image" src="../../static/source/twocard.png"></image>

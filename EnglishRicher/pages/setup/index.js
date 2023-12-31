@@ -2,7 +2,7 @@ var database = require('./source/radio');
 const innerAudioContext = wx.getBackgroundAudioManager();
 Page({
   data: {
-    randomText: '新版本发布，伴音彩蛋可以支持背景播放啦，操作有所变化，请看玩法说明解释～～',
+    randomText: '新版本发布，新增更多背景伴音，兑换市集新增报销机，帮你购物返款～～',
     textCollection: [
       '使用小技巧，开启旅途中的小齿轮点击后可以进入策划谋略页面哦～～',
       '想要获取更多的经验和钱币？可以通过交换市集、关卡和任务大厅获取哦～～',

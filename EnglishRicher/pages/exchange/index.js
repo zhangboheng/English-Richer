@@ -24,7 +24,9 @@ Page({
       ticketTwoPrice: 0.01,
       ticketTwoTitle: "选择知我意体验",
       taobaoPrice: 5,
-      taobaoTitle: "淘宝商品1分购"
+      taobaoTitle: "淘宝商品1分购",
+      reimbursementPrice: 3,
+      reimbursementTitle: "购物报销机"
     },
     // 彩票
     lotteryShow: true,
@@ -52,7 +54,9 @@ Page({
     // 选择知我意体验卡
     ticketTwoShow: true,
     // 淘宝一分购
-    taobaoShow: true
+    taobaoShow: true,
+    // 购物报销机
+    reimbursementShow: true
   },
   // 页面分享
   onShareAppMessage() {},
@@ -196,6 +200,16 @@ Page({
     } else {
       this.setData({
         taobaoShow: false
+      });
+    }
+    // 判断购物报销机是否显示
+    if (this.data.priceArray.reimbursementTitle.indexOf(this.data.inputTitle) > -1) {
+      this.setData({
+        reimbursementShow: true
+      });
+    } else {
+      this.setData({
+        reimbursementShow: false
       });
     }
   },
@@ -406,6 +420,29 @@ Page({
         showTips: '\n请关注微信公众号行运设计师，之后发送消息：1cent，即可获得。',
         itemName: '淘宝商品1分购兑换成功',
         itemImg: '../../static/source/taobao.png'
+      });
+    }
+  },
+  // 点击购物报销机提示
+  showReimbursementTips() {
+    this.setData({
+      einsteinArticle: true,
+      showTips: '\n通过兑换，可以获得在日常购物（比如某宝，某东，某猫）后，每日获得一次报销购物款的方法。',
+      itemName: '购物报销机兑换说明',
+      itemImg: '../../static/source/reimbursement.png'
+    });    
+  },
+  // 点击兑换购物报销机
+  exchangeReimbursement() {
+    let getReimbursement = wx.getStorageSync('reimbursement');
+    if (getReimbursement == 0) {
+      this.popupPublic(this.data.priceArray.reimbursementPrice, this.data.priceArray.reimbursementTitle);
+    } else {
+      this.setData({
+        einsteinArticle: true,
+        showTips: '\n请关注微信公众号行运设计师，之后发送消息：报销机，即可获得。',
+        itemName: '物报销机兑换成功',
+        itemImg: '../../static/source/reimbursement.png'
       });
     }
   },
@@ -668,6 +705,29 @@ Page({
                 showTips: '\n请关注微信公众号行运设计师，之后发送消息：1cent，即可获得。',
                 itemName: '淘宝商品1分购兑换成功',
                 itemImg: '../../static/source/taobao.png'
+              });
+            } else {
+              self.setData({
+                einsteinArticle: true,
+                showTips: `\n① 通过诚实刷单词、轻航填字海、选择知我意中获得\n\n② 通过策略谋划页面中的任务大厅获取\n\n③ 通过兑换市集中的彩票获得，但是也有可能损失钱币`,
+                itemName: '钱币不足兑换怎么办',
+                itemImg: '../../static/source/coin.png'
+              });
+            }
+          } else if (_publicTitle == "购物报销机") {
+            if (self.data.moenyTotal >= _publicPrice) {
+              self.setData({
+                moenyTotal: (self.data.moenyTotal - _publicPrice).toFixed(2)
+              });
+              // 将剩余钱币数量存储到缓存中
+              wx.setStorageSync('money', Number(self.data.moenyTotal));
+              // 将兑换成功后资格储存到缓存中
+              wx.setStorageSync('reimbursement', 1);
+              self.setData({
+                einsteinArticle: true,
+                showTips: '\n请关注微信公众号行运设计师，之后发送消息：报销机，即可获得。',
+                itemName: '购物报销机兑换成功',
+                itemImg: '../../static/source/reimbursement.png'
               });
             } else {
               self.setData({

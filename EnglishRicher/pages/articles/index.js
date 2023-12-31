@@ -183,6 +183,18 @@ Page({
         time: "2023-06-25",
         url: "https://mp.weixin.qq.com/s/x3JYKam5r_Y_ViP_5uCRpQ"
       },
+      {
+        image: "https://mmbiz.qpic.cn/sz_mmbiz_png/YpPe9SnqQxniaJibA6fXabpmmswltenbBFvTkIvDcicLqGs1f0xooDsrlZehmCwdauG7HRgpJHich8D9HRAGnxpw8A/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "博采众长，看看大家都有什么如何使用 ChatGPT 的技巧",
+        time: "2023-12-29",
+        url: "https://mp.weixin.qq.com/s/uLP3JVPS3knq4Tj5_lxo9A"
+      },
+      {
+        image: "https://mmbiz.qpic.cn/sz_mmbiz_png/YpPe9SnqQxniaJibA6fXabpmmswltenbBFyowc80GjMBsKPd3YXKd5ViblYyf5RHOhHGFGAkl0oz1hLuMbrnF3xbQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1",
+        title: "GPTs 对比：如何挑选最适合的，找到适合自己的 GPTs",
+        time: "2023-12-29",
+        url: "https://mp.weixin.qq.com/s/HZ8DAI-Ix-3XJrgysha8Zw"
+      },
     ]
   },
   onLoad: function (options) {
@@ -190,15 +202,15 @@ Page({
     this.shuffleArray(this.data.moneyData);
     this.shuffleArray(this.data.entertainmentData);
     this.shuffleArray(this.data.bookData);
-    this.shuffleArray(this.data.articleData);
     this.shuffleArray(this.data.appData);
+    this.shuffleArray(this.data.articleData);
     this.setData({
       swiperImages: this.data.swiperImages,
       moneyData: this.data.moneyData,
       entertainmentData: this.data.entertainmentData,
       appData: this.data.appData,
-      articleData: this.data.articleData,
-      bookData: this.data.bookData
+      bookData: this.data.bookData,
+      articleData: this.data.articleData
     });
     if (wx.createInterstitialAd) {
       interstitialAd = wx.createInterstitialAd({
@@ -219,7 +231,6 @@ Page({
   // 点击标签后跳转到对应位置
   onTagTap: function (e) {
     const index = e.currentTarget.dataset.index;
-    console.info('------>', index)
     wx.pageScrollTo({
       selector: `#content-${index}`,
       duration: 300

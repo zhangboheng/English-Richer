@@ -24,6 +24,7 @@ App({
     let getGameThreeTicket = wx.getStorageSync('getGameThreeTicket'); // 选择知我意验是否兑换
     let getClockTime = wx.getStorageSync('clockTime'); // 获取计时统计
     let getTaobao = wx.getStorageSync('taobao'); // 淘宝商品1分购
+    let getReimbursement = wx.getStorageSync('reimbursement'); // 购物报销机
     // 判断是否存在总货币数数据，如果不存在则赋值为 0
     if (typeof money == 'undefined' || money == null || typeof money == "string") {
       money = 0;
@@ -78,6 +79,11 @@ App({
     if (typeof getTaobao == 'undefined' || getTaobao == null || typeof getTaobao == "string") {
       getTaobao = 0;
       wx.setStorageSync('taobao', getTaobao);
+    }
+    // 判断是否存在购物报销机数据，如果不存在则赋值为 0
+    if (typeof getReimbursement == 'undefined' || getReimbursement == null || typeof getReimbursement == "string") {
+      getReimbursement = 0;
+      wx.setStorageSync('reimbursement', getReimbursement);
     }
   },
   // 重写分享方法
