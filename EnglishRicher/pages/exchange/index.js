@@ -217,7 +217,7 @@ Page({
   showLotteryInfo() {
     this.setData({
       einsteinArticle: true,
-      showTips: '\n0.01～100钱币，体验一夜暴富。\n\n① 0.01钱币：中奖概率 40%\n\n② 0.10钱币：中奖概率 35%\n\n③ 0.50钱币：中奖概率 10%\n\n④ 1.00钱币：中奖概率 5%\n\n⑤ 1.50钱币：中奖概率 5%\n\n⑥ 2.00钱币：中奖概率 3%\n\n⑦ 5.00钱币：中奖概率 1.5%\n\n⑧ 10.00钱币：中奖概率 0.4%\n\n⑨ 100.00钱币：中奖概率 0.1%\n\n',
+      showTips: '\n0.10～100钱币，体验一夜暴富。\n\n① 0.10钱币：中奖概率 40%\n\n② 0.50钱币：中奖概率 35%\n\n③ 1.00钱币：中奖概率 10%\n\n④ 1.50钱币：中奖概率 5%\n\n⑤ 2.00钱币：中奖概率 5%\n\n⑥ 5.00钱币：中奖概率 3%\n\n⑦ 10.00钱币：中奖概率 1.5%\n\n⑧ 20.00钱币：中奖概率 0.4%\n\n⑨ 100.00钱币：中奖概率 0.1%\n\n',
       itemName: '彩票中奖概率',
       itemImg: '../../static/source/lottery.png'
     });
@@ -230,7 +230,7 @@ Page({
   showExperienceInfo() {
     this.setData({
       einsteinArticle: true,
-      showTips: '\n0.01～100经验，让你快速变强。\n\n① 0.01经验：中奖概率 40%\n\n② 0.10经验：中奖概率 35%\n\n③ 0.50经验：中奖概率 10%\n\n④ 1.00经验：中奖概率 5%\n\n⑤ 1.50经验：中奖概率 5%\n\n⑥ 2.00经验：中奖概率 3%\n\n⑦ 5.00经验：中奖概率 1.5%\n\n⑧ 10.00经验：中奖概率 0.4%\n\n⑨ 100.00经验：中奖概率 0.1%\n\n',
+      showTips: '\n0.10～100经验，让你快速变强。\n\n① 0.10经验：中奖概率 40%\n\n② 0.50经验：中奖概率 35%\n\n③ 1.00经验：中奖概率 10%\n\n④ 1.50经验：中奖概率 5%\n\n⑤ 2.00经验：中奖概率 5%\n\n⑥ 5.00经验：中奖概率 3%\n\n⑦ 10.00经验：中奖概率 1.5%\n\n⑧ 20.00经验：中奖概率 0.4%\n\n⑨ 100.00经验：中奖概率 0.1%\n\n',
       itemName: '经验卡开出概率',
       itemImg: '../../static/source/up.png'
     });
@@ -748,7 +748,7 @@ Page({
   // 彩票出现的公共方法
   getRandomNumber: function () {
     const probabilities = [0.4, 0.35, 0.1, 0.05, 0.05, 0.03, 0.015, 0.004, 0.001];
-    const values = [0.01, 0.1, 0.5, 1, 1.5, 2, 5, 10, 100];
+    const values = [0.1, 0.5, 1, 1.5, 2, 5, 10, 20, 100];
     let sumOfProbabilities = 0;
     for (const probability of probabilities) {
       sumOfProbabilities += probability;
