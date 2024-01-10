@@ -1,6 +1,7 @@
 <view class="container-head">
   <image class="top-inner" src="../../../static/source/logos.png" alt="Logo" mode='aspectFit'></image>
 </view>
+<title-section lineTitle="联系方式"></title-section>
 <view style="width:100%;">
   <official-account></official-account>
 </view>
@@ -12,3 +13,22 @@
     </view>
   </view>
 </view>
+<title-section lineTitle="团队人员"></title-section>
+<view class="container">
+  <view wx:for="{{ groupmember }}" wx:for-item="group" wx:key="group">
+    <view class="settingscontent">
+      <text>{{ group.position }}</text>
+      <text user-select="{{ true }}">{{ group.name }}</text>
+    </view>
+  </view>
+</view>
+<title-section lineTitle="旗下产品"></title-section>
+<view class="container">
+  <view wx:for="{{ productList }}" wx:for-item="product" wx:key="product">
+    <view class="settingscontent">
+      <text>{{ product.catalogue }}</text>
+      <text user-select="{{ true }}">{{ product.name }}</text>
+    </view>
+  </view>
+</view>
+<ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>

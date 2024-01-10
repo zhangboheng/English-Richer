@@ -1,4 +1,5 @@
 var database = require('./source/cet6');
+const innerAudioContext = wx.createInnerAudioContext();
 var randomList = [];
 // 在对应页面的 js 文件中
 Page({
@@ -86,7 +87,12 @@ Page({
         duration: 1000
       });
       wx.setStorageSync('cet6ThreeList', randomList);
-      this.getNextWord();
+      try {
+        this.playAudio();
+        this.getNextWord();
+      } catch(e) {
+        this.getNextWord();
+      }
       // 点击掌握后进度条增加
       this.setData({
         currentLength: randomList.length,
@@ -115,7 +121,12 @@ Page({
         icon: 'none',
         duration: 4000
       });
-      this.getNextWord();
+      try {
+        this.playAudio();
+        this.getNextWord();
+      } catch(e) {
+        this.getNextWord();
+      }
     }
   },
   // 获取下一个单词
@@ -142,5 +153,12 @@ Page({
   getRandomElements: function (collection, count) {
     const shuffled = collection.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
+  },
+  // 语音播放
+  playAudio() {
+    let trueWord = this.data.word.indexOf(' ') > -1 ? this.data.word.replaceAll(' ', '-') : this.data.word;
+    let speak = [`https://dict.youdao.com/dictvoice?type=0&audio=${trueWord}`, `https://dds.dui.ai/runtime/v1/synthesize?voiceId=lucyfa&text=${trueWord}&speed=1&volume=100&audioType=mp3`][Math.floor(Math.random() * 2)];
+    innerAudioContext.src = speak;
+    innerAudioContext.play();
   }
 });

@@ -1,6 +1,14 @@
 Page({
   data: {
-    versions: [
+    versions: [{
+        version: '2.4.4',
+        date: '2024-01-10',
+        icon: ['success', 'info'],
+        changes: [
+          '关于我们新增团队人员和旗下产品',
+          'Game Three 选择知我意关卡选择后，补全正确发音',
+        ],
+      },
       {
         version: '2.4.3',
         date: '2023-12-31',
