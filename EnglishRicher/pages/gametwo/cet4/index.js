@@ -1,4 +1,5 @@
 const innerAudioContext = wx.createInnerAudioContext();
+import {addMissingNumber} from '../../../utils/algorithm'
 var database = require('./source/cet4');
 var randomList = [];
 // 在对应页面的 js 文件中
@@ -130,11 +131,12 @@ Page({
   },
 
   getNextWord: function () {
-    // 生成0到1990之间的随机数
-    const randomNum = Math.floor(Math.random() * this.data.listData.length);
-    // 当 randomList 集合中没有随机数即放进去
-    if (randomList.indexOf(randomNum) == -1) {
-      randomList.push(randomNum);
+    let randomNum = 0;
+    let condition = addMissingNumber(randomList, this.data.listData.length);
+    if (!condition){
+      randomNum = Math.floor(Math.random() * this.data.listData.length)
+    }else{
+      randomNum = condition
     }
     this.setData({
       inputValue: '', // 输入框的值

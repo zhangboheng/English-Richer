@@ -1,4 +1,5 @@
 const innerAudioContext = wx.createInnerAudioContext();
+import {addMissingNumber} from '../../../utils/algorithm'
 var database = require('./source/elementary');
 var randomList = [];
 // 在对应页面的 js 文件中
@@ -14,9 +15,9 @@ Page({
     showGrade: '小学'
   },
   // 页面分享
-  onShareAppMessage() { },
+  onShareAppMessage() {},
   // 页面分享朋友圈
-  onShareTimeline() { },
+  onShareTimeline() {},
   onLoad: function (options) {
     // 显示正在刷新提示框
     wx.showToast({
@@ -94,7 +95,7 @@ Page({
     // 从缓存获取解限卡是否获得
     let getNoLimitCard = wx.getStorageSync('getNoLimitCard');
     if (getNoLimitCard == 1) {
-        limitNumber = 2000;
+      limitNumber = 2000;
     }
     // 如果缓存内没有则可以放置
     if (notMasterWords.map(x => x.word).indexOf(this.data.word) == -1 && notMasterWords.length < limitNumber) {
@@ -111,11 +112,12 @@ Page({
   },
 
   getNextWord: function () {
-    // 生成0到1990之间的随机数
-    const randomNum = Math.floor(Math.random() * this.data.listData.length);
-    // 当 randomList 集合中没有随机数即放进去
-    if (randomList.indexOf(randomNum) == -1) {
-      randomList.push(randomNum);
+    let randomNum = 0;
+    let condition = addMissingNumber(randomList, this.data.listData.length);
+    if (!condition){
+      randomNum = Math.floor(Math.random() * this.data.listData.length)
+    }else{
+      randomNum = condition
     }
     this.setData({
       translationShow: false,

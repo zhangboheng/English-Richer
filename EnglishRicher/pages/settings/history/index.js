@@ -1,12 +1,20 @@
 Page({
   data: {
     versions: [{
+        version: '2.4.5',
+        date: '2024-01-12',
+        icon: ['info'],
+        changes: [
+          '优化 Game One 诚实刷单词和 Game Two轻航填字海单词显示顺序，第一轮是顺序显示，当全部一轮后，随机显示。'
+        ],
+      },
+      {
         version: '2.4.4',
         date: '2024-01-10',
         icon: ['success', 'info'],
         changes: [
-          '关于我们新增团队人员和旗下产品',
-          'Game Three 选择知我意关卡选择后，补全正确发音',
+          '关于我们新增团队人员和旗下产品。',
+          'Game Three 选择知我意关卡选择后，补全正确发音。',
         ],
       },
       {
