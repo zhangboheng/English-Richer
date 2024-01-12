@@ -28,7 +28,6 @@ Page({
     // 初次加载获取数据
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let trueData = database.postData.main;
-    // 生成0到1990之间的随机数
     const randomNum = Math.floor(Math.random() * trueData.length);
     // 当 randomList 集合中没有随机数即放进去
     randomList = wx.getStorageSync('postgraduateList')

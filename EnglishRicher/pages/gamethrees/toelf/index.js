@@ -132,10 +132,17 @@ Page({
   },
   // 获取下一个单词
   getNextWord: function () {
-    let trueData = database.postData.main;
+    let trueData = this.data.listData;
     let sortData = [...trueData.map(x => x.word)];
+    let filteredSortData = [];
     // 选出四个随机单词
-    const randomElements = this.getRandomElements(sortData, 4);
+    if (randomList.length == trueData.length) {
+      filteredSortData = sortData;
+    }else{
+      // 移除 randomList 中已经包含的单词
+      filteredSortData = sortData.filter((_, index) => !randomList.includes(index));
+    }
+    const randomElements = this.getRandomElements(filteredSortData, 4);
     const randomOneToFour = Math.floor(Math.random() * 4);
     const randomNum = trueData.map(x => x.word).indexOf(randomElements[randomOneToFour]);
     if (randomList.indexOf(randomNum) == -1) {

@@ -3,9 +3,10 @@ Page({
     versions: [{
         version: '2.4.5',
         date: '2024-01-12',
-        icon: ['info'],
+        icon: ['info', 'success_no_circle'],
         changes: [
-          '优化 Game One 诚实刷单词和 Game Two轻航填字海单词显示顺序，第一轮是顺序显示，当全部一轮后，随机显示。'
+          '优化 Game One 诚实刷单词和 Game Two轻航填字海单词显示顺序。',
+          '修复托福水平单词显示顺序问题。'
         ],
       },
       {

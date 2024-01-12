@@ -17,7 +17,6 @@ Page({
   onLoad: function (options) {
     randomList = [];
     let trueData = wx.getStorageSync('notMasterWords');
-    // 生成0到1990之间的随机数
     const randomNum = Math.floor(Math.random() * trueData.length);
     if (randomList.indexOf(randomNum) == -1) {
       randomList.push(randomNum);
@@ -74,7 +73,6 @@ Page({
   },
 
   getNextWord: function () {
-    // 生成0到1990之间的随机数
     const randomNum = Math.floor(Math.random() * this.data.listData.length);
     // 当 randomList 集合中没有随机数即放进去
     if (randomList.indexOf(randomNum) == -1) {
