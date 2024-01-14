@@ -1,6 +1,13 @@
 Page({
   data: {
     versions: [{
+        version: '2.4.6',
+        date: '2024-01-14',
+        icon: ['success'],
+        changes: [
+          '小学和初中水平关卡和英语词库单词新增音标显示。'
+        ],
+      },{
         version: '2.4.5',
         date: '2024-01-12',
         icon: ['info', 'success_no_circle'],

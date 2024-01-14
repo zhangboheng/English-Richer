@@ -8,6 +8,8 @@ Page({
     listLength: 0, // 单词所有词库
     currentLength: 1, // 当前显示单词进度数
     word: 'hello', // 要展示的英文单词
+    phonetic: '', // 要展示的音标
+    phoneticShow: true, //是否显示音标
     translations: [], // 翻译的集合
   },
   // 页面分享
@@ -27,6 +29,8 @@ Page({
     this.setData({
       listData: trueData,
       word: trueData[randomNum].word,
+      phonetic: trueData[randomNum].phonetic == undefined ? "" : trueData[randomNum].phonetic,
+      phoneticShow: trueData[randomNum].phonetic == undefined ? false: true,
       translations: trueData[randomNum].translations,
       listLength: trueData.length,
     });
@@ -59,6 +63,8 @@ Page({
     }
     this.setData({
       word: this.data.listData[randomNum].word,
+      phonetic: this.data.listData[randomNum].phonetic == undefined ? '' : this.data.listData[randomNum].phonetic,
+      phoneticShow: this.data.listData[randomNum].phonetic == undefined ? false: true,
       translations: this.data.listData[randomNum].translations,
     });
   },

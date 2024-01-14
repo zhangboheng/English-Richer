@@ -3,5 +3,7 @@
     "animation-box": "../../../../components/animation-box/animation-box",
     "image-timer": "../../../../components/image-timer/image-timer"
   },
-  "navigationBarTitleText": "速览"
+  "navigationBarTitleText": "速览",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
 }
