@@ -144,6 +144,7 @@ Page({
       inputValue: '', // 输入框的值
       word: this.data.listData[randomNum].word,
       phonetic: this.data.listData[randomNum].phonetic == undefined ? '' : this.data.listData[randomNum].phonetic,
+      phoneticShow: false,
       translations: this.data.listData[randomNum].translations,
     });
   },
