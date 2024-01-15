@@ -14,7 +14,7 @@ Page({
     wx.showToast({
       title: '努力加载中……',
       icon: 'loading',
-      duration: 500
+      duration: 1500
     });
     // 初次加载获取数据
     let trueData = database.postData.main.sort(this.shuffleArray);
