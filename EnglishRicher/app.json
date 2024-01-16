@@ -90,7 +90,12 @@
       "pages": [
         "elementary/index",
         "junior/index",
-        "high/index",
+        "high/index"
+      ]
+    },
+    {
+      "root": "pages/gameoner",
+      "pages": [
         "cet4/index",
         "cet6/index"
       ]
@@ -114,7 +119,12 @@
       "pages": [
         "elementary/index",
         "junior/index",
-        "high/index",
+        "high/index"
+      ]
+    },
+    {
+      "root": "pages/gametwor",
+      "pages": [
         "cet4/index",
         "cet6/index"
       ]

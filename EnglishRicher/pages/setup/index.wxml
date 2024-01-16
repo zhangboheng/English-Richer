@@ -1,5 +1,5 @@
 <image class="background-image" src="../../static/source/startup.png" mode='aspectFill'></image>
-<scrollable-text wx:if="{{showComponent}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="玩法说明" imgSrc="../../static/source/console.png"></scrollable-text>
+<scrollable-text wx:if="{{showComponent}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="使用说明" imgSrc="../../static/source/console.png"></scrollable-text>
 <view class="tool-zone">
   <view class="marquee-box">
     <view class="mention">
@@ -28,7 +28,7 @@
     <button bindtap="gotoIntroduce" class="custom-btn introduce">
       <view class="button-content">
         <image class="button-icon rotate-animation" src="../../static/source/console.png"></image>
-        <text class="button-text">玩法说明</text>
+        <text class="button-text">使用说明</text>
       </view>
     </button>
   </view>

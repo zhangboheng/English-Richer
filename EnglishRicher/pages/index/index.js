@@ -81,11 +81,11 @@ Page({
       });
     } else if (defaultLevel === '大学英语四级') {
       wx.navigateTo({
-        url: '/pages/gameone/cet4/index'
+        url: '/pages/gameoner/cet4/index'
       });
     } else if (defaultLevel === '大学英语六级') {
       wx.navigateTo({
-        url: '/pages/gameone/cet6/index'
+        url: '/pages/gameoner/cet6/index'
       });
     } else if (defaultLevel === '考研') {
       wx.navigateTo({
@@ -128,11 +128,11 @@ Page({
         });
       } else if (defaultLevel === '大学英语四级') {
         wx.navigateTo({
-          url: '/pages/gametwo/cet4/index'
+          url: '/pages/gametwor/cet4/index'
         });
       } else if (defaultLevel === '大学英语六级') {
         wx.navigateTo({
-          url: '/pages/gametwo/cet6/index'
+          url: '/pages/gametwor/cet6/index'
         });
       } else if (defaultLevel === '考研') {
         wx.navigateTo({
