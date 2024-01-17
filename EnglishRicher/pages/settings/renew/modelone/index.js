@@ -65,7 +65,7 @@ Page({
   // 语音播放
   playAudio() {
     let trueWord = this.data.word.indexOf(' ') > -1 ? this.data.word.replaceAll(' ', '-') : this.data.word;
-    let speak = [`https://dict.youdao.com/dictvoice?type=0&audio=${trueWord}`, `https://dds.dui.ai/runtime/v1/synthesize?voiceId=lucyfa&text=${trueWord}&speed=1&volume=100&audioType=mp3`][Math.floor(Math.random() * 2)];
+    let speak = [`https://dict.youdao.com/dictvoice?type=0&audio=${trueWord}`,`https://api.vvhan.com/api/song?txt=${trueWord}`][Math.floor(Math.random() * 2)];
     innerAudioContext.src = speak;
     innerAudioContext.play();
   }
