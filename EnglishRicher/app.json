@@ -148,7 +148,12 @@
       "pages": [
         "elementary/index",
         "junior/index",
-        "high/index",
+        "high/index"
+      ]
+    },
+    {
+      "root": "pages/gamethreer",
+      "pages": [
         "cet4/index",
         "cet6/index"
       ]

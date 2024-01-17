@@ -2,6 +2,9 @@
   <image-timer></image-timer>
   <animation-box></animation-box>
   <floating-animation showAnimation="{{showAnimation}}"></floating-animation>
+  <view wx:if="{{phoneticShow}}">
+    <text>{{phonetic}}</text>
+  </view>
   <view class="word">
     <text>{{word}}</text>
     <image  bind:tap="playAudio" class="voice-word" src="../../../static/source/microphone.png" mode="scaleToFill"></image>

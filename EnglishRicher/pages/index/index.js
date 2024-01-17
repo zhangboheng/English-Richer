@@ -184,11 +184,11 @@ Page({
         });
       } else if (defaultLevel === '大学英语四级') {
         wx.navigateTo({
-          url: '/pages/gamethree/cet4/index'
+          url: '/pages/gamethreer/cet4/index'
         });
       } else if (defaultLevel === '大学英语六级') {
         wx.navigateTo({
-          url: '/pages/gamethree/cet6/index'
+          url: '/pages/gamethreer/cet6/index'
         });
       } else if (defaultLevel === '考研') {
         wx.navigateTo({
