@@ -13,9 +13,9 @@ Page({
     translations: [], // 翻译的集合
   },
   // 页面分享
-  onShareAppMessage() { },
+  onShareAppMessage() {},
   // 页面分享朋友圈
-  onShareTimeline() { },
+  onShareTimeline() {},
   onLoad: function (options) {
     randomList = [];
     // 初次加载获取数据
@@ -30,7 +30,7 @@ Page({
       listData: trueData,
       word: trueData[randomNum].word,
       phonetic: trueData[randomNum].phonetic == undefined ? "" : trueData[randomNum].phonetic,
-      phoneticShow: trueData[randomNum].phonetic == undefined ? false: true,
+      phoneticShow: trueData[randomNum].phonetic == undefined ? false : true,
       translations: trueData[randomNum].translations,
       listLength: trueData.length,
     });
@@ -64,15 +64,44 @@ Page({
     this.setData({
       word: this.data.listData[randomNum].word,
       phonetic: this.data.listData[randomNum].phonetic == undefined ? "" : this.data.listData[randomNum].phonetic,
-      phoneticShow: this.data.listData[randomNum].phonetic == undefined ? false: true,
+      phoneticShow: this.data.listData[randomNum].phonetic == undefined ? false : true,
       translations: this.data.listData[randomNum].translations,
     });
   },
   // 语音播放
   playAudio() {
     let trueWord = this.data.word.indexOf(' ') > -1 ? this.data.word.replaceAll(' ', '-') : this.data.word;
-    let speak = [`https://dict.youdao.com/dictvoice?type=0&audio=${trueWord}`,`https://api.vvhan.com/api/song?txt=${trueWord}`][Math.floor(Math.random() * 2)];
-    innerAudioContext.src = speak;
-    innerAudioContext.play();
+    wx.request({
+      url: `https://dict-co.iciba.com/api/dictionary.php?key=AA6C7429C3884C9E766C51187BD1D86F&type=json&w=${trueWord}`,
+      method: 'GET', // 请求方法
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if (res.statusCode === 200) {
+          let speak = null;
+          if (res.data.symbols[0].ph_en_mp3.length > 0) {
+            speak = res.data.symbols[0].ph_en_mp3
+          }else if(res.data.symbols[0].ph_tts_mp3.length > 0){
+            speak = res.data.symbols[0].ph_tts_mp3;
+          }else{
+            speak = `https://dict.youdao.com/dictvoice?type=0&audio=${trueWord}`;
+          }
+          innerAudioContext.src = speak;
+          innerAudioContext.play();
+        } else {
+          // 处理错误情况
+          let speak = `https://dict.youdao.com/dictvoice?type=0&audio=${trueWord}`;
+          innerAudioContext.src = speak;
+          innerAudioContext.play();
+        }
+      },
+      fail(error) {
+        // 处理错误情况
+        let speak = `https://dict.youdao.com/dictvoice?type=0&audio=${trueWord}`;
+        innerAudioContext.src = speak;
+        innerAudioContext.play();
+      }
+    });
   }
 });
