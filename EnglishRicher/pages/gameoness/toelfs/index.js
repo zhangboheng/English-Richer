@@ -10,10 +10,12 @@ Page({
     listLength: 0, // 单词所有词库
     currentLength: 1, // 当前显示单词进度数
     word: 'hello',  // 要展示的英文单词
+    phonetic: '', // 要展示的音标
+    phoneticShow: true, //是否显示音标
     translations: [], // 翻译的集合
     translationShow: false, // 是否显示翻译
     showAnimation: false, // 显示悬浮动画
-    showGrade: '托福'
+    showGrade: '托福(下)'
   },
   // 页面分享
   onShareAppMessage() {},
@@ -26,8 +28,6 @@ Page({
       icon: 'loading',
       duration: 500
     });
-    // 初次加载获取数据
-    let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let trueData = database.postData.main.concat(databaseTwo.postData.main);
     const randomNum = Math.floor(Math.random() * trueData.length);
     // 当 randomList 集合中没有随机数即放进去
@@ -43,8 +43,10 @@ Page({
     this.setData({
       listData: trueData,
       word: trueData[randomNum].word,
+      phonetic: trueData[randomNum].phonetic == undefined ? "" : trueData[randomNum].phonetic,
+      phoneticShow: trueData[randomNum].phonetic == undefined ? false: true,
       translations: trueData[randomNum].translations,
-      showGrade: defaultLevel,
+      showGrade: '托福(下)',
       listLength: trueData.length,
     });
   },
@@ -122,6 +124,8 @@ Page({
     this.setData({
       translationShow: false,
       word: this.data.listData[randomNum].word,
+      phonetic: this.data.listData[randomNum].phonetic == undefined ? '' : this.data.listData[randomNum].phonetic,
+      phoneticShow: this.data.listData[randomNum].phonetic == undefined ? false: true,
       translations: this.data.listData[randomNum].translations
     });
   },

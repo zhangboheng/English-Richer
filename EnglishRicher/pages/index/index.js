@@ -99,7 +99,7 @@ Page({
         });
       } else {
         wx.navigateTo({
-          url: '/pages/gameones/toelfs/index'
+          url: '/pages/gameoness/toelfs/index'
         });
       }
     } else if (defaultLevel === 'SAT') {
@@ -146,7 +146,7 @@ Page({
           });
         } else {
           wx.navigateTo({
-            url: '/pages/gametwos/toelfs/index'
+            url: '/pages/gametwoss/toelfs/index'
           });
         }
       } else if (defaultLevel === 'SAT') {
@@ -202,7 +202,7 @@ Page({
           });
         } else {
           wx.navigateTo({
-            url: '/pages/gamethrees/toelfs/index'
+            url: '/pages/gamethreess/toelfs/index'
           });
         }
       } else if (defaultLevel === 'SAT') {

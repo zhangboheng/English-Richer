@@ -104,13 +104,13 @@
       "root": "pages/gameones",
       "pages": [
         "postgraduate/index",
-        "toelf/index",
-        "toelfs/index"
+        "toelf/index"
       ]
     },
     {
       "root": "pages/gameoness",
       "pages": [
+        "toelfs/index",
         "sat/index"
       ]
     },
@@ -133,13 +133,13 @@
       "root": "pages/gametwos",
       "pages": [
         "postgraduate/index",
-        "toelf/index",
-        "toelfs/index"
+        "toelf/index"
       ]
     },
     {
       "root": "pages/gametwoss",
       "pages": [
+        "toelfs/index",
         "sat/index"
       ]
     },
@@ -162,13 +162,13 @@
       "root": "pages/gamethrees",
       "pages": [
         "postgraduate/index",
-        "toelf/index",
-        "toelfs/index"
+        "toelf/index"
       ]
     },
     {
       "root": "pages/gamethreess",
       "pages": [
+        "toelfs/index",
         "sat/index"
       ]
     }
