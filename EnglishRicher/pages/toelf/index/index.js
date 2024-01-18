@@ -15,7 +15,7 @@ Page({
     wx.showToast({
       title: '努力加载中……',
       icon: 'loading',
-      duration: 500
+      duration: 2500
     });
     // 初次加载获取数据
     let allData = database.postData.main.concat(databaseTwo.postData.main);

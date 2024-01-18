@@ -12,8 +12,10 @@ Page({
     translations: [], // 翻译的集合
     inputValue: '', // 输入框的值
     word: '', // 填写正确的值
+    phonetic: '', // 要展示的音标
+    phoneticShow: false, // 是否显示音标
     showAnimation: false, // 显示悬浮动画
-    showGrade: '托福'
+    showGrade: '托福(上)'
   },
   // 页面分享
   onShareAppMessage() {},
@@ -27,7 +29,6 @@ Page({
       duration: 500
     });
     // 初次加载获取数据
-    let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let trueData = database.postData.main.concat(databaseTwo.postData.main);;
     const randomNum = Math.floor(Math.random() * trueData.length);
     // 当 randomList 集合中没有随机数即放进去
@@ -43,8 +44,9 @@ Page({
     this.setData({
       listData: trueData,
       word: trueData[randomNum].word,
+      phonetic: trueData[randomNum].phonetic == undefined ? "" : trueData[randomNum].phonetic,
       translations: trueData[randomNum].translations,
-      showGrade: defaultLevel,
+      showGrade: '托福(上)',
       listLength: trueData.length,
     });
   },
@@ -141,6 +143,8 @@ Page({
     this.setData({
       inputValue: '', // 输入框的值
       word: this.data.listData[randomNum].word,
+      phonetic: this.data.listData[randomNum].phonetic == undefined ? '' : this.data.listData[randomNum].phonetic,
+      phoneticShow: false,
       translations: this.data.listData[randomNum].translations,
     });
   },
@@ -186,6 +190,9 @@ Page({
       title: `提示：单词长度为${this.data.word.length}，首字母为${this.data.word[0]}`,
       icon: 'none',
       duration: 2000
-    }); 
+    });
+    this.setData({
+      phoneticShow: true,
+    })
   }
 });

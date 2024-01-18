@@ -11,7 +11,7 @@ Page({
     translations: [], // 翻译的集合
     word: '', // 填写正确的值
     showAnimation: false, // 显示悬浮动画
-    showGrade: '托福'
+    showGrade: '托福(上)'
   },
   // 页面分享
   onShareAppMessage() {},
@@ -50,7 +50,7 @@ Page({
       selectC: randomElements[2],
       selectD: randomElements[3],
       translations: trueData[randomNum].translations,
-      showGrade: defaultLevel,
+      showGrade: '托福(上)',
       listLength: trueData.length,
     });
   },
