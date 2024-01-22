@@ -1,6 +1,14 @@
 Page({
   data: {
     versions: [{
+        version: '2.4.7',
+        date: '2024-01-22',
+        icon: ['success', 'success_no_circle'],
+        changes: [
+          '英语词库新增列表点击单词发音。',
+          '修正高中水平英语单词解释排版问题。'
+        ],
+      },{
         version: '2.4.6',
         date: '2024-01-18',
         icon: ['success'],
