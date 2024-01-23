@@ -44,6 +44,7 @@ Page({
     this.setData({
       listData: trueData,
       word: trueData[randomNum].word,
+      phonetic: trueData[randomNum].phonetic,
       selectA: randomElements[0],
       selectB: randomElements[1],
       selectC: randomElements[2],
