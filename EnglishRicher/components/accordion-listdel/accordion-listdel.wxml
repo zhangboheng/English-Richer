@@ -2,7 +2,7 @@
   <view class="accordion-list">
     <block wx:for="{{dataList}}" wx:key="index">
       <view class="list-item" bindtap="toggleAccordion" data-index="{{index}}">
-        <view class="title">{{item.word}}</view>
+        <view class="title">{{item.word}} {{item.phonetic}}</view>
         <image class="item-image" src="../../static/source/detail.png" />
       </view>
       <view class="content" wx:if="{{item.show}}">

@@ -9,6 +9,7 @@ Page({
     currentLength: 1, // 当前显示单词进度数
     translations: [], // 翻译的集合
     word: '', // 填写正确的值
+    phonetic: '', // 音标
     showAnimation: false, // 显示悬浮动画
     showGrade: '考研'
   },
@@ -44,6 +45,7 @@ Page({
     this.setData({
       listData: trueData,
       word: trueData[randomNum].word,
+      phonetic: trueData[randomNum].phonetic,
       selectA: randomElements[0],
       selectB: randomElements[1],
       selectC: randomElements[2],
@@ -110,6 +112,7 @@ Page({
       if (notMasterWords.map(x => x.word).indexOf(this.data.word) == -1 && notMasterWords.length < limitNumber) {
         notMasterWords.push({
           word: this.data.word,
+          phonetic: this.data.phonetic,
           translations: this.data.translations
         });
       }
@@ -149,6 +152,7 @@ Page({
     }
     this.setData({
       word: this.data.listData[randomNum].word,
+      phonetic: this.data.listData[randomNum].phonetic,
       selectA: randomElements[0],
       selectB: randomElements[1],
       selectC: randomElements[2],
