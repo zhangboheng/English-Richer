@@ -1,6 +1,13 @@
 Page({
   data: {
     versions: [{
+        version: '2.4.9',
+        date: '2024-01-24',
+        icon: ['success'],
+        changes: [
+          '温故知新导出新增音标列表。'
+        ],
+      }, {
         version: '2.4.8',
         date: '2024-01-23',
         icon: ['success', 'success_no_circle'],

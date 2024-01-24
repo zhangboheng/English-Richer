@@ -5,11 +5,6 @@
         </view>
   </scroll-view>
   <swiper-banner class="swiper-box" images="{{swiperImages}}" indicatorDots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" circular="{{true}}"></swiper-banner>
-  <view id="content-0">
-    <title-section lineTitle="生财有道"></title-section>
-    <article-list articles="{{ moneyData }}"></article-list>
-    <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
-  </view>
   <view id="content-1">
     <title-section lineTitle="学习娱乐"></title-section>
     <article-list articles="{{ entertainmentData }}"></article-list>
@@ -29,6 +24,11 @@
     <title-section lineTitle="AI助力"></title-section>
     <article-list articles="{{ articleData }}"></article-list>
     <ad unit-id="adunit-9ea16354eb9450a0" ad-type="video" ad-theme="white"></ad>
+  </view>
+  <view id="content-0">
+    <title-section lineTitle="生财有道"></title-section>
+    <article-list articles="{{ moneyData }}"></article-list>
+    <ad unit-id="adunit-ac761499eddfaf1d" ad-intervals="30"></ad>
   </view>
   <view class="bottomup" bindtap="scrollToTop">
     <image class="fixedimage" src="../../static/source/uparrow.png" />

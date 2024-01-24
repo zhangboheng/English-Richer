@@ -71,11 +71,12 @@ Page({
     }
     // 构建一个表的数据
     let sheet = []
-    let title = ['单词', '解释', '复习计划']
+    let title = ['单词', '音标', '解释', '复习计划']
     sheet.push(title)
     data.forEach(item => {
       let rowcontent = []
       rowcontent.push(item.word)
+      rowcontent.push(item.phonetic)
       rowcontent.push(item.translations.map(x=>x.translation))
       sheet.push(rowcontent)
     })
