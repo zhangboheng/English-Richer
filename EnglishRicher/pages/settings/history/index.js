@@ -1,6 +1,13 @@
 Page({
   data: {
     versions: [{
+        version: '2.5.0',
+        date: '2024-01-29',
+        icon: ['success'],
+        changes: [
+          '温故知新复习模式增加音标显示。'
+        ],
+      }, {
         version: '2.4.9',
         date: '2024-01-24',
         icon: ['success'],

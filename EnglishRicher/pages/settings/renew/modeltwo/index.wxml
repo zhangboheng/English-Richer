@@ -3,6 +3,9 @@
   <animation-box></animation-box>
   <view class="content">
     <image  bind:tap="playAudio" class="voice-word" src="../../../../static/source/microphone.png" mode="scaleToFill"></image>
+    <view wx:if="{{phoneticShow}}">
+      <text>{{phonetic}}</text>
+    </view>
     <view class="translation-word" wx:for="{{translations}}" wx:key="index">
       <text class="item-type">{{item.type}}</text>
       <text>{{item.translation}}</text>

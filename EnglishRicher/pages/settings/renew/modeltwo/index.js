@@ -9,6 +9,8 @@ Page({
     translations: [], // 翻译的集合
     inputValue: '', // 输入框的值
     word: '', // 填写正确的值
+    phonetic: '', // 要展示的音标
+    phoneticShow: false, // 是否显示音标
   },
   // 页面分享
   onShareAppMessage() {},
@@ -25,6 +27,7 @@ Page({
     this.setData({
       listData: trueData,
       word: trueData[randomNum].word,
+      phonetic: trueData[randomNum].phonetic == undefined ? "" : trueData[randomNum].phonetic,
       translations: trueData[randomNum].translations,
       listLength: trueData.length,
     });
@@ -81,6 +84,8 @@ Page({
     this.setData({
       inputValue: '', // 输入框的值
       word: this.data.listData[randomNum].word,
+      phonetic: this.data.listData[randomNum].phonetic == undefined ? '' : this.data.listData[randomNum].phonetic,
+      phoneticShow: false,
       currentLength: randomList.length,
       translations: this.data.listData[randomNum].translations,
     });
@@ -127,6 +132,9 @@ Page({
       title: `提示：单词长度为${this.data.word.length}，首字母为${this.data.word[0]}`,
       icon: 'none',
       duration: 2000
-    }); 
+    });
+    this.setData({
+      phoneticShow: true,
+    })
   }
 });
