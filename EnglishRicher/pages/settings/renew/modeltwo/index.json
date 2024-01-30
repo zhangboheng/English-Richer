@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "animation-box": "../../../../components/animation-box/animation-box",
-    "image-timer": "../../../../components/image-timer/image-timer"
+    "image-timer": "../../../../components/image-timer/image-timer",
+    "scrollable-text": "../../../../components/scroll-text/scroll"
   },
   "navigationBarTitleText": "复习模式二",
   "enablePullDownRefresh": false,

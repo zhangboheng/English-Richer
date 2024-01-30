@@ -1,6 +1,14 @@
 Page({
   data: {
     versions: [{
+        version: '2.5.1',
+        date: '2024-01-30',
+        icon: ['info', 'info'],
+        changes: [
+          '完善 Game Two 轻航填字海 点击不会时弹出显示。',
+          '完善温故知新复习模式二中点击不会时弹出显示。'
+        ],
+      }, {
         version: '2.5.0',
         date: '2024-01-29',
         icon: ['success'],

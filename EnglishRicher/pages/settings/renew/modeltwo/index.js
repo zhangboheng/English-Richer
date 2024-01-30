@@ -10,7 +10,8 @@ Page({
     inputValue: '', // 输入框的值
     word: '', // 填写正确的值
     phonetic: '', // 要展示的音标
-    phoneticShow: false, // 是否显示音标
+    phoneticShow: false,
+    detailTranslation: false
   },
   // 页面分享
   onShareAppMessage() {},
@@ -67,10 +68,10 @@ Page({
   },
 
   handleNotMaster: function () {
-    wx.showToast({
-      title: `正确答案是${this.data.word}！`,
-      icon: 'none',
-      duration: 2000
+    this.setData({
+      itemName: '详细解释',
+      showTips: `单词：${this.data.word}\n音标：${this.data.phonetic}\n处理：你记住了吗？`,
+      detailTranslation: true,
     });
     this.getNextWord();
   },
@@ -136,5 +137,11 @@ Page({
     this.setData({
       phoneticShow: true,
     })
-  }
+  },
+  // 点击关闭爱因斯坦大脑文章
+  closePopup() {
+    this.setData({
+      detailTranslation: false,
+    });
+  },
 });

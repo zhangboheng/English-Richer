@@ -2,7 +2,8 @@
   "usingComponents": {
     "animation-box": "../../../components/animation-box/animation-box",
     "image-timer": "../../../components/image-timer/image-timer",
-    "floating-animation": "../../../components/floating-animation/floating-animation"
+    "floating-animation": "../../../components/floating-animation/floating-animation",
+    "scrollable-text": "../../../components/scroll-text/scroll"
   },
   "navigationBarTitleText": "轻航填字海",
   "enablePullDownRefresh": false,

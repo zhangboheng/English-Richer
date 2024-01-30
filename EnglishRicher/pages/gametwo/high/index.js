@@ -14,7 +14,8 @@ Page({
     phonetic: '', // 要展示的音标
     phoneticShow: false, // 是否显示音标
     showAnimation: false, // 显示悬浮动画
-    showGrade: '高中'
+    showGrade: '高中',
+    detailTranslation: false
   },
   // 页面分享
   onShareAppMessage() {},
@@ -123,11 +124,11 @@ Page({
       });
     }
     wx.setStorageSync('notMasterWords', notMasterWords);
-    wx.showToast({
-      title: `正确答案是${this.data.word}, 已经加入到温故知新！`,
-      icon: 'none',
-      duration: 2000
-    }); // 重新赋值给随机数字集合
+    this.setData({
+      itemName: '详细解释',
+      showTips: `单词：${this.data.word}\n音标：${this.data.phonetic}\n处理：已经加入到温故知新`,
+      detailTranslation: true,
+    });
     randomList = randomList.slice(0, -1);
     wx.setStorageSync('highTwoList', randomList);
     this.getNextWord();
@@ -195,5 +196,11 @@ Page({
     this.setData({
       phoneticShow: true,
     })
-  }
+  },
+  // 点击关闭爱因斯坦大脑文章
+  closePopup() {
+    this.setData({
+      detailTranslation: false,
+    });
+  },
 });
