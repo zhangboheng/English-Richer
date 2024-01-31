@@ -1,6 +1,13 @@
 Page({
   data: {
     versions: [{
+        version: '2.5.2',
+        date: '2024-01-31',
+        icon: ['success_no_circle'],
+        changes: [
+          '修正小学到高中部分单词音标不规范问题。'
+        ],
+      }, {
         version: '2.5.1',
         date: '2024-01-30',
         icon: ['info', 'info'],
