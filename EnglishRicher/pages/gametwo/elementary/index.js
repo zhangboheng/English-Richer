@@ -1,6 +1,7 @@
 const innerAudioContext = wx.createInnerAudioContext();
-import {addMissingNumber} from '../../../utils/algorithm'
+import {addMissingNumber,findLongestArray} from '../../../utils/algorithm'
 var database = require('./source/elementary');
+const midArray = findLongestArray(wx.getStorageSync('elementaryList'),'elementaryList', wx.getStorageSync('elementaryTwoList'), 'elementaryTwoList', wx.getStorageSync('elementaryThreeList'), 'elementaryThreeList');
 var randomList = [];
 // 在对应页面的 js 文件中
 Page({
@@ -33,11 +34,7 @@ Page({
     let trueData = database.postData.main;
     const randomNum = Math.floor(Math.random() * trueData.length);
     // 当 randomList 集合中没有随机数即放进去
-    randomList = wx.getStorageSync('elementaryTwoList')
-    if (typeof randomList == 'string') {
-      randomList = [];
-      wx.setStorageSync('elementaryTwoList', [])
-    }
+    randomList = midArray[0];
     if (randomList.indexOf(randomNum) == -1) {
       randomList.push(randomNum);
     }
@@ -91,7 +88,7 @@ Page({
         icon: 'none',
         duration: 1000
       });
-      wx.setStorageSync('elementaryTwoList', randomList);
+      wx.setStorageSync(midArray[1], randomList);
       this.getNextWord();
       // 点击掌握后进度条增加
       this.setData({
@@ -130,7 +127,7 @@ Page({
       detailTranslation: true,
     });
     randomList = randomList.slice(0, -1);
-    wx.setStorageSync('elementaryTwoList', randomList);
+    wx.setStorageSync(midArray[1], randomList);
     this.getNextWord();
   },
 

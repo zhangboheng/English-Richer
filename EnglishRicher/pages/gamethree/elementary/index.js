@@ -1,5 +1,7 @@
+import {addMissingNumber,findLongestArray} from '../../../utils/algorithm'
 var database = require('./source/elementary');
 const innerAudioContext = wx.createInnerAudioContext();
+const midArray = findLongestArray(wx.getStorageSync('elementaryList'),'elementaryList', wx.getStorageSync('elementaryTwoList'), 'elementaryTwoList', wx.getStorageSync('elementaryThreeList'), 'elementaryThreeList');
 var randomList = [];
 // 在对应页面的 js 文件中
 Page({
@@ -33,11 +35,7 @@ Page({
     const randomOneToFour = Math.floor(Math.random() * 4);
     const randomNum = trueData.map(x => x.word).indexOf(randomElements[randomOneToFour]);
     // 当 randomList 集合中没有随机数即放进去
-    randomList = wx.getStorageSync('elementaryThreeList')
-    if (typeof randomList == 'string') {
-      randomList = [];
-      wx.setStorageSync('elementaryThreeList', [])
-    }
+    randomList = midArray[0];
     if (randomList.indexOf(randomNum) == -1) {
       randomList.push(randomNum);
     }
@@ -88,7 +86,7 @@ Page({
         icon: 'none',
         duration: 1000
       });
-      wx.setStorageSync('elementaryThreeList', randomList);
+      wx.setStorageSync(midArray[1], randomList);
       try {
         this.playAudio();
         this.getNextWord();
@@ -118,7 +116,7 @@ Page({
       }
       wx.setStorageSync('notMasterWords', notMasterWords);
       randomList = randomList.slice(0, -1);
-      wx.setStorageSync('elementaryThreeList', randomList);
+      wx.setStorageSync(midArray[1], randomList);
       wx.showToast({
         title: `啊哦，正解是${this.data.word}，放入了温故知新`,
         icon: 'none',
