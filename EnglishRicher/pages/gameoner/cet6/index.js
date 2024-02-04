@@ -1,13 +1,14 @@
+import {addMissingNumber,findLongestArray} from '../../../utils/algorithm'
 const innerAudioContext = wx.createInnerAudioContext();
-import {addMissingNumber} from '../../../utils/algorithm'
 var database = require('./source/cet6');
+var midArray = '';
 var randomList = [];
 // 在对应页面的 js 文件中
 Page({
   data: {
     listData: [], // 刷单词所有的词库
     listLength: 0, // 单词所有词库
-    currentLength: 1, // 当前显示单词进度数
+    currentLength: 0, // 当前显示单词进度数
     word: 'hello',  // 要展示的英文单词
     phonetic: '', // 要展示的音标
     phoneticShow: true, //是否显示音标
@@ -21,25 +22,20 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function (options) {
+    midArray = findLongestArray(wx.getStorageSync('cet6List'),'cet6List', wx.getStorageSync('cet6TwoList'), 'cet6TwoList', wx.getStorageSync('cet6ThreeList'), 'cet6ThreeList');
     // 显示正在刷新提示框
     wx.showToast({
       title: '努力加载中……',
       icon: 'loading',
       duration: 500
     });
+  },
+  onReady: function() {
     // 初次加载获取数据
     let defaultLevel = wx.getStorageSync('defaultLevel'); // 初始水平
     let trueData = database.postData.main;
     const randomNum = Math.floor(Math.random() * trueData.length);
-    // 当 randomList 集合中没有随机数即放进去
-    randomList = wx.getStorageSync('cet6List')
-    if (typeof randomList == 'string') {
-      randomList = [];
-      wx.setStorageSync('cet6List', [])
-    }
-    if (randomList.indexOf(randomNum) == -1) {
-      randomList.push(randomNum);
-    }
+    randomList = midArray[0]
     // 赋值给本轮列表
     this.setData({
       listData: trueData,
@@ -49,10 +45,6 @@ Page({
       translations: trueData[randomNum].translations,
       showGrade: defaultLevel,
       listLength: trueData.length,
-    });
-  },
-  onReady: function() {
-    this.setData({
       currentLength: randomList.length
     });
   },
@@ -83,8 +75,8 @@ Page({
         showAnimation: false,
       });
     }, 1000);
-    wx.setStorageSync('cet6List', randomList);
     this.getNextWord();
+    wx.setStorageSync(midArray[1], randomList);
     // 点击掌握后进度条增加
     this.setData({
       currentLength: randomList.length, // 是否显示翻译
@@ -109,15 +101,12 @@ Page({
       });
     }
     wx.setStorageSync('notMasterWords', notMasterWords);
-    // 重新赋值给随机数字集合
-    randomList = randomList.slice(0, -1);
-    wx.setStorageSync('cet6List', randomList);
-    this.getNextWord();
+    this.getNextWord(false);
   },
 
-  getNextWord: function() {
+  getNextWord: function(_info = true) {
     let randomNum = 0;
-    let condition = addMissingNumber(randomList, this.data.listData.length);
+    let condition = addMissingNumber(randomList, this.data.listData.length, _info);
     if (!condition){
       randomNum = Math.floor(Math.random() * this.data.listData.length)
     }else{

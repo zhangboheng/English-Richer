@@ -78,7 +78,6 @@ Page({
 
   getNextWord: function () {
     const randomNum = Math.floor(Math.random() * this.data.listData.length);
-    // 当 randomList 集合中没有随机数即放进去
     if (randomList.indexOf(randomNum) == -1) {
       randomList.push(randomNum);
     }

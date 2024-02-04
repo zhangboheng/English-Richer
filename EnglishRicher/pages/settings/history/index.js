@@ -1,13 +1,22 @@
 Page({
   data: {
     versions: [{
+        version: '2.5.3',
+        date: '2024-02-04',
+        icon: ['info'],
+        changes: [
+          '优化关卡中掌握和不会时的进度记录，不会时不再消减进度。'
+        ],
+      },
+      {
         version: '2.5.2',
         date: '2024-01-31',
         icon: ['success_no_circle'],
         changes: [
           '修正部分单词音标不规范问题。'
         ],
-      }, {
+      },
+      {
         version: '2.5.1',
         date: '2024-01-30',
         icon: ['info', 'info'],
@@ -15,21 +24,24 @@ Page({
           '完善 Game Two 轻航填字海 点击不会时弹出显示。',
           '完善温故知新复习模式二中点击不会时弹出显示。'
         ],
-      }, {
+      },
+      {
         version: '2.5.0',
         date: '2024-01-29',
         icon: ['success'],
         changes: [
           '温故知新复习模式增加音标显示。'
         ],
-      }, {
+      },
+      {
         version: '2.4.9',
         date: '2024-01-24',
         icon: ['success'],
         changes: [
           '温故知新导出新增音标列表。'
         ],
-      }, {
+      },
+      {
         version: '2.4.8',
         date: '2024-01-23',
         icon: ['success', 'success_no_circle'],
@@ -37,7 +49,8 @@ Page({
           '温故知新新增列表音标以及点击单词发音。',
           '修正部分英语单词解释不全问题。'
         ],
-      }, {
+      },
+      {
         version: '2.4.7',
         date: '2024-01-22',
         icon: ['success', 'success_no_circle'],
@@ -45,14 +58,16 @@ Page({
           '英语词库新增列表点击单词发音。',
           '修正高中水平英语单词解释排版问题。'
         ],
-      }, {
+      },
+      {
         version: '2.4.6',
         date: '2024-01-18',
         icon: ['success'],
         changes: [
           '所有水平关卡和英语词库单词新增音标显示。'
         ],
-      }, {
+      },
+      {
         version: '2.4.5',
         date: '2024-01-12',
         icon: ['info', 'success_no_circle'],

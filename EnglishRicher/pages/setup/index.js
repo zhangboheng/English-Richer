@@ -2,7 +2,7 @@ var database = require('./source/radio');
 const innerAudioContext = wx.getBackgroundAudioManager();
 Page({
   data: {
-    randomText: '新版本发布，修正部分音标不规范问题～～',
+    randomText: '新版本发布，优化关卡中掌握和不会时的进度记录，不会时不再消减进度～～',
     textCollection: [
       '使用小技巧，开启旅途中的小齿轮点击后可以进入策划谋略页面哦～～',
       '想要获取更多的经验和钱币？可以通过交换市集、关卡和任务大厅获取哦～～',
