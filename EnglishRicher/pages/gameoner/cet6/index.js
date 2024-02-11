@@ -15,7 +15,8 @@ Page({
     translations: [], // 翻译的集合
     translationShow: false, // 是否显示翻译
     showAnimation: false, // 显示悬浮动画
-    showGrade: '大学英语六级'
+    showGrade: '大学英语六级',
+    detailTranslation: false
   },
   // 页面分享
   onShareAppMessage() {},
@@ -101,6 +102,11 @@ Page({
       });
     }
     wx.setStorageSync('notMasterWords', notMasterWords);
+    this.setData({
+      itemName: '详情',
+      showTips: `单词：${this.data.word}\n音标：${this.data.phonetic ? this.data.phonetic : ""}\n解释：${this.data.translations.map(item=>item.type + ' ' + item.translation).join('\n')}\n处理：已经加入到温故知新`,
+      detailTranslation: true,
+    });
     this.getNextWord(false);
   },
 
@@ -155,5 +161,11 @@ Page({
         innerAudioContext.play();
       }
     });
-  }
+  },
+  // 点击关闭弹出内容
+  closePopup() {
+    this.setData({
+      detailTranslation: false,
+    });
+  },
 });
