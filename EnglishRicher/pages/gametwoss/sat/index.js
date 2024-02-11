@@ -111,14 +111,14 @@ Page({
     if (notMasterWords.map(x => x.word).indexOf(this.data.word) == -1 && notMasterWords.length < limitNumber) {
       notMasterWords.push({
         word: this.data.word,
-        phonetic: this.data.phonetic,
+        phonetic: this.data.phonetic ? this.data.phonetic : "",
         translations: this.data.translations
       });
     }
     wx.setStorageSync('notMasterWords', notMasterWords);
     this.setData({
-      itemName: '详细解释',
-      showTips: `单词：${this.data.word}\n音标：${this.data.phonetic}\n处理：已经加入到温故知新`,
+      itemName: '详情',
+      showTips: `单词：${this.data.word}\n音标：${this.data.phonetic ? this.data.phonetic : ""}\n解释：${this.data.translations.map(item=>item.type + ' ' + item.translation).join('\n')}\n处理：已经加入到温故知新`,
       detailTranslation: true,
     });
     this.getNextWord(false);
@@ -187,7 +187,7 @@ Page({
       phoneticShow: true,
     }) 
   },
-  // 点击关闭爱因斯坦大脑文章
+  // 点击关闭弹出内容
   closePopup() {
     this.setData({
       detailTranslation: false,

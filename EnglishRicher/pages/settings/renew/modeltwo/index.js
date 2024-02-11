@@ -69,8 +69,8 @@ Page({
 
   handleNotMaster: function () {
     this.setData({
-      itemName: '详细解释',
-      showTips: `单词：${this.data.word}\n音标：${this.data.phonetic}\n处理：你记住了吗？`,
+      itemName: '详情',
+      showTips: `单词：${this.data.word}\n音标：${this.data.phonetic ? this.data.phonetic : ""}\n解释：${this.data.translations.map(item=>item.type + ' ' + item.translation).join('\n')}\n处理：你记住了吗？`,
       detailTranslation: true,
     });
     this.getNextWord();
@@ -137,7 +137,7 @@ Page({
       phoneticShow: true,
     })
   },
-  // 点击关闭爱因斯坦大脑文章
+  // 点击关闭弹出内容
   closePopup() {
     this.setData({
       detailTranslation: false,

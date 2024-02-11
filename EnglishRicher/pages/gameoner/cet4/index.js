@@ -96,7 +96,7 @@ Page({
     if (notMasterWords.map(x => x.word).indexOf(this.data.word) == -1 && notMasterWords.length < limitNumber) {
       notMasterWords.push({
         word: this.data.word,
-        phonetic: this.data.phonetic,
+        phonetic: this.data.phonetic ? this.data.phonetic : "",
         translations: this.data.translations
       });
     }

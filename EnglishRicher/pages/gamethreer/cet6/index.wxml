@@ -31,3 +31,4 @@
     </view>
   </view>
 </view>
+<scrollable-text wx:if="{{detailTranslation}}" bind:closePopup="closePopup" text="{{ showTips }}" titleInfo="{{ itemName }}" imgSrc="../../static/source/vocabulary.png"></scrollable-text>

@@ -51,7 +51,7 @@ Page({
   },
   // 当点击搜索按钮的时候方法
   onSearch: function () {
-    let searchData = this.data.searchData;
+    let searchData = this.data.searchData.trim();
     let filterArr = this.data.globalData.filter(item => item.word.toLowerCase().indexOf(searchData.toLowerCase()) > -1 || item.translations.map(x=>x.translation).some(x=>x.indexOf(searchData) > -1));
     this.setData({
       listData: filterArr

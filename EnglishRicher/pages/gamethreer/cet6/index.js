@@ -12,8 +12,10 @@ Page({
     translations: [], // 翻译的集合
     word: '', // 填写正确的值
     phonetic: '', // 音标
+    phoneticShow: false, // 是否显示音标
     showAnimation: false, // 显示悬浮动画
-    showGrade: '大学英语六级'
+    showGrade: '大学英语六级',
+    detailTranslation: false
   },
   // 页面分享
   onShareAppMessage() {},
@@ -105,15 +107,15 @@ Page({
       if (notMasterWords.map(x => x.word).indexOf(this.data.word) == -1 && notMasterWords.length < limitNumber) {
         notMasterWords.push({
           word: this.data.word,
-          phonetic: this.data.phonetic,
+          phonetic: this.data.phonetic ? this.data.phonetic : "",
           translations: this.data.translations
         });
       }
       wx.setStorageSync('notMasterWords', notMasterWords);
-      wx.showToast({
-        title: `啊哦，正解是${this.data.word}，放入了温故知新`,
-        icon: 'none',
-        duration: 4000
+      this.setData({
+        itemName: '详情',
+        showTips: `单词：${this.data.word}\n音标：${this.data.phonetic ? this.data.phonetic : ""}\n解释：${this.data.translations.map(item=>item.type + ' ' + item.translation).join('\n')}\n处理：已经加入到温故知新`,
+        detailTranslation: true,
       });
       try {
         this.playAudio();
@@ -191,5 +193,11 @@ Page({
         innerAudioContext.play();
       }
     });
-  }
+  },
+  // 点击关闭弹出内容
+  closePopup() {
+    this.setData({
+      detailTranslation: false,
+    });
+  },
 });

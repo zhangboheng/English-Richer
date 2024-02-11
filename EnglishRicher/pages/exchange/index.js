@@ -348,7 +348,7 @@ Page({
       });
     }
   },
-  // 点击关闭爱因斯坦大脑文章
+  // 点击关闭弹出内容
   closePopup() {
     this.setData({
       einsteinArticle: false,

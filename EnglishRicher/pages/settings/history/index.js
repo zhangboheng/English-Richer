@@ -1,6 +1,15 @@
 Page({
   data: {
     versions: [{
+        version: '2.5.4',
+        date: '2024-02-11',
+        icon: ['info', 'info'],
+        changes: [
+          '优化英语词库和温故知新中单词搜索中输入空格的处理。',
+          '优化在关卡中不会时弹出的显示内容。'
+        ],
+      },
+      {
         version: '2.5.3',
         date: '2024-02-04',
         icon: ['info'],
