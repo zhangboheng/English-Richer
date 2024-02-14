@@ -2,7 +2,7 @@ var database = require('./source/radio');
 const innerAudioContext = wx.getBackgroundAudioManager();
 Page({
   data: {
-    randomText: '新版本发布，优化英语词库和温故知新中单词搜索中输入空格的处理～～',
+    randomText: '新版本发布，优化温故知新复习模式下增加掌握，点击掌握即可去除温故知新中的词汇～～',
     textCollection: [
       '使用小技巧，开启旅途中的小齿轮点击后可以进入策划谋略页面哦～～',
       '想要获取更多的经验和钱币？可以通过交换市集、关卡和任务大厅获取哦～～',

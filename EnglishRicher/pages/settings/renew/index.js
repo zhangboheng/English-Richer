@@ -12,8 +12,12 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function (options) {
-    // 从缓存中获取不会的单词
-    let database = wx.getStorageSync('notMasterWords') || [];
+    // 显示正在刷新提示框
+    wx.showToast({
+      title: '努力加载中……',
+      icon: 'loading',
+      duration: 1000
+    });
     // 在页面onLoad回调事件中创建激励视频广告实例
     if (wx.createRewardedVideoAd) {
       videoAd = wx.createRewardedVideoAd({
@@ -26,12 +30,23 @@ Page({
         console.error('激励视频光告加载失败', err)
       });
     }
-    // 显示正在刷新提示框
-    wx.showToast({
-      title: '努力加载中……',
-      icon: 'loading',
-      duration: 500
+  },
+  onReady: function () {
+    // 从缓存中获取不会的单词
+    let database = wx.getStorageSync('notMasterWords') || [];
+    // 初次加载获取数据
+    let trueData = database.sort(this.shuffleArray);
+    trueData = trueData.map(item => ({ ...item, show: false }));
+    // 赋值给子组件列表
+    this.setData({
+      listData: trueData,
+      globalData: trueData,
+      exportList: database
     });
+  },
+  onShow: function(){
+    // 从缓存中获取不会的单词
+    let database = wx.getStorageSync('notMasterWords') || [];
     // 初次加载获取数据
     let trueData = database.sort(this.shuffleArray);
     trueData = trueData.map(item => ({ ...item, show: false }));

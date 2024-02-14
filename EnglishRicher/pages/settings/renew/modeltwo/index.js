@@ -1,11 +1,9 @@
 const innerAudioContext = wx.createInnerAudioContext();
-var randomList = [];
 // 在对应页面的 js 文件中
 Page({
   data: {
     listData: [], // 刷单词所有的词库
     listLength: 0, // 单词所有词库
-    currentLength: 1, // 当前显示单词进度数
     translations: [], // 翻译的集合
     inputValue: '', // 输入框的值
     word: '', // 填写正确的值
@@ -18,12 +16,16 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function (options) {
-    randomList = [];
+    // 显示正在刷新提示框
+    wx.showToast({
+      title: '努力加载中……',
+      icon: 'loading',
+      duration: 1000
+    });
+  },
+  onReady: function() {
     let trueData = wx.getStorageSync('notMasterWords');
     const randomNum = Math.floor(Math.random() * trueData.length);
-    if (randomList.indexOf(randomNum) == -1) {
-      randomList.push(randomNum);
-    }
     // 赋值给本轮列表
     this.setData({
       listData: trueData,
@@ -31,11 +33,6 @@ Page({
       phonetic: trueData[randomNum].phonetic == undefined ? "" : trueData[randomNum].phonetic,
       translations: trueData[randomNum].translations,
       listLength: trueData.length,
-    });
-  },
-  onReady: function() {
-    this.setData({
-      currentLength: randomList.length
     });
   },
   // 输入框的值
@@ -54,10 +51,6 @@ Page({
         duration: 1000
       });
       this.getNextWord();
-      // 点击掌握后进度条增加
-      this.setData({
-        currentLength: randomList.length,
-      });
     } else {
       wx.showToast({
         title: '哎哟，不好意思，答错了！',
@@ -66,7 +59,6 @@ Page({
       });
     }
   },
-
   handleNotMaster: function () {
     this.setData({
       itemName: '详情',
@@ -75,18 +67,33 @@ Page({
     });
     this.getNextWord();
   },
-
+  // 点击掌握后删除该单词
+  handleDelete: function() {
+    // 从缓存中获取不会的单词
+    let database = wx.getStorageSync('notMasterWords') || [];
+    const word = this.data.word;
+    // 从缓存中去除该单词
+    let newNotMasterWords = database.filter(item => item.word != word);
+    wx.setStorageSync('notMasterWords', newNotMasterWords);
+    this.setData({
+      listData: newNotMasterWords,
+      listLength: newNotMasterWords.length,
+    });
+    this.getNextWord();
+  },
   getNextWord: function () {
-    const randomNum = Math.floor(Math.random() * this.data.listData.length);
-    if (randomList.indexOf(randomNum) == -1) {
-      randomList.push(randomNum);
+    if (this.data.listData.length == 0){
+      wx.navigateBack({
+        delta: 1
+      });
+      return;
     }
+    const randomNum = Math.floor(Math.random() * this.data.listData.length);
     this.setData({
       inputValue: '', // 输入框的值
       word: this.data.listData[randomNum].word,
       phonetic: this.data.listData[randomNum].phonetic == undefined ? '' : this.data.listData[randomNum].phonetic,
       phoneticShow: false,
-      currentLength: randomList.length,
       translations: this.data.listData[randomNum].translations,
     });
   },
