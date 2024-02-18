@@ -12,6 +12,11 @@
   <view class="tool-zone-image" bind:tap="randomMusicNext" bind:longpress="stopMusic">
     <image class="logos" src="../../static/source/logos.png" style="transform: rotate({{rotate}}deg);" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"></image>
   </view>
+  <view class="album-zone-image" wx:if="{{showAlbum}}">
+    <picker mode="selector" range="{{options}}" bindchange="onPickerChange">
+      <image class="albums" src="../../static/source/album.png"></image>
+    </picker>
+  </view>
   <view>
     <button bindtap="gotoHome" class="custom-btn start">
       <view class="button-content">

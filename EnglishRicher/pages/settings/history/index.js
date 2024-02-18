@@ -2,13 +2,22 @@ Page({
   data: {
     versions: [
       {
+        version: '2.5.6',
+        date: '2024-02-18',
+        icon: ['success'],
+        changes: [
+          '伴音系统新增可视化自定义选择。'
+        ],
+      },
+      {
         version: '2.5.5',
         date: '2024-02-14',
         icon: ['info'],
         changes: [
           '优化温故知新复习模式下增加掌握，点击掌握即可去除温故知新中的词汇。'
         ],
-      },{
+      },
+      {
         version: '2.5.4',
         date: '2024-02-11',
         icon: ['info', 'info', 'success_no_circle'],
