@@ -2,6 +2,7 @@ const innerAudioContext = wx.createInnerAudioContext();
 Component({
   data: {
     showOrNot: true,
+    count: 0,
     word: ''
   },
   properties: {
@@ -20,6 +21,22 @@ Component({
         word: word,
       });
       this.playAudio();
+    },
+    // 对列表进行排序
+    resortList: function() {
+      this.data.count++
+      this.setData({
+        count: this.data.count
+      });
+      if (this.data.count == 2){
+        this.setData({
+          count: 0
+        });
+      }
+      let param = this.data.count;
+      this.triggerEvent('orderList', {
+        param
+      });
     },
     // 侦测滚动事件回到顶部
     scrollToTop: function () {

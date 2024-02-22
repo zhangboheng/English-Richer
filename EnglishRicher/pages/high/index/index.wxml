@@ -7,5 +7,5 @@
     <button class="search-box" bindtap="onSearch">搜索</button>
     <button class="export-box" bindtap="quickLook">速览</button>
   </view>
-  <accordion-list dataList="{{listData}}"></accordion-list>
+    <accordion-list dataList="{{listData}}" bind:orderList="getOrderList"></accordion-list>
 </view>

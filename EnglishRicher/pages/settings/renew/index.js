@@ -144,6 +144,19 @@ Page({
       }
     })
   },
+  // 获取排序
+  getOrderList: function(e){
+    const orderIndex = e.detail.param;
+    if (orderIndex == 0){
+      this.setData({
+        listData: this.data.listData.sort((x,y)=>y.word.length - x.word.length),
+      });
+    }else if(orderIndex == 1){
+      this.setData({
+        listData:  this.data.listData.sort((x,y)=>x.word.length - y.word.length),
+      });
+    }
+  },
   // 获取删除的词汇
   getRemoveWord: function(e){
     // 从缓存中获取不会的单词

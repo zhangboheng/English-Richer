@@ -34,6 +34,9 @@
     </button>
   </view>
   <view class="footer-box">
+    <view class="bottomup" bindtap="resortList">
+      <image class="fixedimage" src="../../static/source/sort.png" />
+    </view>
     <view class="bottomup" bindtap="scrollToTop">
       <image class="fixedimage" src="../../static/source/uparrow.png" />
     </view>

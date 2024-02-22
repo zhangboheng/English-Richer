@@ -30,6 +30,19 @@ Page({
       globalData: trueData
     });
   },
+  // 获取排序
+  getOrderList: function(e){
+    const orderIndex = e.detail.param;
+    if (orderIndex == 0){
+      this.setData({
+        listData: this.data.listData.sort((x,y)=>y.word.length - x.word.length),
+      });
+    }else if(orderIndex == 1){
+      this.setData({
+        listData:  this.data.listData.sort((x,y)=>x.word.length - y.word.length),
+      });
+    }
+  },
   // 输入时的方法
   onInput: function (e) {
     const searchData = e.detail.value;

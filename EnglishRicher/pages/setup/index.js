@@ -2,7 +2,7 @@ var database = require('./source/radio');
 const innerAudioContext = wx.getBackgroundAudioManager();
 Page({
   data: {
-    randomText: '新版本发布，伴音系统新增可视化自定义选择～～',
+    randomText: '新版本发布，英语词库和温故知新新增单词列表从短到长以及从长到短排序～～',
     textCollection: [
       '使用小技巧，开启旅途中的小齿轮点击后可以进入策划谋略页面哦～～',
       '想要获取更多的经验和钱币？可以通过交换市集、关卡和任务大厅获取哦～～',

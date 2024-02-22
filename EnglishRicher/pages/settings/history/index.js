@@ -2,6 +2,15 @@ Page({
   data: {
     versions: [
       {
+        version: '2.5.7',
+        date: '2024-02-22',
+        icon: ['success', 'success'],
+        changes: [
+          '英语词库新增单词列表从短到长以及从长到短排序。',
+          '温故知新新增单词列表从短到长以及从长到短排序。'
+        ],
+      },
+      {
         version: '2.5.6',
         date: '2024-02-18',
         icon: ['success'],

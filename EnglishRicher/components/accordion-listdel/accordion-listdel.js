@@ -3,6 +3,7 @@ Component({
   data: {
     showOrNot: true,
     showPopupButtons: false,
+    count: 0,
     word: ''
   },
   properties: {
@@ -26,6 +27,22 @@ Component({
     removeWord: function (e) {
       const delWord = e.currentTarget.dataset.id;
       this.triggerEvent('removeWord', delWord);
+    },
+    // 对列表进行排序
+    resortList: function() {
+      this.data.count++
+      this.setData({
+        count: this.data.count
+      });
+      if (this.data.count == 2){
+        this.setData({
+          count: 0
+        });
+      }
+      let param = this.data.count;
+      this.triggerEvent('orderList', {
+        param
+      });
     },
     // 侦测滚动事件回到顶部
     scrollToTop: function () {

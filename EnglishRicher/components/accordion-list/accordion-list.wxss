@@ -31,12 +31,6 @@
   height: 20px;
 }
 
-.bottomup {
-  position: fixed;
-  bottom: 20rpx;
-  text-align: center;
-}
-
 .fixedimage {
   min-width: 50px;
   min-height: 50px;
@@ -58,4 +52,12 @@
 
 .item-type {
   margin-right:10rpx;
+}
+
+.footer-box {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 20rpx;
+  text-align: center;
 }
