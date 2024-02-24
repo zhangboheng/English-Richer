@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.5.8',
+        date: '2024-02-24',
+        icon: ['success'],
+        changes: [
+          '英语词库增加不会按钮，点击后可将单词加入到温故知新。'
+        ],
+      },
+      {
         version: '2.5.7',
         date: '2024-02-22',
         icon: ['success', 'success'],

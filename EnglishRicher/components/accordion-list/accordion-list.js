@@ -3,7 +3,9 @@ Component({
   data: {
     showOrNot: true,
     count: 0,
-    word: ''
+    word: '',
+    phonetic: '',
+    translations: '',
   },
   properties: {
     dataList: {
@@ -16,11 +18,39 @@ Component({
       const index = e.currentTarget.dataset.index;
       const key = `dataList[${index}].show`;
       const word = this.properties.dataList[index].word;
+      const phonetic = this.properties.dataList[index].phonetic;
+      const translations = this.properties.dataList[index].translations;
       this.setData({
         [key]: !this.properties.dataList[index].show,
         word: word,
+        phonetic: phonetic,
+        translations: translations
       });
       this.playAudio();
+    },
+    handleNotMaster: function () {
+      // 将单词缓存到本地数据
+      let notMasterWords = wx.getStorageSync('notMasterWords') || [];
+      let limitNumber = 100;
+      // 从缓存获取解限卡是否获得
+      let getNoLimitCard = wx.getStorageSync('getNoLimitCard');
+      if (getNoLimitCard == 1) {
+        limitNumber = 2000;
+      }
+      // 如果缓存内没有则可以放置
+      if (notMasterWords.map(x => x.word).indexOf(this.data.word) == -1 && notMasterWords.length < limitNumber) {
+        notMasterWords.push({
+          word: this.data.word,
+          phonetic: this.data.phonetic ? this.data.phonetic : "",
+          translations: this.data.translations
+        });
+      }
+      wx.setStorageSync('notMasterWords', notMasterWords);
+      // 显示正在刷新提示框
+      wx.showToast({
+        title: '已经加入到温故知新',
+        duration: 1000
+      });
     },
     // 对列表进行排序
     resortList: function() {

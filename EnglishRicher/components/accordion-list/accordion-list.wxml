@@ -10,6 +10,7 @@
           <text class="item-type">{{item.type}}</text>
           <text>{{item.translation}}</text>
         </view>
+        <button class="content-btn" data-id="{{item.word}}" bind:tap="handleNotMaster">不会</button>
       </view>
     </block>
   </view>
