@@ -53,6 +53,7 @@ Page({
     this.setData({
       translationShow: !this.data.translationShow, // 是否显示翻译
     });
+    this.playAudio();
   },
   // 点击掌握后进行下一个单词
   handleMaster: function() {

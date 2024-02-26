@@ -27,6 +27,13 @@
     </view>
     <view class="basic-box margin-top">
       <view class="inner-box">
+        <image class="item-box-image" src="../../../static/source/study.png" />
+        <text>待复习词数</text>
+      </view>
+      <text>{{currentCount}}</text>
+    </view>
+    <view class="basic-box margin-top">
+      <view class="inner-box">
         <image class="item-box-image" src="../../../static/source/clock.png" />
         <text>进步总时</text>
       </view>

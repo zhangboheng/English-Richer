@@ -42,6 +42,7 @@ Page({
     this.setData({
       translationShow: !this.data.translationShow, // 是否显示翻译
     });
+    this.playAudio();
   },
   // 点击掌握后删除该单词
   handleDelete: function() {

@@ -2,6 +2,16 @@ Page({
   data: {
     versions: [
       {
+        version: '2.5.9',
+        date: '2024-02-26',
+        icon: ['info', 'info', 'success_no_circle'],
+        changes: [
+          '优化基础信息中显示内容，增加待复习词数。',
+          '完善关卡一以及复习模式一种点击解释后可以发音。',
+          '修复替换伴音系统中不能播放的电台。'
+        ],
+      },
+      {
         version: '2.5.8',
         date: '2024-02-24',
         icon: ['success'],
