@@ -2,7 +2,7 @@ var database = require('./source/radio');
 const innerAudioContext = wx.getBackgroundAudioManager();
 Page({
   data: {
-    randomText: '新版本发布，英语词库增加不会按钮，点击后可将单词加入到温故知新～～',
+    randomText: '新版本发布，做了一些小小的完善更新～～',
     textCollection: [
       '使用小技巧，开启旅途中的小齿轮点击后可以进入策划谋略页面哦～～',
       '想要获取更多的经验和钱币？可以通过交换市集、关卡和任务大厅获取哦～～',
