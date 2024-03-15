@@ -2,8 +2,9 @@ var database = require('./source/radio');
 const innerAudioContext = wx.getBackgroundAudioManager();
 Page({
   data: {
-    randomText: '新版本发布，做了一些小小的完善更新～～',
+    randomText: '重大公告，伯衡君制作的微信小游戏小恐龙不要停已经上架，欢迎试玩～～',
     textCollection: [
+      '伯衡君制作的微信小游戏小恐龙不要停已经上架，欢迎试玩～～',
       '使用小技巧，开启旅途中的小齿轮点击后可以进入策划谋略页面哦～～',
       '想要获取更多的经验和钱币？可以通过交换市集、关卡和任务大厅获取哦～～',
       '兑换市集不定期增加各种有用，有料，有趣的物品，可以用钱币兑换～～',
