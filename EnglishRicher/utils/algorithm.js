@@ -43,3 +43,11 @@ export function findLongestArray(array1, a, array2, b, array3, c) {
 
   return [longestArray, sort];
 }
+export function removeNegativeOneFromList(list) {
+  // 检查传入的参数是否为数组类型
+  if (!Array.isArray(list)) {
+      throw new Error('Invalid input. Expected an array.');
+  }
+  list = list.filter(item => item !== -1)
+  return list;
+}

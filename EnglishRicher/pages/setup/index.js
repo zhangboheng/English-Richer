@@ -1,3 +1,6 @@
+import {
+  removeNegativeOneFromList
+} from '../../utils/algorithm'
 var database = require('./source/radio');
 const innerAudioContext = wx.getBackgroundAudioManager();
 Page({
@@ -25,6 +28,145 @@ Page({
   },
   onLoad() {
     this.updateRandomText();
+    try{
+      let elementaryList = wx.getStorageSync('elementaryList');
+      if (elementaryList && Array.isArray(elementaryList)) {
+        elementaryList = removeNegativeOneFromList(elementaryList);
+        wx.setStorageSync('elementaryList', elementaryList);
+      }
+      let juniorList = wx.getStorageSync('juniorList');
+      if (juniorList && Array.isArray(juniorList)) {
+        juniorList = removeNegativeOneFromList(juniorList);
+        wx.setStorageSync('juniorList', juniorList);
+      }
+      let highList = wx.getStorageSync('highList');
+      if (highList && Array.isArray(highList)) {
+        highList = removeNegativeOneFromList(highList);
+        wx.setStorageSync('highList', highList);
+      }
+      let cet4List = wx.getStorageSync('cet4List');
+      if (cet4List && Array.isArray(cet4List)) {
+        cet4List = removeNegativeOneFromList(cet4List);
+        wx.setStorageSync('cet4List', cet4List);
+      }
+      let cet6List = wx.getStorageSync('cet6List');
+      if (cet6List && Array.isArray(cet6List)) {
+        cet6List = removeNegativeOneFromList(cet6List);
+        wx.setStorageSync('cet6List', cet6List);
+      }
+      let postgraduateList = wx.getStorageSync('postgraduateList');
+      if (postgraduateList && Array.isArray(postgraduateList)) {
+        postgraduateList = removeNegativeOneFromList(postgraduateList);
+        wx.setStorageSync('postgraduateList', postgraduateList);
+      }
+      let toelfOneList = wx.getStorageSync('toelfOneList');
+      if (toelfOneList && Array.isArray(toelfOneList)) {
+        toelfOneList = removeNegativeOneFromList(toelfOneList);
+        wx.setStorageSync('toelfOneList', toelfOneList);
+      }
+      let toelfTwoList = wx.getStorageSync('toelfTwoList');
+      if (toelfTwoList && Array.isArray(toelfTwoList)) {
+        toelfTwoList = removeNegativeOneFromList(toelfTwoList);
+        wx.setStorageSync('toelfTwoList', toelfTwoList);
+      }
+      let satList = wx.getStorageSync('satList');
+      if (satList && Array.isArray(satList)) {
+        satList = removeNegativeOneFromList(satList);
+        wx.setStorageSync('satList', satList);
+      }
+      let elementaryTwoList = wx.getStorageSync('elementaryTwoList');
+      if (elementaryTwoList && Array.isArray(elementaryTwoList)) {
+        elementaryTwoList = removeNegativeOneFromList(elementaryTwoList);
+        wx.setStorageSync('elementaryTwoList', elementaryTwoList);
+      }
+      let juniorTwoList = wx.getStorageSync('juniorTwoList');
+      if (juniorTwoList && Array.isArray(juniorTwoList)) {
+        juniorTwoList = removeNegativeOneFromList(juniorTwoList);
+        wx.setStorageSync('juniorTwoList', juniorTwoList);
+      }
+      let highTwoList = wx.getStorageSync('highTwoList');
+      if (highTwoList && Array.isArray(highTwoList)) {
+        highTwoList = removeNegativeOneFromList(highTwoList);
+        wx.setStorageSync('highTwoList', highTwoList);
+      }
+      let cet4TwoList = wx.getStorageSync('cet4TwoList');
+      if (cet4TwoList && Array.isArray(cet4TwoList)) {
+        cet4TwoList = removeNegativeOneFromList(cet4TwoList);
+        wx.setStorageSync('cet4TwoList', cet4TwoList);
+      }
+      let cet6TwoList = wx.getStorageSync('cet6TwoList');
+      if (cet6TwoList && Array.isArray(cet6TwoList)) {
+        cet6TwoList = removeNegativeOneFromList(cet6TwoList);
+        wx.setStorageSync('cet6TwoList', cet6TwoList);
+      }
+      let postgraduateTwoList = wx.getStorageSync('postgraduateTwoList');
+      if (postgraduateTwoList && Array.isArray(postgraduateTwoList)) {
+        postgraduateTwoList = removeNegativeOneFromList(postgraduateTwoList);
+        wx.setStorageSync('postgraduateTwoList', postgraduateTwoList);
+      }
+      let toelfOneTwoList = wx.getStorageSync('toelfOneTwoList');
+      if (toelfOneTwoList && Array.isArray(toelfOneTwoList)) {
+        toelfOneTwoList = removeNegativeOneFromList(toelfOneTwoList);
+        wx.setStorageSync('toelfOneTwoList', toelfOneTwoList);
+      }
+      let toelfTwoTwoList = wx.getStorageSync('toelfTwoTwoList');
+      if (toelfTwoTwoList && Array.isArray(toelfTwoTwoList)) {
+        toelfTwoTwoList = removeNegativeOneFromList(toelfTwoTwoList);
+        wx.setStorageSync('toelfTwoTwoList', toelfTwoTwoList);
+      }
+      let satTwoList = wx.getStorageSync('satTwoList');
+      if (satTwoList && Array.isArray(satTwoList)) {
+        satTwoList = removeNegativeOneFromList(satTwoList);
+        wx.setStorageSync('satTwoList', satTwoList);
+      }
+      let elementaryThreeList = wx.getStorageSync('elementaryThreeList');
+      if (elementaryThreeList && Array.isArray(elementaryThreeList)) {
+        elementaryThreeList = removeNegativeOneFromList(elementaryThreeList);
+        wx.setStorageSync('elementaryThreeList', elementaryThreeList);
+      }
+      let juniorThreeList = wx.getStorageSync('juniorThreeList');
+      if (juniorThreeList && Array.isArray(juniorThreeList)) {
+        juniorThreeList = removeNegativeOneFromList(juniorThreeList);
+        wx.setStorageSync('juniorThreeList', juniorThreeList);
+      }
+      let highThreeList = wx.getStorageSync('highThreeList');
+      if (highThreeList && Array.isArray(highThreeList)) {
+        highThreeList = removeNegativeOneFromList(highThreeList);
+        wx.setStorageSync('highThreeList', highThreeList);
+      }
+      let cet4ThreeList = wx.getStorageSync('cet4ThreeList');
+      if (cet4ThreeList && Array.isArray(cet4ThreeList)) {
+        cet4ThreeList = removeNegativeOneFromList(cet4ThreeList);
+        wx.setStorageSync('cet4ThreeList', cet4ThreeList);
+      }
+      let cet6ThreeList = wx.getStorageSync('cet6ThreeList');
+      if (cet6ThreeList && Array.isArray(cet6ThreeList)) {
+        cet6ThreeList = removeNegativeOneFromList(cet6ThreeList);
+        wx.setStorageSync('cet6ThreeList', cet6ThreeList);
+      }
+      let postgraduateThreeList = wx.getStorageSync('postgraduateThreeList');
+      if (postgraduateThreeList && Array.isArray(postgraduateThreeList)) {
+        postgraduateThreeList = removeNegativeOneFromList(postgraduateThreeList);
+        wx.setStorageSync('postgraduateThreeList', postgraduateThreeList);
+      }
+      let toelfOneThreeList = wx.getStorageSync('toelfOneThreeList');
+      if (toelfOneThreeList && Array.isArray(toelfOneThreeList)) {
+        toelfOneThreeList = removeNegativeOneFromList(toelfOneThreeList);
+        wx.setStorageSync('toelfOneThreeList', toelfOneThreeList);
+      }
+      let toelfTwoThreeList = wx.getStorageSync('toelfTwoThreeList');
+      if (toelfTwoThreeList && Array.isArray(toelfTwoThreeList)) {
+        toelfTwoThreeList = removeNegativeOneFromList(toelfTwoThreeList);
+        wx.setStorageSync('toelfTwoThreeList', toelfTwoThreeList);
+      }
+      let satThreeList = wx.getStorageSync('satThreeList');
+      if (satThreeList && Array.isArray(satThreeList)) {
+        satThreeList = removeNegativeOneFromList(satThreeList);
+        wx.setStorageSync('satThreeList', satThreeList);
+      }
+    }catch(e){
+      console.info('启动页出现问题，请注意～～')
+    }
   },
   // 页面分享
   onShareAppMessage() {},
