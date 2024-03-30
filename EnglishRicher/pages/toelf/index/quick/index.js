@@ -1,4 +1,6 @@
-const innerAudioContext = wx.createInnerAudioContext();
+import {
+  innerAudioContext
+} from '../../../../utils/global';
 var database = require('../../source/toelf-first');
 var databaseTwo = require('../../source/toelf-second');
 var randomList = [];

@@ -1,4 +1,4 @@
-let interstitialAd = null
+let interstitialAd = null;
 Page({
   data: {
     tags: ['生财有道', '学习娱乐', '他山之石', '英语应用', 'AI助力'], // 分类标签数组

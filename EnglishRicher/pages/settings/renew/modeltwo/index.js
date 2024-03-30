@@ -1,5 +1,6 @@
-const innerAudioContext = wx.createInnerAudioContext();
-// 在对应页面的 js 文件中
+import {
+  innerAudioContext
+} from '../../../../utils/global';
 Page({
   data: {
     listData: [], // 刷单词所有的词库

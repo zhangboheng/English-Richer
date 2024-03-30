@@ -1,4 +1,6 @@
-const innerAudioContext = wx.createInnerAudioContext();
+import {
+  innerAudioContext
+} from '../../../../utils/global';
 var database = require('../../source/cet4');
 var randomList = [];
 // 在对应页面的 js 文件中

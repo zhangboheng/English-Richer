@@ -1,6 +1,6 @@
-let videoAd = null
 Page({
   data: {
+    videoAd: null,
     moenyTotal: 0,
     inputTitle: "",
     priceArray: {
@@ -72,13 +72,13 @@ Page({
     });
     // 在页面onLoad回调事件中创建激励视频广告实例
     if (wx.createRewardedVideoAd) {
-      videoAd = wx.createRewardedVideoAd({
+      this.data.videoAd = wx.createRewardedVideoAd({
         adUnitId: 'adunit-67cd6ef4b3dd9519'
       })
-      videoAd.onLoad(() => {
+      this.data.videoAd.onLoad(() => {
         console.log('激励视频 广告加载成功')
       })
-      videoAd.onError((err) => {
+      this.data.videoAd.onError((err) => {
         console.error('激励视频光告加载失败', err)
       });
     }
@@ -306,15 +306,15 @@ Page({
   },
   // 点击获取解限卡
   unclockAd() {
-    if (videoAd) {
-      videoAd.show().catch(() => {
-        videoAd.load()
-          .then(() => videoAd.show())
+    if (this.data.videoAd) {
+      this.data.videoAd.show().catch(() => {
+        this.data.videoAd.load()
+          .then(() => this.data.videoAd.show())
           .catch(err => {
             console.error('激励视频 广告显示失败', err)
           })
       });
-      videoAd.onClose((res) => {
+      this.data.videoAd.onClose((res) => {
         if (res && res.isEnded) {
           // 正常播放结束，可以下发游戏奖励
           wx.setStorageSync('getNoLimitCard', 1);

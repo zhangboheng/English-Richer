@@ -1,5 +1,7 @@
-import {addMissingNumber,findLongestArray} from '../../../utils/algorithm'
-const innerAudioContext = wx.createInnerAudioContext();
+import {addMissingNumber,findLongestArray} from '../../../utils/algorithm';
+import {
+  innerAudioContext
+} from '../../../utils/global';
 var database = require('./source/elementary');
 var midArray = '';
 var randomList = [];

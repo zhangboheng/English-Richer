@@ -1,4 +1,6 @@
-const innerAudioContext = wx.createInnerAudioContext();
+import {
+  innerAudioContext
+} from '../../utils/global';
 Component({
   data: {
     showOrNot: true,

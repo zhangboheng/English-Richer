@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.6.0',
+        date: '2024-03-30',
+        icon: ['success_no_circle'],
+        changes: [
+          '解决发音偶尔延迟问题以及避免内存泄漏。'
+        ],
+      },
+      {
         version: '2.5.9',
         date: '2024-03-23',
         icon: ['info', 'info', 'success_no_circle'],

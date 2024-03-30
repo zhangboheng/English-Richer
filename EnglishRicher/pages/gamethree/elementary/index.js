@@ -1,6 +1,8 @@
 import {findLongestArray} from '../../../utils/algorithm'
 var database = require('./source/elementary');
-const innerAudioContext = wx.createInnerAudioContext();
+import {
+  innerAudioContext
+} from '../../../utils/global';
 var midArray = '';
 var randomList = [];
 // 在对应页面的 js 文件中

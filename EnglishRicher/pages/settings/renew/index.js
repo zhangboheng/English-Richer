@@ -1,11 +1,11 @@
 const XLSX = require('../../../utils/excel.js');
-let videoAd = null
 Page({
   data: {
     globalData: [], // 全局获取所有单词列表
     listData: [],
     searchData: '', // 搜索关键词
     exportList: [], // 导出内容
+    videoAd: null,
   },
   // 页面分享
   onShareAppMessage() {},
@@ -20,13 +20,13 @@ Page({
     });
     // 在页面onLoad回调事件中创建激励视频广告实例
     if (wx.createRewardedVideoAd) {
-      videoAd = wx.createRewardedVideoAd({
+      this.data.videoAd = wx.createRewardedVideoAd({
         adUnitId: 'adunit-67cd6ef4b3dd9519'
       })
-      videoAd.onLoad(() => {
+      this.data.videoAd.onLoad(() => {
         console.log('激励视频 广告加载成功')
       })
-      videoAd.onError((err) => {
+      this.data.videoAd.onError((err) => {
         console.error('激励视频光告加载失败', err)
       });
     }
@@ -178,15 +178,15 @@ Page({
   // 点击后获取真实链接
   handleChooseOneOrTwo: function(event) {
     const data = event.detail.url;
-    if (videoAd) {
-      videoAd.show().catch(() => {
-        videoAd.load()
-          .then(() => videoAd.show())
+    if (this.data.videoAd) {
+      this.data.videoAd.show().catch(() => {
+        this.data.videoAd.load()
+          .then(() => this.data.videoAd.show())
           .catch(err => {
             console.error('激励视频 广告显示失败', err)
           })
       });
-      videoAd.onClose((res) => {
+      this.data.videoAd.onClose((res) => {
         if (res && res.isEnded) {
           wx.navigateTo({
             url: data,
