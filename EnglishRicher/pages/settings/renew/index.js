@@ -29,6 +29,20 @@ Page({
       this.data.videoAd.onError((err) => {
         console.error('激励视频光告加载失败', err)
       });
+      this.data.videoAd.onClose((res) => {
+        if (res && res.isEnded || res === undefined) {
+          wx.navigateTo({
+            url: data,
+          });
+        } else {
+          // 播放中途退出，不下发游戏奖励
+          wx.showToast({
+            title: '由于没有看完，无法进入复习',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      })
     }
   },
   onReady: function () {
@@ -186,20 +200,6 @@ Page({
             console.error('激励视频 广告显示失败', err)
           })
       });
-      this.data.videoAd.onClose((res) => {
-        if (res && res.isEnded) {
-          wx.navigateTo({
-            url: data,
-          });
-        } else {
-          // 播放中途退出，不下发游戏奖励
-          wx.showToast({
-            title: '由于没有看完，无法进入复习',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-      })
     }
   },
   // 公共乱序方法

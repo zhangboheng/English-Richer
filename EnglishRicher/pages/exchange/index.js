@@ -82,6 +82,15 @@ Page({
         console.error('激励视频光告加载失败', err)
       });
     }
+    this.data.videoAd.onClose((res) => {
+      if (res && res.isEnded) {
+        // 正常播放结束，可以下发游戏奖励
+        wx.setStorageSync('getNoLimitCard', 1);
+      } else {
+        // 播放中途退出，不下发游戏奖励
+        console.info('用户放弃了解限卡的获取');
+      }
+    })
   },
   onInput(event) {
     // 处理输入事件的逻辑
@@ -314,15 +323,6 @@ Page({
             console.error('激励视频 广告显示失败', err)
           })
       });
-      this.data.videoAd.onClose((res) => {
-        if (res && res.isEnded) {
-          // 正常播放结束，可以下发游戏奖励
-          wx.setStorageSync('getNoLimitCard', 1);
-        } else {
-          // 播放中途退出，不下发游戏奖励
-          console.info('用户放弃了解限卡的获取');
-        }
-      })
     }
   },
   // 点击显示爱因斯坦大脑说明
