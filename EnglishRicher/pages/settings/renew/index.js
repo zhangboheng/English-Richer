@@ -6,6 +6,7 @@ Page({
     searchData: '', // 搜索关键词
     exportList: [], // 导出内容
     videoAd: null,
+    chooseUrl: '',
   },
   // 页面分享
   onShareAppMessage() {},
@@ -32,7 +33,7 @@ Page({
       this.data.videoAd.onClose((res) => {
         if (res && res.isEnded || res === undefined) {
           wx.navigateTo({
-            url: data,
+            url: this.data.chooseUrl,
           });
         } else {
           // 播放中途退出，不下发游戏奖励
@@ -154,7 +155,6 @@ Page({
             content: '文档已打开，请先关闭',
           })
         }
-
       }
     })
   },
@@ -191,7 +191,9 @@ Page({
   },
   // 点击后获取真实链接
   handleChooseOneOrTwo: function(event) {
-    const data = event.detail.url;
+    this.setData({
+      chooseUrl: event.detail.url,
+    });
     if (this.data.videoAd) {
       this.data.videoAd.show().catch(() => {
         this.data.videoAd.load()
