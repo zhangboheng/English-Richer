@@ -56,6 +56,44 @@ Page({
       currentLength: randomList.length
     });
   },
+  onImageClicked: function (event) {
+    let self = this;
+    if (event.detail.message == 'clicked') {
+      wx.showLoading({
+        title: '加载中...',
+        mask: true
+      });
+      wx.request({
+        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397',
+        method: 'POST',
+        header: {
+          'Content-Type': 'application/json' // 设置请求头为JSON格式
+        },
+        data: {
+          messages: [{
+            role: 'user',
+            content: `${this.data.word}, 先给出该英文单词的英文解释，再给出它的中文翻译，再列出三个由它组成的句子和翻译，再列出它的同义词和反义词`
+          }] // 将数据以JSON格式传递
+        },
+        success: function (res) {
+          wx.hideLoading();
+          self.setData({
+            itemName: '详情',
+            showTips: `单词：${self.data.word}\n音标：${self.data.phonetic ? self.data.phonetic : ""}\n解释：\n\n${res.data.result}`,
+            detailTranslation: true,
+          });
+        },
+        fail: function (error) {
+          wx.hideLoading();
+          self.setData({
+            itemName: '详情',
+            showTips: `$服务器故障，暂无返回`,
+            detailTranslation: true,
+          });
+        }
+      });
+    }
+  },
   // 点击选项后进入下一个单词，正确下一个，错误下一个并放入温故知新
   selectOption(event) {
     const selectedOption = event.currentTarget.dataset.option;

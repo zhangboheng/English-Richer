@@ -20,6 +20,8 @@ Page({
     { catalogue: '浏览器插件', name: 'LuckyNews Box' },
     { catalogue: '微信小程序', name: '英语大富翁' },
     { catalogue: '微信小游戏', name: '小恐龙不要停' },
+    { catalogue: '微信小游戏', name: '跃影忍者' },
+    { catalogue: '微信小游戏', name: '寻爱迷踪' },
   ]
 },
   // 页面分享

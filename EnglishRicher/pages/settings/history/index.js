@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.6.1',
+        date: '2024-04-12',
+        icon: ['success'],
+        changes: [
+          '新增单词 AI 详解功能。'
+        ],
+      },
+      {
         version: '2.6.0',
         date: '2024-03-30',
         icon: ['success_no_circle'],

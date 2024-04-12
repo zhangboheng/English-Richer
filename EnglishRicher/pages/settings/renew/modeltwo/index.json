@@ -2,6 +2,7 @@
   "usingComponents": {
     "animation-box": "../../../../components/animation-box/animation-box",
     "image-timer": "../../../../components/image-timer/image-timer",
+    "ai-bot": "../../../../components/aibot/ai-bot",
     "scrollable-text": "../../../../components/scroll-text/scroll"
   },
   "navigationBarTitleText": "复习模式二",

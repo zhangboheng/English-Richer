@@ -1,5 +1,6 @@
 <view class="container">
   <image-timer></image-timer>
+  <ai-bot bind:imageClicked="onImageClicked"></ai-bot>
   <animation-box></animation-box>
   <view class="content">
     <image  bind:tap="playAudio" class="voice-word" src="../../../../static/source/microphone.png" mode="scaleToFill"></image>
