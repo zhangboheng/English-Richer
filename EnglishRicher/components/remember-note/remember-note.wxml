@@ -1,0 +1,3 @@
+<view class="box" bindtap="handleTap">
+  <image class="image" src="../../static/source/aiarticle.png"></image>
+</view>

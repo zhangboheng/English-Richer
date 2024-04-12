@@ -1,6 +1,7 @@
 <view class="container">
   <image-timer></image-timer>
   <ai-bot bind:imageClicked="onImageClicked"></ai-bot>
+  <remember-note bind:remember="onRememberClicked"></remember-note>
   <animation-box></animation-box>
   <view wx:if="{{phoneticShow}}">
     <text>{{phonetic}}</text>

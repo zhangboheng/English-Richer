@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.6.2',
+        date: '2024-04-13',
+        icon: ['success'],
+        changes: [
+          '新增单词 AI 学习建议功能。'
+        ],
+      },
+      {
         version: '2.6.1',
         date: '2024-04-12',
         icon: ['success'],

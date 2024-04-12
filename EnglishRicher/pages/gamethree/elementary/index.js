@@ -1,4 +1,6 @@
-import {findLongestArray} from '../../../utils/algorithm'
+import {
+  findLongestArray
+} from '../../../utils/algorithm'
 var database = require('./source/elementary');
 import {
   innerAudioContext
@@ -24,7 +26,7 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function (options) {
-    midArray = findLongestArray(wx.getStorageSync('elementaryList'),'elementaryList', wx.getStorageSync('elementaryTwoList'), 'elementaryTwoList', wx.getStorageSync('elementaryThreeList'), 'elementaryThreeList');
+    midArray = findLongestArray(wx.getStorageSync('elementaryList'), 'elementaryList', wx.getStorageSync('elementaryTwoList'), 'elementaryTwoList', wx.getStorageSync('elementaryThreeList'), 'elementaryThreeList');
     // 显示正在刷新提示框
     wx.showToast({
       title: '努力加载中……',
@@ -57,6 +59,47 @@ Page({
       currentLength: randomList.length
     });
   },
+  // AI 建议
+  onRememberClicked: function(event) {
+    let self = this;
+    if (event.detail.message == 'clicked') {
+      wx.showLoading({
+        title: '加载中...',
+        mask: true
+      });
+      wx.request({
+        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397',
+        method: 'POST',
+        header: {
+          'Content-Type': 'application/json' // 设置请求头为JSON格式
+        },
+        data: {
+          messages: [{
+            role: 'user',
+            content: `用关联记忆直接写出如何更好记住单词或者词组:${this.data.word}`
+          }],
+          "top_p": 1
+        },
+        success: function (res) {
+          wx.hideLoading();
+          self.setData({
+            itemName: '学习建议',
+            showTips: `${res.data.result}`,
+            detailTranslation: true,
+          });
+        },
+        fail: function (error) {
+          wx.hideLoading();
+          self.setData({
+            itemName: '详情',
+            showTips: `AI 傲娇了一下，请稍后再试`,
+            detailTranslation: true,
+          });
+        }
+      });
+    }
+  },
+  // AI 详解
   onImageClicked: function (event) {
     let self = this;
     if (event.detail.message == 'clicked') {
@@ -73,8 +116,9 @@ Page({
         data: {
           messages: [{
             role: 'user',
-            content: `${this.data.word}, 先给出该英文单词的英文解释，再给出它的中文翻译，再列出三个由它组成的句子和翻译，再列出它的同义词和反义词`
-          }] // 将数据以JSON格式传递
+            content: `${this.data.word}, 先给出该英文单词的英文解释，再给出它的中文翻译，再列出三个由它组成的句子和翻译，再列出它的五个以内的同义词和反义词`
+          }],
+          "top_p": 1
         },
         success: function (res) {
           wx.hideLoading();
@@ -88,7 +132,7 @@ Page({
           wx.hideLoading();
           self.setData({
             itemName: '详情',
-            showTips: `$服务器故障，暂无返回`,
+            showTips: `AI 傲娇了一下，请稍后再试`,
             detailTranslation: true,
           });
         }
@@ -126,7 +170,7 @@ Page({
       try {
         this.playAudio();
         this.getNextWord();
-      } catch(e) {
+      } catch (e) {
         this.getNextWord();
       }
       wx.setStorageSync(midArray[1], randomList);
@@ -160,7 +204,7 @@ Page({
       try {
         this.playAudio();
         this.getNextWord(false);
-      } catch(e) {
+      } catch (e) {
         this.getNextWord(false);
       }
     }
@@ -173,7 +217,7 @@ Page({
     // 选出四个随机单词
     if (randomList.length >= trueData.length) {
       filteredSortData = sortData;
-    }else{
+    } else {
       // 移除 randomList 中已经包含的单词
       filteredSortData = sortData.filter((_, index) => !randomList.includes(index));
     }
@@ -212,9 +256,9 @@ Page({
           let speak = null;
           if (res.data.symbols[0].ph_en_mp3.length > 0) {
             speak = res.data.symbols[0].ph_en_mp3
-          }else if(res.data.symbols[0].ph_tts_mp3.length > 0){
+          } else if (res.data.symbols[0].ph_tts_mp3.length > 0) {
             speak = res.data.symbols[0].ph_tts_mp3;
-          }else{
+          } else {
             speak = `https://dict.youdao.com/dictvoice?type=0&audio=${trueWord}`;
           }
           innerAudioContext.src = speak;

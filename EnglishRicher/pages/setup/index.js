@@ -7,7 +7,7 @@ import {
 var database = require('./source/radio');
 Page({
   data: {
-    randomText: '新版本 V 2.6.1 发布，新增单词 AI 详解功能，在各个关卡中点击右上角的机器人可以召唤～～',
+    randomText: '新版本 V 2.6.2 发布，新增单词 AI 学习建议功能，在各个关卡中点击左上角的图标可以召唤～～',
     textCollection: [
       '伯衡君制作的微信小游戏小恐龙不要停已经上架，欢迎试玩～～',
       '使用小技巧，开启旅途中的小齿轮点击后可以进入策划谋略页面哦～～',
