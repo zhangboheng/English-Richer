@@ -1,0 +1,13 @@
+.box {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.image {
+  width: 24px;
+  height: 24px;
+}

@@ -2,6 +2,7 @@
   <image-timer></image-timer>
   <ai-bot bind:imageClicked="onImageClicked"></ai-bot>
   <remember-note bind:remember="onRememberClicked"></remember-note>
+  <chat-room bind:chatroom="onChatRoomClicked"></chat-room>
   <animation-box></animation-box>
   <view class="content">
     <image  bind:tap="playAudio" class="voice-word" src="../../../../static/source/microphone.png" mode="scaleToFill"></image>

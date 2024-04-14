@@ -59,7 +59,7 @@ Page({
     let self = this;
     if (event.detail.message == 'clicked') {
       wx.showLoading({
-        title: '加载中...',
+        title: 'AI生成中...',
         mask: true
       });
       wx.request({
@@ -99,7 +99,7 @@ Page({
     let self = this;
     if (event.detail.message == 'clicked') {
       wx.showLoading({
-        title: '加载中...',
+        title: 'AI生成中...',
         mask: true
       });
       wx.request({
@@ -133,6 +133,12 @@ Page({
         }
       });
     }
+  },
+  // AI 畅聊室
+  onChatRoomClicked: function(event) {
+    wx.navigateTo({
+      url: '../../chatbox/index',
+    });
   },
   // 显示翻译的动作
   showExplanation: function () {

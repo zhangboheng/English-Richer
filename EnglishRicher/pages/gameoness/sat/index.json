@@ -4,6 +4,7 @@
     "image-timer": "../../../components/image-timer/image-timer",
     "ai-bot": "../../../components/aibot/ai-bot",
     "remember-note": "../../../components/remember-note/remember-note",
+    "chat-room": "../../../components/chat-room/chat-room",
     "floating-animation": "../../../components/floating-animation/floating-animation",
     "scrollable-text": "../../../components/scroll-text/scroll"
   },

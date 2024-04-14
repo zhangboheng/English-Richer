@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.6.3',
+        date: '2024-04-14',
+        icon: ['success'],
+        changes: [
+          '新增 AI 畅聊室功能，有什么疑问请咨询智能的机器人吧。'
+        ],
+      },
+      {
         version: '2.6.2',
         date: '2024-04-13',
         icon: ['success'],

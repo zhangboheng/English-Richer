@@ -3,6 +3,7 @@
     "animation-box": "../../../../components/animation-box/animation-box",
     "image-timer": "../../../../components/image-timer/image-timer",
     "ai-bot": "../../../../components/aibot/ai-bot",
+    "chat-room": "../../../../components/chat-room/chat-room",
     "remember-note": "../../../../components/remember-note/remember-note",
     "scrollable-text": "../../../../components/scroll-text/scroll"
   },

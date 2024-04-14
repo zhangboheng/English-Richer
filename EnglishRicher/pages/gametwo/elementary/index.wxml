@@ -2,6 +2,7 @@
   <image-timer></image-timer>
   <ai-bot bind:imageClicked="onImageClicked"></ai-bot>
   <remember-note bind:remember="onRememberClicked"></remember-note>
+  <chat-room bind:chatroom="onChatRoomClicked"></chat-room>
   <animation-box></animation-box>
   <floating-animation showAnimation="{{showAnimation}}"></floating-animation>
   <view class="content">

@@ -1,0 +1,18 @@
+<view class="chatbox">
+  <scroll-view scroll-y="true" class="message-container" scroll-into-view="{{toView}}" scroll-with-animation>
+    <block wx:for="{{messages}}" wx:key="index">
+      <view class="message-item {{item.role}}">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <text class="nickname">{{item.nickname}}</text>
+      </view>
+      <view class="message-content {{item.role}}">
+          <text class="content">{{item.content}}</text>
+        </view>
+    </block>
+    <view wx:if="{{showOrNot}}"><text>AI 思考中……</text></view>
+  </scroll-view>
+  <view class="bottom-bar">
+    <input type="text" class="input" placeholder="请输入消息" value="{{inputValue}}" bindinput="bindInput"></input>
+    <button class="send-btn" bindtap="sendMessage">发送</button>
+  </view>
+</view>

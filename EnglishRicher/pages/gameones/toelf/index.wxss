@@ -59,7 +59,7 @@
   justify-content: space-around;
   align-items: center;
   position: absolute;
-  bottom: 60rpx;
+  bottom: 20px;
 }
 
 .footer-inner {

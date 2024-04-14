@@ -168,6 +168,12 @@ Page({
       showRadioDialog: true
     });
   },
+  // AI畅聊室跳转
+  openGPT: function() {
+    wx.navigateTo({
+      url: '../chatbox/index',
+    });    
+  },
   // 点击修改水平的确定后运行
   handleConfirmLevel: function (event) {
     const { level } = event.detail;

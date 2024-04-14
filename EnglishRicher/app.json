@@ -3,6 +3,7 @@
     "pages/setup/index",
     "pages/index/index",
     "pages/exchange/index",
+    "pages/chatbox/index",
     "pages/articles/index",
     "pages/settings/index",
     "pages/settings/mydream/index",

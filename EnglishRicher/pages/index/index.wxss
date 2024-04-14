@@ -67,6 +67,7 @@
 }
 
 .scale-text {
+  font-size: 20rpx;
   margin-top: 20rpx;
   font-weight: bold;
 }
