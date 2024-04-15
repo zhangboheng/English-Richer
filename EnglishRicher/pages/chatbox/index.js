@@ -5,6 +5,7 @@ Page({
     messages: [],
     toView: '',
     showOrNot: false,
+    tipsShowOrNot: true,
     user: {
       nickname: '用户',
       avatar: '../../static/source/user.png' // 用户头像路径
@@ -14,6 +15,10 @@ Page({
       avatar: '../../static/source/gpt4.png' // 机器人头像路径
     }
   },
+  // 页面分享
+  onShareAppMessage() {},
+  // 页面分享朋友圈
+  onShareTimeline() {},
   onLoad: function() {
     let nickname = wx.getStorageSync('nickname'); // 获取昵称
     this.data.user.nickname = nickname;
@@ -55,6 +60,7 @@ Page({
       inputValue: '',
       toView: 'msg_' + (newMessages.length - 1),
       showOrNot: true,
+      tipsShowOrNot: false,
     });
     wx.request({
       url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397', // 后端服务器地址

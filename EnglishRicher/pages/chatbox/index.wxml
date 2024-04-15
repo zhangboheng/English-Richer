@@ -1,3 +1,7 @@
+<view class="background-image" wx:if="{{tipsShowOrNot}}">
+  <image class="inner-image" src="../../static/source/gpt4.png" mode='aspectFill'></image>
+  <text>今天能帮到你什么呢？</text>
+</view>
 <view class="chatbox">
   <scroll-view scroll-y="true" class="message-container" scroll-into-view="{{toView}}" scroll-with-animation>
     <block wx:for="{{messages}}" wx:key="index">
@@ -6,7 +10,7 @@
         <text class="nickname">{{item.nickname}}</text>
       </view>
       <view class="message-content {{item.role}}">
-          <text class="content">{{item.content}}</text>
+          <text class="content" user-select="true">{{item.content}}</text>
         </view>
     </block>
     <view wx:if="{{showOrNot}}"><text>AI 思考中……</text></view>

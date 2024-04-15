@@ -119,7 +119,7 @@ Page({
   // AI 畅聊室
   onChatRoomClicked: function(event) {
     wx.navigateTo({
-      url: '../../chatbox/index',
+      url: '../../../chatbox/index',
     });
   },
   // 输入框的值
