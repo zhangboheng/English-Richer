@@ -3,7 +3,7 @@ Page({
     versions: [
       {
         version: '2.6.4',
-        date: '2024-04-14',
+        date: '2024-04-16',
         icon: ['info', 'info'],
         changes: [
           '改善关卡中 AI 辅助记忆以及 AI 详解的响应速度。',
