@@ -114,7 +114,4 @@
       <button class="task-button" bindtap="handleTwentyThousand">掌握单词 20000 个</button>
     </view>
   </view>
-  <view class="adContainer" style="margin-top:20rpx;">
-    <ad unit-id="adunit-55e0b0675d7950fc" ad-intervals="30"></ad>
-  </view>
 </view>
