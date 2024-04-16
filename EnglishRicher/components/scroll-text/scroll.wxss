@@ -14,18 +14,17 @@
   width: 70%;
   background-color: #f5d659;
   border: 3px solid #000;
-  height: 50vh;
+  height: 75vh;
   padding: 32rpx;
   border-radius: 60rpx;
   text-align: center;
 }
 
 .close {
-  max-width: 40px;
-  width: 40px;
+  max-width: 40rpx;
   background-color: #f5d659;
   border: 3px solid #000;
-  border-radius: 50px;
+  border-radius: 50rpx;
   text-align: center;
 }
 

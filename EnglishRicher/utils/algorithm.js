@@ -51,3 +51,46 @@ export function removeNegativeOneFromList(list) {
   list = list.filter(item => item !== -1)
   return list;
 }
+
+export function decodeArrayBuffer(buffer, encoding) {
+  if (encoding === 'utf-8') {
+    return utf8Decode(buffer);
+  } else if (encoding === 'gbk') {
+    return gbkDecode(buffer);
+  } else {
+    throw new Error('Unsupported encoding: ' + encoding);
+  }
+}
+
+function utf8Decode(buffer) {
+  const bytes = new Uint8Array(buffer);
+  let result = '';
+  let i = 0;
+
+  while (i < bytes.length) {
+    const byte = bytes[i++];
+    if (byte < 128) {
+      result += String.fromCharCode(byte);
+    } else if (byte >= 192 && byte < 224) {
+      const byte2 = bytes[i++];
+      result += String.fromCharCode((byte - 192) * 64 + (byte2 - 128));
+    } else if (byte >= 224 && byte < 240) {
+      const byte2 = bytes[i++];
+      const byte3 = bytes[i++];
+      result += String.fromCharCode(
+        (byte - 224) * 4096 + (byte2 - 128) * 64 + (byte3 - 128)
+      );
+    } else {
+      throw new Error('Invalid UTF-8 byte');
+    }
+  }
+
+  return result;
+}
+
+function gbkDecode(buffer) {
+  // 实现 GBK 解码逻辑，这里只是示意性的代码，请根据实际需求实现
+  // 这里假设 buffer 是一个 ArrayBuffer
+  // 你可以参考第三方库或自行实现 GBK 解码逻辑
+  return 'GBK decoding not implemented';
+}

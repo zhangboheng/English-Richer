@@ -1,4 +1,4 @@
-import {addMissingNumber,findLongestArray} from '../../../utils/algorithm'
+import {addMissingNumber,findLongestArray,decodeArrayBuffer} from '../../../utils/algorithm'
 import {
   innerAudioContext
 } from '../../../utils/global';
@@ -18,6 +18,7 @@ Page({
     translationShow: false, // 是否显示翻译
     showAnimation: false, // 显示悬浮动画
     showGrade: '大学英语六级',
+    showTips: '',
     detailTranslation: false
   },
   // 页面分享
@@ -55,13 +56,16 @@ Page({
   onRememberClicked: function(event) {
     let self = this;
     if (event.detail.message == 'clicked') {
-      wx.showLoading({
-        title: 'AI生成中...',
-        mask: true
+      self.setData({
+        itemName: '学习建议',
+        showTips: 'AI 思考中……',
+        detailTranslation: true,
       });
-      wx.request({
+    const requestTask = wx.request({
         url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397',
+        responseType: "arraybuffer",
         method: 'POST',
+        enableChunked: true,
         header: {
           'Content-Type': 'application/json' // 设置请求头为JSON格式
         },
@@ -70,23 +74,40 @@ Page({
             role: 'user',
             content: `用关联记忆直接写出如何更好记住单词或者词组:${this.data.word}`
           }],
-          "top_p": 1
+          "top_p": 1,
+          "stream": true,
         },
         success: function (res) {
-          wx.hideLoading();
-          self.setData({
-            itemName: '学习建议',
-            showTips: `${res.data.result}`,
-            detailTranslation: true,
-          });
         },
         fail: function (error) {
           wx.hideLoading();
           self.setData({
             itemName: '详情',
-            showTips: `AI 傲娇了一下，请稍后再试`,
+            showTips: `AI 傲娇了一下，请稍后再试，或者检查一下网络链接`,
             detailTranslation: true,
           });
+        }
+      });
+      requestTask.onHeadersReceived(function (r) {
+        self.setData({
+          showTips: '',
+        });
+      });
+      requestTask.onChunkReceived(function (r) {
+        if (!self.data.detailTranslation) {
+          return;
+        }
+        let parseString = decodeArrayBuffer(r.data, 'utf-8').split('\n\n');
+        for (let i of parseString){
+          try {
+            const resultValue = JSON.parse(i.slice(5)).result;
+            self.data.showTips += resultValue;
+            self.setData({
+              showTips: self.data.showTips.replaceAll('AI 思考中……', ''),
+            });
+          } catch (e) {
+            self.data.showTips += 'AI 思考中……';
+          }
         }
       });
     }
@@ -95,13 +116,16 @@ Page({
   onImageClicked: function (event) {
     let self = this;
     if (event.detail.message == 'clicked') {
-      wx.showLoading({
-        title: 'AI生成中...',
-        mask: true
+      self.setData({
+        itemName: 'AI 详解',
+        showTips: 'AI 思考中……',
+        detailTranslation: true,
       });
-      wx.request({
+      const requestTask = wx.request({
         url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397',
+        responseType: "arraybuffer",
         method: 'POST',
+        enableChunked: true,
         header: {
           'Content-Type': 'application/json' // 设置请求头为JSON格式
         },
@@ -110,23 +134,39 @@ Page({
             role: 'user',
             content: `${this.data.word}, 先给出该英文单词的英文解释，再给出它的中文翻译，再列出三个由它组成的句子和翻译，再列出它的五个以内的同义词和反义词`
           }],
-          "top_p": 1
+          "top_p": 1,
+          "stream": true,
         },
-        success: function (res) {
-          wx.hideLoading();
-          self.setData({
-            itemName: '详情',
-            showTips: `单词：${self.data.word}\n音标：${self.data.phonetic ? self.data.phonetic : ""}\n解释：\n\n${res.data.result}`,
-            detailTranslation: true,
-          });
-        },
+        success: function (res) {},
         fail: function (error) {
           wx.hideLoading();
           self.setData({
             itemName: '详情',
-            showTips: `AI 傲娇了一下，请稍后再试`,
+            showTips: `AI 傲娇了一下，请稍后再试，或者检查一下网络链接`,
             detailTranslation: true,
           });
+        }
+      });
+      requestTask.onHeadersReceived(function (r) {
+        self.setData({
+          showTips: '',
+        });
+      });
+      requestTask.onChunkReceived(function (r) {
+        if (!self.data.detailTranslation) {
+          return;
+        }
+        let parseString = decodeArrayBuffer(r.data, 'utf-8').split('\n\n');
+        for (let i of parseString){
+          try {
+            const resultValue = JSON.parse(i.slice(5)).result;
+            self.data.showTips += resultValue;
+            self.setData({
+              showTips: self.data.showTips.replaceAll('AI 思考中……', ''),
+            });
+          } catch (e) {
+            self.data.showTips += 'AI 思考中……';
+          }
         }
       });
     }
@@ -255,6 +295,7 @@ Page({
   closePopup() {
     this.setData({
       detailTranslation: false,
+      showTips: '',
     });
   },
 });
