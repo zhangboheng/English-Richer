@@ -53,12 +53,16 @@ export function removeNegativeOneFromList(list) {
 }
 
 export function decodeArrayBuffer(buffer, encoding) {
-  if (encoding === 'utf-8') {
-    return utf8Decode(buffer);
-  } else if (encoding === 'gbk') {
-    return gbkDecode(buffer);
-  } else {
-    throw new Error('Unsupported encoding: ' + encoding);
+  try {
+    if (encoding === 'utf-8') {
+      return utf8Decode(buffer);
+    } else if (encoding === 'gbk') {
+      return gbkDecode(buffer);
+    } else {
+      throw new Error('Unsupported encoding: ' + encoding);
+    }
+  } catch (error) {
+    return error; // 返回错误对象给调用者使用
   }
 }
 

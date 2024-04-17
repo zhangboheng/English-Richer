@@ -1,9 +1,9 @@
 import {
   decodeArrayBuffer
 } from '../../utils/algorithm'
-let interstitialAd = null;
 Page({
   data: {
+    interstitialAd: null,
     inputValue: '',
     messages: [],
     toView: '',
@@ -27,17 +27,17 @@ Page({
     let nickname = wx.getStorageSync('nickname'); // 获取昵称
     this.data.user.nickname = nickname;
     if (wx.createInterstitialAd) {
-      interstitialAd = wx.createInterstitialAd({
+      this.data.interstitialAd = wx.createInterstitialAd({
         adUnitId: 'adunit-28211117f59c8710'
       })
-      interstitialAd.onLoad(() => {})
-      interstitialAd.onError((err) => {
+      this.data.interstitialAd.onLoad(() => {})
+      this.data.interstitialAd.onError((err) => {
         console.error('插屏广告加载失败', err)
       })
-      interstitialAd.onClose(() => {})
+      this.data.interstitialAd.onClose(() => {})
     }
-    if (interstitialAd) {
-      interstitialAd.show().catch((err) => {
+    if (this.data.interstitialAd) {
+      this.data.interstitialAd.show().catch((err) => {
         console.error('插屏广告显示失败', err)
       })
     }
@@ -104,7 +104,7 @@ Page({
       if (self.data.messages[self.data.messages.length - 1].role == 'user') {
         let newMessages = self.data.messages.concat({
           role: 'assistant',
-          content: aiMessage,
+          content: aiMessage == '' ? 'AI 傲娇了一下，请稍后再试～～' : aiMessage,
           avatar: self.data.bot.avatar,
           nickname: self.data.bot.nickname
         });
@@ -112,28 +112,32 @@ Page({
           messages: newMessages,
           toView: 'msg_' + (newMessages - 1),
           showOrNot: false,
+          buttonDisabled: false,
         });
       }
     });
     requestTask.onChunkReceived(function (r) {
+      self.setData({
+        buttonDisabled: true,
+      });
       let parseString = decodeArrayBuffer(r.data, 'utf-8').split('\n\n');
-      for (let i of parseString){
-      try {
-        const resultValue = JSON.parse(i.slice(5)).result;
-        aiMessage += resultValue;
-        self.data.messages[self.data.messages.length - 1].content = aiMessage;
-        self.setData({
-          messages: self.data.messages,
-        });
-        if (JSON.parse(i.slice(5)).is_end) {
+      for (let i of parseString) {
+        try {
+          const resultValue = JSON.parse(i.slice(5)).result;
+          aiMessage += resultValue;
+          self.data.messages[self.data.messages.length - 1].content = aiMessage;
           self.setData({
-            buttonDisabled: false,
-          }); 
+            messages: self.data.messages,
+          });
+          if (JSON.parse(i.slice(5)).is_end) {
+            self.setData({
+              buttonDisabled: false,
+            });
+          }
+        } catch (e) {
+
         }
-      } catch(e){
-        
       }
-    }
     });
   }
 });
