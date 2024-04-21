@@ -94,15 +94,6 @@
     </view>
   </view>
   <view>
-    <view class="container-item" bind:tap="goToAdvice">
-      <view class="item-box">
-        <image class="item-box-image" src="../../static/source/advisory.png" />
-        <text>留言建议</text>
-      </view>
-      <text class="item-inner">前往</text>
-    </view>
-  </view>
-  <view>
     <view class="container-item" bind:tap="goToUpdateHistory">
       <view class="item-box">
         <image class="item-box-image" src="../../static/source/history.png" />

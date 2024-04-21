@@ -1,4 +1,3 @@
-var plugin = requirePlugin("wxatradecommentplugin");
 Page({
   data: {
     isCloseTip: true,
@@ -217,17 +216,6 @@ Page({
     wx.navigateTo({
       url: './analytics/index',
     });
-  },
-  // 点击后打开评价
-  goToAdvice: function () {
-    plugin.openComment({
-      success: (res)=>{
-        console.log('plugin.openComment success', res)
-      },
-      fail: (res) =>{
-        console.log('plugin.openComment fail', res)
-      }
-    })
   },
   // 点击后跳转到更新历史页面
   goToUpdateHistory: function () {
