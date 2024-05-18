@@ -1,6 +1,9 @@
 import {
   decodeArrayBuffer
 } from '../../utils/algorithm'
+import {
+  accessTokenGet
+} from '../../utils/api'
 Page({
   data: {
     interstitialAd: null,
@@ -10,6 +13,7 @@ Page({
     showOrNot: false,
     tipsShowOrNot: true,
     buttonDisabled: false, // 按钮是否可点击的状态变量
+    accessTokenNum: '',
     user: {
       nickname: '用户',
       avatar: '../../static/source/user.png' // 用户头像路径
@@ -24,6 +28,14 @@ Page({
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function () {
+    let self = this
+    accessTokenGet().then(function(accessToken) {
+      self.setData({
+        accessTokenNum:accessToken
+      })
+    }).catch(function(error) {
+      console.error(error);
+    })
     let nickname = wx.getStorageSync('nickname'); // 获取昵称
     this.data.user.nickname = nickname;
     if (wx.createInterstitialAd) {
@@ -70,7 +82,7 @@ Page({
       buttonDisabled: true,
     });
     const requestTask = wx.request({
-      url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397', // 后端服务器地址
+      url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=' + this.data.accessTokenNum, // 后端服务器地址
       responseType: "arraybuffer",
       method: 'POST',
       enableChunked: true,

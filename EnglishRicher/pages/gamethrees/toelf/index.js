@@ -2,6 +2,9 @@ import {findLongestArray,decodeArrayBuffer} from '../../../utils/algorithm'
 import {
   innerAudioContext
 } from '../../../utils/global';
+import {
+  accessTokenGet
+} from '../../../utils/api';
 var database = require('./source/toelf-first');
 var databaseTwo = require('./source/toelf-second');
 var midArray = '';
@@ -19,13 +22,22 @@ Page({
     showAnimation: false, // 显示悬浮动画
     showGrade: '托福(上)',
     showTips: '',
-    detailTranslation: false
+    detailTranslation: false,
+    accessTokenNum: '',
   },
   // 页面分享
   onShareAppMessage() {},
   // 页面分享朋友圈
   onShareTimeline() {},
   onLoad: function (options) {
+    let self = this
+    accessTokenGet().then(function(accessToken) {
+      self.setData({
+        accessTokenNum:accessToken
+      })
+    }).catch(function(error) {
+      console.error(error);
+    })
     midArray = findLongestArray(wx.getStorageSync('toelfOneList'),'toelfOneList', wx.getStorageSync('toelfOneTwoList'), 'toelfOneTwoList', wx.getStorageSync('toelfOneThreeList'), 'toelfOneThreeList');
     // 显示正在刷新提示框
     wx.showToast({
@@ -68,7 +80,7 @@ Page({
         detailTranslation: true,
       });
     const requestTask = wx.request({
-        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397',
+        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=' + this.data.accessTokenNum,
         responseType: "arraybuffer",
         method: 'POST',
         enableChunked: true,
@@ -128,7 +140,7 @@ Page({
         detailTranslation: true,
       });
       const requestTask = wx.request({
-        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397',
+        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=' + this.data.accessTokenNum,
         responseType: "arraybuffer",
         method: 'POST',
         enableChunked: true,

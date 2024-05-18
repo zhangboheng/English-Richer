@@ -7,7 +7,7 @@ import {
 var database = require('./source/radio');
 Page({
   data: {
-    randomText: '新版本 V 2.6.4 发布，改善 AI 响应速度，对用户很友好～～',
+    randomText: '新版本 V 2.6.5 发布，修复 AI 回复不稳定问题～～',
     textCollection: [
       '伯衡君制作的微信小游戏小恐龙不要停已经上架，欢迎试玩～～',
       '伯衡君制作的微信小游戏跃影忍者已经上架，欢迎试玩～～',

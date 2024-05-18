@@ -2,6 +2,9 @@ import {decodeArrayBuffer} from '../../../../utils/algorithm';
 import {
   innerAudioContext
 } from '../../../../utils/global';
+import {
+  accessTokenGet
+} from '../../../../utils/api';
 Page({
   data: {
     listData: [], // 刷单词所有的词库
@@ -12,7 +15,8 @@ Page({
     phonetic: '', // 要展示的音标
     phoneticShow: false,
     showTips: '',
-    detailTranslation: false
+    detailTranslation: false,
+    accessTokenNum: '',
   },
   // 页面分享
   onShareAppMessage() {},
@@ -27,6 +31,14 @@ Page({
     });
   },
   onReady: function() {
+    let self = this
+    accessTokenGet().then(function(accessToken) {
+      self.setData({
+        accessTokenNum:accessToken
+      })
+    }).catch(function(error) {
+      console.error(error);
+    })
     let trueData = wx.getStorageSync('notMasterWords');
     const randomNum = Math.floor(Math.random() * trueData.length);
     // 赋值给本轮列表
@@ -48,7 +60,7 @@ Page({
         detailTranslation: true,
       });
     const requestTask = wx.request({
-        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397',
+        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=' + this.data.accessTokenNum,
         responseType: "arraybuffer",
         method: 'POST',
         enableChunked: true,
@@ -108,7 +120,7 @@ Page({
         detailTranslation: true,
       });
       const requestTask = wx.request({
-        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=24.42fe5b839ba4673607e42e3e9db7eb34.2592000.1715481825.282335-60999397',
+        url: 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat?access_token=' + this.data.accessTokenNum,
         responseType: "arraybuffer",
         method: 'POST',
         enableChunked: true,

@@ -2,6 +2,14 @@ Page({
   data: {
     versions: [
       {
+        version: '2.6.5',
+        date: '2024-05-18',
+        icon: ['success_no_circle'],
+        changes: [
+          '修复 AI 回复不稳定问题。',
+        ],
+      },
+      {
         version: '2.6.4',
         date: '2024-04-16',
         icon: ['info', 'info', 'success_no_circle'],
